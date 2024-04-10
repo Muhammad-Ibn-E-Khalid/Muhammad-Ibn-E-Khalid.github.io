@@ -54,11 +54,27 @@ body {
     padding:0;
     margin-left:auto;
  }
- nav ul li {
+
+/* Media query for desktop/laptop */
+@media only screen and (min-width: 768px) {
+    nav ul li {
     display:inline;
     padding:10px;
+    font-size:large;  
+    }
+}
+
+/* Media query for Android devices */
+@media only screen and (max-width: 767px) {
+    /* Assuming Android devices typically have smaller screens */
+    /* You can adjust this breakpoint based on your specific needs */
+    nav ul li {
+            display:inline;
+    padding:10px;
     font-size:large;
- }
+    }
+}
+
  nav ul li a {
         color: #fff;
     text-decoration: none;
