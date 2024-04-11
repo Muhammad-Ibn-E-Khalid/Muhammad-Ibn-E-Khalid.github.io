@@ -14,12 +14,15 @@ body {
     color:#00a6ff;
     text-decoration:none;
     font-weight:750;
+    
  }
  a:visited {
     color:none;
  }
  a:hover {
     color:#95daff;
+    box-shadow: 0 0 100px #87d5ff;
+
  }
  .container {
     width:80%;
@@ -86,6 +89,7 @@ body {
      opacity:0.8;
     color:#377a77;
     background-color: #fff;
+    box-shadow: 0 0 80px #e5eedd;
  }
  section {
     padding:50px 0;
