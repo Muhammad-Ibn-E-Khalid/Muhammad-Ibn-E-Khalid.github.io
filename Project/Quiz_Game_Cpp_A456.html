@@ -69,95 +69,39 @@ a:hover {
     </head>
     
     <body>
-        <header>
-            <div class="container">
-                <div class="logo-container">
-                    <a href="../index.html">
-                        <img src="Images/IconALogo.jpg" alt="MBK Tech Studios Logo">
-                    </a>
-                    <h1>
-                        MBK Tech Studios
-                    </h1>
-                    <br>
-                    <br>
-                    <dfndl>
-                        Innovating Beyond Boundaries
-                    </dfndl>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="../index.html#About" onclick="selectSection('../index.html#About')">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../index.html#Projects" onclick="selectSection('../index.html#Projects')">
-                            Projects
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../index.html#Contact" onclick="selectSection('../index.html#Contact')">
-                            Contact Us
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+
+   <div id="header"></div>
+
+        
         <div class="content-container">
             <p class="cp">
                 Quiz Game Cpp Documentation
             </p>
         </div>
-        <footer>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="../index.html#About" onclick="selectSection('../index.html#About')">
-                            About Us
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../index.html#Projects" onclick="selectSection('../index.html#Projects')">
-                            Projects
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../index.html#Contact" onclick="selectSection('../index.html#Contact')">
-                            Contact Us
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="social-links" id="social-links">
-                <a href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
-                    <img src="../Images/gmail.png" alt="MBK Tech Studios Logo">
-                </a>
-                <a href="https://youtube.com" target="_blank">
-                    <img src="../Images/youtube.png" alt="MBK Tech Studios Logo">
-                </a>
-                <a href="https://github.com" target="_blank">
-                    <img src="../Images/github.png" alt="MBK Tech Studios Logo">
-                </a>
-                <a href="https://facebook.com" target="_blank">
-                    <img src="../Images/facebook.png" alt="MBK Tech Studios Logo">
-                </a>
-                <a href="https://discord.com" target="_blank">
-                    <img src="../Images/discord.png" alt="MBK Tech Studios Logo">
-                </a>
-                <a href="https://instagram.com/mbktech.studios" target="_blank">
-                    <img src="../Images/instagram.png" alt="MBK Tech Studios Logo">
-                </a>
-                <a href="https://linkedin.com" target="_blank">
-                    <img src="../Images/linkedin.png" alt="MBK Tech Studios Logo">
-                </a>
-            </div>
-            &copy; 2023 MBK Tech Studios | Developed by
-            <a href="../index.html">
-                MBK Tech Studios
-            </a>
-        </footer>
+
+   <div id="footer"></div>
+
+        
     </body>
+ <script src="../script.js">
+    </script>
+    <script>
+        // Call updateSocialLinks() when the page loads
+        window.onload = function() {
+            updateSocialLinks();
+        };
+
+                    fetch('header.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('header').innerHTML = html;
+      });
+
+      fetch('footer.html')
+      .then(response => response.text())
+      .then(html => {
+        document.getElementById('footer').innerHTML = html;
+      });
+    </script>
 
 </html>
