@@ -49,9 +49,11 @@ body {
     margin-right:10px;
     border-radius:100%;
  }
- .logo-containerdimg {
-    background-color:black;
- }
+ .logo-container a {
+
+   border-radius:100%;
+}
+
  nav ul {
     list-style-type:none;
     padding:0;
@@ -109,7 +111,7 @@ body {
     margin-top:10px;
  }
  .project-item {
-    border:4px solid #274e4b;
+    border:5px solid #274e4b;
     border-radius:6px;
     padding:10px;
     background-color:#f2f7ed;
