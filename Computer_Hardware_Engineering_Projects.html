@@ -1,108 +1,139 @@
 <html lang="en">
-
-<head>
+  
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C++ Projects - MBK Tech Studios</title>
+    <title>
+      C++ Projects - MBK Tech Studios
+    </title>
     <link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg" style="border-radius: 50%;">
     <link rel="stylesheet" href="styles.css">
-</head>
- 
-<body>
-
+  </head>
+  
+  <body>
     <header>
-
-        <div class="container">
-            <div class="logo-container">
-                <a href="#"><img src="Images/IconALogo.jpg" alt="MBK Tech Studios Logo"></a>
-                <h1>MBK Tech Studios</h1>
-                <br> <br>
-                <dfndl>Innovating Beyond Boundaries</dfndl>
-            </div>
-
+      <div class="container">
+        <div class="logo-container">
+          <a href="#">
+            <img src="Images/IconALogo.jpg" alt="MBK Tech Studios Logo">
+          </a>
+          <h1>
+            MBK Tech Studios
+          </h1>
+          <br>
+          <br>
+          <dfndl>
+            Innovating Beyond Boundaries
+          </dfndl>
         </div>
-
-
-        <nav>
-            <ul>
-                <li><a href="index.html#About" onclick="selectSection('index.html#About')">About Us</a></li>
-                <li><a href="index.html#Projects" onclick="selectSection('index.html#Projects')">Projects</a></li>
-                <li><a href="index.html#Contact" onclick="selectSection('index.html#Contact')">Contact Us</a></li>
-            </ul>
-        </nav>
-
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html#About" onclick="selectSection('index.html#About')">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="index.html#Projects" onclick="selectSection('index.html#Projects')">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="index.html#Contact" onclick="selectSection('index.html#Contact')">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
-
-   <div class="bordered">
-
-    
-    <section id="Projects">
-
+    <div class="bordered">
+      <section id="Projects">
         <div class="container">
-            <div class="search-bar">
-                <input type="text" id="search" placeholder="Search project by name or Project ID #...">
-                <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()">x</button>
-                <button class="search-bar-Sbutton" type="button" onclick="searchProjects()">Search</button>
+          <div class="search-bar">
+            <input type="text" id="search" placeholder="Search project by name or Project ID #...">
+            <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()">
+              x
+            </button>
+            <button class="search-bar-Sbutton" type="button" onclick="searchProjects()">
+              Search
+            </button>
+          </div>
+          <h2>
+            Computer Hardware Engineering Projects
+          </h2>
+          <div id="searchResults">
+          </div>
+          <div class="project-grid">
+            <div class="project-item" id="A456">
+              <a href="#">
+                <img src="https://miro.medium.com/v2/resize:fit:1358/1*3gh-krzOrAoNyX8mJGyc2Q.jpeg"
+                alt="Project 1">
+                <h3>
+                  Comming Soon!!
+                </h3>
+              </a>
             </div>
-
-
-            <h2>Computer Hardware Engineering Projects</h2>
-            <div id="searchResults"></div>
-            <div class="project-grid">
-
-
-
-                <div class="project-item" id="A456">
-                    <a href="#">
-                        <img src="https://miro.medium.com/v2/resize:fit:1358/1*3gh-krzOrAoNyX8mJGyc2Q.jpeg" alt="Project 1">
-                        <h3>Comming Soon!!</h3>
-                    </a>
-                </div>
-
-
-
-
-            </div>
+          </div>
         </div>
-    </section>
-       
-</div>
-    
+      </section>
+    </div>
     <footer>
-
-        <nav>
-            <ul>
-                <li><a href="index.html#About" onclick="selectSection('index.html#About')">About Us</a></li>
-                <li><a href="index.html#Projects" onclick="selectSection('index.html#Projects')">Projects</a></li>
-                <li><a href="index.html#Contact" onclick="selectSection('index.html#Contact')">Contact Us</a></li>
-            </ul>
-        </nav>
-
-<div class="social-links" id="social-links">
+      <nav>
+        <ul>
+          <li>
+            <a href="index.html#About" onclick="selectSection('index.html#About')">
+              About Us
+            </a>
+          </li>
+          <li>
+            <a href="index.html#Projects" onclick="selectSection('index.html#Projects')">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="index.html#Contact" onclick="selectSection('index.html#Contact')">
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="social-links" id="social-links">
         <a href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
-            <img src="Images/gmail.png" alt="MBK Tech Studios Logo">
+          <img src="Images/gmail.png" alt="MBK Tech Studios Logo">
         </a>
-        <a href="https://youtube.com" target="_blank"> <img src="Images/youtube.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://github.com" target="_blank"> <img src="Images/github.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://facebook.com" target="_blank"> <img src="Images/facebook.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://discord.com" target="_blank"> <img src="Images/discord.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://instagram.com" target="_blank"> <img src="Images/instagram.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://linkedin.com" target="_blank"> <img src="Images/linkedin.png" alt="MBK Tech Studios Logo"></a>
-</div>
-
-        &copy; 2023 MBK Tech Studios | Developed by <a href="index.html">MBK Tech Studios</a>
-        
+        <a href="https://youtube.com" target="_blank">
+          <img src="Images/youtube.png" alt="MBK Tech Studios Logo">
+        </a>
+        <a href="https://github.com" target="_blank">
+          <img src="Images/github.png" alt="MBK Tech Studios Logo">
+        </a>
+        <a href="https://facebook.com" target="_blank">
+          <img src="Images/facebook.png" alt="MBK Tech Studios Logo">
+        </a>
+        <a href="https://discord.com" target="_blank">
+          <img src="Images/discord.png" alt="MBK Tech Studios Logo">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+          <img src="Images/instagram.png" alt="MBK Tech Studios Logo">
+        </a>
+        <a href="https://linkedin.com" target="_blank">
+          <img src="Images/linkedin.png" alt="MBK Tech Studios Logo">
+        </a>
+      </div>
+      &copy; 2023 MBK Tech Studios | Developed by
+      <a href="index.html">
+        MBK Tech Studios
+      </a>
     </footer>
-</body>
-
-<script src="script.js"></script>
-    <script>
-        // Call updateSocialLinks() when the page loads
-        window.onload = function() {
-            updateSocialLinks();
-        };
-    </script>
-
-
+  </body>
+  <script src="script.js">
+  </script>
+  <script>
+    // Call updateSocialLinks() when the page loads
+    window.onload = function() {
+      updateSocialLinks();
+    };
+  </script>
 
 </html>
