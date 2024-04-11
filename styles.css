@@ -5,11 +5,21 @@ body {
    background-color:#d4e3c9;
    color:#333;
 }
+
+/*For Paragraphs Text*/
+
 textp {
    font-size:large;
    color:#384f65;
    font-weight:550;
 }
+
+
+/*
+ - No UnderLine under Link Text
+ - No Visited Color
+*/
+
 a {
    color:#0097e8;
    text-decoration:none;
@@ -22,16 +32,25 @@ a:hover {
    color:#95daff;
    box-shadow:0 0 100px #87d5ff;
 }
-.container {
-   width:80%;
-   margin:0 5%;
-}
+
+
+/* Header*/
+
 header {
    background-color:#377a77;
    color:#fff;
    padding:10px 0;
    border:6px solid #274e4b;
    text-align:center;
+}
+dfndl {
+   font-size:10px;
+   margin-top:60px;
+   margin-left:-210px;
+}
+.container {
+   width:80%;
+   margin:0 5%;
 }
 .logo-container {
    display:flex;
@@ -65,8 +84,8 @@ nav ul {
 }/* Media query for Android devices */
 @media only screen and (max-width:767px) {
    /* Assuming Android devices typically have smaller screens */
-   /* You can adjust this breakpoint based on your specific needs */
-   nav ul li {
+  /* You can adjust this breakpoint based on your specific needs */
+  nav ul li {
    display:inline;
    padding:10px;
    font-size:large;
@@ -84,9 +103,31 @@ nav ul li a:hover {
    background-color:#fff;
    box-shadow:0 0 80px #e5eedd;
 }
+
+
+/* Main Body */
+
+.bordered {
+   border-left:6px solid #274e4b;
+   border-right:6px solid #274e4b;
+}
+
+/* Section Click Transition */
+
+.section {
+   transition:background-color 0.5s ease;
+}
+.selected-main {
+   background-color:#e5eedd;
+}
+.selected-footer {
+   background-color:#4d8583;
+}
 section {
    padding:50px 0;
 }
+
+/* Project  Section */
 .project-grid {
    display:grid;
    grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
@@ -122,6 +163,9 @@ section {
 .project-item a:hover {
    opacity:0.8;
 }
+
+
+/* Contact Us */
 form input,form textarea {
    width:100%;
    margin-bottom:10px;
@@ -140,6 +184,17 @@ form button {
 }
 form button:hover {
    opacity:0.8;
+}
+
+
+/* Footer */
+
+footer {
+   background-color:#377a77;
+   color:#fff;
+   padding:15px 0;
+   border:6px solid #274e4b;
+   text-align:center;
 }
 .social-links {
    display:flex;
@@ -164,22 +219,11 @@ form button:hover {
    box-shadow:0 0 80px #e5eedd;
    border-radius:8px;
 }
-dfndl {
-   font-size:10px;
-   margin-top:60px;
-   margin-left:-210px;
-}
-.bordered {
-   border-left:6px solid #274e4b;
-   border-right:6px solid #274e4b;
-}
-footer {
-   background-color:#377a77;
-   color:#fff;
-   padding:15px 0;
-   border:6px solid #274e4b;
-   text-align:center;
-}
+
+
+/* Project Page */
+
+/* Search Bar */
 .search-bar {
    display:flex;
    align-items:center;
@@ -218,13 +262,4 @@ footer {
 }
 #clearButton:hover {
    color:#333;
-}
-.section {
-   transition:background-color 0.5s ease;
-}
-.selected-main {
-   background-color:#e5eedd;
-}
-.selected-footer {
-   background-color:#4d8583;
 }
