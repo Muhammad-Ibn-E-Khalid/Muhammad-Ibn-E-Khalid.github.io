@@ -1,136 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MBK Tech Studios</title>
-    <link rel="icon" type="image/x-icon" href="../Images/IconALogo.jpg" style="border-radius: 50%;">
-    <link rel="stylesheet" href="../styles.css">
     
-    <style>
- 
-        .content-container {
-            max-width: 92%;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: skyblue;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 30px;
-            margin-bottom: 50px;
-            text-align: left;
-            border-radius: 8px;
-        }
-        .cp {
-            font-weight: 900;
-            font-size: 2em;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #0077cc;
-        }
-        .video-container {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+          Quiz Game Cpp - MBK Tech Studios
+        </title>
+        <link rel="icon" type="image/x-icon" href="../Images/IconALogo.jpg" style="border-radius: 50%;">
+        <link rel="stylesheet" href="../styles.css">
+        <style>
+            .content-container {
+    max-width:92%;
+    margin:0 auto;
+    padding:20px;
+    background-color:skyblue;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    margin-top:30px;
+    margin-bottom:50px;
+    text-align:left;
+    border-radius:8px;
+}
+.cp {
+    font-weight:900;
+    font-size:2em;
+    margin-bottom:20px;
+    text-align:center;
+    color:#0077cc;
+}
+.video-container {
+    text-align:center;
+    margin-bottom:20px;
+}
+iframe {
+    border-radius:8px;
+}
+.ct {
+    font-size:16px;
+    line-height:1.6;
+    margin-bottom:10px;
+    text-align:left;
+}
+.quoted-text {
+    font-weight:bold;
+    color:#000000;
+}
+.content-container
+            img {
+    max-width:90%;
+    height:auto;
+    margin-bottom:20px;
+    border:1px solid
+            #ddd;
+    border-radius:8px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+/* Additional styles for improved aesthetics */ a {
+    color:#0077cc;
+    text-decoration:none;
+}
+a:hover {
+    text-decoration:underline;
+}
 
-        iframe {
-            border-radius: 8px;
-        }
-
-        .ct {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 10px;
-            text-align: left;
-        }
-        .quoted-text {
-            font-weight: bold;
-            color: #000000;
-        }
-
-        .content-container img {
-            max-width: 90%;
-            height: auto;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Additional styles for improved aesthetics */
-        a {
-            color: #0077cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-
-
-</head>
-
-<body>
-
-     <header>
-
-        <div class="container">
-            <div class="logo-container">
-                <a href="../index.html"><img src="Images/IconALogo.jpg" alt="MBK Tech Studios Logo"></a>
-                <h1>MBK Tech Studios</h1>
-                <br> <br>
-                <dfndl>Innovating Beyond Boundaries</dfndl>
+        </style>
+    </head>
+    
+    <body>
+        <header>
+            <div class="container">
+                <div class="logo-container">
+                    <a href="../index.html">
+                        <img src="Images/IconALogo.jpg" alt="MBK Tech Studios Logo">
+                    </a>
+                    <h1>
+                        MBK Tech Studios
+                    </h1>
+                    <br>
+                    <br>
+                    <dfndl>
+                        Innovating Beyond Boundaries
+                    </dfndl>
+                </div>
             </div>
-
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html#About" onclick="selectSection('../index.html#About')">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#Projects" onclick="selectSection('../index.html#Projects')">
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#Contact" onclick="selectSection('../index.html#Contact')">
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class="content-container">
+            <p class="cp">
+                Quiz Game Cpp Documentation
+            </p>
         </div>
+        <footer>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="../index.html#About" onclick="selectSection('../index.html#About')">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#Projects" onclick="selectSection('../index.html#Projects')">
+                            Projects
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../index.html#Contact" onclick="selectSection('../index.html#Contact')">
+                            Contact Us
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="social-links" id="social-links">
+                <a href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
+                    <img src="../Images/gmail.png" alt="MBK Tech Studios Logo">
+                </a>
+                <a href="https://youtube.com" target="_blank">
+                    <img src="../Images/youtube.png" alt="MBK Tech Studios Logo">
+                </a>
+                <a href="https://github.com" target="_blank">
+                    <img src="../Images/github.png" alt="MBK Tech Studios Logo">
+                </a>
+                <a href="https://facebook.com" target="_blank">
+                    <img src="../Images/facebook.png" alt="MBK Tech Studios Logo">
+                </a>
+                <a href="https://discord.com" target="_blank">
+                    <img src="../Images/discord.png" alt="MBK Tech Studios Logo">
+                </a>
+                <a href="https://instagram.com/mbktech.studios" target="_blank">
+                    <img src="../Images/instagram.png" alt="MBK Tech Studios Logo">
+                </a>
+                <a href="https://linkedin.com" target="_blank">
+                    <img src="../Images/linkedin.png" alt="MBK Tech Studios Logo">
+                </a>
+            </div>
+            &copy; 2023 MBK Tech Studios | Developed by
+            <a href="../index.html">
+                MBK Tech Studios
+            </a>
+        </footer>
+    </body>
 
-        <nav>
-            <ul>
-                <li><a href="../index.html#About" onclick="selectSection('../index.html#About')">About Us</a></li>
-                <li><a href="../index.html#Projects" onclick="selectSection('../index.html#Projects')">Projects</a></li>
-                <li><a href="../index.html#Contact" onclick="selectSection('../index.html#Contact')">Contact Us</a></li>
-            </ul>
-        </nav>
-
-    </header>
-
-    <div class="content-container">
-        
-        <p class="cp">Quiz Game Cpp Documentation</p>
-       
-
-    </div>
-
-
-    <footer>
-
-
-        <nav>
-            <ul>
-                <li><a href="../index.html#About" onclick="selectSection('../index.html#About')">About Us</a></li>
-                <li><a href="../index.html#Projects" onclick="selectSection('../index.html#Projects')">Projects</a></li>
-                <li><a href="../index.html#Contact" onclick="selectSection('../index.html#Contact')">Contact Us</a></li>
-            </ul>
-        </nav>
-
-    <div class="social-links" id="social-links">
-        <a href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
-            <img src="../Images/gmail.png" alt="MBK Tech Studios Logo">
-        </a>
-        <a href="https://youtube.com" target="_blank"> <img src="../Images/youtube.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://github.com" target="_blank"> <img src="../Images/github.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://facebook.com" target="_blank"> <img src="../Images/facebook.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://discord.com" target="_blank"> <img src="../Images/discord.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://instagram.com/mbktech.studios" target="_blank"> <img src="../Images/instagram.png" alt="MBK Tech Studios Logo"></a>
-        <a href="https://linkedin.com" target="_blank"> <img src="../Images/linkedin.png" alt="MBK Tech Studios Logo"></a>
- 
-    </div>
-
-        &copy; 2023 MBK Tech Studios | Developed by <a href="../index.html">MBK Tech Studios</a>
-
-    </footer>
-    
-</body>
 </html>
