@@ -51,11 +51,7 @@
     </body>
     <script src="script.js">
     </script>
-    <script>
-        // Call updateSocialLinks() when the page loads
-        window.onload = function() {
-            updateSocialLinks();
-        };
+       <script>
 
       fetch('header.html')
       .then(response => response.text())
@@ -68,6 +64,7 @@
       .then(html => {
         document.getElementById('footer').innerHTML = html;
       });
+        
     </script>
 
 </html>
