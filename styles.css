@@ -75,14 +75,14 @@ dfndl {
 }
 nav ul {
    list-style-type:none;
-   padding:0;
+   padding: 10px;
    margin-left:auto;
 }
 /* Media query for desktop/laptop */
 @media only screen and (min-width:768px) {
    nav ul li {
    display:inline;
-   padding:10px;
+   padding:20px;
    font-size:large;
 }
 }
@@ -92,7 +92,7 @@ nav ul {
   /* You can adjust this breakpoint based on your specific needs */
   nav ul li {
    display:inline;
-   padding:10px;
+   padding:20px;
    font-size:large;
 }
 }
