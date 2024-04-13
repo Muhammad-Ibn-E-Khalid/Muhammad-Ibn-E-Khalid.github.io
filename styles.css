@@ -38,79 +38,6 @@ section a:hover,
    box-shadow: 0 0 100px #48bfff;
 }
 
-/* Header*/
-
-header {
-   background-color:#377a77;
-   color:#fff;
-   padding:10px 0;
-   border:6px solid #274e4b;
-   text-align:center;
-}
-dfndl {
-   font-size:10px;
-   margin-top:60px;
-   margin-left:-210px;
-}
-.container {
-   width:80%;
-   margin:0 5%;
-}
-.logo-container {
-   display:flex;
-   align-items:center;
-}
-.logo-container h1 {
-   margin:0;
-   font-size:24px;
-}
-.logo-container img {
-   width:100px;
-   height:100px;
-   margin-right:10px;
-   border-radius:100%;
-}
-.logo-container a {
-   border-radius:100%;
-}
-nav ul {
-   list-style-type:none;
-   padding: 10px;
-   margin-left:auto;
-}
-/* Media query for desktop/laptop */
-@media only screen and (min-width:768px) {
-   nav ul li {
-   display:inline;
-   padding:20px;
-   font-size:large;
-}
-}
-/* Media query for Android devices */
-@media only screen and (max-width:767px) {
-   /* Assuming Android devices typically have smaller screens */
-  /* You can adjust this breakpoint based on your specific needs */
-  nav ul li {
-   display:inline;
-   padding:20px;
-   font-size:large;
-}
-}
-nav ul li a {
-   color:#fff;
-   text-decoration:none;
-   text-align:center;
-   padding:15px 10px;
-   font-weight: 750;
-   border-radius:6px;
-}
-nav ul li a:hover {
-   opacity:0.8;
-   color:#377a77;
-   background-color:#fff;
-   box-shadow:0 0 80px #e5eedd;
-}
-
 
 /* Main Body */
 
@@ -205,39 +132,6 @@ form button {
 }
 form button:hover {
    opacity:0.8;
-}
-
-/* Footer */
-
-footer {
-   background-color:#377a77;
-   color:#fff;
-   padding:15px 0;
-   border:6px solid #274e4b;
-   text-align:center;
-}
-.social-links {
-   display:flex;
-   justify-content:center;
-   align-items:center;
-   border-radius:6px;
-   padding:15px;
-   flex-wrap:wrap;
-}
-.social-links-container {
-   max-width:100%;
-   margin:0 auto;
-   overflow:hidden;
-}
-.social-links img {
-   margin:5px;
-   height:56px;
-   width:56px;
-   max-width:100%;
-}
-.social-links img:hover {
-   box-shadow:0 0 80px #e5eedd;
-   border-radius:14px;
 }
 
 /* Project Page */
