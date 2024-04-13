@@ -1,31 +1,168 @@
 <!-- Main Footer Section -->
 
-<head>
 
-    <link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg" style="border-radius: 50%;">
-    <link rel="stylesheet" href="styles.css">
+<style>
+      
+
+      .navbar {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+       
+    }
+
+    .main-nav {
+        justify-content: center;
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-nav li {
+        margin-right: 25px;
+    }
+
+    .main-nav li:last-child {
+        margin-right: 20px;
+    }
+
+    .main-nav a {
+        color:#fff;
+   text-decoration:none;
+   text-align:center;
+   padding: 10px 10px;
+   font-weight: 750;
+   font-size: 18px;
+   border-radius:6px;
+    }
+
+    .navbar-toggle {
+        display: none;
+    }
+
+    .nav-mobile {
         
-</head>
+      
+        border-radius: 6px;
+        height: 30%;
+        width: 0;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        right: 0;
+        background-color: #468b88;
+        overflow-x: hidden;
+        padding-top: 80px;
+    }
+
+    .nav-mobile a {
+        display: block;
+        text-decoration: none;
+        color:#fff;
+   padding:5px 5px;
+   font-weight: 750;
+   border-radius:6px;
+    }
+    .nav-mobile a:hover,
+    .main-nav a:hover
+    {
+        opacity:0.8;
+   color:#377a77;
+   background-color:#fff;
+   box-shadow:0 0 80px #e5eedd;
+    }
+
+    .closebutton {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        font-size: 56px;
+        padding: auto;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 25px;
+        height: 2px;
+        background-color: black;
+        margin: 6px 0;
+    }
+
+    @media screen and (max-width: 768px) {
+        .main-nav {
+            display: none;
+        }
+
+        .navbar-toggle {
+            display: block;
+        }
+    }
+
+footer {
+   background-color:#377a77;
+   color:#fff;
+   padding:15px 0;
+   border:6px solid #274e4b;
+   text-align:center;
+}
+.social-links {
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   border-radius:6px;
+   padding:15px;
+   flex-wrap:wrap;
+}
+.social-links-container {
+   max-width:100%;
+   margin:0 auto;
+   overflow:hidden;
+}
+.social-links img {
+   margin:5px;
+   height:56px;
+   width:56px;
+   max-width:100%;
+}
+.social-links img:hover {
+   box-shadow:0 0 80px #e5eedd;
+   border-radius:14px;
+}
+</style>
 
 <footer>
 
-
-    <nav>
-        <ul>
-            <li><a href="#About" onclick="selectSection('About')">About Us</a></li>
-            <li><a href="#Updates" onclick="selectSection('Updates')">Updates</a></li>
-            <li><a href="#Projects" onclick="selectSection('Projects')">Projects</a></li>
-            <li><a href="#Blogs" onclick="selectSection('Blogs')">Blogs</a></li>
-            <li><a href="#Contact" onclick="selectSection('Contact')">Contact Us</a></li>
-        </ul>
-    </nav>
+    <ul class="main-nav">
+        <li><a class="nav-links" href="#About" onclick="selectSection('About')">About Us</a></li>
+        <li><a class="nav-links" href="#Updates" onclick="selectSection('Updates')">Updates</a></li>
+        <li><a class="nav-links" href="#Projects" onclick="selectSection('Projects')">Projects</a></li>
+        <li><a class="nav-links" href="#Blogs" onclick="selectSection('Blogs')">Blogs</a></li>
+        <li><a class="nav-links" href="#Contact" onclick="selectSection('Contact')">Contact Us</a></li>
+    </ul>
+    <div id="sidenav" class="nav-mobile">
+        <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+        <a href="#About" onclick="selectSection('About')">About Us</a>
+        <a href="#Updates" onclick="selectSection('Updates')">Updates</a>
+        <a href="#Projects" onclick="selectSection('Projects')">Projects</a>
+        <a href="#Blogs" onclick="selectSection('Blogs')">Blogs</a>
+        <a href="#Contact" onclick="selectSection('Contact')">Contact Us</a>
+    </div>
+    <div class="navbar-toggle" onclick="openNav()">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+        <div class="bar5"></div>
+        <div class="bar4"></div>
+    </div>
 
 
 <div class="social-links" id="social-links">
     <a href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
         <img src="Images/gmail.png" alt="MBK Tech Studios Logo">
     </a>
-    <a href="https://youtube.com/@MBKTechStudios" target="_blank"> <img src="Images/youtube.png" alt="MBK Tech Studios Logo"></a>
+    <a href="https://youtube.com/@MBKTechStudios" target="_blank"> <img src="Images/youtube.png" alt="Youru"></a>
     <a href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank"> <img src="Images/github.png" alt="MBK Tech Studios Logo"></a>
     <a href="https://facebook.com/@MBKTechStudios" target="_blank"> <img src="Images/facebook.png" alt="MBK Tech Studios Logo"></a>
     <a href="https://discord.gg/MUAyAeckrM" target="_blank"> <img src="Images/discord.png" alt="MBK Tech Studios Logo"></a>
@@ -42,3 +179,13 @@
     </div>
     
 </footer>
+</header>
+<script>
+    function openNav() {
+        document.getElementById("sidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+        document.getElementById("sidenav").style.width = "0";
+    }
+</script>
