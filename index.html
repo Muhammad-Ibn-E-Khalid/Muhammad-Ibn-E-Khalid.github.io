@@ -151,31 +151,21 @@
                     <h2>
                         Contact Us
                     </h2>
-                    <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScfHlIq6245nvKHxzwcengdjcjv_9pTs_44LBzRzwNT0U9sAw/formResponse">
-                        <input type="text" id="name" name="entry.708316550" placeholder="Your Name"
-                        required>
-                        <input type="email" id="email" name="entry.1416936503" placeholder="Your Email"
-                        required>
-                        <textarea id="message" name="entry.99889746" rows="6" placeholder="Your Message"
-                        required>
-                        </textarea>
+ <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScfHlIq6245nvKHxzwcengdjcjv_9pTs_44LBzRzwNT0U9sAw/formResponse">
+                        <input type="text" id="name" name="entry.708316550" placeholder="Your Name" required>
+                        <input type="email" id="email" name="entry.1416936503" placeholder="Your Email" required>
+                        <textarea id="message" name="entry.99889746" rows="6" placeholder="Your Message" required></textarea>
+                        <input type="hidden" id="submissionDateTime" name="entry.278719911">
                         <br>
                         <p>
-                            <textp>
-                                Note:
-                            </textp>
+                            <textp>Note:</textp>
                             For quicker assistance, contact us on
-                            <a href="#social-links" onclick="selectSectionfooter('social-links')">
-                                Social Media
-                            </a>
-                            . Email responses may take 1-2 business days.
+                            <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>.
+                            Email responses may take 1-2 business days.
                         </p>
                         <br>
-                        <div id="messageStatus">
-                        </div>
-                        <button type="submit" id="sendButton">
-                            Send Message
-                        </button>
+                        <div id="messageStatus"></div>
+                        <button type="submit" id="sendButton">Send Message</button>
                     </form>
                 </div>
             </section>
@@ -186,6 +176,23 @@
     
     </body>
     <script src="script.js">
+    </script>
+    <script>
+
+        // Get the hidden input element for submission date and time
+        var submissionDateTimeInput = document.getElementById("submissionDateTime");
+    
+        // Add an event listener for when the form is submitted
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            // Get the current date and time
+            var currentDateTime = new Date();
+    
+            // Format the date and time as a string with desired format (hh:mm:ss dd/mm/yy)
+            var formattedDateTime = currentDateTime.toLocaleTimeString() + ' ' + currentDateTime.toLocaleDateString();
+    
+            // Set the value of the hidden input for submission date and time
+            submissionDateTimeInput.value = formattedDateTime;
+        });
     </script>
     <script>
         document.getElementById("contactForm").addEventListener("submit",
