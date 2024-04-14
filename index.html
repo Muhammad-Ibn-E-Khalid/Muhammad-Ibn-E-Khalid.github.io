@@ -178,24 +178,28 @@
     </body>
     <script src="script.js">
     </script>
-    <script>
 
-        // Get the hidden input element for submission date and time
-        var submissionDateTimeInput = document.getElementById("submissionDateTime");
-    
-        // Add an event listener for when the form is submitted
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
+ 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+   <script>
+
+    $(document).ready(() => {
+        $.getJSON("https://api.ipify.org?format=json", function (data) {
             // Get the current date and time
             var currentDateTime = new Date();
-    
             // Format the date and time as a string with desired format (hh:mm:ss dd/mm/yy)
             var formattedDateTime = currentDateTime.toLocaleTimeString() + ' ' + currentDateTime.toLocaleDateString();
-    
-            // Set the value of the hidden input for submission date and time
-            submissionDateTimeInput.value = formattedDateTime;
+            
+            // Concatenate IP address, date, and time into a single string
+            var ipAddressDateTime = "IP: " + data.ip + ", Date and Time: " + formattedDateTime;
+
+            // Set the value of the hidden input for submission date, time, and IP address
+            document.getElementById("submissionDateTime").value = ipAddressDateTime;
         });
-    </script>
-    <script>
+    });
+
+
         document.getElementById("contactForm").addEventListener("submit",
         function(event) {
             var messageStatus = document.getElementById("messageStatus");
@@ -217,8 +221,7 @@
       .then(html => {
         document.getElementById('footer').innerHTML = html;
       });
-    </script>
-<script>
+
     function openNav() {
         document.getElementById("sidenav").style.width = "250px";
     }
