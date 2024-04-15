@@ -16,6 +16,7 @@
 
         
         <div class="bordered">
+            <div id="terms"></div>
             <section id="Projects">
                 <div class="container">
                     <div class="search-bar">
@@ -72,5 +73,60 @@
         document.getElementById('footer').innerHTML = html;
       });
     </script>
+<script>
+    
+    function loadTerms() {
+        fetch('terms.html').then(response => response.text()).then(html => {
+            document.getElementById('terms').innerHTML = html;
 
+            document.getElementById('agreeButton').addEventListener('click', function () {
+                setCookie('agreed', 'true', 365);
+                hideOverlay();
+            });
+
+            document.getElementById('disagreeButton').addEventListener('click', function () {
+                window.location.href = 'disagree.html';
+            });
+
+            checkCookie();
+        });
+    }
+
+    function checkCookie() {
+        if (getCookie('agreed') === 'true') {
+            hideOverlay();
+        }
+    }
+
+    loadTerms();
+
+    function hideOverlay() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1, cookie.length);
+            }
+            if (cookie.indexOf(nameEQ) === 0) {
+                return cookie.substring(nameEQ.length, cookie.length);
+            }
+        }
+        return null;
+    }
+</script>
 </html>
