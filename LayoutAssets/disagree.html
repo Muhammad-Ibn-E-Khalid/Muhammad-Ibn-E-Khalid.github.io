@@ -6,8 +6,8 @@
     <title>Disagreement - MBK Tech Studios</title>
     <style>
         body {
-            background-color: #1f1f1f; /* Dark background color */
-            color: #fff; /* White text color */
+            background-color: #1f1f1f; 
+            color: #fff;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -18,22 +18,43 @@
             text-align: center;
         }
         h1 {
-            color: #ff5733; /* Red title color */
+            color: #ff5733;
         }
         p {
             margin-top: 20px;
         }
+        button {
+    background-color: rgb(0, 213, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    color: azure;
+    display: block; 
+    margin: auto; 
+}
+
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Disagreement</h1>
         <p>You have rejected the Terms of Use and Privacy Policy of MBK Tech Studios.</p>
-        <p>You will be redirected to Google in <span id="countdown">5</span> seconds.</p>
+        <p>You will be redirected to Google in <span id="countdown">8</span> seconds.</p>
     </div>
+    <button onclick="goToindex()" >Go Back</button>
 </body>
 <script>
-    var countdown = 5; // Initial countdown value
+
+    function goToindex(){
+        window.location.href = 'https://muhammad-ibn-e-khalid.github.io/index.html';
+        
+    }
+
+    var countdown = 8;
     var countdownElement = document.getElementById('countdown');
 
     function updateCountdown() {
