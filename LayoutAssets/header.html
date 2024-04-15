@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg">
+<link rel="icon" type="image/x-icon" href="https://muhammad-ibn-e-khalid.github.io/Images/IconALogo.jpg">
 
 <title>Responsive Navbar</title>
 <style>
@@ -140,37 +140,37 @@ dfndl {
 </head>
 <body>
 <header>
-<nav class="navbar">
-    <div class="logo-position">
-        <a href="#"><img src="" id="logo-img-a" alt="MBK Tech Studios Logo"></a>
-
-    </div>
-  
-    <p class="main" >MBK Tech Studios</p>
-   <!-- <p class="sub" >Innovating Beyond Boundaries</p>-->
-    <ul class="main-nav">
-        <li><a class="nav-links" id="about" href="" onclick="selectSection('About')">About Us</a></li>
-        <li><a class="nav-links" id="updates" href="" onclick="selectSection('Updates')">Updates</a></li>
-        <li><a class="nav-links" id="projects" href="" onclick="selectSection('Projects')">Projects</a></li>
-        <li><a class="nav-links" id="blogs" href="" onclick="selectSection('Blogs')">Blogs</a></li>
-        <li><a class="nav-links" id="contact" href="" onclick="selectSection('Contact')">Contact Us</a></li>
-    </ul>
-    <div id="sidenav" class="nav-mobile">
-        <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
-        <a href="#About" onclick="selectSection('About')">About Us</a>
-        <a href="#Updates" onclick="selectSection('Updates')">Updates</a>
-        <a href="#Projects" onclick="selectSection('Projects')">Projects</a>
-        <a href="#Blogs" onclick="selectSection('Blogs')">Blogs</a>
-        <a href="#Contact" onclick="selectSection('Contact')">Contact Us</a>
-    </div>
-    <div class="navbar-toggle" onclick="openNav()">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-        <div class="bar5"></div>
-        <div class="bar4"></div>
-    </div>
-</nav>
+    <nav class="navbar">
+        <div class="logo-position">
+            <a href="#"><img src="https://muhammad-ibn-e-khalid.github.io/Images/IconALogo.jpg" alt="MBK Tech Studios Logo"></a>
+    
+        </div>
+      
+        <p class="main" >MBK Tech Studios</p>
+       <!-- <p class="sub" >Innovating Beyond Boundaries</p>-->
+        <ul class="main-nav">
+            <li><a class="nav-links" href="https://muhammad-ibn-e-khalid.github.io/index.html#About" onclick="selectSection('About')">About Us</a></li>
+            <li><a class="nav-links" href="https://muhammad-ibn-e-khalid.github.io/index.html#Updates" onclick="selectSection('Updates')">Updates</a></li>
+            <li><a class="nav-links" href="https://muhammad-ibn-e-khalid.github.io/index.html#Projects" onclick="selectSection('Projects')">Projects</a></li>
+            <li><a class="nav-links" href="https://muhammad-ibn-e-khalid.github.io/index.html#Blogs" onclick="selectSection('Blogs')">Blogs</a></li>
+            <li><a class="nav-links" href="https://muhammad-ibn-e-khalid.github.io/index.html#Contact" onclick="selectSection('Contact')">Contact Us</a></li>
+        </ul>
+        <div id="sidenav" class="nav-mobile">
+            <a href="javascript:void(0)" class="closebutton" onclick="closeNav()">&times;</a>
+            <a href="https://muhammad-ibn-e-khalid.github.io/index.html#About" onclick="selectSection('About')">About Us</a>
+            <a href="https://muhammad-ibn-e-khalid.github.io/index.html#Updates" onclick="selectSection('Updates')">Updates</a>
+            <a href="https://muhammad-ibn-e-khalid.github.io/index.html#Projects" onclick="selectSection('Projects')">Projects</a>
+            <a href="https://muhammad-ibn-e-khalid.github.io/index.html#Blogs" onclick="selectSection('Blogs')">Blogs</a>
+            <a href="https://muhammad-ibn-e-khalid.github.io/index.html#Contact" onclick="selectSection('Contact')">Contact Us</a>
+        </div>
+        <div class="navbar-toggle" onclick="openNav()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+            <div class="bar5"></div>
+            <div class="bar4"></div>
+        </div>
+    </nav>
 </header>
 <script>
     function openNav() {
@@ -180,73 +180,6 @@ dfndl {
     function closeNav() {
         document.getElementById("sidenav").style.width = "0";
     }
-
-    function getIndexPath() {
-    var path = window.location.pathname;
-    var depth = (path.match(/\//g) || []).length;
-    var indexPath;
-    if (depth === 1) {
-        indexPath = "index.html";
-    } else if (depth === 2) {
-        indexPath = "../index.html";
-    } else if (depth === 3) {
-        indexPath = "../../index.html";
-    }
-    return indexPath;
-}
-
-document.getElementById('about').href = getIndexPath() + '#About';
-document.getElementById('updates').href = getIndexPath() + '#Updates';
-document.getElementById('projects').href = getIndexPath() + '#Projects';
-document.getElementById('blogs').href = getIndexPath() + '#Blogs';
-document.getElementById('contact').href = getIndexPath() + '#Contact';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    function getImagePath() {
-    // Get the current URL pathname
-    var path = window.location.pathname;
-
-    // Count the number of slashes to determine the depth
-    var depth = (path.match(/\//g) || []).length;
-
-    // Adjust the image source path based on the depth
-    var imagePath;
-    if (depth === 1) {
-      imagePath = "Images/";
-    } 
-    if (depth === 2) {
-      imagePath = "../Images/";
-    } 
-    else if (depth === 3) {
-      imagePath = "../../Images/";
-    }
-    return imagePath;
-  }
-
-
-  document.getElementById('logo-img-a').src = getImagePath() + 'IconALogo.jpg';
-
 </script>
 
 </body>

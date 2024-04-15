@@ -134,58 +134,24 @@ footer {
 
 <footer>
 
-<div class="social-links" id="social-links">
-  <a href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
-      <img id="gmail-img" src="" alt="Email Address">
-  </a>
-  <a href="https://youtube.com/@MBKTechStudios" target="_blank"> <img id="yt-img" src="" alt="YouTube Channel Link"></a>
-  <a href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank"> <img id="git-img" src="" alt="Github Profile Link"></a>
-  <a href="https://facebook.com/@MBKTechStudios" target="_blank"> <img id="fb-img" src="" alt="Facebook Page Link"></a>
-  <a href="https://discord.gg/MUAyAeckrM" target="_blank"> <img id="dis-img" src="" alt="Discord Server Link"></a>
-  <a href="https://instagram.com/mbktech.studios" target="_blank"> <img id="insta-img" src="" alt="Instagram Page Link"></a>
-  <a href="https://www.linkedin.com/in/muhammad-bin-khalid-89711b25b" target="_blank"> <img id="link-img" src="" alt="Linkedin Profile Link"></a>
-</div>
+  <div class="social-links" id="social-links">
+    <a href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
+        <img src="https://muhammad-ibn-e-khalid.github.io/Images/gmail.png" alt="MBK Tech Studios Logo">
+    </a>
+    <a href="https://youtube.com/@MBKTechStudios" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/youtube.png" alt="Youru"></a>
+    <a href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/github.png" alt="MBK Tech Studios Logo"></a>
+    <a href="https://facebook.com/@MBKTechStudios" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/facebook.png" alt="MBK Tech Studios Logo"></a>
+    <a href="https://discord.gg/MUAyAeckrM" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/discord.png" alt="MBK Tech Studios Logo"></a>
+    <a href="https://instagram.com/mbktech.studios" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/instagram.png" alt="MBK Tech Studios Logo"></a>
+    <a href="https://www.linkedin.com/in/muhammad-bin-khalid-89711b25b" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/linkedin.png" alt="MBK Tech Studios Logo"></a>
+  </div>
 
 <br>
   
   <div class="CopyRightBox" >
      
-      &copy; 2024 MBK Tech Studios | Developed by <a href="index.html">MBK Tech Studios</a>
+      &copy; 2024 MBK Tech Studios | Developed by <a href="https://muhammad-ibn-e-khalid.github.io/index.html">MBK Tech Studios</a>
 
   </div>
-    
-<script>
-  // Function to determine the path based on the location of the file
-  function getImagePath() {
-    // Get the current URL pathname
-    var path = window.location.pathname;
-
-    // Count the number of slashes to determine the depth
-    var depth = (path.match(/\//g) || []).length;
-
-    // Adjust the image source path based on the depth
-    var imagePath;
-    if (depth === 1) {
-      imagePath = "Images/";
-    } 
-    if (depth === 2) {
-      imagePath = "../Images/";
-    } 
-    else if (depth === 3) {
-      imagePath = "../../Images/";
-    }
-    return imagePath;
-  }
-
-
-  document.getElementById('gmail-img').src = getImagePath() + 'gmail.png';
-  document.getElementById('yt-img').src = getImagePath() + 'youtube.png';
-  document.getElementById('git-img').src = getImagePath() + 'github.png';
-  document.getElementById('fb-img').src = getImagePath() + 'facebook.png';
-  document.getElementById('dis-img').src = getImagePath() + 'discord.png';
-  document.getElementById('insta-img').src = getImagePath() + 'instagram.png';
-  document.getElementById('link-img').src = getImagePath() + 'linkedin.png';
-
-</script>
   
 </footer>

@@ -70,24 +70,30 @@
         #disagreeButton:hover {
             box-shadow:0 0 50 #f54b5c;
         }
+        body.no-scroll {
+            overflow: hidden;
+        }
         </style>
 </head>
 <body>
     <div class="mmodal" id="overlay">
         <div id="modal">
             <h2>Terms of Use and Privacy Policy</h2>
-            <p>Please Read and Agree To The <a href="user_agreement.html" target="_blank" >Terms Of Use & Privacy Policy</a> Before Accessing The Website.</p>
+            <p>Please Read and Agree To The <a href="https://muhammad-ibn-e-khalid.github.io/LayoutAssets/user_agreement.html" target="_blank" >Terms Of Use & Privacy Policy</a> Before Accessing The Website.</p>
             <button id="agreeButton">Agree</button>
             <button id="disagreeButton">Disagree</button>
         </div>
     </div> 
     <script>
+
         function displayOverlay() {
             document.getElementById('overlay').style.display = 'block';
+            document.body.classList.add('no-scroll');
         }
         
         function hideOverlay() {
             document.getElementById('overlay').style.display = 'none';
+            document.body.classList.remove('no-scroll');
         }
         
         function setCookie(name, value, days) {
@@ -129,7 +135,7 @@
         });
         
         document.getElementById('disagreeButton').addEventListener('click', function() {
-            window.location.href = 'disagree.html';
+            window.location.href = 'https://muhammad-ibn-e-khalid.github.io/LayoutAssets/disagree.html';
         });
     </script>
 </body>
