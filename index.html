@@ -176,7 +176,13 @@
             document.getElementById("submissionDateTime").value = ipAddressDateTime;
         });
     });
-    
+    function gett() {
+    var host = window.location.host; // Get the hostname (e.g., www.example.com)
+    var protocol = window.location.protocol; // Get the protocol (e.g., http or https)
+    var indexPath = protocol + '//' + host + '/LayoutAssets/user_agreement.html'; // Construct the full path
+
+    return indexPath;
+}
     document.getElementById("contactForm").addEventListener("submit",
     function(event) {
         var messageStatus = document.getElementById("messageStatus");
