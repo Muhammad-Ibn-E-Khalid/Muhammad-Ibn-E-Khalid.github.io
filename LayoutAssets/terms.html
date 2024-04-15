@@ -22,7 +22,7 @@
         }
         .mmodal a:hover {
             color:#95daff;
-            box-shadow:0 0 60px #48bfff;
+            box-shadow:0 0 10px 5px #48bfff; /* Added unit to box-shadow */
         }
         #overlay {
             display:block;
@@ -66,13 +66,23 @@
             float:right;
         }
         #agreeButton:hover {
-            box-shadow:0 0 50 #46b05d;
+            box-shadow:0 0 50px 10px #46b05d; /* Added unit to box-shadow */
         }
         #disagreeButton:hover {
-            box-shadow:0 0 50 #f54b5c;
+            box-shadow:0 0 50px 10px #f54b5c; /* Added unit to box-shadow */
         }
         body.no-scroll {
             overflow: hidden;
+        }
+        @media only screen and (max-width: 600px) {
+            #modal {
+                width: 90%;
+                padding: 10px;
+            }
+            .mmodal button {
+                padding: 5px 10px;
+                font-size: 14px;
+            }
         }
         </style>
 </head>
