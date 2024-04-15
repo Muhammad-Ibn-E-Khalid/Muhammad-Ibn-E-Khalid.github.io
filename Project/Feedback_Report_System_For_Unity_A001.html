@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+          Feedback Report System For Unity - MBK Tech Studios
+        </title>
+        <link rel="stylesheet" href="../LayoutAssets/styles.css">
+
+    </head>
+    
+    <body>
+      
+   <div id="header"></div>
+
+        
+   <div id="terms"></div>
+
+        <div class="content-container">
+            <p class="cp"> How To Deploy Unity Feedback Report System in Your Project! </p>
+            <div class="video-container">
+                <iframe width="90%" height="500px" src="https://www.youtube.com/embed/AAAAAA1AA11?autoplay=1&mute=1">
+                </iframe>
+            </div>
+            <p class="ct">
+                1. First, import the Unity package from the Asset Store:
+                <span class="quoted-text">
+                    <a href="https://assetstore.unity.com/packages/slug/270861"> Feedback Report System </a>
+                </span>
+            </p>
+            <p class="ct">
+                2. Disable
+                <span class="quoted-text"> "Assembly Version Validation" </span>
+                in <span class="quoted-text"> "PlayerSettings/OtherSetting/Assembly Version Validation" </span>
+                to solve the <span class="quoted-text"> "unityplastic.dll not loaded due to errors" </span>
+                issue caused by <span class="quoted-text"> "Plugins/StandaloneFileBrowser" </span>.
+            </p>
+            <p class="ct">
+                3. Drag the prefab named <span class="quoted-text"> "FeedBackReportCanvas" </span> into your scene.
+            </p>
+            <img class="cimg" src="Images/1-(i).png" alt="Screenshot 1">
+            <p class="ct">
+                4. Select the object named  <span class="quoted-text"> "All Scripts" </span> and fill in the fields:
+                <span class="quoted-text"> "ReceiverMail" </span> , <span class="quoted-text"> "SenderMail" </span>
+                , and <span class="quoted-text"> "SenderMail AppPassword" </span> . If you don't know what AppPassword is, watch this
+                <a href="https://www.youtube.com/watch?v=3KaBYMOAg3A" target="_blank"> Video </a>.
+            </p>
+            <img src="Images/1-(ii).png" alt="Screenshot 2">
+            <p class="ct">
+                5. Now you are ready to use the feedback system.
+            </p>
+        </div>
+
+   <div id="footer"></div>
+
+        
+    </body>
+    
+    
+    <script src="../LayoutAssets/script.js"></script>
+
+    <script>
+        // Call updateSocialLinks() when the page loads
+        window.onload = function() {
+            updateSocialLinks();
+        };
+
+        fetch('../LayoutAssets/header.html').then(response => response.text()).then(html => {
+      document.getElementById('header').innerHTML = html;
+       
+      function getIndexPath() {
+    var path = window.location.pathname;
+    var depth = (path.match(/\//g) || []).length;
+    var indexPath;
+    if (depth === 1) {
+        indexPath = "index.html";
+    } else if (depth === 2) {
+        indexPath = "../index.html";
+    } else if (depth === 3) {
+        indexPath = "../../index.html";
+    }
+    return indexPath;
+}
+
+document.getElementById('about').href = getIndexPath() + '#About';
+document.getElementById('updates').href = getIndexPath() + '#Updates';
+document.getElementById('projects').href = getIndexPath() + '#Projects';
+document.getElementById('blogs').href = getIndexPath() + '#Blogs';
+document.getElementById('contact').href = getIndexPath() + '#Contact';
+
+
+    function getImagePath() {
+    // Get the current URL pathname
+    var path = window.location.pathname;
+
+    // Count the number of slashes to determine the depth
+    var depth = (path.match(/\//g) || []).length;
+
+    // Adjust the image source path based on the depth
+    var imagePath;
+    if (depth === 1) {
+      imagePath = "Images/";
+    } 
+    if (depth === 2) {
+      imagePath = "../Images/";
+    } 
+    else if (depth === 3) {
+      imagePath = "../../Images/";
+    }
+    return imagePath;
+  }
+
+
+  document.getElementById('logo-img-a').src = getImagePath() + 'IconALogo.jpg';
+      });
+
+      fetch('../LayoutAssets/footer.html').then(response => response.text()).then(html => {
+        document.getElementById('footer').innerHTML = html; // Function to determine the path based on the location of the file
+  function getImagePath() {
+    // Get the current URL pathname
+    var path = window.location.pathname;
+
+    // Count the number of slashes to determine the depth
+    var depth = (path.match(/\//g) || []).length;
+
+    // Adjust the image source path based on the depth
+    var imagePath;
+    if (depth === 1) {
+      imagePath = "Images/";
+    } 
+    if (depth === 2) {
+      imagePath = "../Images/";
+    } 
+    else if (depth === 3) {
+      imagePath = "../../Images/";
+    }
+    return imagePath;
+  }
+
+
+  document.getElementById('gmail-img').src = getImagePath() + 'gmail.png';
+  document.getElementById('yt-img').src = getImagePath() + 'youtube.png';
+  document.getElementById('git-img').src = getImagePath() + 'github.png';
+  document.getElementById('fb-img').src = getImagePath() + 'facebook.png';
+  document.getElementById('dis-img').src = getImagePath() + 'discord.png';
+  document.getElementById('insta-img').src = getImagePath() + 'instagram.png';
+  document.getElementById('link-img').src = getImagePath() + 'linkedin.png';
+
+    });
+
+
+    </script>
+
+<script>
+    
+    function loadTerms() {
+        fetch('../LayoutAssets/terms.html').then(response => response.text()).then(html => {
+            document.getElementById('terms').innerHTML = html;
+
+            document.getElementById('agreeButton').addEventListener('click', function () {
+                setCookie('agreed', 'true', 365);
+                hideOverlay();
+            });
+
+            document.getElementById('disagreeButton').addEventListener('click', function () {
+                window.location.href = '../LayoutAssets/disagree.html';
+            });
+
+            checkCookie();
+        });
+    }
+
+    function checkCookie() {
+        if (getCookie('agreed') === 'true') {
+            hideOverlay();
+        }
+    }
+
+    loadTerms();
+
+    function hideOverlay() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1, cookie.length);
+            }
+            if (cookie.indexOf(nameEQ) === 0) {
+                return cookie.substring(nameEQ.length, cookie.length);
+            }
+        }
+        return null;
+    }
+</script>
+
+</html>

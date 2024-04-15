@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="LayoutAssets/styles.css">
+        <link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg" style="border-radius: 50%;">
+        <title>Home - MBK Tech Studios</title>
+    </head>
+   
+    <body>
+ 
+    <div id="header"></div>
+
+        <div class="bordered">
+            <div id="terms"></div>
+            <section id="About">
+
+                <div class="container">
+                    <h2>About Us</h2>
+                    <textp>
+                        Hey there! I'm a tech enthusiast with a passion for exploration and creation.With skills in Unity, C++, and C#, I'm blending my love for technology
+                        with a fascination for astrophysics and the quantum world. In addition to software development, I also work on hardware engineering projects,
+                        exploring the intersection of digital and physical realms. Follow me on my journey as I dive into the depths of technology and the mysteries of
+                        the universe! For further updates, follow me on
+                        <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>.
+                    </textp>
+                </div>
+
+            </section>
+
+            <section id="Updates">
+
+                <div class="container">
+                    <h2>Latest Updates</h2>
+                    <textp>Here you can find the latest news, announcements, and updates about MBK Tech Studios.</textp>
+                    <div class="project-grid">
+                        <div class="project-item new-project">
+                            <a href="" target="_blank">
+                                <div class="overlay">
+                                    <h3>New Project</h3>
+                                </div>
+                                <img src="Images/pr-item1.jpg" alt="Game Development Projects">
+                                <h3>Projects Name</h3>
+                            </a>
+                        </div>
+                        <div class="project-item announcement">
+                            <a href="" target="_blank">
+                                <div class="overlay">
+                                    <h3>Announcements</h3>
+                                </div>
+                                <img src="Images/pr-item1.jpg" alt="Announcements">
+                                <h3>Projects Name</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            
+            <section id="Projects">
+
+                <div class="container">
+                    <h2>Projects Category</h2>
+                    <div class="project-grid">
+                        <div class="project-item">
+                            <a href="Game_Development_Projects.html" target="_blank">
+                                <img src="Images/pr-item1.jpg" alt="Game Development Projects">
+                                <h3>Game Development Projects</h3>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="Computer_Hardware_Engineering_Projects.html" target="_blank">
+                                <img src="Images/pr-item2.jpeg" alt="Computer Hardware Engineering Projects">
+                                <h3>Computer Hardware Engineering Projects</h3>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="Unity_Assest_Projects.html" target="_blank">
+                                <img class="logo-containerdimg" src="Images/pr-item3.webp" alt="Unity Assest Projects">
+                                <h3>Unity Assest Projects</h3>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="Cpp_Projects.html" target="_blank">
+                                <img class="logo-containerdimg" src="Images/pr-item4.png" alt="Unity Assest Projects">
+                                <h3>C++ Projects</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="Blogs">
+
+                <div class="container">
+                    <h2>Featured Blog</h2>
+                    <div class="project-grid">
+                        <div class="project-item">
+                            <a href="" target="_blank">
+                                <img src="Images/pr-item1.jpg" alt="Game Development Projects">
+                                <h3>Blog 1</h3>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="" target="_blank">
+                                <img src="Images/pr-item1.jpg" alt="Computer Hardware Engineering Projects">
+                                <h3>Blog 2</h3>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="" target="_blank">
+                                <img class="logo-containerdimg" src="Images/pr-item1.jpg" alt="Unity Assest Projects">
+                                <h3>Blog 3</h3>
+                            </a>
+                        </div>
+                        <div class="project-item">
+                            <a href="" target="_blank">
+                                <img class="logo-containerdimg" src="Images/pr-item1.jpg" alt="Unity Assest Projects">
+                                <h3>Blog 4</h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="Contact">
+
+                <div class="container">
+
+                    <h2>Contact Us</h2>
+
+                    <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScfHlIq6245nvKHxzwcengdjcjv_9pTs_44LBzRzwNT0U9sAw/formResponse">
+                        <input type="text" id="name" name="entry.708316550" placeholder="Your Name" required>
+                        <input type="email" id="email" name="entry.1416936503" placeholder="Your Email" required>
+                        <textarea id="message" name="entry.99889746" rows="6" placeholder="Your Message" required></textarea>
+                        <input type="hidden" id="submissionDateTime" name="entry.278719911">
+                        <br>
+                        <p>
+                            <textp>Note:</textp>
+                            For quicker assistance, contact us on
+                            <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>.
+                            Email responses may take 1-2 business days.
+                        </p>
+                        <br>
+                        <div id="messageStatus"></div>
+                        <button type="submit" id="sendButton">Send Message</button>
+                    </form>
+                </div>
+
+            </section>
+
+        </div>
+
+        <div id="footer"></div>
+
+       
+    
+    </body>
+   
+   <script src="LayoutAssets/script.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+   <script>
+
+
+    $(document).ready(() => {
+        $.getJSON("https://api.ipify.org?format=json",
+        function(data) {
+            var currentDateTime = new Date();
+            var formattedDateTime = currentDateTime.toLocaleTimeString() + ' ' + currentDateTime.toLocaleDateString();
+            var ipAddressDateTime = "Date and Time:          " + formattedDateTime + ",             IP: " + data.ip;
+            document.getElementById("submissionDateTime").value = ipAddressDateTime;
+        });
+    });
+    
+    document.getElementById("contactForm").addEventListener("submit",
+    function(event) {
+        var messageStatus = document.getElementById("messageStatus");
+        messageStatus.innerHTML = "Submitting...";
+        setTimeout(function() {
+            messageStatus.innerHTML = "Form submitted successfully!";
+        },
+        2000);
+    });
+    
+    fetch('../LayoutAssets/header.html').then(response => response.text()).then(html => {
+      document.getElementById('header').innerHTML = html;
+       
+      function getIndexPath() {
+    var path = window.location.pathname;
+    var depth = (path.match(/\//g) || []).length;
+    var indexPath;
+    if (depth === 1) {
+        indexPath = "index.html";
+    } else if (depth === 2) {
+        indexPath = "../index.html";
+    } else if (depth === 3) {
+        indexPath = "../../index.html";
+    }
+    return indexPath;
+}
+
+document.getElementById('about').href = getIndexPath() + '#About';
+document.getElementById('updates').href = getIndexPath() + '#Updates';
+document.getElementById('projects').href = getIndexPath() + '#Projects';
+document.getElementById('blogs').href = getIndexPath() + '#Blogs';
+document.getElementById('contact').href = getIndexPath() + '#Contact';
+
+
+    function getImagePath() {
+    // Get the current URL pathname
+    var path = window.location.pathname;
+
+    // Count the number of slashes to determine the depth
+    var depth = (path.match(/\//g) || []).length;
+
+    // Adjust the image source path based on the depth
+    var imagePath;
+    if (depth === 1) {
+      imagePath = "Images/";
+    } 
+    if (depth === 2) {
+      imagePath = "../Images/";
+    } 
+    else if (depth === 3) {
+      imagePath = "../../Images/";
+    }
+    return imagePath;
+  }
+
+
+  document.getElementById('logo-img-a').src = getImagePath() + 'IconALogo.jpg';
+      });
+
+    
+    fetch('LayoutAssets/footer.html').then(response => response.text()).then(html => {
+        document.getElementById('footer').innerHTML = html; // Function to determine the path based on the location of the file
+  function getImagePath() {
+    // Get the current URL pathname
+    var path = window.location.pathname;
+
+    // Count the number of slashes to determine the depth
+    var depth = (path.match(/\//g) || []).length;
+
+    // Adjust the image source path based on the depth
+    var imagePath;
+    if (depth === 1) {
+      imagePath = "Images/";
+    } 
+    if (depth === 2) {
+      imagePath = "../Images/";
+    } 
+    else if (depth === 3) {
+      imagePath = "../../Images/";
+    }
+    return imagePath;
+  }
+
+
+  document.getElementById('gmail-img').src = getImagePath() + 'gmail.png';
+  document.getElementById('yt-img').src = getImagePath() + 'youtube.png';
+  document.getElementById('git-img').src = getImagePath() + 'github.png';
+  document.getElementById('fb-img').src = getImagePath() + 'facebook.png';
+  document.getElementById('dis-img').src = getImagePath() + 'discord.png';
+  document.getElementById('insta-img').src = getImagePath() + 'instagram.png';
+  document.getElementById('link-img').src = getImagePath() + 'linkedin.png';
+
+    });
+    
+    
+    function openNav() {
+        document.getElementById("sidenav").style.width = "250px";
+    }
+    
+    function closeNav() {
+        document.getElementById("sidenav").style.width = "0";
+    }
+ 
+        </script>
+
+
+<script>
+    
+    function loadTerms() {
+        fetch('LayoutAssets/terms.html').then(response => response.text()).then(html => {
+            document.getElementById('terms').innerHTML = html;
+
+            document.getElementById('agreeButton').addEventListener('click', function () {
+                setCookie('agreed', 'true', 365);
+                hideOverlay();
+            });
+
+            document.getElementById('disagreeButton').addEventListener('click', function () {
+                window.location.href = 'LayoutAssets/disagree.html';
+            });
+
+            checkCookie();
+        });
+    }
+
+    function checkCookie() {
+        if (getCookie('agreed') === 'true') {
+            hideOverlay();
+        }
+    }
+
+    loadTerms();
+
+    function hideOverlay() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1, cookie.length);
+            }
+            if (cookie.indexOf(nameEQ) === 0) {
+                return cookie.substring(nameEQ.length, cookie.length);
+            }
+        }
+        return null;
+    }
+</script>
+
+</html>

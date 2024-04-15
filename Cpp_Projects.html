@@ -1,0 +1,202 @@
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            C++ Projects - MBK Tech Studios
+        </title>
+        <link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg" style="border-radius: 50%;">
+        <link rel="stylesheet" href="LayoutAssets/styles.css">
+    </head>
+    
+    <body>
+
+           <div id="header"></div>
+        
+        <div class="bordered">
+            <div id="terms"></div>
+            <section id="Projects">
+                <div class="container">
+                    <div class="search-bar">
+                        <input type="text" id="search" placeholder="Search project by name or Project ID #...">
+                        <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()">
+                            x
+                        </button>
+                        <button class="search-bar-Sbutton" type="button" onclick="searchProjects()">
+                            Search
+                        </button>
+                    </div>
+                    <h2>
+                        C++ Projects
+                    </h2>
+                    <div id="searchResults">
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-item" id="A456">
+                            <a href="Project/Quiz_Game_Cpp_A456.html">
+                                <img src="Images/pr-item1.jpg" alt="Project 1">
+                                <h3>
+                                    Quiz Game C++
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+     
+   <div id="footer"></div>
+
+        
+    </body>
+
+
+    <script src="LayoutAssets/script.js"></script>
+    
+    <script>
+
+fetch('../LayoutAssets/header.html').then(response => response.text()).then(html => {
+      document.getElementById('header').innerHTML = html;
+       
+      function getIndexPath() {
+    var path = window.location.pathname;
+    var depth = (path.match(/\//g) || []).length;
+    var indexPath;
+    if (depth === 1) {
+        indexPath = "index.html";
+    } else if (depth === 2) {
+        indexPath = "../index.html";
+    } else if (depth === 3) {
+        indexPath = "../../index.html";
+    }
+    return indexPath;
+}
+
+document.getElementById('about').href = getIndexPath() + '#About';
+document.getElementById('updates').href = getIndexPath() + '#Updates';
+document.getElementById('projects').href = getIndexPath() + '#Projects';
+document.getElementById('blogs').href = getIndexPath() + '#Blogs';
+document.getElementById('contact').href = getIndexPath() + '#Contact';
+
+
+    function getImagePath() {
+    // Get the current URL pathname
+    var path = window.location.pathname;
+
+    // Count the number of slashes to determine the depth
+    var depth = (path.match(/\//g) || []).length;
+
+    // Adjust the image source path based on the depth
+    var imagePath;
+    if (depth === 1) {
+      imagePath = "Images/";
+    } 
+    if (depth === 2) {
+      imagePath = "../Images/";
+    } 
+    else if (depth === 3) {
+      imagePath = "../../Images/";
+    }
+    return imagePath;
+  }
+
+
+  document.getElementById('logo-img-a').src = getImagePath() + 'IconALogo.jpg';
+      });
+
+
+   fetch('LayoutAssets/footer.html').then(response => response.text()).then(html => {
+        document.getElementById('footer').innerHTML = html; // Function to determine the path based on the location of the file
+  function getImagePath() {
+    // Get the current URL pathname
+    var path = window.location.pathname;
+
+    // Count the number of slashes to determine the depth
+    var depth = (path.match(/\//g) || []).length;
+
+    // Adjust the image source path based on the depth
+    var imagePath;
+    if (depth === 1) {
+      imagePath = "Images/";
+    } 
+    if (depth === 2) {
+      imagePath = "../Images/";
+    } 
+    else if (depth === 3) {
+      imagePath = "../../Images/";
+    }
+    return imagePath;
+  }
+
+
+  document.getElementById('gmail-img').src = getImagePath() + 'gmail.png';
+  document.getElementById('yt-img').src = getImagePath() + 'youtube.png';
+  document.getElementById('git-img').src = getImagePath() + 'github.png';
+  document.getElementById('fb-img').src = getImagePath() + 'facebook.png';
+  document.getElementById('dis-img').src = getImagePath() + 'discord.png';
+  document.getElementById('insta-img').src = getImagePath() + 'instagram.png';
+  document.getElementById('link-img').src = getImagePath() + 'linkedin.png';
+
+    });
+     
+ </script>
+
+<script>
+    
+    function loadTerms() {
+        fetch('LayoutAssets/terms.html').then(response => response.text()).then(html => {
+            document.getElementById('terms').innerHTML = html;
+
+            document.getElementById('agreeButton').addEventListener('click', function () {
+                setCookie('agreed', 'true', 365);
+                hideOverlay();
+            });
+
+            document.getElementById('disagreeButton').addEventListener('click', function () {
+                window.location.href = 'LayoutAssets/disagree.html';
+            });
+
+            checkCookie();
+        });
+    }
+
+    function checkCookie() {
+        if (getCookie('agreed') === 'true') {
+            hideOverlay();
+        }
+    }
+
+    loadTerms();
+
+    function hideOverlay() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1, cookie.length);
+            }
+            if (cookie.indexOf(nameEQ) === 0) {
+                return cookie.substring(nameEQ.length, cookie.length);
+            }
+        }
+        return null;
+    }
+</script>
+
+</html>
