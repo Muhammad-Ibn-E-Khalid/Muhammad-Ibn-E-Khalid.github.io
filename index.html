@@ -155,7 +155,8 @@
         function(data) {
             var currentDateTime = new Date();
             var formattedDateTime = currentDateTime.toLocaleTimeString() + ' ' + currentDateTime.toLocaleDateString();
-            var ipAddressDateTime = "Date and Time:          " + formattedDateTime + ",             IP: " + data.ip;
+            var ipAddressDateTime = "Date and Time: " + formattedDateTime /*+ data.ip*/ ;
+            //In current version Ip address is not submitting with contact form
             document.getElementById("submissionDateTime").value = ipAddressDateTime;
         });
     });
