@@ -114,28 +114,59 @@
 
                 <div class="container">
 
-                    <h2>Contact Us</h2>
+                    <h2>Contact Me</h2>
 
-                    <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScfHlIq6245nvKHxzwcengdjcjv_9pTs_44LBzRzwNT0U9sAw/formResponse">
-                        <input type="text" id="name" name="entry.708316550" placeholder="Your Name" required>
-                        <input type="email" id="email" name="entry.1416936503" placeholder="Your Email" required>
-                        <textarea id="message" name="entry.99889746" rows="6" placeholder="Your Message" required></textarea>
-                        <input type="hidden" id="submissionDateTime" name="entry.278719911">
-                        <br>
-                        <p>
-                            <textp>Note:</textp>
-                            For quicker assistance, contact us on
-                            <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>.
-                            Email responses may take 1-2 business days.
-                        </p>
-                        <br>
-                        <div id="messageStatus"></div>
-                        <button type="submit" id="sendButton">Send Message</button>
-                    </form>
+                    <form id="form" class="container m-4 pl-4" method="POST">
+
+                        <div class="field">
+                          <label class="label">Name</label>
+                          <div class="control">
+                            <input class="input" type="text" placeholder="Enter Your Name" name="UserName" required />
+                          </div>
+                        </div>
+                  
+                  
+                        <div class="field">
+                          <label class="label">Email</label>
+                          <div class="control">
+                            <input class="input" type="email" placeholder="Enter Your Email" name="Email" required />
+                          </div>
+                        </div>
+                  
+                        <div class="field">
+                          <label class="label">Message</label>
+                          <div class="control">
+                            <textarea class="input" placeholder="Enter Your Message" name="Message" rows="6" required></textarea>
+                          </div>
+                        </div>
+                  
+                  
+                        <div class="field is-grouped">
+                          <div class="control">
+                            <button class="button is-primary" type="submit" id="submit-button">
+                              Submit
+                            </button>
+                          </div>
+                        </div>
+                        <div
+                        id="message"
+                        style="
+                          display: none;
+                          font-weight: bold;
+                          color: green;
+                          padding: 8px;
+                          background-color: beige;
+                          border-radius: 4px;
+                          border-color: aquamarine;
+                        "
+                      ></div>
+                      </form>
+
+
                 </div>
 
             </section>
-
+            
         </div>
 
         <div id="footer"></div>
