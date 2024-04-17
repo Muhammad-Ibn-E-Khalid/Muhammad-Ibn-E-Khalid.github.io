@@ -101,7 +101,7 @@
 a {
     color:#5bc6ff;
     font-weight:bolder;
-    text-decoration:none;
+    text-decoration:underline;
 }
 a:visited {
     color:none;
@@ -118,6 +118,38 @@ a:hover {
 }
 }
 
+footer {
+ color:#fff;
+ padding:5px 0;
+ text-align:center;
+ border-radius: 6px;
+}
+.social-links {
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ border-radius:6px;
+ padding:5px;
+ flex-wrap:wrap;
+}
+.social-links-container {
+ max-width:100%;
+ margin:0 auto;
+ overflow:hidden;
+}
+.social-links img {
+ margin:5px;
+ height:56px;
+ width:56px;
+ max-width:100%;
+}
+.social-links img:hover {
+ box-shadow:0 0 80px #e5eedd;
+ border-radius:14px;
+}
+.CopyRightBox{
+    padding: 5px;
+}
     </style>
 </head>
 <body>
@@ -137,7 +169,7 @@ a:hover {
                 <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
             </ul>
             <h3 id="Section3" >Section 3: Intellectual Property</h3>
-            <p>All content on this <a href="https://muhammad-ibn-e-khalid.github.io/index.html" >Website</a>, including project documentation, images, and blog posts, is the property of Muhammad Bin Khalid and is protected by copyright laws of Pakistan. You may not reproduce, modify, display, sell, or distribute any content without prior written permission.</p>
+            <p>All content on this <a href="https://muhammad-ibn-e-khalid.github.io/index.html" >Website</a>, including project documentation, images, and blog posts, is the property of <a href="https://github.com/Muhammad-Ibn-E-Khalid/" target="_blank" >Muhammad Bin Khalid</a> and is protected by copyright laws of Pakistan. You may not reproduce, modify, display, sell, or distribute any content without prior written permission.</p>
             <h3 id="Section4" >Section 4: Links to Other Sites</h3>
             <p>This <a href="https://muhammad-ibn-e-khalid.github.io/index.html" >Website</a> may contain links to other apps, <a href="https://muhammad-ibn-e-khalid.github.io/index.html" >Website</a>s, and social media accounts. I am not responsible for the content or privacy practices of these external sites.</p>
             <h3 id="Section5" >Section 5: Contact Us Form</h3>
@@ -145,21 +177,50 @@ a:hover {
             <h3 id="Section6" >Section 6: Cookies</h3>
             <p>This <a href="https://muhammad-ibn-e-khalid.github.io/index.html" >Website</a> uses cookies to determine if you have agreed to these Terms and Conditions. By continuing to use this <a href="https://muhammad-ibn-e-khalid.github.io/index.html" >Website</a>, you consent to the use of cookies.</p>
             <h3 id="Section7" >Section 7: Blog Posts</h3>
-            <p>All blog posts on this <a href="https://muhammad-ibn-e-khalid.github.io/index.html" >Website</a> are the exclusive property of Muhammad Bin Khalid and are protected by copyright laws of Pakistan. You may not reproduce, modify, display, sell, or distribute any blog post without prior written permission from Muhammad Bin Khalid.</p>
+            <p>All blog posts on this <a href="https://muhammad-ibn-e-khalid.github.io/index.html" >Website</a> are the exclusive property of <a href="https://github.com/Muhammad-Ibn-E-Khalid/" target="_blank" >Muhammad Bin Khalid</a> and are protected by copyright laws of Pakistan. You may not reproduce, modify, display, sell, or distribute any blog post without prior written permission from <a href="https://github.com/Muhammad-Ibn-E-Khalid/" target="_blank" >Muhammad Bin Khalid</a>.</p>
             <h3 id="Section8" >Section 8: Governing Law</h3>
             <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of Pakistan. Any disputes arising out of or related to these Terms and Conditions will be resolved through binding arbitration in accordance with the rules of the Pakistan International Arbitration Centre.</p>
             <h3 id="Section9" >Section 9: Changes to Terms</h3>
-            <p>I reserve the right to modify or update these Terms and Conditions at any time without prior notice. Your continued use of this Website constitutes your agreement to any changes.</p>
-          
-              <div class="container">
-                <p class="DateTimePara">Last updated: 15/04/2024</p>
+            <ul>
+                <li>I reserve the right to modify or update these Terms and Conditions at any time without prior notice. Your continued use of this Website constitutes your agreement to any changes.</li>
+                <li>The terms and conditions of use are valid for 365 days from your initial acceptance. After this period, you must re-agree to the terms. You'll receive a notification prompting renewal. Failure to renew may result in restricted access. <a href="https://github.com/Muhammad-Ibn-E-Khalid/" target="_blank" >Muhammad Bin Khalid</a> reserves the right to update these terms without notice.</li>
+            </ul>
+            <h3 id="Section10" >Section 10: Website Code License</h3>
+            <p>The <a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank" >Source Code</a> of this <a href="https://muhammad-ibn-e-khalid.github.io/index.html" >Website</a> is provided under an open-source license, allowing you to view, copy, modify, distribute, and use it for any purpose, including commercial purposes, without requiring further permission from <a href="https://github.com/Muhammad-Ibn-E-Khalid/" target="_blank" >Muhammad Bin Khalid</a>. However, you accept that the <a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank" >Source Code</a> is provided "as is," without warranty of any kind, express or implied. <a href="https://github.com/Muhammad-Ibn-E-Khalid/" target="_blank" >Muhammad Bin Khalid</a> holds no liability for any damages arising from the use of this <a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank" >Source Code</a>.</p>
+           
+            <div class="container">
+                <p class="DateTimePara">Last Updated On 17/04/2024</p>
                 <div class="button-container">
                     <button id="backToTerm">Back</button>
                 </div>
             </div>
-
-
+            <footer>
+                <div class="CopyRightBox" >
+                   
+                   Contact Us Through Social Media
+                </div>
+                <div class="social-links" id="social-links">
+                  <a href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
+                      <img src="https://muhammad-ibn-e-khalid.github.io/Images/gmail.png" alt="MBK Tech Studios Logo">
+                  </a>
+                  <a href="https://youtube.com/@MBKTechStudios" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/youtube.png" alt="Youru"></a>
+                  <a href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/github.png" alt="MBK Tech Studios Logo"></a>
+                  <a href="https://facebook.com/@MBKTechStudios" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/facebook.png" alt="MBK Tech Studios Logo"></a>
+                  <a href="https://discord.gg/MUAyAeckrM" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/discord.png" alt="MBK Tech Studios Logo"></a>
+                  <a href="https://instagram.com/mbktech.studios" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/instagram.png" alt="MBK Tech Studios Logo"></a>
+                  <a href="https://www.linkedin.com/in/muhammad-bin-khalid-89711b25b" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Images/linkedin.png" alt="MBK Tech Studios Logo"></a>
+                </div>
+                
+                <div class="CopyRightBox" >
+                   
+                    &copy; 2024 MBK Tech Studios | Developed by <a href="https://muhammad-ibn-e-khalid.github.io/index.html">MBK Tech Studios</a>
+              
+                </div>
+                
+              </footer>
+            
         </div>
+        
     </div> 
     <script>
         document.getElementById("backToTerm").onclick = function() {
