@@ -134,7 +134,7 @@
                         <div class="field">
                           <label class="label">Email</label>
                           <div class="control">
-                            <input class="input" type="text" placeholder="Enter Your Email" name="Email" required />
+                            <input class="input" type="email" placeholder="Enter Your Email" name="Email" required />
                           </div>
                         </div>
                   
@@ -331,16 +331,18 @@ form button:hover {
       // Assign the timestamp value to the hidden input field
       document.querySelector('input[name="Timestamp"]').value = timestamp;
 
-      $(document).ready(() => {
-      $.getJSON("https://api.ipify.org?format=json", function(data) {
-        if (data && data.ip) {
-          document.querySelector('input[name="IXPX"]').value = data.ip;
-        } else {
-          console.error("Failed to retrieve IP address.");
-        }
-      }).fail(function() {
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+      if (data && data.ip) {
+        // Assign the IP address value to the hidden input field
+        document.querySelector('input[name="IXPX"]').value = data.ip;
+        submitForm();
+      } else {
         console.error("Failed to retrieve IP address.");
-      });
+        submitForm();
+      }
+    }).fail(function() {
+      console.error("Failed to retrieve IP address.");
+      submitForm();
     });
 
 
