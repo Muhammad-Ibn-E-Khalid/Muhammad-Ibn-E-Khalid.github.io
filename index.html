@@ -29,7 +29,7 @@
                 </div>
 
             </section>
-
+<!--
             <section id="Updates">
 
                 <div class="container">
@@ -38,7 +38,7 @@
                     <div class="project-grid">
                         
                         <div class="project-item new-project">
-                            <a><!-- <a href="" target="_blank">-->
+                            <a>
                                 <div class="overlay"> <h3>New Project</h3> </div>
                                 <img src="Images/pr-item1.jpg" alt="Game Development Projects">
                                 <h3>No New Projects Update</h3>
@@ -46,7 +46,7 @@
                         </div>
                         
                         <div class="project-item announcement">
-                             <a><!-- <a href="" target="_blank">-->
+                             <a>
                                 <div class="overlay"> <h3>Announcements</h3> </div>
                                 <img src="Images/pr-item1.jpg" alt="Announcements">
                                 <h3>No New Announcement</h3>
@@ -57,7 +57,8 @@
                 </div>
 
             </section>
-            
+        -->
+
             <section id="Projects">
 
                 <div class="container">
@@ -109,32 +110,70 @@
 
             </section>
 
-            <section id="Contact">
+
+                        <section id="Contact">
 
                 <div class="container">
 
-                    <h2>Contact Us</h2>
+                    <h2>Contact Me</h2>
 
-                    <form id="contactForm" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScfHlIq6245nvKHxzwcengdjcjv_9pTs_44LBzRzwNT0U9sAw/formResponse">
-                        <input type="text" id="name" name="entry.708316550" placeholder="Your Name" required>
-                        <input type="email" id="email" name="entry.1416936503" placeholder="Your Email" required>
-                        <textarea id="message" name="entry.99889746" rows="6" placeholder="Your Message" required></textarea>
-                        <input type="hidden" id="submissionDateTime" name="entry.278719911">
-                        <br>
-                        <p>
-                            <textp>Note:</textp>
-                            For quicker assistance, contact us on
-                            <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>.
-                            Email responses may take 1-2 business days.
-                        </p>
-                        <br>
-                        <div id="messageStatus"></div>
-                        <button type="submit" id="sendButton">Send Message</button>
-                    </form>
+                    <form id="form" class="container m-4 pl-4" method="POST">
+                        
+
+                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="Timestamp" /></div></div>
+                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="IXPX" /></div></div>
+
+                        <div class="field">
+                          <label class="label">Name</label>
+                          <div class="control">
+                            <input class="input" type="text" placeholder="Enter Your Name" name="UserName" required />
+                          </div>
+                        </div>
+                  
+                  
+                        <div class="field">
+                          <label class="label">Email</label>
+                          <div class="control">
+                            <input class="input" type="text" placeholder="Enter Your Email" name="Email" required />
+                          </div>
+                        </div>
+                  
+                        <div class="field">
+                          <label class="label">Message</label>
+                          <div class="control">
+                            <textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea>
+                          </div>
+                        </div>
+                  
+                  
+                        <div class="field is-grouped">
+                          <div class="control">
+                            <button class="button is-primary" type="submit" id="submit-button">
+                              Submit
+                            </button>
+                          </div>
+                        </div>
+                        <div
+                        id="message"
+                        style="
+                          display: none;
+                          font-weight: bold;
+                          color: green;
+                          padding: 8px;
+                          background-color: beige;
+                          border-radius: 4px;
+                          border-color: aquamarine;
+                        "
+                      ></div>
+                      </form>
+
+
                 </div>
 
             </section>
 
+            
+            
         </div>
 
         <div id="footer"></div>
@@ -142,32 +181,53 @@
        
     
     </body>
+     
+    <style>
+form{
+    border-radius: 6px;
+    padding: 20px;
+    background-color: #377a77;
+    border:6px solid #274e4b;
+}
+form .control {
    
+    margin-top: 10px;
+}
+form .field {
+    margin-bottom: 15px; 
+}
+form .label {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 5px; 
+}
+form input,form textarea {
+   width:97%;
+   margin-bottom:10px;
+   padding:10px;
+   border:1px solid #ccc;
+   border-radius:6px;
+   background-color:#fff;
+}
+form button {
+   background-color:#2ecc71;
+   color:#fff;
+   border:none;
+   font-weight: bold;
+   font-size: medium;
+   border-radius:6px;
+   padding:10px 20px;
+   cursor:pointer;
+}
+form button:hover {
+   opacity:0.8;
+}
+   </style>
+    
    <script src="LayoutAssets/script.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
    <script>
-
-
-    $(document).ready(() => {
-        $.getJSON("https://api.ipify.org?format=json",
-        function(data) {
-            var currentDateTime = new Date();
-            var formattedDateTime = currentDateTime.toLocaleTimeString() + ' ' + currentDateTime.toLocaleDateString();
-            var ipAddressDateTime = "Date and Time:          " + formattedDateTime + ",             IP: " + data.ip;
-            document.getElementById("submissionDateTime").value = ipAddressDateTime;
-        });
-    });
-    
-    document.getElementById("contactForm").addEventListener("submit",
-    function(event) {
-        var messageStatus = document.getElementById("messageStatus");
-        messageStatus.innerHTML = "Submitting...";
-        setTimeout(function() {
-            messageStatus.innerHTML = "Form submitted successfully!";
-        },
-        2000);
-    });
     
     fetch('LayoutAssets/header.html').then(response => response.text()).then(html => {
       document.getElementById('header').innerHTML = html;
@@ -248,4 +308,89 @@
     }
 </script>
 
+<script>
+
+//Credit: TechLever (youtube.com/@tech-lever)
+//Contact Me Script
+
+    document.getElementById("form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("message").textContent = "Submitting..";
+      document.getElementById("message").style.display = "block";
+      document.getElementById("submit-button").disabled = true;
+  
+      var currentDate = new Date();
+    var day = String(currentDate.getDate()).padStart(2, "0");
+    var month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    var year = currentDate.getFullYear();
+    var hours = String(currentDate.getHours()).padStart(2, "0");
+    var minutes = String(currentDate.getMinutes()).padStart(2, "0");
+    var seconds = String(currentDate.getSeconds()).padStart(2, "0");
+    var timestamp = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+
+      // Assign the timestamp value to the hidden input field
+      document.querySelector('input[name="Timestamp"]').value = timestamp;
+
+      $(document).ready(() => {
+      $.getJSON("https://api.ipify.org?format=json", function(data) {
+        if (data && data.ip) {
+          document.querySelector('input[name="IXPX"]').value = data.ip;
+        } else {
+          console.error("Failed to retrieve IP address.");
+        }
+      }).fail(function() {
+        console.error("Failed to retrieve IP address.");
+      });
+    });
+
+
+      var formData = new FormData(this);
+      var keyValuePairs = [];
+      for (var pair of formData.entries()) {
+        keyValuePairs.push(pair[0] + "=" + pair[1]);
+      }
+  
+      var formDataString = keyValuePairs.join("&");
+  
+      fetch(
+        "https://script.google.com/macros/s/AKfycbz3Gp9r177UzM0z1olj8TW25hBZqIQ7zlMrAdrVoq-dT8gkuqQMwHe7JcmYFwgvcfd_/exec",
+        {
+          redirect: "follow",
+          method: "POST",
+          body: formDataString,
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+        }
+      )
+        .then(function (response) {
+          if (response) {
+            return response;
+          } else {
+            throw new Error("Failed to submit the form.");
+          }
+        })
+        .then(function (data) {
+          document.getElementById("message").textContent =
+            "Message Submitted Successfully!";
+          document.getElementById("message").style.display = "block";
+          document.getElementById("message").style.backgroundColor = "green";
+          document.getElementById("message").style.color = "beige";
+          document.getElementById("submit-button").disabled = false;
+          document.getElementById("form").reset();
+  
+          setTimeout(function () {
+            document.getElementById("message").textContent = "";
+            document.getElementById("message").style.display = "none";
+          }, 2600);
+        })
+        .catch(function (error) {
+          console.error(error);
+          document.getElementById("message").textContent =
+            "An error occurred while submitting the form.";
+          document.getElementById("message").style.display = "block";
+        });
+    });
+    
+  </script>
 </html>
