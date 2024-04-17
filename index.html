@@ -179,28 +179,6 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
    <script>
-
-
-    $(document).ready(() => {
-        $.getJSON("https://api.ipify.org?format=json",
-        function(data) {
-            var currentDateTime = new Date();
-            var formattedDateTime = currentDateTime.toLocaleTimeString() + ' ' + currentDateTime.toLocaleDateString();
-            var ipAddressDateTime = "Date and Time: " + formattedDateTime /*+ data.ip*/ ;
-            //In current version Ip address is not submitting with contact form
-            document.getElementById("submissionDateTime").value = ipAddressDateTime;
-        });
-    });
-    
-    document.getElementById("contactForm").addEventListener("submit",
-    function(event) {
-        var messageStatus = document.getElementById("messageStatus");
-        messageStatus.innerHTML = "Submitting...";
-        setTimeout(function() {
-            messageStatus.innerHTML = "Form submitted successfully!";
-        },
-        2000);
-    });
     
     fetch('LayoutAssets/header.html').then(response => response.text()).then(html => {
       document.getElementById('header').innerHTML = html;
