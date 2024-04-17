@@ -110,13 +110,18 @@
 
             </section>
 
-            <section id="Contact">
+
+                        <section id="Contact">
 
                 <div class="container">
 
                     <h2>Contact Me</h2>
 
                     <form id="form" class="container m-4 pl-4" method="POST">
+                        
+
+                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="Timestamp" /></div></div>
+                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="IXPX" /></div></div>
 
                         <div class="field">
                           <label class="label">Name</label>
@@ -129,14 +134,14 @@
                         <div class="field">
                           <label class="label">Email</label>
                           <div class="control">
-                            <input class="input" type="email" placeholder="Enter Your Email" name="Email" required />
+                            <input class="input" type="text" placeholder="Enter Your Email" name="Email" required />
                           </div>
                         </div>
                   
                         <div class="field">
                           <label class="label">Message</label>
                           <div class="control">
-                            <textarea class="input" placeholder="Enter Your Message" name="Message" rows="6" required></textarea>
+                            <textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea>
                           </div>
                         </div>
                   
@@ -166,6 +171,8 @@
                 </div>
 
             </section>
+
+            
             
         </div>
 
@@ -174,7 +181,8 @@
        
     
     </body>
-     <style>
+     
+    <style>
 form{
     border-radius: 6px;
     padding: 20px;
@@ -215,6 +223,7 @@ form button:hover {
    opacity:0.8;
 }
    </style>
+    
    <script src="LayoutAssets/script.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -305,21 +314,44 @@ form button:hover {
 //Contact Me Script
 
     document.getElementById("form").addEventListener("submit", function (e) {
-      e.preventDefault(); // Prevent the default form submission
+      e.preventDefault();
       document.getElementById("message").textContent = "Submitting..";
       document.getElementById("message").style.display = "block";
       document.getElementById("submit-button").disabled = true;
+  
+      var currentDate = new Date();
+    var day = String(currentDate.getDate()).padStart(2, "0");
+    var month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    var year = currentDate.getFullYear();
+    var hours = String(currentDate.getHours()).padStart(2, "0");
+    var minutes = String(currentDate.getMinutes()).padStart(2, "0");
+    var seconds = String(currentDate.getSeconds()).padStart(2, "0");
+    var timestamp = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 
-      // Collect the form data
+      // Assign the timestamp value to the hidden input field
+      document.querySelector('input[name="Timestamp"]').value = timestamp;
+
+      $(document).ready(() => {
+      $.getJSON("https://api.ipify.org?format=json", function(data) {
+        if (data && data.ip) {
+          document.querySelector('input[name="IXPX"]').value = data.ip;
+        } else {
+          console.error("Failed to retrieve IP address.");
+        }
+      }).fail(function() {
+        console.error("Failed to retrieve IP address.");
+      });
+    });
+
+
       var formData = new FormData(this);
       var keyValuePairs = [];
       for (var pair of formData.entries()) {
         keyValuePairs.push(pair[0] + "=" + pair[1]);
       }
-
+  
       var formDataString = keyValuePairs.join("&");
-
-      // Send a POST request to your Google Apps Script
+  
       fetch(
         "https://script.google.com/macros/s/AKfycbz3Gp9r177UzM0z1olj8TW25hBZqIQ7zlMrAdrVoq-dT8gkuqQMwHe7JcmYFwgvcfd_/exec",
         {
@@ -332,15 +364,13 @@ form button:hover {
         }
       )
         .then(function (response) {
-          // Check if the request was successful
           if (response) {
-            return response; // Assuming your script returns JSON response
+            return response;
           } else {
             throw new Error("Failed to submit the form.");
           }
         })
         .then(function (data) {
-          // Display a success message
           document.getElementById("message").textContent =
             "Message Submitted Successfully!";
           document.getElementById("message").style.display = "block";
@@ -348,19 +378,19 @@ form button:hover {
           document.getElementById("message").style.color = "beige";
           document.getElementById("submit-button").disabled = false;
           document.getElementById("form").reset();
-
+  
           setTimeout(function () {
             document.getElementById("message").textContent = "";
             document.getElementById("message").style.display = "none";
           }, 2600);
         })
         .catch(function (error) {
-          // Handle errors, you can display an error message here
           console.error(error);
           document.getElementById("message").textContent =
             "An error occurred while submitting the form.";
           document.getElementById("message").style.display = "block";
         });
     });
+    
   </script>
 </html>
