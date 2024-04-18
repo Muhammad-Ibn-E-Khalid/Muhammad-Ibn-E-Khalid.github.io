@@ -112,6 +112,92 @@
             </section>
 
 
+                        <section id="PCSpecs" class="expandable-section">
+              <div class="container">
+                  <div id="toggleHeading" class="header">
+                      <h2  >PC Specifications</h2>
+                      <button class="toggle-button"></button>
+                  </div>
+                  <div class="specs-list">
+                    <div class="specs-list">
+                      <div class="spec-item">
+                          <h3>Processor:</h3>
+                          <p>Intel Core i5-12400F</p>
+                      </div>
+                      <div class="spec-item">
+                        <h3>MotherBoard:</h3>
+                        <p>GigaByte B660 M</p>
+                      </div>
+                      <div class="spec-item">
+                          <h3>Graphics Card:</h3>
+                          <p>AMD Reodon RX 6500 XT</p>
+                      </div>
+                      <div class="spec-item">
+                          <h3>RAM:</h3>
+                          <p>32(4x8) GB DDR4 3200MHz</p>
+                      </div>
+                      <div class="spec-item">
+                        <h3>Storage:</h3>
+                        <p>1TB HDD + 512GB NVMe SSD + 256GB SSD</p>
+                    </div>
+                    <div class="spec-item">
+                      <h3>Power Supply:</h3>
+                      <p>Corsair 550 Watt</p>
+                  </div>
+                  </div>
+              </div>
+          </section>
+          <style>
+            #PCSpecs {
+    border: 6px solid #274e4b;
+    border-radius: 5px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 10px;
+    padding-width: 100% on PC Specs text line ;
+  }
+
+#PCSpecs .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#PCSpecs .header h2 {
+    margin: 0;
+}
+
+#PCSpecs .toggle-button {
+    width: 20px;
+    height: 20px;
+    background-image: url('https://w7.pngwing.com/pngs/175/947/png-transparent-arrow-computer-icons-down-arrow-angle-black-desktop-wallpaper-thumbnail.png'); /* Replace 'arrow-down.png' with the path to your arrow-down image */
+    background-size: cover;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add transition for smooth rotation */
+}
+
+
+#PCSpecs.expanded .toggle-button {
+    transform: rotate(180deg);
+}
+
+
+#PCSpecs .specs-list {
+    padding: 0 20px;
+    display: none;
+}
+
+#PCSpecs.expanded .specs-list {
+    display: block;
+}
+
+          </style>
+            
+
                         <section id="Contact">
 
                 <div class="container">
