@@ -316,6 +316,31 @@ form button:hover {
 
    <script>
     
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.querySelector("#PCSpecs .toggle-button");
+    const specsList = document.querySelector("#PCSpecs .specs-list");
+    const toggleHeading = document.querySelector("#toggleHeading");
+
+    toggleHeading.addEventListener("click", function() {
+        const section = document.querySelector("#PCSpecs");
+        section.classList.toggle("expanded");
+        if (section.classList.contains("expanded")) {
+            toggleButton.style.transform = "rotate(180deg)";
+        } else {
+            toggleButton.style.transform = "rotate(0deg)";
+        }
+    });
+
+    toggleButton.addEventListener("click", function() {
+        const section = document.querySelector("#PCSpecs");
+        section.classList.toggle("expanded");
+        if (section.classList.contains("expanded")) {
+            toggleButton.style.transform = "rotate(180deg)";
+        } else {
+            toggleButton.style.transform = "rotate(0deg)";
+        }
+    });
+});
     fetch('LayoutAssets/header.html').then(response => response.text()).then(html => {
       document.getElementById('header').innerHTML = html;
       });
