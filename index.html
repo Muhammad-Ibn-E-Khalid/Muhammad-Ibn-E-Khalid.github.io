@@ -90,7 +90,7 @@
 
             </section>
    
-            <section id="Collaboration" class="expandable-section">
+            <section style="margin-bottom: 50px;margin-top: 50px;" id="Collaboration" class="expandable-section">
               <div class="container">
                   <div id="collabToggleHeading" class="header">
                       <h2>Collaboration Opportunities</h2>
@@ -150,82 +150,60 @@
             </div>
         </section>
 
-          <section id="Contact">
-
+        <section id="Contact" class="expandable-section">
+            <div class="section-wrapper">
+              <div id="contactToggleHeading" class="header">
+                <h2>Contact Me</h2>
+                <button class="toggle-button"></button>
+              </div>
+              <div class="contact-content">
                 <div class="container">
-
-                    <h2>Contact Me</h2>
-
-                    <form id="form" class="container m-4 pl-4" method="POST">
-                        
-
-                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="Timestamp" /></div></div>
-                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="IXPX" /></div></div>
-                      
-                        <div class="field">
-                          <label class="label">Subject</label>
-                          <div class="control">
-                              <div class="select">
-                                <select name="Subject" required>
-                                  <option value="" disabled selected>Select a subject</option>
-                                  <option value="Support">Support</option>
-                                  <option value="General Inquiry">General Inquiry</option>
-                                  <option value="Collaboration">Collaboration</option>
-                                  <option value="Feedback">Feedback</option>
-                                </select>                              
-                              </div>
-                          </div>
+                  <form id="contactForm" class="container m-4 pl-4" method="POST">
+                    <div class="field">
+                      <label class="label">Subject</label>
+                      <div class="control">
+                        <div class="select">
+                          <select name="Subject" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="Support">Support</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Feedback">Feedback</option>
+                          </select>                              
+                        </div>
                       </div>
-
-                        <div class="field">
-                          <label class="label">Name</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="Enter Your Name" name="UserName" required />
-                          </div>
-                        </div>
-                  
-                  
-                        <div class="field">
-                          <label class="label">Email</label>
-                          <div class="control">
-                            <input class="input" type="email" placeholder="Enter Your Email" name="Email" required />
-                          </div>
-                        </div>
-                  
-                        <div class="field">
-                          <label class="label">Message</label>
-                          <div class="control">
-                            <textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea>
-                          </div>
-                        </div>
-                  
-                  
-                        <div class="field is-grouped">
-                          <div class="control">
-                            <button class="button is-primary" type="submit" id="submit-button">
-                              Submit
-                            </button>
-                          </div>
-                        </div>
-                        
-                        <div
-                        id="message"
-                        style="
-                          display: none;
-                          font-weight: bold;
-                          color: green;
-                          padding: 8px;
-                          background-color: beige;
-                          border-radius: 4px;
-                          border-color: aquamarine;
-                        "
-                      ></div>
-                      </form>
-
-
+                    </div>
+                    <div class="field">
+                      <label class="label">Name</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Enter Your Name" name="UserName" required />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">Email</label>
+                      <div class="control">
+                        <input class="input" type="email" placeholder="Enter Your Email" name="Email" required />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">Message</label>
+                      <div class="control">
+                        <textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea>
+                      </div>
+                    </div>
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <button class="button is-primary" type="submit" id="submit-button">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                    <div id="message" style="display: none; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine;"></div>
+                  </form>
                 </div>
-
-            </section>
+              </div>
+            </div>
+          </section>
           
           </div>
             
@@ -267,11 +245,9 @@
         }
     });
 
-    // PC Specs section
     const specsToggleButton = document.querySelector("#PCSpecs .toggle-button");
     const specsList = document.querySelector("#PCSpecs .specs-list");
     const specsToggleHeading = document.querySelector("#toggleHeading");
-
     specsToggleHeading.addEventListener("click", function() {
         const section = document.querySelector("#PCSpecs");
         section.classList.toggle("expanded");
@@ -298,13 +274,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const aboutContent = document.querySelector("#About .about-content");
     const aboutToggleHeading = document.querySelector("#aboutToggleHeading");
     const aboutSection = document.querySelector("#About");
-
-    // Add the "expanded" class to the section by default
     aboutSection.classList.add("expanded");
-
-    // Rotate the toggle button icon 180 degrees initially
     toggleButton.style.transform = "rotate(180deg)";
-
     aboutToggleHeading.addEventListener("click", function() {
         aboutSection.classList.toggle("expanded");
         if (aboutSection.classList.contains("expanded")) {
@@ -313,7 +284,6 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleButton.style.transform = "rotate(360deg)";
         }
     });
-
     toggleButton.addEventListener("click", function() {
         aboutSection.classList.toggle("expanded");
         if (aboutSection.classList.contains("expanded")) {
@@ -324,7 +294,30 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.querySelector("#Contact .toggle-button");
+    const contactContent = document.querySelector("#Contact .contact-content");
+    const contactToggleHeading = document.querySelector("#contactToggleHeading");
+    const contactSection = document.querySelector("#Contact");
+    contactSection.classList.add("expanded");
+    toggleButton.style.transform = "rotate(180deg)";
+    contactToggleHeading.addEventListener("click", function() {
+        contactSection.classList.toggle("expanded");
+        if (contactSection.classList.contains("expanded")) {
+            toggleButton.style.transform = "rotate(180deg)";
+        } else {
+            toggleButton.style.transform = "rotate(360deg)";
+        }
+    });
+    toggleButton.addEventListener("click", function() {
+        contactSection.classList.toggle("expanded");
+        if (contactSection.classList.contains("expanded")) {
+            toggleButton.style.transform = "rotate(0deg)";
+        } else {
+            toggleButton.style.transform = "rotate(180deg)";
+        }
+    });
+});
     
     fetch('LayoutAssets/header.html').then(response => response.text()).then(html => {
       document.getElementById('header').innerHTML = html;
@@ -502,7 +495,7 @@ document.addEventListener("DOMContentLoaded", function() {
     margin-bottom: 30px; 
 }
   #Collaboration,
-  #PCSpecs
+  #PCSpecs 
    {
     border: 6px solid #274e4b;
     background-color: #377a77;
@@ -515,7 +508,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   #Collaboration .header,
   #PCSpecs .header,
-  #About .header {
+  #About .header,
+  #Contact .header{
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -533,12 +527,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   #Collaboration .header h2,
   #PCSpecs .header h2,
-  #About .header h2 {
+  #About .header h2,
+  #Contact .header h2 {
       margin: 0;
   }
   #Collaboration .toggle-button,
   #PCSpecs .toggle-button,
-  #About .toggle-button {
+  #About .toggle-button,
+  #Contact .toggle-button  {
       width: 20px;
       height: 20px;
       border-radius: 6px;
@@ -551,19 +547,22 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   #Collaboration.expanded .toggle-button,
   #About.expanded .toggle-button,
-  #PCSpecs.expanded .toggle-button {
+  #PCSpecs.expanded .toggle-button,
+  #Contact.expanded .toggle-button {
       transform: rotate(180deg);
   }
   #Collaboration .collab-content,
   #About .about-content,
-  #PCSpecs .specs-list  {
+  #PCSpecs .specs-list,
+  #Contact .contact-content  {
       padding: 0 20px;
       display: none;
   }
 
   #Collaboration.expanded .collab-content,
   #PCSpecs.expanded .specs-list,
-  #About.expanded .about-content {
+  #About.expanded .about-content,
+  #Contact.expanded .contact-content {
       display: block;
   }
   form select {
@@ -600,7 +599,6 @@ document.addEventListener("DOMContentLoaded", function() {
       border-radius: 6px;
       padding: 20px;
       background-color: #377a77;
-      border:6px solid #274e4b;
   }
   form .control {
      
