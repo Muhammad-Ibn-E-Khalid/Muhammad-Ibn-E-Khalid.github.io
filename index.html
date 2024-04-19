@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
     
     <head>
@@ -15,50 +14,31 @@
 
         <div class="bordered">
             <div id="terms"></div>
-            <section id="About">
 
-                <div class="container">
-                    <h2>About Us</h2>
-                    <textp>
-                        Hey there! I'm a tech enthusiast with a passion for exploration and creation.With skills in Unity, C++, and C#, I'm blending my love for technology
-                        with a fascination for astrophysics and the quantum world. In addition to software development, I also work on hardware engineering projects,
-                        exploring the intersection of digital and physical realms. Follow me on my journey as I dive into the depths of technology and the mysteries of
-                        the universe! For further updates, follow me on
-                        <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>.
-                    </textp>
-                </div>
-
-            </section>
-<!--
-            <section id="Updates">
-
-                <div class="container">
-                    <h2>Latest Updates</h2>
-                    <textp>Here you can find the latest news, announcements, and updates about MBK Tech Studios.</textp>
-                    <div class="project-grid">
-                        
-                        <div class="project-item new-project">
-                            <a>
-                                <div class="overlay"> <h3>New Project</h3> </div>
-                                <img src="Images/pr-item1.jpg" alt="Game Development Projects">
-                                <h3>No New Projects Update</h3>
-                            </a>
-                        </div>
-                        
-                        <div class="project-item announcement">
-                             <a>
-                                <div class="overlay"> <h3>Announcements</h3> </div>
-                                <img src="Images/pr-item1.jpg" alt="Announcements">
-                                <h3>No New Announcement</h3>
-                            </a>
-                        </div>
-                        
-                    </div>
-                </div>
-
-            </section>
-        -->
-
+            <section id="About" class="expandable-section">
+              <div class="section-wrapper">
+                  <div id="aboutToggleHeading" class="header">
+                      <h2>About Us</h2>
+                      <button class="toggle-button"></button>
+                  </div>
+                  <div class="about-content">
+                      <p style="font-size: large; color: white; ">
+                          Hey there! I'm a tech enthusiast with a passion for
+                          exploration and creation. With skills in Unity, C++,
+                          and C#, I'm blending my love for technology with a
+                          fascination for astrophysics and the quantum world.
+                          In addition to software development, I also work on
+                          hardware engineering projects, exploring the intersection
+                          of digital and physical realms. Follow me on my journey
+                          as I dive into the depths of technology and the mysteries
+                          of the universe! For further updates, follow me on
+                          <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>.
+                      </p>
+                  </div>
+              </div>
+          </section>
+          
+    
             <section id="Projects">
 
                 <div class="container">
@@ -109,125 +89,235 @@
                 </div>
 
             </section>
+   
+            <section style="margin-bottom: 50px;margin-top: 50px;" id="Collaboration" class="expandable-section">
+              <div class="container">
+                  <div id="collabToggleHeading" class="header">
+                      <h2>Collaboration Opportunities</h2>
+                      <button class="toggle-button"></button>
+                  </div>
+                  <div class="collab-content">
+                      <p>I'm excited to collaborate on current, upcoming, and new projects with individuals and entities who share my passion for technology and innovation. Whether you have an idea for a joint project, want to explore technology partnerships, or are looking for consulting or advisory services, I'm here to discuss and bring our ideas to life.</p>
+                      
+                      <p>Here's how we can collaborate:</p>
+                      
+                      <ul style="font-size: medium; color:#d4e3c9">
+                          <li>Join ongoing projects to contribute expertise and insights</li>
+                          <li>Co-create new projects from ideation to implementation</li>
+                          <li>Explore technology partnerships for mutual benefit</li>
+                          <li>Exchange knowledge and resources for innovative solutions</li>
+                          <li>And much more!</li>
+                      </ul>
+                      
+                      <p>If you're interested in exploring collaboration opportunities or have a project idea you'd like to discuss, don't hesitate to get in touch using the <a href="#Contact" onclick="selectSection('Contact')">Contact Form</a> and through <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>. I'm always open to new collaborations and excited to work with talented individuals and entities to achieve our shared goals.</p>
+                  </div>
+              </div>
+          </section>
 
-
-                        <section id="Contact">
-
-                <div class="container">
-
-                    <h2>Contact Me</h2>
-
-                    <form id="form" class="container m-4 pl-4" method="POST">
-                        
-
-                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="Timestamp" /></div></div>
-                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="IXPX" /></div></div>
-
-                        <div class="field">
-                          <label class="label">Name</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="Enter Your Name" name="UserName" required />
-                          </div>
-                        </div>
-                  
-                  
-                        <div class="field">
-                          <label class="label">Email</label>
-                          <div class="control">
-                            <input class="input" type="text" placeholder="Enter Your Email" name="Email" required />
-                          </div>
-                        </div>
-                  
-                        <div class="field">
-                          <label class="label">Message</label>
-                          <div class="control">
-                            <textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea>
-                          </div>
-                        </div>
-                  
-                  
-                        <div class="field is-grouped">
-                          <div class="control">
-                            <button class="button is-primary" type="submit" id="submit-button">
-                              Submit
-                            </button>
-                          </div>
-                        </div>
-                        <div
-                        id="message"
-                        style="
-                          display: none;
-                          font-weight: bold;
-                          color: green;
-                          padding: 8px;
-                          background-color: beige;
-                          border-radius: 4px;
-                          border-color: aquamarine;
-                        "
-                      ></div>
-                      </form>
-
-
+          <section id="PCSpecs" class="expandable-section">
+            <div class="container">
+                <div id="toggleHeading" class="header">
+                    <h2  >PC Specifications</h2>
+                    <button class="toggle-button"></button>
                 </div>
+                <div class="specs-list">
+                  <div class="specs-list">
+                    <div class="spec-item">
+                        <h3>Processor:</h3>
+                        <p>Intel Core i5-12400F</p>
+                    </div>
+                    <div class="spec-item">
+                      <h3>MotherBoard:</h3>
+                      <p>GigaByte B660 M</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>Graphics Card:</h3>
+                        <p>AMD Reodon RX 6500 XT</p>
+                    </div>
+                    <div class="spec-item">
+                        <h3>RAM:</h3>
+                        <p>32(4x8) GB DDR4 3200MHz</p>
+                    </div>
+                    <div class="spec-item">
+                      <h3>Storage:</h3>
+                      <p>1TB HDD + 512GB NVMe SSD + 256GB SSD</p>
+                  </div>
+                  <div class="spec-item">
+                    <h3>Power Supply:</h3>
+                    <p>Corsair 550 Watt</p>
+                </div>
+                </div>
+            </div>
+        </section>
 
-            </section>
-
+        <section id="Contact" class="expandable-section">
+            <div class="section-wrapper">
+              <div id="contactToggleHeading" class="header">
+                <h2>Contact Me</h2>
+                <button class="toggle-button"></button>
+              </div>
+              <div class="contact-content">
+                <div class="container">
+                  <form id="contactForm" class="container m-4 pl-4" method="POST">
+                    <div class="field">
+                      <label class="label">Subject</label>
+                      <div class="control">
+                        <div class="select">
+                          <select name="Subject" required>
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="Support">Support</option>
+                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Collaboration">Collaboration</option>
+                            <option value="Feedback">Feedback</option>
+                          </select>                              
+                        </div>
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">Name</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Enter Your Name" name="UserName" required />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">Email</label>
+                      <div class="control">
+                        <input class="input" type="email" placeholder="Enter Your Email" name="Email" required />
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">Message</label>
+                      <div class="control">
+                        <textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea>
+                      </div>
+                    </div>
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <button class="button is-primary" type="submit" id="submit-button">
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                    <div id="message" style="display: none; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine;"></div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          </div>
             
             
         </div>
 
         <div id="footer"></div>
-
-       
     
     </body>
      
-    <style>
-form{
-    border-radius: 6px;
-    padding: 20px;
-    background-color: #377a77;
-    border:6px solid #274e4b;
-}
-form .control {
-   
-    margin-top: 10px;
-}
-form .field {
-    margin-bottom: 15px; 
-}
-form .label {
-    color: white;
-    font-weight: bold;
-    margin-bottom: 5px; 
-}
-form input,form textarea {
-   width:97%;
-   margin-bottom:10px;
-   padding:10px;
-   border:1px solid #ccc;
-   border-radius:6px;
-   background-color:#fff;
-}
-form button {
-   background-color:#2ecc71;
-   color:#fff;
-   border:none;
-   font-weight: bold;
-   font-size: medium;
-   border-radius:6px;
-   padding:10px 20px;
-   cursor:pointer;
-}
-form button:hover {
-   opacity:0.8;
-}
-   </style>
     
    <script src="LayoutAssets/script.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    // Collaboration section
+    const collabToggleButton = document.querySelector("#Collaboration .toggle-button");
+    const collabContent = document.querySelector("#Collaboration .collab-content");
+    const collabToggleHeading = document.querySelector("#collabToggleHeading");
+
+    collabToggleHeading.addEventListener("click", function() {
+        const section = document.querySelector("#Collaboration");
+        section.classList.toggle("expanded");
+        if (section.classList.contains("expanded")) {
+            collabToggleButton.style.transform = "rotate(180deg)";
+        } else {
+            collabToggleButton.style.transform = "rotate(0deg)";
+        }
+    });
+
+    collabToggleButton.addEventListener("click", function() {
+        const section = document.querySelector("#Collaboration");
+        section.classList.toggle("expanded");
+        if (section.classList.contains("expanded")) {
+            collabToggleButton.style.transform = "rotate(180deg)";
+        } else {
+            collabToggleButton.style.transform = "rotate(0deg)";
+        }
+    });
+
+    const specsToggleButton = document.querySelector("#PCSpecs .toggle-button");
+    const specsList = document.querySelector("#PCSpecs .specs-list");
+    const specsToggleHeading = document.querySelector("#toggleHeading");
+    specsToggleHeading.addEventListener("click", function() {
+        const section = document.querySelector("#PCSpecs");
+        section.classList.toggle("expanded");
+        if (section.classList.contains("expanded")) {
+            specsToggleButton.style.transform = "rotate(180deg)";
+        } else {
+            specsToggleButton.style.transform = "rotate(0deg)";
+        }
+    });
+
+    specsToggleButton.addEventListener("click", function() {
+        const section = document.querySelector("#PCSpecs");
+        section.classList.toggle("expanded");
+        if (section.classList.contains("expanded")) {
+            specsToggleButton.style.transform = "rotate(180deg)";
+        } else {
+            specsToggleButton.style.transform = "rotate(0deg)";
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.querySelector("#About .toggle-button");
+    const aboutContent = document.querySelector("#About .about-content");
+    const aboutToggleHeading = document.querySelector("#aboutToggleHeading");
+    const aboutSection = document.querySelector("#About");
+    aboutSection.classList.add("expanded");
+    toggleButton.style.transform = "rotate(180deg)";
+    aboutToggleHeading.addEventListener("click", function() {
+        aboutSection.classList.toggle("expanded");
+        if (aboutSection.classList.contains("expanded")) {
+            toggleButton.style.transform = "rotate(180deg)";
+        } else {
+            toggleButton.style.transform = "rotate(360deg)";
+        }
+    });
+    toggleButton.addEventListener("click", function() {
+        aboutSection.classList.toggle("expanded");
+        if (aboutSection.classList.contains("expanded")) {
+            toggleButton.style.transform = "rotate(0deg)";
+        } else {
+            toggleButton.style.transform = "rotate(180deg)";
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.querySelector("#Contact .toggle-button");
+    const contactContent = document.querySelector("#Contact .contact-content");
+    const contactToggleHeading = document.querySelector("#contactToggleHeading");
+    const contactSection = document.querySelector("#Contact");
+    contactSection.classList.add("expanded");
+    toggleButton.style.transform = "rotate(180deg)";
+    contactToggleHeading.addEventListener("click", function() {
+        contactSection.classList.toggle("expanded");
+        if (contactSection.classList.contains("expanded")) {
+            toggleButton.style.transform = "rotate(180deg)";
+        } else {
+            toggleButton.style.transform = "rotate(360deg)";
+        }
+    });
+    toggleButton.addEventListener("click", function() {
+        contactSection.classList.toggle("expanded");
+        if (contactSection.classList.contains("expanded")) {
+            toggleButton.style.transform = "rotate(0deg)";
+        } else {
+            toggleButton.style.transform = "rotate(180deg)";
+        }
+    });
+});
     
     fetch('LayoutAssets/header.html').then(response => response.text()).then(html => {
       document.getElementById('header').innerHTML = html;
@@ -248,7 +338,6 @@ form button:hover {
     }
  
         </script>
-
 
 <script>
     
@@ -310,6 +399,7 @@ form button:hover {
 
 <script>
 
+
 //Credit: TechLever (youtube.com/@tech-lever)
 //Contact Me Script
 
@@ -331,17 +421,18 @@ form button:hover {
       // Assign the timestamp value to the hidden input field
       document.querySelector('input[name="Timestamp"]').value = timestamp;
 
-      $(document).ready(() => {
-      $.getJSON("https://api.ipify.org?format=json", function(data) {
-        if (data && data.ip) {
-          document.querySelector('input[name="IXPX"]').value = data.ip;
-        } else {
-          console.error("Failed to retrieve IP address.");
-        }
-      }).fail(function() {
+ $(document).ready(function() {
+    $.getJSON("https://api.ipify.org?format=json", function(data) {
+      if (data && data.ip) {
+        // Assign the IP address value to the hidden input field
+        $('input[name="IXPX"]').val(data.ip);
+      } else {
         console.error("Failed to retrieve IP address.");
-      });
+      }
+    }).fail(function() {
+      console.error("Failed to retrieve IP address.");
     });
+  });
 
 
       var formData = new FormData(this);
@@ -393,4 +484,189 @@ form button:hover {
     });
     
   </script>
-</html>
+
+<style>
+.section-wrapper {
+    border: 6px solid #274e4b;
+    background-color: #377a77;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px; 
+}
+  #Collaboration,
+  #PCSpecs 
+   {
+    border: 6px solid #274e4b;
+    background-color: #377a77;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 30px;
+    margin-bottom: 30px; 
+  }
+  #Collaboration .header,
+  #PCSpecs .header,
+  #About .header,
+  #Contact .header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      cursor: pointer;
+      color: white;
+  }
+  #Collaboration h3,
+  #PCSpecs h3 {
+      color: #d4e3c9;
+  }
+  #Collaboration p,
+  #PCSpecs p {
+      color: #f5f5f5;
+  }
+  #Collaboration .header h2,
+  #PCSpecs .header h2,
+  #About .header h2,
+  #Contact .header h2 {
+      margin: 0;
+  }
+  #Collaboration .toggle-button,
+  #PCSpecs .toggle-button,
+  #About .toggle-button,
+  #Contact .toggle-button  {
+      width: 20px;
+      height: 20px;
+      border-radius: 6px;
+      background-image: url('https://w7.pngwing.com/pngs/175/947/png-transparent-arrow-computer-icons-down-arrow-angle-black-desktop-wallpaper-thumbnail.png'); /* Replace 'arrow-down.png' with the path to your arrow-down image */
+      background-size: cover;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: transform 0.3s ease; 
+  }
+  #Collaboration.expanded .toggle-button,
+  #About.expanded .toggle-button,
+  #PCSpecs.expanded .toggle-button,
+  #Contact.expanded .toggle-button {
+      transform: rotate(180deg);
+  }
+  #Collaboration .collab-content,
+  #About .about-content,
+  #PCSpecs .specs-list,
+  #Contact .contact-content  {
+      padding: 0 20px;
+      display: none;
+  }
+
+  #Collaboration.expanded .collab-content,
+  #PCSpecs.expanded .specs-list,
+  #About.expanded .about-content,
+  #Contact.expanded .contact-content {
+      display: block;
+  }
+  form select {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fff;
+  }
+        /* Modal */
+  .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%;
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.4); 
+  }
+  .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; 
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; 
+  }
+  .modal-buttons {
+      text-align: right;
+  }
+  form{
+      border-radius: 6px;
+      padding: 20px;
+      background-color: #377a77;
+  }
+  form .control {
+     
+      margin-top: 10px;
+  }
+  form .field {
+      margin-bottom: 15px; 
+  }
+  form .label {
+      color: white;
+      font-weight: bold;
+      margin-bottom: 5px; 
+  }
+  form input, form textarea, form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+  form button {
+     background-color:#2ecc71;
+     color:#fff;
+     border:none;
+     font-weight: bold;
+     font-size: medium;
+     border-radius:6px;
+     padding:10px 20px;
+     cursor:pointer;
+  }
+  form button:hover {
+     opacity:0.8;
+  }
+            </style>
+
+
+
+
+<!--
+            <section id="Updates">
+
+                <div class="container">
+                    <h2>Latest Updates</h2>
+                    <textp>Here you can find the latest news, announcements, and updates about MBK Tech Studios.</textp>
+                    <div class="project-grid">
+                        
+                        <div class="project-item new-project">
+                            <a>
+                                <div class="overlay"> <h3>New Project</h3> </div>
+                                <img src="Images/pr-item1.jpg" alt="Game Development Projects">
+                                <h3>No New Projects Update</h3>
+                            </a>
+                        </div>
+                        
+                        <div class="project-item announcement">
+                             <a>
+                                <div class="overlay"> <h3>Announcements</h3> </div>
+                                <img src="Images/pr-item1.jpg" alt="Announcements">
+                                <h3>No New Announcement</h3>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </section>
+-->
+
+        

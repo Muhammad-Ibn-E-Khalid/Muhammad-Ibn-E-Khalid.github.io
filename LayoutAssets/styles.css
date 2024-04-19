@@ -42,7 +42,7 @@ section a:hover,
 /* Main Body */
 
 .bordered {
-   border-left:6px solid #274e4b;
+   border-left:6px solid #285d59;
    border-right:6px solid #274e4b;
 }
 
@@ -52,13 +52,13 @@ section a:hover,
    transition:background-color 0.5s ease;
 }
 .selected-main {
-   background-color:#e5eedd;
+   background-color:#4d8583;
 }
 .selected-footer {
    background-color:#4d8583;
 }
 section {
-   padding:30px 50px;
+   padding:10px 20px;
 }
 
 /* Project  Section */
@@ -116,22 +116,18 @@ section {
 
 /* Contact Us */
 
-
 form{
     border-radius: 6px;
     padding: 20px;
-    background-color: #377a77;
-    border:6px solid #274e4b;
+    background-color:#4d8583;
 }
 form .control {
-   
     margin-top: 10px;
 }
 form .field {
     margin-bottom: 15px; 
 }
 form .label {
-    color: white;
     font-weight: bold;
     margin-bottom: 5px; 
 }
@@ -156,6 +152,7 @@ form button {
 form button:hover {
    opacity:0.8;
 }
+ 
 
 /* Project Page */
 
