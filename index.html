@@ -223,6 +223,22 @@
                         <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="IXPX" /></div></div>
 
                         <div class="field">
+                          <label class="label">Subject</label>
+                          <div class="control">
+                              <div class="select">
+                                <select name="Subject" required>
+                                  <option value="" disabled selected>Select a subject</option>
+                                  <option value="Support">Support</option>
+                                  <option value="General Inquiry">General Inquiry</option>
+                                  <option value="Collaboration">Collaboration</option>
+                                  <option value="Feedback">Feedback</option>
+                                </select>                              
+                              </div>
+                          </div>
+                      </div>
+
+                        
+                        <div class="field">
                           <label class="label">Name</label>
                           <div class="control">
                             <input class="input" type="text" placeholder="Enter Your Name" name="UserName" required />
@@ -282,6 +298,15 @@
     </body>
      
     <style>
+form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
 form{
     border-radius: 6px;
     padding: 20px;
