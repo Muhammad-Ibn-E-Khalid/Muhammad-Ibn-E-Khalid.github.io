@@ -1,0 +1,127 @@
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Unity Assest Projects - MBK Tech Studios
+        </title>
+        <link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg" style="border-radius: 50%;">
+        <link rel="stylesheet" href="LayoutAssets/styles.css">
+    </head>
+    
+    <body>
+
+   <div id="header"></div>
+
+        <div class="bordered">
+            <div id="terms"></div>
+            <section id="Projects">
+                <div class="container">
+                    <div class="search-bar">
+                        <input type="text" id="search" placeholder="Search project by name or Project ID #...">
+                        <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()">
+                            x
+                        </button>
+                        <button class="search-bar-Sbutton" type="button" onclick="searchProjects()">
+                            Search
+                        </button>
+                    </div>
+                    <h2>
+                        Unity Assest Projects
+                    </h2>
+                    <div id="searchResults">
+                    </div>
+                    <div class="project-grid">
+                        <div class="project-item" id="A456">
+                            <a href="Project/Feedback_Report_System_For_Unity_A001.html">
+                                <img src="https://miro.medium.com/v2/resize:fit:1358/1*3gh-krzOrAoNyX8mJGyc2Q.jpeg"
+                                alt="Project 1">
+                                <h3>
+                                    Unity Feedback Report System
+                                </h3>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+   <div id="footer"></div>
+
+        
+    </body>
+
+    <script src="LayoutAssets/script.js"></script>
+    
+    <script>
+
+        fetch('../LayoutAssets/header.html').then(response => response.text()).then(html => {
+              document.getElementById('header').innerHTML = html;
+              });
+        
+        
+           fetch('LayoutAssets/footer.html').then(response => response.text()).then(html => {
+                document.getElementById('footer').innerHTML = html; 
+            });
+             
+         </script>
+        
+        <script>
+            
+            function loadTerms() {
+                fetch('https://muhammad-ibn-e-khalid.github.io/LayoutAssets/terms.html').then(response => response.text()).then(html => {
+                    document.getElementById('terms').innerHTML = html;
+                    document.body.classList.add('no-scroll');
+                    document.getElementById('agreeButton').addEventListener('click', function () {
+                        setCookie('agreed', 'true', 365);
+                        hideOverlay();
+                    });
+        
+                    document.getElementById('disagreeButton').addEventListener('click', function () {
+                        window.location.href = 'https://muhammad-ibn-e-khalid.github.io/LayoutAssets/disagree.html';
+                    });
+        
+                    checkCookie();
+                });
+            }
+        
+            function checkCookie() {
+                if (getCookie('agreed') === 'true') {
+                    hideOverlay();
+                }
+            }
+        
+            loadTerms();
+        
+            function hideOverlay() {
+                document.getElementById('overlay').style.display = 'none';
+                document.body.classList.remove('no-scroll');
+            }
+        
+            function setCookie(name, value, days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/";
+            }
+        
+            function getCookie(name) {
+                var nameEQ = name + "=";
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i];
+                    while (cookie.charAt(0) === ' ') {
+                        cookie = cookie.substring(1, cookie.length);
+                    }
+                    if (cookie.indexOf(nameEQ) === 0) {
+                        return cookie.substring(nameEQ.length, cookie.length);
+                    }
+                }
+                return null;
+            }
+        </script>
+</html>
