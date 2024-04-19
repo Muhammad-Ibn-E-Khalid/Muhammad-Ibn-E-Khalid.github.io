@@ -42,7 +42,7 @@ section a:hover,
 /* Main Body */
 
 .bordered {
-   border-left:6px solid #274e4b;
+   border-left:6px solid #285d59;
    border-right:6px solid #274e4b;
 }
 
@@ -52,13 +52,13 @@ section a:hover,
    transition:background-color 0.5s ease;
 }
 .selected-main {
-   background-color:#e5eedd;
+   background-color:#4d8583;
 }
 .selected-footer {
    background-color:#4d8583;
 }
 section {
-   padding:15px 20px;
+   padding:10px 20px;
 }
 
 /* Project  Section */
