@@ -6,6 +6,10 @@
         <link rel="stylesheet" href="Website/styles.css">
         <link rel="icon" type="image/x-icon" href="Website/Images/IconALogo.jpg" style="border-radius: 50%;">
         <title>Home - MBK Tech Studios</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+          
     </head>
    
     <body>
@@ -13,6 +17,7 @@
     <div id="header"></div>
 
         <div class="bordered">
+
             <div id="terms"></div>
 
             <section id="About" class="expandable-section">
@@ -36,7 +41,7 @@
                       </p>
                   </div>
               </div>
-          </section>
+            </section>
     
             <section id="Projects">
 
@@ -111,9 +116,9 @@
                       <p>If you're interested in exploring collaboration opportunities or have a project idea you'd like to discuss, don't hesitate to get in touch using the <a href="#Contact" onclick="selectSection('Contact')">Contact Form</a> and through <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>. I'm always open to new collaborations and excited to work with talented individuals and entities to achieve our shared goals.</p>
                   </div>
               </div>
-          </section>
+            </section>
 
-          <section id="PCSpecs" class="expandable-section">
+            <section id="PCSpecs" class="expandable-section">
             <div class="container">
                 <div id="toggleHeading" class="header">
                     <h2  >PC Specifications</h2>
@@ -147,8 +152,9 @@
                 </div>
                 </div>
             </div>
-        </section>
-        <section id="Contact" class="expandable-section">
+            </section>
+
+            <section id="Contact" class="expandable-section">
 
             <div class="section-wrapper">
 
@@ -168,7 +174,7 @@
                           <label class="label">Subject</label>
                           <div class="control">
                               <div class="select">
-                                <select name="Subject" required>
+                                <select name="Subject" id="subjectSelect" required>
                                   <option value="" disabled selected>Select a subject</option>
                                   <option value="Support">Support</option>
                                   <option value="General Inquiry">General Inquiry</option>
@@ -186,7 +192,14 @@
                         <div class="field">
                           <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
                         </div>
-                  
+
+                        <div class="field phoneField" style="display: none;">
+                            <label class="label">Phone Number</label>
+                            <div class="control">
+                              <input type="text" id="mobile_code" placeholder="Enter Phone Number" name="Number" required />
+                            </div>
+                          </div>
+                
                         <div class="field">
                           <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea></div>
                         </div>
@@ -212,12 +225,11 @@
                 </div>
               </div>
             </div>
-          </section>
+            </section>
           
-          </div>
-            
-            
         </div>
+                 
+    </div>
 
         <div id="footer"></div>
     
@@ -226,8 +238,28 @@
     
    <script src="Website/script.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput-jquery.min.js"></script>
+       
+<script>
 
-   <script>
+$("#mobile_code").intlTelInput({
+    initialCountry: "pk",
+    separateDialCode: true
+    // utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
+  });
+  
+  document.getElementById("subjectSelect").addEventListener("change", function() {
+    var numberField = document.querySelector(".phoneField");
+    if (this.value === "Collaboration") {
+      numberField.style.display = "block";
+    } else {
+      numberField.style.display = "none";
+    }
+  });
+
     document.addEventListener("DOMContentLoaded", function() {
     // Collaboration section
     const collabToggleButton = document.querySelector("#Collaboration .toggle-button");
@@ -346,7 +378,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("sidenav").style.width = "0";
     }
  
-        </script>
+    </script>
 
 <script>
     
@@ -404,7 +436,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         return null;
     }
-</script>
+    </script>
 
 <script>
 
@@ -427,8 +459,17 @@ document.addEventListener("DOMContentLoaded", function() {
     var seconds = String(currentDate.getSeconds()).padStart(2, "0");
     var timestamp = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
 
+
+    var countryCode = $("#mobile_code").intlTelInput("getSelectedCountryData").dialCode;
+
+// Get the input number
+var inputNumber = document.querySelector('input[name="Number"]').value;
+
+// Combine the country code and input number
+var combinedNumber = "+" + countryCode + inputNumber;
       // Assign the timestamp value to the hidden input field
       document.querySelector('input[name="Timestamp"]').value = timestamp;
+document.querySelector('input[name="Number"]').value =combinedNumber;
 
  $(document).ready(function() {
     $.getJSON("https://api.ipify.org?format=json", function(data) {
@@ -482,6 +523,8 @@ document.addEventListener("DOMContentLoaded", function() {
           setTimeout(function () {
             document.getElementById("message").textContent = "";
             document.getElementById("message").style.display = "none";
+            var numberField = document.querySelector(".phoneField");
+  numberField.style.display = "none";
           }, 3600);
         })
         .catch(function (error) {
@@ -492,9 +535,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     
-  </script>
+    </script>
 
 <style>
+
 .section-wrapper {
     border: 6px solid #274e4b;
     background-color: #377a77;
@@ -643,39 +687,4 @@ document.addEventListener("DOMContentLoaded", function() {
   form button:hover {
      opacity:0.8;
   }
-            </style>
-
-
-
-
-<!--
-            <section id="Updates">
-
-                <div class="container">
-                    <h2>Latest Updates</h2>
-                    <textp>Here you can find the latest news, announcements, and updates about MBK Tech Studios.</textp>
-                    <div class="project-grid">
-                        
-                        <div class="project-item new-project">
-                            <a>
-                                <div class="overlay"> <h3>New Project</h3> </div>
-                                <img src="Images/pr-item1.jpg" alt="Game Development Projects">
-                                <h3>No New Projects Update</h3>
-                            </a>
-                        </div>
-                        
-                        <div class="project-item announcement">
-                             <a>
-                                <div class="overlay"> <h3>Announcements</h3> </div>
-                                <img src="Images/pr-item1.jpg" alt="Announcements">
-                                <h3>No New Announcement</h3>
-                            </a>
-                        </div>
-                        
-                    </div>
-                </div>
-
-            </section>
--->
-
-        
+    </style>   
