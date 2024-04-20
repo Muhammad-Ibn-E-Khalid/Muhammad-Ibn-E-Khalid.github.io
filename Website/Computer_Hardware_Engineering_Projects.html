@@ -7,7 +7,7 @@
             Computer Hardware Engineering Projects - MBK Tech Studios
         </title>
         <link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg" style="border-radius: 50%;">
-        <link rel="stylesheet" href="LayoutAssets/styles.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     
     <body>
@@ -58,12 +58,12 @@
     
     <script>
 
-        fetch('../LayoutAssets/header.html').then(response => response.text()).then(html => {
+        fetch('header.html').then(response => response.text()).then(html => {
               document.getElementById('header').innerHTML = html;
               });
         
         
-           fetch('LayoutAssets/footer.html').then(response => response.text()).then(html => {
+           fetch('footer.html').then(response => response.text()).then(html => {
                 document.getElementById('footer').innerHTML = html; 
             });
              
@@ -72,7 +72,7 @@
         <script>
             
             function loadTerms() {
-                fetch('https://muhammad-ibn-e-khalid.github.io/LayoutAssets/terms.html').then(response => response.text()).then(html => {
+                fetch('terms.html').then(response => response.text()).then(html => {
                     document.getElementById('terms').innerHTML = html;
                     document.body.classList.add('no-scroll');
                     document.getElementById('agreeButton').addEventListener('click', function () {
@@ -81,7 +81,7 @@
                     });
         
                     document.getElementById('disagreeButton').addEventListener('click', function () {
-                        window.location.href = 'https://muhammad-ibn-e-khalid.github.io/LayoutAssets/disagree.html';
+                        window.location.href = 'disagree.html';
                     });
         
                     checkCookie();

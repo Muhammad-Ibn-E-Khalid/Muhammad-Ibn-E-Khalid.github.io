@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="LayoutAssets/styles.css">
-        <link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg" style="border-radius: 50%;">
+        <link rel="stylesheet" href="Website/styles.css">
+        <link rel="icon" type="image/x-icon" href="Website/Images/IconALogo.jpg" style="border-radius: 50%;">
         <title>Home - MBK Tech Studios</title>
     </head>
    
@@ -37,7 +37,6 @@
                   </div>
               </div>
           </section>
-          
     
             <section id="Projects">
 
@@ -46,25 +45,25 @@
                     <div class="project-grid">
                         <div class="project-item">
                             <a href="Game_Development_Projects.html" target="_blank">
-                                <img src="Images/pr-item1.jpg" alt="Game Development Projects">
+                                <img src="Website/Images/pr-item1.jpg" alt="Game Development Projects">
                                 <h3>Game Development Projects</h3>
                             </a>
                         </div>
                         <div class="project-item">
-                            <a href="Computer_Hardware_Engineering_Projects.html" target="_blank">
-                                <img src="Images/pr-item2.jpeg" alt="Computer Hardware Engineering Projects">
+                            <a href="Website/Computer_Hardware_Engineering_Projects.html" target="_blank">
+                                <img src="Website/Images/pr-item2.jpeg" alt="Computer Hardware Engineering Projects">
                                 <h3>Computer Hardware Engineering Projects</h3>
                             </a>
                         </div>
                         <div class="project-item">
-                            <a href="Unity_Assest_Projects.html" target="_blank">
-                                <img class="logo-containerdimg" src="Images/pr-item3.webp" alt="Unity Assest Projects">
+                            <a href="Website/Unity_Assest_Projects.html" target="_blank">
+                                <img class="logo-containerdimg" src="Website/Images/pr-item3.webp" alt="Unity Assest Projects">
                                 <h3>Unity Assest Projects</h3>
                             </a>
                         </div>
                         <div class="project-item">
-                            <a href="Cpp_Projects.html" target="_blank">
-                                <img class="logo-containerdimg" src="Images/pr-item4.png" alt="Unity Assest Projects">
+                            <a href="Website/Cpp_Projects.html" target="_blank">
+                                <img class="logo-containerdimg" src="Website/Images/pr-item4.png" alt="Unity Assest Projects">
                                 <h3>C++ Projects</h3>
                             </a>
                         </div>
@@ -81,7 +80,7 @@
          
                         <div class="project-item">
                               <a><!-- <a href="" target="_blank">-->
-                                <img class="logo-containerdimg" src="Images/pr-item1.jpg" alt="Unity Assest Projects">
+                                <img class="logo-containerdimg" src="Website/Images/pr-item1.jpg" alt="Unity Assest Projects">
                                 <h3>No Blog Upload Yet</h3>
                             </a>
                         </div>
@@ -149,57 +148,67 @@
                 </div>
             </div>
         </section>
-
         <section id="Contact" class="expandable-section">
+
             <div class="section-wrapper">
+
               <div id="contactToggleHeading" class="header">
                 <h2>Contact Me</h2>
                 <button class="toggle-button"></button>
               </div>
+              
               <div class="contact-content">
                 <div class="container">
-                  <form id="contactForm" class="container m-4 pl-4" method="POST">
-                    <div class="field">
-                      <label class="label">Subject</label>
-                      <div class="control">
-                        <div class="select">
-                          <select name="Subject" required>
-                            <option value="" disabled selected>Select a subject</option>
-                            <option value="Support">Support</option>
-                            <option value="General Inquiry">General Inquiry</option>
-                            <option value="Collaboration">Collaboration</option>
-                            <option value="Feedback">Feedback</option>
-                          </select>                              
+                    <form id="form" class="container m-4 pl-4" method="POST">
+                        
+                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="Timestamp" /></div></div>
+                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="IXPX" /></div></div>
+                      
+                        <div class="field">
+                          <label class="label">Subject</label>
+                          <div class="control">
+                              <div class="select">
+                                <select name="Subject" required>
+                                  <option value="" disabled selected>Select a subject</option>
+                                  <option value="Support">Support</option>
+                                  <option value="General Inquiry">General Inquiry</option>
+                                  <option value="Collaboration">Collaboration</option>
+                                  <option value="Feedback">Feedback</option>
+                                </select>                              
+                              </div>
+                          </div>
+                      </div>
+            
+                        <div class="field">
+                          <label class="label">Name</label><div class="control"><div class="input" ><input  type="text" placeholder="Enter Your Name" name="UserName" required /></div></div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="field">
-                      <label class="label">Name</label>
-                      <div class="control">
-                        <input class="input" type="text" placeholder="Enter Your Name" name="UserName" required />
-                      </div>
-                    </div>
-                    <div class="field">
-                      <label class="label">Email</label>
-                      <div class="control">
-                        <input class="input" type="email" placeholder="Enter Your Email" name="Email" required />
-                      </div>
-                    </div>
-                    <div class="field">
-                      <label class="label">Message</label>
-                      <div class="control">
-                        <textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea>
-                      </div>
-                    </div>
-                    <div class="field is-grouped">
-                      <div class="control">
-                        <button class="button is-primary" type="submit" id="submit-button">
-                          Submit
-                        </button>
-                      </div>
-                    </div>
-                    <div id="message" style="display: none; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine;"></div>
-                  </form>
+                  
+                        <div class="field">
+                          <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
+                        </div>
+                  
+                        <div class="field">
+                          <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea></div>
+                        </div>
+                  
+                        <div class="field is-grouped">
+                          <div class="control"><button class="button is-primary" type="submit" id="submit-button">Submit</button></div>
+                        </div>
+                        
+                        <div
+                        id="message"
+                        style="
+                          display: none;
+                          font-weight: bold;
+                          color: green;
+                          padding: 8px;
+                          background-color: beige;
+                          border-radius: 4px;
+                          border-color: aquamarine;
+                        "
+                      ></div>
+
+                      </form>
                 </div>
               </div>
             </div>
@@ -215,7 +224,7 @@
     </body>
      
     
-   <script src="LayoutAssets/script.js"></script>
+   <script src="Website/script.js"></script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
    <script>
@@ -319,12 +328,12 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
     
-    fetch('LayoutAssets/header.html').then(response => response.text()).then(html => {
+    fetch('Website/header.html').then(response => response.text()).then(html => {
       document.getElementById('header').innerHTML = html;
       });
 
     
-    fetch('LayoutAssets/footer.html').then(response => response.text()).then(html => {
+    fetch('Website/footer.html').then(response => response.text()).then(html => {
         document.getElementById('footer').innerHTML = html;
     });
     
@@ -342,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
     
     function loadTerms() {
-        fetch('LayoutAssets/terms.html').then(response => response.text()).then(html => {
+        fetch('Website/terms.html').then(response => response.text()).then(html => {
             document.getElementById('terms').innerHTML = html;
             document.body.classList.add('no-scroll');
             document.getElementById('agreeButton').addEventListener('click', function () {
@@ -351,7 +360,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             document.getElementById('disagreeButton').addEventListener('click', function () {
-                window.location.href = 'LayoutAssets/disagree.html';
+                window.location.href = 'Website/disagree.html';
             });
 
             checkCookie();
