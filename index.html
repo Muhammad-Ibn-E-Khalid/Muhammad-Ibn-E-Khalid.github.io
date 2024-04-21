@@ -556,7 +556,26 @@
                 function() {
                     window.location.href = 'Website/disagree.html';
                 });
-    
+    // Function to open the terms box
+    function openTermsBox() {
+        var termsBox = document.getElementById("termsBox");
+        termsBox.style.display = "block";
+    }
+
+    // Function to close the terms box
+    document.addEventListener('click', function(event) {
+        if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
+            var termsBox = document.getElementById("termsBox");
+            termsBox.style.display = "none";
+        }
+    });
+
+    // Function to toggle the modal
+    document.addEventListener('click', function(event) {
+        if (event.target.id === 'openModalBtn') {
+            openTermsBox();
+        }
+    });
                 checkCookie();
             });
         }
