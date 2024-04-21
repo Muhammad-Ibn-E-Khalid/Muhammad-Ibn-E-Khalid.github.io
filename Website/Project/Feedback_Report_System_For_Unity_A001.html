@@ -73,22 +73,45 @@
             });
              
             
-            function loadTerms() {
-                fetch('../terms.html').then(response => response.text()).then(html => {
-                    document.getElementById('terms').innerHTML = html;
-                    document.body.classList.add('no-scroll');
-                    document.getElementById('agreeButton').addEventListener('click', function () {
-                        setCookie('agreed', 'true', 365);
-                        hideOverlay();
-                    });
-        
-                    document.getElementById('disagreeButton').addEventListener('click', function () {
-                        window.location.href = '../disagree.html';
-                    });
-        
-                    checkCookie();
+                  
+        function loadTerms() {
+            fetch('../terms.html').then(response => response.text()).then(html => {
+                document.getElementById('terms').innerHTML = html;
+                document.body.classList.add('no-scroll');
+                document.getElementById('agreeButton').addEventListener('click',
+                function() {
+                    setCookie('agreed', 'true', 365);
+                    hideOverlay();
                 });
-            }
+    
+                document.getElementById('disagreeButton').addEventListener('click',
+                function() {
+                    window.location.href = 'Website/disagree.html';
+                });
+    // Function to open the terms box
+    function openTermsBox() {
+        var termsBox = document.getElementById("termsBox");
+        termsBox.style.display = "block";
+    }
+
+    // Function to close the terms box
+    document.addEventListener('click', function(event) {
+        if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
+            var termsBox = document.getElementById("termsBox");
+            termsBox.style.display = "none";
+        }
+    });
+
+    // Function to toggle the modal
+    document.addEventListener('click', function(event) {
+        if (event.target.id === 'openModalBtn') {
+            openTermsBox();
+        }
+    });
+                checkCookie();
+            });
+        }
+        
         
             function checkCookie() {
                 if (getCookie('agreed') === 'true') {
