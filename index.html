@@ -545,6 +545,7 @@
     
     <script>
 
+        //load terms.html + pass cookies data and allow to interact with terms.html buttons and links
     function loadTerms() {
         fetch('Website/terms.html').then(response => response.text()).then(html => {
             document.getElementById('terms').innerHTML = html;
