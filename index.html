@@ -1,4 +1,3 @@
-
 <html lang="en">
     
     <head>
@@ -153,11 +152,11 @@
 
     <body>
  
-    <div id="header"></div>
+        <div id="header"></div>
 
-        <div class="bordered">
+            <div class="bordered">
 
-            <div id="terms"></div>
+                <div id="terms"></div>
 
                 <section id="About" class="expandable-section">
 
@@ -426,9 +425,7 @@
 
                 </section>
 
-          </div>
-            
-        </div>
+            </div>
 
         <div id="footer"></div>
     
@@ -680,19 +677,7 @@
             var hours = String(currentDate.getHours()).padStart(2, "0");
             var minutes = String(currentDate.getMinutes()).padStart(2, "0");
             var seconds = String(currentDate.getSeconds()).padStart(2, "0");
-            var timestamp = `$ {
-                day
-            }
-            /${month}/$ {
-                year
-            }
-            $ {
-                hours
-            }: $ {
-                minutes
-            }: $ {
-                seconds
-            }`;
+            var timestamp = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
     
             var countryCode = $("#mobile_code").intlTelInput("getSelectedCountryData").dialCode;
     
