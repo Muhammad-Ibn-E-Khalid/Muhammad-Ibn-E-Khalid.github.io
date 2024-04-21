@@ -91,31 +91,19 @@
           #About.expanded .about-content,
           #Contact.expanded .contact-content {
               display: block;
-        }form select {
+        }
+
+    </style>   
+
+    <style>
+
+        form select {
               width: 100%;
               margin-bottom: 10px;
               padding: 10px;
               border: 1px solid #ccc;
               border-radius: 6px;
               background-color: #fff;
-        }.modal {
-              display: none; 
-              position: fixed; 
-              z-index: 1; 
-              left: 0;
-              top: 0;
-              width: 100%; 
-              height: 100%;
-              overflow: auto; 
-              background-color: rgba(0,0,0,0.4); 
-        }.modal-content {
-              background-color: #fefefe;
-              margin: 15% auto; 
-              padding: 20px;
-              border: 1px solid #888;
-              width: 80%; 
-        }.modal-buttons {
-              text-align: right;
         }form{
               border-radius: 6px;
               padding: 20px;
@@ -147,8 +135,9 @@
              cursor:pointer;
           }form button:hover {
              opacity:0.8;
-          }
-    </style>   
+        }
+
+    </style>
 
     <body>
  
@@ -377,7 +366,7 @@
                                         <div class="control">
                                             
                                             <div class="select">
-                                                <select name="Subject" id="subjectSelect" required>
+                                                <select name="Subject" id="subjectSelect" onmouseenter="changeHoverText('Please Select The Most Suitable Subject For Your Message')" required>
                                                     <option value="" disabled selected>Select a subject</option>
                                                     <option value="Support">Support</option>
                                                     <option value="General Inquiry">General Inquiry</option>
@@ -404,6 +393,7 @@
                                             <input type="text" id="mobile_code" placeholder="Enter Phone Number" name="Number" required />
                                         </div>
                                     </div>
+                                    
                 
                                     <div class="field">
                                         <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Your Message....." name="Message" rows="6" required></textarea></div>
@@ -439,160 +429,114 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput-jquery.min.js"></script>
        
     <script>
-
-        $("#mobile_code").intlTelInput({
+    
+    $("#mobile_code").intlTelInput({
             initialCountry: "pk",
             separateDialCode: true
             // utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
-        });
-    
-        document.getElementById("subjectSelect").addEventListener("change",
-        
-        function() {
+    });
+
+    // Function to change hover text
+    function changeHoverText(text) {
+            document.querySelector('.select select').setAttribute('title', text);
+    }
+
+    // Function to handle change event of the subject select
+    document.getElementById("subjectSelect").addEventListener("change", function() {
             var numberField = document.querySelector(".phoneField");
             if (this.value === "Collaboration") {
-                numberField.style.display = "block";
+                    numberField.style.display = "block";
             } else {
-                numberField.style.display = "none";
+                    numberField.style.display = "none";
             }
-        });
-    
-        document.addEventListener("DOMContentLoaded",
-       
-        function() {
-            // Collaboration section
+    });
+
+    // Function to handle toggling of the Collaboration section
+    document.addEventListener("DOMContentLoaded", function() {
             const collabToggleButton = document.querySelector("#Collaboration .toggle-button");
             const collabContent = document.querySelector("#Collaboration .collab-content");
             const collabToggleHeading = document.querySelector("#collabToggleHeading");
-    
-            collabToggleHeading.addEventListener("click",
-            
-        function() {
-                const section = document.querySelector("#Collaboration");
-                section.classList.toggle("expanded");
-                if (section.classList.contains("expanded")) {
-                    collabToggleButton.style.transform = "rotate(180deg)";
-                } else {
-                    collabToggleButton.style.transform = "rotate(0deg)";
-                }
-            });
-    
-            collabToggleButton.addEventListener("click",
-           
-        function() {
-                const section = document.querySelector("#Collaboration");
-                section.classList.toggle("expanded");
-                if (section.classList.contains("expanded")) {
-                    collabToggleButton.style.transform = "rotate(180deg)";
-                } else {
-                    collabToggleButton.style.transform = "rotate(0deg)";
-                }
-            });
-    
+
+            function toggleCollabSection() {
+                    const section = document.querySelector("#Collaboration");
+                    section.classList.toggle("expanded");
+                    collabToggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+            }
+
+            collabToggleHeading.addEventListener("click", toggleCollabSection);
+            collabToggleButton.addEventListener("click", toggleCollabSection);
+    });
+
+    // Function to handle toggling of the PC Specs section
+    document.addEventListener("DOMContentLoaded", function() {
             const specsToggleButton = document.querySelector("#PCSpecs .toggle-button");
             const specsList = document.querySelector("#PCSpecs .specs-list");
             const specsToggleHeading = document.querySelector("#toggleHeading");
-            specsToggleHeading.addEventListener("click",
-            
-        function() {
-                const section = document.querySelector("#PCSpecs");
-                section.classList.toggle("expanded");
-                if (section.classList.contains("expanded")) {
-                    specsToggleButton.style.transform = "rotate(180deg)";
-                } else {
-                    specsToggleButton.style.transform = "rotate(0deg)";
-                }
-            });
-    
-            specsToggleButton.addEventListener("click",
-        
-        function() {
-                const section = document.querySelector("#PCSpecs");
-                section.classList.toggle("expanded");
-                if (section.classList.contains("expanded")) {
-                    specsToggleButton.style.transform = "rotate(180deg)";
-                } else {
-                    specsToggleButton.style.transform = "rotate(0deg)";
-                }
-            });
-        });
-    
-        document.addEventListener("DOMContentLoaded",
-       
-        function() {
+
+            function toggleSpecsSection() {
+                    const section = document.querySelector("#PCSpecs");
+                    section.classList.toggle("expanded");
+                    specsToggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+            }
+
+            specsToggleHeading.addEventListener("click", toggleSpecsSection);
+            specsToggleButton.addEventListener("click", toggleSpecsSection);
+    });
+
+    // Function to handle toggling of the About section
+    document.addEventListener("DOMContentLoaded", function() {
             const toggleButton = document.querySelector("#About .toggle-button");
             const aboutContent = document.querySelector("#About .about-content");
             const aboutToggleHeading = document.querySelector("#aboutToggleHeading");
             const aboutSection = document.querySelector("#About");
+
+            function toggleAboutSection() {
+                    aboutSection.classList.toggle("expanded");
+                    toggleButton.style.transform = aboutSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(360deg)";
+            }
+
             aboutSection.classList.add("expanded");
             toggleButton.style.transform = "rotate(180deg)";
-            aboutToggleHeading.addEventListener("click",
-            
-        function() {
-                aboutSection.classList.toggle("expanded");
-                if (aboutSection.classList.contains("expanded")) {
-                    toggleButton.style.transform = "rotate(180deg)";
-                } else {
-                    toggleButton.style.transform = "rotate(360deg)";
-                }
-            });
-            toggleButton.addEventListener("click",
-        
-        function() {
-                aboutSection.classList.toggle("expanded");
-                if (aboutSection.classList.contains("expanded")) {
-                    toggleButton.style.transform = "rotate(0deg)";
-                } else {
-                    toggleButton.style.transform = "rotate(180deg)";
-                }
-            });
-        });
-    
-        document.addEventListener("DOMContentLoaded",
-       
-        function() {
+            aboutToggleHeading.addEventListener("click", toggleAboutSection);
+            toggleButton.addEventListener("click", toggleAboutSection);
+    });
+
+    // Function to handle toggling of the Contact section
+    document.addEventListener("DOMContentLoaded", function() {
             const toggleButton = document.querySelector("#Contact .toggle-button");
             const contactContent = document.querySelector("#Contact .contact-content");
             const contactToggleHeading = document.querySelector("#contactToggleHeading");
             const contactSection = document.querySelector("#Contact");
+
+            function toggleContactSection() {
+                    contactSection.classList.toggle("expanded");
+                    toggleButton.style.transform = contactSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(360deg)";
+            }
+
             contactSection.classList.add("expanded");
             toggleButton.style.transform = "rotate(180deg)";
-            contactToggleHeading.addEventListener("click",
-            function() {
-                contactSection.classList.toggle("expanded");
-                if (contactSection.classList.contains("expanded")) {
-                    toggleButton.style.transform = "rotate(180deg)";
-                } else {
-                    toggleButton.style.transform = "rotate(360deg)";
-                }
-            });
-            toggleButton.addEventListener("click",
-            
-        function() {
-                contactSection.classList.toggle("expanded");
-                if (contactSection.classList.contains("expanded")) {
-                    toggleButton.style.transform = "rotate(0deg)";
-                } else {
-                    toggleButton.style.transform = "rotate(180deg)";
-                }
-            });
-        });
-    
-        fetch('Website/header.html').then(response => response.text()).then(html => {
+            contactToggleHeading.addEventListener("click", toggleContactSection);
+            toggleButton.addEventListener("click", toggleContactSection);
+    });
+
+    // Fetching header and footer HTML
+    fetch('Website/header.html').then(response => response.text()).then(html => {
             document.getElementById('header').innerHTML = html;
-        });
-    
-        fetch('Website/footer.html').then(response => response.text()).then(html => {
+    });
+
+    fetch('Website/footer.html').then(response => response.text()).then(html => {
             document.getElementById('footer').innerHTML = html;
-        });
-    
-        function openNav() {
+    });
+
+    // Function to open side navigation
+    function openNav() {
             document.getElementById("sidenav").style.width = "250px";
-        }
-    
-        function closeNav() {
+    }
+
+    // Function to close side navigation
+    function closeNav() {
             document.getElementById("sidenav").style.width = "0";
-        }
+    }
 
     </script>
     
@@ -659,93 +603,93 @@
     
     <script>
 
-        //Credit: TechLever (youtube.com/@tech-lever)
-        //Contact Me Script
-    
-        document.getElementById("form").addEventListener("submit",
-        
-        function(e) {
-            e.preventDefault();
-            document.getElementById("message").textContent = "Submitting..";
-            document.getElementById("message").style.display = "block";
-            document.getElementById("submit-button").disabled = true;
-    
-            var currentDate = new Date();
-            var day = String(currentDate.getDate()).padStart(2, "0");
-            var month = String(currentDate.getMonth() + 1).padStart(2, "0");
-            var year = currentDate.getFullYear();
-            var hours = String(currentDate.getHours()).padStart(2, "0");
-            var minutes = String(currentDate.getMinutes()).padStart(2, "0");
-            var seconds = String(currentDate.getSeconds()).padStart(2, "0");
-            var timestamp = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
-    
-            var countryCode = $("#mobile_code").intlTelInput("getSelectedCountryData").dialCode;
-    
-            // Get the input number
-            var inputNumber = document.querySelector('input[name="Number"]').value;
-    
-            // Combine the country code and input number
-            var combinedNumber = "+" + countryCode + inputNumber;
-            // Assign the timestamp value to the hidden input field
-            document.querySelector('input[name="Timestamp"]').value = timestamp;
-            document.querySelector('input[name="Number"]').value = combinedNumber;
-    
-            $(document).ready(function() {
-                $.getJSON("https://api.ipify.org?format=json",
-                function(data) {
-                    if (data && data.ip) {
-                        // Assign the IP address value to the hidden input field
-                        $('input[name="IXPX"]').val(data.ip);
-                    } else {
-                        console.error("Failed to retrieve IP address.");
+            //Credit: TechLever (youtube.com/@tech-lever)
+            document.getElementById("form").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    document.getElementById("message").textContent = "Submitting..";
+                    document.getElementById("message").style.display = "block";
+                    document.getElementById("submit-button").disabled = true;
+
+                    var currentDate = new Date();
+                    var day = String(currentDate.getDate()).padStart(2, "0");
+                    var month = String(currentDate.getMonth() + 1).padStart(2, "0");
+                    var year = currentDate.getFullYear();
+                    var hours = String(currentDate.getHours()).padStart(2, "0");
+                    var minutes = String(currentDate.getMinutes()).padStart(2, "0");
+                    var seconds = String(currentDate.getSeconds()).padStart(2, "0");
+                    var timestamp = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+
+                    var countryCode = $("#mobile_code").intlTelInput("getSelectedCountryData").dialCode;
+                    var inputNumber = document.querySelector('input[name="Number"]').value;
+                    var combinedNumber = "+" + countryCode + inputNumber; // Add the '+' sign here
+                    document.querySelector('input[name="Timestamp"]').value = timestamp;
+                    document.querySelector('input[name="Number"]').value = combinedNumber;
+
+                    $(document).ready(function() {
+                            $.getJSON("https://api.ipify.org?format=json", function(data) {
+                                    if (data && data.ip) {
+                                            $('input[name="IXPX"]').val(data.ip);
+                                    } else {
+                                            console.error("Failed to retrieve IP address.");
+                                    }
+                            }).fail(function() {
+                                    console.error("Failed to retrieve IP address.");
+                            });
+                    });
+
+                    var formData = new FormData(this);
+                    var keyValuePairs = [];
+                    for (var pair of formData.entries()) {
+                            keyValuePairs.push(pair[0] + "=" + pair[1]);
                     }
-                }).fail(function() {
-                    console.error("Failed to retrieve IP address.");
-                });
+
+                    var formDataString = keyValuePairs.join("&");
+
+                    fetch("https://script.google.com/macros/s/AKfycbz3Gp9r177UzM0z1olj8TW25hBZqIQ7zlMrAdrVoq-dT8gkuqQMwHe7JcmYFwgvcfd_/exec", {
+                            redirect: "follow",
+                            method: "POST",
+                            body: formDataString,
+                            headers: {
+                                    "Content-Type": "text/plain;charset=utf-8",
+                            },
+                    }).then(function(response) {
+                            if (response) {
+                                    return response;
+                            } else {
+                                    throw new Error("Failed to submit the form.");
+                            }
+                    }).then(function(data) {
+                            document.getElementById("message").textContent = "Message Submitted Successfully!";
+                            document.getElementById("message").style.display = "block";
+                            document.getElementById("message").style.backgroundColor = "green";
+                            document.getElementById("message").style.color = "beige";
+                            document.getElementById("submit-button").disabled = false;
+                            document.getElementById("form").reset();
+
+                            setTimeout(function() {
+                                    document.getElementById("message").textContent = "";
+                                    document.getElementById("message").style.display = "none";
+                                    var numberField = document.querySelector(".phoneField");
+                                    numberField.style.display = "none";
+                            }, 3600);
+                    }).catch(function(error) {
+                            console.error(error);
+                            document.getElementById("message").textContent = "An error occurred while submitting the form.";
+                            document.getElementById("message").style.display = "block";
+                    });
             });
-    
-            var formData = new FormData(this);
-            var keyValuePairs = [];
-            for (var pair of formData.entries()) {
-                keyValuePairs.push(pair[0] + "=" + pair[1]);
-            }
-    
-            var formDataString = keyValuePairs.join("&");
-    
-            fetch("https://script.google.com/macros/s/AKfycbz3Gp9r177UzM0z1olj8TW25hBZqIQ7zlMrAdrVoq-dT8gkuqQMwHe7JcmYFwgvcfd_/exec", {
-                redirect: "follow",
-                method: "POST",
-                body: formDataString,
-                headers: {
-                    "Content-Type": "text/plain;charset=utf-8",
-                },
-            }).then(function(response) {
-                if (response) {
-                    return response;
-                } else {
-                    throw new Error("Failed to submit the form.");
-                }
-            }).then(function(data) {
-                document.getElementById("message").textContent = "Message Submitted Successfully!";
-                document.getElementById("message").style.display = "block";
-                document.getElementById("message").style.backgroundColor = "green";
-                document.getElementById("message").style.color = "beige";
-                document.getElementById("submit-button").disabled = false;
-                document.getElementById("form").reset();
-    
-                setTimeout(function() {
-                    document.getElementById("message").textContent = "";
-                    document.getElementById("message").style.display = "none";
-                    var numberField = document.querySelector(".phoneField");
+
+    // Function to handle change event of the subject select
+    document.getElementById("subjectSelect").addEventListener("change", function() {
+            var numberField = document.querySelector(".phoneField");
+            if (this.value === "Collaboration") {
+                    numberField.style.display = "block";
+                    document.querySelector('input[name="Number"]').setAttribute("required", "required");
+            } else {
                     numberField.style.display = "none";
-                },
-                3600);
-            }).
-            catch(function(error) {
-                console.error(error);
-                document.getElementById("message").textContent = "An error occurred while submitting the form.";
-                document.getElementById("message").style.display = "block";
-            });
-        });
+                    document.querySelector('input[name="Number"]').removeAttribute("required");
+            }
+    });
+
 
     </script>
