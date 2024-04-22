@@ -114,46 +114,6 @@ section {
 }
 
 
-/* Contact Us */
-
-form{
-    border-radius: 6px;
-    padding: 20px;
-    background-color:#4d8583;
-}
-form .control {
-    margin-top: 10px;
-}
-form .field {
-    margin-bottom: 15px; 
-}
-form .label {
-    font-weight: bold;
-    margin-bottom: 5px; 
-}
-form input,form textarea {
-   width:97%;
-   margin-bottom:10px;
-   padding:10px;
-   border:1px solid #ccc;
-   border-radius:6px;
-   background-color:#fff;
-}
-form button {
-   background-color:#2ecc71;
-   color:#fff;
-   border:none;
-   font-weight: bold;
-   font-size: medium;
-   border-radius:6px;
-   padding:10px 20px;
-   cursor:pointer;
-}
-form button:hover {
-   opacity:0.8;
-}
- 
-
 /* Project Page */
 
 /* Search Bar */
