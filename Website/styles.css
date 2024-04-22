@@ -14,7 +14,6 @@ textp {
    font-weight:550;
 }
 
-
 /*
  - No UnderLine under Link Text
  - No Visited Color
@@ -38,7 +37,6 @@ section a:hover,
    box-shadow: 0 0 100px #48bfff;
 }
 
-
 /* Main Body */
 
 .bordered {
@@ -52,7 +50,7 @@ section a:hover,
    transition:background-color 0.5s ease;
 }
 .selected-main {
-   background-color:#4d8583;
+   background-color:#578482;
 }
 .selected-footer {
    background-color:#4d8583;
@@ -112,7 +110,6 @@ section {
 .project-item a:hover {
    opacity:0.8;
 }
-
 
 /* Project Page */
 
