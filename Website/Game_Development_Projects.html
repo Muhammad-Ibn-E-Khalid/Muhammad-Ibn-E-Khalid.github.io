@@ -14,69 +14,72 @@
 
    <div id="header"></div>
 
-        <div class="bordered"> 
+        <div class="bordered">
+
             <div id="terms"></div>
+
             <section id="Projects">
+
                 <div class="container">
+
                     <div class="search-bar">
+
                         <input type="text" id="search" placeholder="Search project by name or Project ID #...">
-                        <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()">
-                            x
-                        </button>
-                        <button class="search-bar-Sbutton" type="button" onclick="searchProjects()">
-                            Search
-                        </button>
+                        <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()"> x </button>
+                        <button class="search-bar-Sbutton" type="button" onclick="searchProjects()"> Search </button>
+                  
                     </div>
-                    <h2>
-                        Game Development Projects
-                    </h2>
-                    <div id="searchResults">
-                    </div>
+
+                    <h2> Unity Assest Projects </h2>
+
+                    <div id="searchResults"></div>
+
                     <div class="project-grid">
+
                         <div class="project-item" id="A456">
-                            <a href="#">
-                                <img src="https://miro.medium.com/v2/resize:fit:1358/1*3gh-krzOrAoNyX8mJGyc2Q.jpeg"
-                                alt="Project 1">
-                                <h3>
-                                    Comming Soon
-                                </h3>
+
+                            <a href="Project/Feedback_Report_System_For_Unity_A001.html">
+                                <img src="https://miro.medium.com/v2/resize:fit:1358/1*3gh-krzOrAoNyX8mJGyc2Q.jpeg" alt="Project 1">
+                                <h3> Unity Feedback Report System </h3>
                             </a>
+
                         </div>
+
                     </div>
+
                 </div>
+
             </section>
+
         </div>
-      
-          
-           <div id="footer"></div>
+
+        <div id="footer"></div>
 
         
     </body>
 
     <script src="script.js"></script>
-    
+
     <script>
 
-        fetch('header.html').then(response => response.text()).then(html => {
-              document.getElementById('header').innerHTML = html;
-              });
-        
-        
-           fetch('footer.html').then(response => response.text()).then(html => {
-                document.getElementById('footer').innerHTML = html; 
-            });
-             
-          
+
+    fetch('header.html').then(response => response.text()).then(html => {
+        document.getElementById('header').innerHTML = html;
+    });
+
+    fetch('footer.html').then(response => response.text()).then(html => {
+        document.getElementById('footer').innerHTML = html;
+    });
+
     // Function to open side navigation
     function openNav() {
-            document.getElementById("sidenav").style.width = "250px";
+        document.getElementById("sidenav").style.width = "250px";
     }
 
     // Function to close side navigation
     function closeNav() {
-            document.getElementById("sidenav").style.width = "0";
+        document.getElementById("sidenav").style.width = "0";
     }
-        
     function loadTerms() {
         fetch('terms.html').then(response => response.text()).then(html => {
             document.getElementById('terms').innerHTML = html;
@@ -116,43 +119,43 @@
             checkCookie();
         });
     }
-        
-            function checkCookie() {
-                if (getCookie('agreed') === 'true') {
-                    hideOverlay();
-                }
+
+    function checkCookie() {
+        if (getCookie('agreed') === 'true') {
+            hideOverlay();
+        }
+    }
+
+    loadTerms();
+
+    function hideOverlay() {
+        document.getElementById('overlay').style.display = 'none';
+        document.body.classList.remove('no-scroll');
+    }
+
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1, cookie.length);
             }
-        
-            loadTerms();
-        
-            function hideOverlay() {
-                document.getElementById('overlay').style.display = 'none';
-                document.body.classList.remove('no-scroll');
+            if (cookie.indexOf(nameEQ) === 0) {
+                return cookie.substring(nameEQ.length, cookie.length);
             }
-        
-            function setCookie(name, value, days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + (value || "") + expires + "; path=/";
-            }
-        
-            function getCookie(name) {
-                var nameEQ = name + "=";
-                var cookies = document.cookie.split(';');
-                for (var i = 0; i < cookies.length; i++) {
-                    var cookie = cookies[i];
-                    while (cookie.charAt(0) === ' ') {
-                        cookie = cookie.substring(1, cookie.length);
-                    }
-                    if (cookie.indexOf(nameEQ) === 0) {
-                        return cookie.substring(nameEQ.length, cookie.length);
-                    }
-                }
-                return null;
-            }
+        }
+        return null;
+    }
         </script>
 </html>
