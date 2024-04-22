@@ -1,23 +1,20 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>
           Feedback Report System For Unity - MBK Tech Studios
         </title>
-        <link rel="stylesheet" href="../styles.css">
-
-    </head>
-    
-    <body>
-      
-   <div id="header"></div>
-   <div class="bordered">
-        
-   <div id="terms"></div>
-       <h2> At This Moment Feedback_Report_System_For_Unity Project is under development. We are making few changes to our Project. It may  Avaiable at 1st June 2024</h2>
+                <link rel="stylesheet" href="../styles.css">
+                </head>
+                <body>
+                    <div id="header"></div>
+                    <div class="bordered">
+                        <div id="terms"></div>
+                        <h2> At This Moment Feedback_Report_System_For_Unity Project is under development. We are making few changes to our Project. It may  Avaiable at 1st June 2024</h2>
+                   
 <!--
         <div class="content-container">
             <p class="cp"> How To Deploy Unity Feedback Report System in Your Project! </p>
@@ -53,115 +50,106 @@
                 5. Now you are ready to use the feedback system.
             </p>
         </div> -->
-</div>
-   <div id="footer"></div>
 
-        
-    </body>
-    
-    <script src="../script.js"></script>
-
-  
-    <script>
-
-        fetch('../header.html').then(response => response.text()).then(html => {
-              document.getElementById('header').innerHTML = html;
-              });
-        
-        
-           fetch('../footer.html').then(response => response.text()).then(html => {
-                document.getElementById('footer').innerHTML = html; 
-            });
-             
-            
-    // Function to open side navigation
-    function openNav() {
-            document.getElementById("sidenav").style.width = "250px";
-    }
-
-    // Function to close side navigation
-    function closeNav() {
-            document.getElementById("sidenav").style.width = "0";
-    }
-                          
-    function loadTerms() {
-        fetch('../terms.html').then(response => response.text()).then(html => {
-            document.getElementById('terms').innerHTML = html;
-            document.body.classList.add('no-scroll');
-            document.getElementById('agreeButton').addEventListener('click',
-            function() {
-                setCookie('agreed', 'true', 365);
-                hideOverlay();
-            });
-
-            document.getElementById('disagreeButton').addEventListener('click',
-            function() {
-                window.location.href = '../disagree.html';
-            });
-            // Function to open the terms box
-            function openTermsBox() {
-                var termsBox = document.getElementById("termsBox");
-                termsBox.style.display = "block";
-            }
-
-            // Function to close the terms box
-            document.addEventListener('click',
-            function(event) {
-                if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
-                    var termsBox = document.getElementById("termsBox");
-                    termsBox.style.display = "none";
-                }
-            });
-
-            // Function to toggle the modal
-            document.addEventListener('click',
-            function(event) {
-                if (event.target.id === 'openModalBtn') {
-                    openTermsBox();
-                }
-            });
-            checkCookie();
-        });
-    }
-        
-        
-            function checkCookie() {
-                if (getCookie('agreed') === 'true') {
-                    hideOverlay();
-                }
-            }
-        
-            loadTerms();
-        
-            function hideOverlay() {
-                document.getElementById('overlay').style.display = 'none';
-                document.body.classList.remove('no-scroll');
-            }
-        
-            function setCookie(name, value, days) {
-                var expires = "";
-                if (days) {
-                    var date = new Date();
-                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                    expires = "; expires=" + date.toUTCString();
-                }
-                document.cookie = name + "=" + (value || "") + expires + "; path=/";
-            }
-        
-            function getCookie(name) {
-                var nameEQ = name + "=";
-                var cookies = document.cookie.split(';');
-                for (var i = 0; i < cookies.length; i++) {
-                    var cookie = cookies[i];
-                    while (cookie.charAt(0) === ' ') {
-                        cookie = cookie.substring(1, cookie.length);
+                    </div>
+                    <div id="footer"></div>
+                </body>
+                <script src="../script.js"></script>
+                <script>
+                    fetch('../header.html').then(response => response.text()).then(html => {
+                        document.getElementById('header').innerHTML = html;
+                    });
+                
+                    fetch('../footer.html').then(response => response.text()).then(html => {
+                        document.getElementById('footer').innerHTML = html;
+                    });
+                
+                    // Function to open side navigation
+                    function openNav() {
+                        document.getElementById("sidenav").style.width = "250px";
                     }
-                    if (cookie.indexOf(nameEQ) === 0) {
-                        return cookie.substring(nameEQ.length, cookie.length);
+                
+                    // Function to close side navigation
+                    function closeNav() {
+                        document.getElementById("sidenav").style.width = "0";
                     }
-                }
-                return null;
-            }
-        </script>
-
+                
+                    function loadTerms() {
+                        fetch('../terms.html').then(response => response.text()).then(html => {
+                            document.getElementById('terms').innerHTML = html;
+                            document.body.classList.add('no-scroll');
+                            document.getElementById('agreeButton').addEventListener('click',
+                            function() {
+                                setCookie('agreed', 'true', 365);
+                                hideOverlay();
+                            });
+                
+                            document.getElementById('disagreeButton').addEventListener('click',
+                            function() {
+                                window.location.href = '../disagree.html';
+                            });
+                            // Function to open the terms box
+                            function openTermsBox() {
+                                var termsBox = document.getElementById("termsBox");
+                                termsBox.style.display = "block";
+                            }
+                
+                            // Function to close the terms box
+                            document.addEventListener('click',
+                            function(event) {
+                                if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
+                                    var termsBox = document.getElementById("termsBox");
+                                    termsBox.style.display = "none";
+                                }
+                            });
+                
+                            // Function to toggle the modal
+                            document.addEventListener('click',
+                            function(event) {
+                                if (event.target.id === 'openModalBtn') {
+                                    openTermsBox();
+                                }
+                            });
+                            checkCookie();
+                        });
+                    }
+                
+                    function checkCookie() {
+                        if (getCookie('agreed') === 'true') {
+                            hideOverlay();
+                        }
+                    }
+                
+                    loadTerms();
+                
+                    function hideOverlay() {
+                        document.getElementById('overlay').style.display = 'none';
+                        document.body.classList.remove('no-scroll');
+                    }
+                
+                    function setCookie(name, value, days) {
+                        var expires = "";
+                        if (days) {
+                            var date = new Date();
+                            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                            expires = "; expires=" + date.toUTCString();
+                        }
+                        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+                    }
+                
+                    function getCookie(name) {
+                        var nameEQ = name + "=";
+                        var cookies = document.cookie.split(';');
+                        for (var i = 0; i < cookies.length; i++) {
+                            var cookie = cookies[i];
+                            while (cookie.charAt(0) === ' ') {
+                                cookie = cookie.substring(1, cookie.length);
+                            }
+                            if (cookie.indexOf(nameEQ) === 0) {
+                                return cookie.substring(nameEQ.length, cookie.length);
+                            }
+                        }
+                        return null;
+                    }
+                </script>
 </html>
