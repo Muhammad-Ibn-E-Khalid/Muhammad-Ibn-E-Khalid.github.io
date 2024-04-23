@@ -227,6 +227,13 @@ footer {
         document.getElementById("backToTerm").onclick = function() {
             window.location.href = "https://muhammad-ibn-e-khalid.github.io/index.html";
         };
+
+        <script>
+  if (window.location.pathname.endsWith('.html')) {
+    window.location.replace(window.location.pathname.replace('.html', ''));
+  }
+</script>
+
     </script>
 </body>
 </html>
