@@ -63,3 +63,94 @@ function selectSectionfooter(sectionId) {
         selectedSection.classList.remove('selected-footer');
     }, 1000);
 }
+
+
+
+
+            //Credit: TechLever (youtube.com/@tech-lever)
+            document.getElementById("form").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    document.getElementById("message").textContent = "Submitting..";
+                    document.getElementById("message").style.display = "block";
+                    document.getElementById("submit-button").disabled = true;
+
+                    var currentDate = new Date();
+                    var day = String(currentDate.getDate()).padStart(2, "0");
+                    var month = String(currentDate.getMonth() + 1).padStart(2, "0");
+                    var year = currentDate.getFullYear();
+                    var hours = String(currentDate.getHours()).padStart(2, "0");
+                    var minutes = String(currentDate.getMinutes()).padStart(2, "0");
+                    var seconds = String(currentDate.getSeconds()).padStart(2, "0");
+                    var timestamp = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+
+                    var countryCode = $("#mobile_code").intlTelInput("getSelectedCountryData").dialCode;
+                    var inputNumber = document.querySelector('input[name="Number"]').value;
+                    var combinedNumber = "+" + countryCode + inputNumber; // Add the '+' sign here
+                    document.querySelector('input[name="Timestamp"]').value = timestamp;
+                    document.querySelector('input[name="Number"]').value = combinedNumber;
+
+                    $(document).ready(function() {
+                            $.getJSON("https://api.ipify.org?format=json", function(data) {
+                                    if (data && data.ip) {
+                                            $('input[name="IXPX"]').val(data.ip);
+                                    } else {
+                                            console.error("Failed to retrieve IP address.");
+                                    }
+                            }).fail(function() {
+                                    console.error("Failed to retrieve IP address.");
+                            });
+                    });
+
+                    var formData = new FormData(this);
+                    var keyValuePairs = [];
+                    for (var pair of formData.entries()) {
+                            keyValuePairs.push(pair[0] + "=" + pair[1]);
+                    }
+
+                    var formDataString = keyValuePairs.join("&");
+
+                    fetch("https://script.google.com/macros/s/AKfycbz3Gp9r177UzM0z1olj8TW25hBZqIQ7zlMrAdrVoq-dT8gkuqQMwHe7JcmYFwgvcfd_/exec", {
+                            redirect: "follow",
+                            method: "POST",
+                            body: formDataString,
+                            headers: {
+                                    "Content-Type": "text/plain;charset=utf-8",
+                            },
+                    }).then(function(response) {
+                            if (response) {
+                                    return response;
+                            } else {
+                                    throw new Error("Failed to submit the form.");
+                            }
+                    }).then(function(data) {
+                            document.getElementById("message").textContent = "Message Submitted Successfully!";
+                            document.getElementById("message").style.display = "block";
+                            document.getElementById("message").style.backgroundColor = "green";
+                            document.getElementById("message").style.color = "beige";
+                            document.getElementById("submit-button").disabled = false;
+                            document.getElementById("form").reset();
+
+                            setTimeout(function() {
+                                    document.getElementById("message").textContent = "";
+                                    document.getElementById("message").style.display = "none";
+                                    var numberField = document.querySelector(".phoneField");
+                                    numberField.style.display = "none";
+                            }, 3600);
+                    }).catch(function(error) {
+                            console.error(error);
+                            document.getElementById("message").textContent = "An error occurred while submitting the form.";
+                            document.getElementById("message").style.display = "block";
+                    });
+            });
+
+    // Function to handle change event of the subject select
+    document.getElementById("subjectSelect").addEventListener("change", function() {
+            var numberField = document.querySelector(".phoneField");
+            if (this.value === "Collaboration") {
+                    numberField.style.display = "block";
+                    document.querySelector('input[name="Number"]').setAttribute("required", "required");
+            } else {
+                    numberField.style.display = "none";
+                    document.querySelector('input[name="Number"]').removeAttribute("required");
+            }
+    });
