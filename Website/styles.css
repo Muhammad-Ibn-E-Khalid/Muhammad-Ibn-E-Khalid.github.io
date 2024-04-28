@@ -345,6 +345,7 @@ section {
         font-weight:750;
         font-size:28px;
         border-radius:6px;
+        transition: 0.35s;
     }
     .navbar-toggle {
         display:none;
@@ -369,6 +370,7 @@ section {
         padding:10px 10px;
         font-weight:750;
         border-radius:6px;
+        transition: 0.35s;
     }
     .nav-mobile a:hover,.main-nav a:hover {
         opacity:0.8;
