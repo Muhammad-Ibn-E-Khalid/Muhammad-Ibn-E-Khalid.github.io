@@ -464,6 +464,7 @@ footer {
  height:56px;
  width:56px;
  max-width:100%;
+ transition: 0.3s;
 }.dis img:hover {
  box-shadow:0 0 80px #e5eedd;
  border-radius: 10px
