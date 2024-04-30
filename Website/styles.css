@@ -6,6 +6,10 @@ body {
    color:#333;
 }
 
+.commento-root .commento-logged-container .commento-profile-button{
+color: white;
+}
+
 /*For Paragraphs Text*/
 
 textp {
