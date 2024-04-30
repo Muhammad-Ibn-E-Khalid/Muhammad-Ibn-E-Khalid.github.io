@@ -14,6 +14,7 @@ body {
 
 .commento-root textarea{
    height: 3em;
+   width: 100%;
 }
 
 
