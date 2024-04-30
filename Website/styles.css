@@ -7,6 +7,8 @@ body {
 }
 /* CSS to change Commento textarea placeholder position */
 #commento-textarea-root::placeholder {
+   
+    position: relative;
     /* Adjust the positioning as needed */
     top: -35px; /* Example adjustment, you can adjust as needed */
     left: 0px;
