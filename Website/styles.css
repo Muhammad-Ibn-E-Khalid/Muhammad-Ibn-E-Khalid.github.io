@@ -7,6 +7,8 @@ body {
 }
 
 /* Change the color of text to white */
+.commento-root *,
+.commento-markdown-button,
 .commento-name,
 .commento-score,
 .commento-timeago,
@@ -15,7 +17,9 @@ body {
 .commento-sort-policy-button{
     color: white !important;
 }
-
+ .commento-markdown-button{
+  color: black !important;
+ }
 
 /*For Paragraphs Text*/
 
