@@ -6,9 +6,14 @@ body {
    color:#333;
 }
 
-.commento-root .commento-logged-container .commento-profile-button{
-color: white;
+/* Change the color of text to white */
+.commento-name,
+.commento-score,
+.commento-timeago,
+.commento-body {
+    color: white !important;
 }
+
 
 /*For Paragraphs Text*/
 
