@@ -7,7 +7,7 @@ body {
 }
 
 /* Change the color of text to white */
-.commento-root *,
+.commento-body p,
 .commento-markdown-button,
 .commento-name,
 .commento-score,
