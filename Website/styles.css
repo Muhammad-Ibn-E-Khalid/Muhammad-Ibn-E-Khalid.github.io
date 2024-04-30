@@ -35,21 +35,24 @@ textp {
 */
 
 section a,
-.CopyRightBox a {
-   color: #0097e8;
+.CopyRightBox a,
+.donate-button {
+   color: #48bfff ;
    text-decoration: none;
    font-weight: 750;
 }
 
 section a:visited,
-.CopyRightBox a:visited {
+.CopyRightBox a:visited,
+.donate-button a:visited {
    color: none;
 }
 
 section a:hover,
-.CopyRightBox a:hover {
+.CopyRightBox a:hover,
+.donate-button a:hover{
    color: #95daff;
-   box-shadow: 0 0 100px #48bfff;
+   box-shadow: 0 0 100px #0097e8;
 }
 
 /* Main Body */
