@@ -18,16 +18,7 @@ textp {
  - No UnderLine under Link Text
  - No Visited Color
 */
-#Comment
-{ 
-    border: 6px solid #274e4b;
-    border-radius: 6px;
-    padding: 20px;
-    margin-bottom: 10px;
-    margin-left: 15px;
-    margin-right: 15px;
-    background-color: #377a77;
-  }
+
 section a,
 .CopyRightBox a {
    color: #0097e8;
@@ -63,9 +54,6 @@ section a:hover,
 }
 .selected-footer {
    background-color:#4d8583;
-}
-section {
-   padding:10px 20px;
 }
 
 /* Project  Section */
@@ -171,6 +159,12 @@ section {
 
 
 
+.section-margin{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
 
 
 
@@ -178,8 +172,13 @@ section {
 
 
 
-
-
+#Comment
+{ 
+    border: 6px solid #274e4b;
+    border-radius: 6px;
+    padding: 20px;
+    background-color: #377a77;
+  }
 
 
         .section-wrapper {
@@ -187,8 +186,6 @@ section {
             background-color: #377a77;
             border-radius: 5px;
             padding: 10px;
-            margin-top: 30px;
-            margin-bottom: 30px; 
         }
           #Collaboration,
           #PCSpecs 
@@ -197,10 +194,6 @@ section {
             background-color: #377a77;
             border-radius: 5px;
             padding: 10px;
-            margin-left: 15px;
-            margin-right: 15px;
-            margin-top: 30px;
-            margin-bottom: 30px; 
           }
           #Collaboration .header,
           #PCSpecs .header,
@@ -224,7 +217,8 @@ section {
           #Collaboration .header h2,
           #PCSpecs .header h2,
           #About .header h2,
-          #Contact .header h2 {
+          #Contact .header h2,
+          #Projects h2 {
               margin: 0;
           }
           #Collaboration .toggle-button,
