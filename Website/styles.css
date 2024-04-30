@@ -10,7 +10,9 @@ body {
 .commento-name,
 .commento-score,
 .commento-timeago,
-.commento-body {
+.commento-body,
+.commento-profile-button,
+.commento-sort-policy-button{
     color: white !important;
 }
 
