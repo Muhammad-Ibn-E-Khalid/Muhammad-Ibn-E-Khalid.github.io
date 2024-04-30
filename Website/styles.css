@@ -10,10 +10,13 @@ body {
     /* Adjust the positioning as needed */
     position: relative;
     top: -35px; /* Example adjustment, you can adjust as needed */
+    left: 0px;
 }
 
 .commento-root textarea{
-
+   min-height: 50px;
+   height: 3em;
+   width: 100%;
 }
 
 
