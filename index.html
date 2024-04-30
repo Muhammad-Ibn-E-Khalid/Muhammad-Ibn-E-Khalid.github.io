@@ -72,10 +72,19 @@
 
                 <div id="terms"></div>
 
-                <section>
-                    <div id="commento"></div>
+                <section style="background-color:white; border: 6px solid green;" >
+
+<div id="commento"></div>
+<script defer src="https://cdn.commento.io/js/commento.js"></script>
+<script>
+    // Get the current page's URL
+    var currentPageUrl = window.location.pathname;
+
+    // Set the data-page-id attribute of the commento div to the current page's URL
+    document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+</script>
+                    
                 </section>
-                <script defer src="https://cdn.commento.io/js/commento.js"></script>
 
                 <section id="About" class="expandable-section">
 
