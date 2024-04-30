@@ -5,6 +5,13 @@ body {
    background-color:#d4e3c9;
    color:#333;
 }
+/* CSS to change Commento textarea placeholder position */
+#commento-textarea-root::placeholder {
+    /* Adjust the positioning as needed */
+    position: relative;
+    top: -20px; /* Example adjustment, you can adjust as needed */
+    left: 10px; /* Example adjustment, you can adjust as needed */
+}
 
 /* Change the color of text to white */
 .commento-body p,
