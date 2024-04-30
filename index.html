@@ -353,18 +353,32 @@ Notice: I will be less available until 25/05/2024 , due to ongoing exams. Your p
 
                 </section>
 
-                <section id="Comment" class="section-margin" >
+                             <section id="Comment" class="expandable-section section-margin">
+                
+                    <div class="container">
+                        
+                        <div id="commentToggleHeading" class="header">
+                            <h2>Comment</h2>
+                            <button class="toggle-button"></button>
+                        </div>
 
-                    <div id="commento"></div>
-                    <script defer src="https://cdn.commento.io/js/commento.js"></script>
-                    <script>
-                       // Get the current page's URL
-                        var currentPageUrl = window.location.pathname;
+                        <div class="collab-content">
 
-                        // Set the data-page-id attribute of the commento div to the current page's URL
-                        document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
-                    </script>
-                    
+                            <div id="commento"></div>
+                            <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                            
+                            <script>
+                               // Get the current page's URL
+                                var currentPageUrl = window.location.pathname;
+        
+                                // Set the data-page-id attribute of the commento div to the current page's URL
+                                document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+                            </script>
+                            
+                        </div>
+
+                    </div>
+
                 </section>
 
                 <section style="padding: 1px;" ></section>
@@ -442,6 +456,23 @@ Notice: I will be less available until 25/05/2024 , due to ongoing exams. Your p
             collabToggleHeading.addEventListener("click", toggleCollabSection);
             collabToggleButton.addEventListener("click", toggleCollabSection);
     });
+
+        
+    document.addEventListener("DOMContentLoaded", function() {
+            const collabToggleButton = document.querySelector("#Comment .toggle-button");
+            const collabContent = document.querySelector("#Comment .collab-content");
+            const collabToggleHeading = document.querySelector("#commentToggleHeading");
+
+            function toggleCollabSection() {
+                    const section = document.querySelector("#Comment");
+                    section.classList.toggle("expanded");
+                    collabToggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+            }
+
+            collabToggleHeading.addEventListener("click", toggleCollabSection);
+            collabToggleButton.addEventListener("click", toggleCollabSection);
+    });
+
 
     // Function to handle toggling of the PC Specs section
     document.addEventListener("DOMContentLoaded", function() {
