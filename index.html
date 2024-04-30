@@ -72,20 +72,6 @@
 
                 <div id="terms"></div>
 
-                <section style="background-color:white; border: 6px solid green;" >
-
-<div id="commento"></div>
-<script defer src="https://cdn.commento.io/js/commento.js"></script>
-<script>
-    // Get the current page's URL
-    var currentPageUrl = window.location.pathname;
-
-    // Set the data-page-id attribute of the commento div to the current page's URL
-    document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
-</script>
-                    
-                </section>
-
                 <section id="About" class="expandable-section">
 
                     <div class="section-wrapper">
@@ -365,6 +351,20 @@ Notice: I will be less available until 25/05/2024 , due to ongoing exams. Your p
 
                 </section>
 
+                <section id="Comment" >
+
+                    <div id="commento"></div>
+                    <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                    <script>
+                       // Get the current page's URL
+                        var currentPageUrl = window.location.pathname;
+
+                        // Set the data-page-id attribute of the commento div to the current page's URL
+                        document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+                    </script>
+                    
+                </section>
+                
             </div>
 
         <footer>
