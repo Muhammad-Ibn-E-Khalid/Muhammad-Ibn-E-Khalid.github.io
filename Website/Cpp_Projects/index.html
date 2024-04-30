@@ -18,7 +18,9 @@
 
             <div id="terms"></div>
 
-            <section id="Projects">
+            <section style="padding: 1px;" ></section>
+
+            <section id="Projects" class="section-margin">
 
                 <div class="container">
 
@@ -51,10 +53,25 @@
 
             </section>
 
+            <section id="Comment" class="section-margin" >
+
+                <div id="commento"></div>
+                <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                <script>
+                   // Get the current page's URL
+                    var currentPageUrl = window.location.pathname;
+
+                    // Set the data-page-id attribute of the commento div to the current page's URL
+                    document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+                </script>
+                
+            </section>
+            
+            <section style="padding: 1px;" ></section>
+
         </div>
 
         <div id="footer"></div>
-
         
     </body>
 

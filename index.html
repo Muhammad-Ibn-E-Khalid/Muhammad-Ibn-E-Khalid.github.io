@@ -16,6 +16,8 @@
     <header>
 
         <p style="text-align: center; background-color: #f2f2f2; color: #333; padding: 10px; margin-top: 0px; ">
+            <a href="https://alkhidmat.org/appeal/emergency-appeal-palestine-save-lives-in-gaza-today" target="_blank" class="donate-button">Donate to Help Palestine People</a>
+            <br>
             <strong>Notice:</strong> I will be less available until 25/05/2024 , due to ongoing exams. Your patience and understanding are greatly appreciated during this period.
         </p>
         
@@ -321,7 +323,7 @@
                                     
                 
                                     <div class="field">
-                                        <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Enter Your Message" name="Message" rows="6" required></textarea></div>
+                                        <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Enter Your Message" name="Message" rows="4" required></textarea></div>
                                     </div>
 
                                     <textp>
@@ -351,18 +353,34 @@ Notice: I will be less available until 25/05/2024 , due to ongoing exams. Your p
 
                 </section>
 
-                <section id="Comment" class="section-margin" >
+                <section id="Comment" class="expandable-section section-margin">
+                
+                    <div class="container">
+                        
+                        <div id="commentToggleHeading" class="header">
+                            <h2>Comment</h2>
+                            <button class="toggle-button"></button>
+                        </div>
 
-                    <div id="commento"></div>
-                    <script defer src="https://cdn.commento.io/js/commento.js"></script>
-                    <script>
-                       // Get the current page's URL
-                        var currentPageUrl = window.location.pathname;
+                        <div class="collab-content">
 
-                        // Set the data-page-id attribute of the commento div to the current page's URL
-                        document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
-                    </script>
-                    
+                            <br>
+                            
+                            <div id="commento"></div>
+                            <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                            
+                            <script>
+                               // Get the current page's URL
+                                var currentPageUrl = window.location.pathname;
+        
+                                // Set the data-page-id attribute of the commento div to the current page's URL
+                                document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+                            </script>
+                            
+                        </div>
+
+                    </div>
+
                 </section>
 
                 <section style="padding: 1px;" ></section>
@@ -382,10 +400,10 @@ Notice: I will be less available until 25/05/2024 , due to ongoing exams. Your p
     <a class="insta" href="https://instagram.com/mbktech.studios" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Website/Images/instagram.png" alt="Instagram Page Link"></a>
     <a class="lk" href="https://www.linkedin.com/in/muhammad-bin-khalid-89711b25b" target="_blank"> <img src="https://muhammad-ibn-e-khalid.github.io/Website/Images/linkedin.png" alt="Linkedin Profile Link"></a>
   </div>
-
-<br>
   
   <div class="CopyRightBox" >
+        <a href="https://alkhidmat.org/appeal/emergency-appeal-palestine-save-lives-in-gaza-today" target="_blank" class="donate-button">Donate to Help Palestine People</a>
+        <br>
         &copy; 2024 MBK Tech Studios | Developed by <a href="https://github.com/Muhammad-Ibn-E-Khalid">Muhammad Bin Khalid</a> | <a href="https://muhammad-ibn-e-khalid.github.io/Website/UserAgreement/" target="_blank" >Terms & Conditions</a>
   </div>
   
@@ -440,6 +458,23 @@ Notice: I will be less available until 25/05/2024 , due to ongoing exams. Your p
             collabToggleHeading.addEventListener("click", toggleCollabSection);
             collabToggleButton.addEventListener("click", toggleCollabSection);
     });
+
+        
+    document.addEventListener("DOMContentLoaded", function() {
+            const collabToggleButton = document.querySelector("#Comment .toggle-button");
+            const collabContent = document.querySelector("#Comment .collab-content");
+            const collabToggleHeading = document.querySelector("#commentToggleHeading");
+
+            function toggleCollabSection() {
+                    const section = document.querySelector("#Comment");
+                    section.classList.toggle("expanded");
+                    collabToggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+            }
+
+            collabToggleHeading.addEventListener("click", toggleCollabSection);
+            collabToggleButton.addEventListener("click", toggleCollabSection);
+    });
+
 
     // Function to handle toggling of the PC Specs section
     document.addEventListener("DOMContentLoaded", function() {

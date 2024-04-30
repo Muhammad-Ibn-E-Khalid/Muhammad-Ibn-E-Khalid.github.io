@@ -5,6 +5,17 @@ body {
    background-color:#d4e3c9;
    color:#333;
 }
+/* CSS to change Commento textarea placeholder position */
+#commento-textarea-root::placeholder {
+    /* Adjust the positioning as needed */
+    position: relative;
+    top: -35px; /* Example adjustment, you can adjust as needed */
+}
+
+.commento-root textarea{
+   height: 6em;
+}
+
 
 /* Change the color of text to white */
 .commento-body p,
@@ -35,21 +46,24 @@ textp {
 */
 
 section a,
-.CopyRightBox a {
-   color: #0097e8;
+.CopyRightBox a,
+.donate-button {
+   color: #48bfff ;
    text-decoration: none;
    font-weight: 750;
 }
 
 section a:visited,
-.CopyRightBox a:visited {
+.CopyRightBox a:visited,
+.donate-button a:visited {
    color: none;
 }
 
 section a:hover,
-.CopyRightBox a:hover {
+.CopyRightBox a:hover,
+.donate-button a:hover{
    color: #95daff;
-   box-shadow: 0 0 100px #48bfff;
+   box-shadow: 0 0 100px #0097e8;
 }
 
 /* Main Body */
@@ -213,7 +227,8 @@ section a:hover,
           #Collaboration .header,
           #PCSpecs .header,
           #About .header,
-          #Contact .header{
+          #Contact .header,
+          #Comment .header{
               display: flex;
               justify-content: space-between;
               align-items: center;
@@ -222,6 +237,7 @@ section a:hover,
               color: white;
           }
           #Collaboration h3,
+          #Comment h3,
           #PCSpecs h3 {
               color: #d4e3c9;
           }
@@ -230,6 +246,7 @@ section a:hover,
               color: #f5f5f5;
           }
           #Collaboration .header h2,
+          #Comment .header h2,
           #PCSpecs .header h2,
           #About .header h2,
           #Contact .header h2,
@@ -237,6 +254,7 @@ section a:hover,
               margin: 0;
           }
           #Collaboration .toggle-button,
+          #Comment .toggle-button,
           #PCSpecs .toggle-button,
           #About .toggle-button,
           #Contact .toggle-button  {
@@ -251,26 +269,27 @@ section a:hover,
               transition: transform 0.3s ease; 
           }
           #Collaboration.expanded .toggle-button,
+          #Comment.expanded .toggle-button,
           #About.expanded .toggle-button,
           #PCSpecs.expanded .toggle-button,
           #Contact.expanded .toggle-button {
               transform: rotate(180deg);
           }
           #Collaboration .collab-content,
+          #Comment .collab-content,
           #About .about-content,
           #PCSpecs .specs-list,
           #Contact .contact-content  {
               padding: 0 20px;
               display: none;
           }
+          #Comment.expanded .collab-content,
           #Collaboration.expanded .collab-content,
           #PCSpecs.expanded .specs-list,
           #About.expanded .about-content,
           #Contact.expanded .contact-content {
               display: block;
         }
-
-
 
 
 
