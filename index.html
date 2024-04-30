@@ -72,9 +72,10 @@
 
                 <div id="terms"></div>
 
-                <section id="About" class="expandable-section">
+                <section style="padding: 1px;" ></section>
 
-                    <div class="section-wrapper">
+                <section id="About" class="expandable-section section-margin section-wrapper">
+
                        
                         <div id="aboutToggleHeading" class="header">
                             <h2>About Us</h2>
@@ -98,11 +99,10 @@
 
                          </div>
 
-                    </div>
 
                 </section>
     
-                <section id="Projects">
+                <section id="Projects" class="section-margin">
 
                     <div class="container">
 
@@ -152,7 +152,7 @@
 
                 </section>
 
-                <section id="Blogs">
+                <section id="Blogs" class="section-margin">
 
                     <div class="container">
 
@@ -173,7 +173,7 @@
 
                 </section>
    
-                <section id="Collaboration" style="margin-bottom: 50px;margin-top: 50px;" class="expandable-section">
+                <section id="Collaboration" class="expandable-section section-margin">
                 
                     <div class="container">
                         
@@ -217,7 +217,7 @@
 
                 </section>
 
-                <section id="PCSpecs" class="expandable-section">
+                <section id="PCSpecs" class="expandable-section section-margin">
                        
                     <div class="container">
 
@@ -266,7 +266,7 @@
 
                 </section>
                                      
-                <section id="Contact" class="expandable-section">
+                <section id="Contact" class="expandable-section section-margin">
 
                     <div class="section-wrapper">
 
@@ -351,6 +351,22 @@ Notice: I will be less available until 25/05/2024 , due to ongoing exams. Your p
 
                 </section>
 
+                <section id="Comment" class="section-margin" >
+
+                    <div id="commento"></div>
+                    <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                    <script>
+                       // Get the current page's URL
+                        var currentPageUrl = window.location.pathname;
+
+                        // Set the data-page-id attribute of the commento div to the current page's URL
+                        document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+                    </script>
+                    
+                </section>
+
+                <section style="padding: 1px;" ></section>
+                
             </div>
 
         <footer>
@@ -370,7 +386,7 @@ Notice: I will be less available until 25/05/2024 , due to ongoing exams. Your p
 <br>
   
   <div class="CopyRightBox" >
-        &copy; 2024 MBK Tech Studios | Developed by <a href="https://muhammad-ibn-e-khalid.github.io/index.html">Muhammad Bin Khalid</a> | <a href="https://muhammad-ibn-e-khalid.github.io/Website/UserAgreement/" target="_blank" >Terms & Conditions</a>
+        &copy; 2024 MBK Tech Studios | Developed by <a href="https://github.com/Muhammad-Ibn-E-Khalid">Muhammad Bin Khalid</a> | <a href="https://muhammad-ibn-e-khalid.github.io/Website/UserAgreement/" target="_blank" >Terms & Conditions</a>
   </div>
   
 </footer>
