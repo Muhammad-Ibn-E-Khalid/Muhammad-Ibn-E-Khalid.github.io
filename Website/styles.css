@@ -9,8 +9,7 @@ body {
 #commento-textarea-root::placeholder {
     /* Adjust the positioning as needed */
     position: relative;
-    top: -20px; /* Example adjustment, you can adjust as needed */
-    left: 10px; /* Example adjustment, you can adjust as needed */
+    top: -50px; /* Example adjustment, you can adjust as needed */
 }
 
 /* Change the color of text to white */
