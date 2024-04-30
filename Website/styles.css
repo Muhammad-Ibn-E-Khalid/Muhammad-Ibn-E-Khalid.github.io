@@ -21,6 +21,10 @@ body {
   color: black !important;
  }
 
+.commento-root textarea{
+height: 4em;
+}
+
 /*For Paragraphs Text*/
 
 textp {
