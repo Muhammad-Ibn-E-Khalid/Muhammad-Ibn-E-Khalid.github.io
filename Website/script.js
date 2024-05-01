@@ -28,24 +28,23 @@
         searchProjects();
     }
 
-
-
 function selectSection(sectionId) {
-    // Remove 'selected' class from all sections
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        section.classList.remove('selected-main');
-    });
+        // Remove 'selected' class from all sections
+        const sections = document.querySelectorAll('.section-margin');
+        sections.forEach(section => {
+            section.classList.remove('selected-main');
+        });
 
-    // Add 'selected' class to the clicked section
-    const selectedSection = document.getElementById(sectionId);
-    selectedSection.classList.add('selected-main');
+        // Add 'selected' class to the parent section of the clicked button
+        const selectedSection = document.getElementById(sectionId);
+        const parentSection = selectedSection.closest('.section-margin');
+        parentSection.classList.add('selected-main');
 
-    // Remove 'selected' class after a delay (e.g., 1 second)
-    setTimeout(() => {
-        selectedSection.classList.remove('selected-main');
-    }, 1000);
-}
+        // Remove 'selected' class after a delay (e.g., 1 second)
+        setTimeout(() => {
+            parentSection.classList.remove('selected-main');
+        }, 1000);
+    }
 
 function selectSectionfooter(sectionId) {
     // Remove 'selected' class from all sections
