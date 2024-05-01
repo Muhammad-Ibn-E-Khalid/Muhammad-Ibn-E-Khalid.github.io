@@ -89,7 +89,8 @@ section a:hover,
 .section {
    transition:background-color 0.5s ease;
 }
-.selected-main {
+.selected-main
+ {
    background-color:#578482;
 }
 .selected-footer {
@@ -216,7 +217,7 @@ section a:hover,
 { 
     border: 6px solid #274e4b;
     border-radius: 6px;
-    padding: 20px;
+    padding: 10px;
     background-color: #377a77;
   }
 
@@ -235,11 +236,7 @@ section a:hover,
             border-radius: 5px;
             padding: 10px;
           }
-          #Collaboration .header,
-          #PCSpecs .header,
-          #About .header,
-          #Contact .header,
-          #Comment .header{
+         .header{
               display: flex;
               justify-content: space-between;
               align-items: center;
@@ -256,19 +253,10 @@ section a:hover,
           #PCSpecs p {
               color: #f5f5f5;
           }
-          #Collaboration .header h2,
-          #Comment .header h2,
-          #PCSpecs .header h2,
-          #About .header h2,
-          #Contact .header h2,
-          #Projects h2 {
+        .header h2 {
               margin: 0;
           }
-          #Collaboration .toggle-button,
-          #Comment .toggle-button,
-          #PCSpecs .toggle-button,
-          #About .toggle-button,
-          #Contact .toggle-button  {
+          .toggle-button {
               width: 20px;
               height: 20px;
               border-radius: 6px;
@@ -282,22 +270,25 @@ section a:hover,
           #Collaboration.expanded .toggle-button,
           #Comment.expanded .toggle-button,
           #About.expanded .toggle-button,
+          #Projects.expanded .toggle-button,
+          #Blogs.expanded .toggle-button,
           #PCSpecs.expanded .toggle-button,
           #Contact.expanded .toggle-button {
               transform: rotate(180deg);
           }
-          #Collaboration .collab-content,
-          #Comment .collab-content,
-          #About .about-content,
-          #PCSpecs .specs-list,
-          #Contact .contact-content  {
+        .collab-content,
+        .about-content,
+        .specs-list,
+        .contact-content  {
               padding: 0 20px;
               display: none;
           }
           #Comment.expanded .collab-content,
           #Collaboration.expanded .collab-content,
           #PCSpecs.expanded .specs-list,
+          #Projects.expanded .about-content,
           #About.expanded .about-content,
+          #Blogs.expanded .about-content,
           #Contact.expanded .contact-content {
               display: block;
         }
