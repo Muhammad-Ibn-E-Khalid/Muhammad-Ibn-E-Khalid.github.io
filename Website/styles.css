@@ -198,14 +198,11 @@ section a,
 .expanded .toggle-button{
     transform: rotate(180deg);
 }
-.collab-content, .about-content, .specs-list, .contact-content {
+.section-content{
     padding: 0 20px;
     display: none;
 }
-.expanded .collab-content,
-.expanded .specs-list,
-.expanded .about-content,
-.expanded .contact-content {
+.expanded .section-content {
     display: block;
 }
 

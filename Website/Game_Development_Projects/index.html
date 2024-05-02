@@ -1,13 +1,13 @@
 <html lang="en">
     
     <head>
+    
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            Game Development Projects - MBK Tech Studios
-        </title>
-        <link rel="icon" type="image/x-icon" href="../Images/IconALogo.jpg" style="border-radius: 50%;">
+        <title> Game Development Projects - MBK Tech Studios </title>
+        <link rel="icon" type="image/x-icon" href="../Images/IconALogo.jpg">
         <link rel="stylesheet" href="../styles.css">
+    
     </head>
     
     <body>
@@ -53,18 +53,33 @@
 
             </section>
 
-            <section id="Comment" class="section-margin" >
+            <section id="Comment" class="expandable-section section-wrapper section-margin">
+            
+                <div class="container">
+                    
+                    <div id="commentToggleHeading" class="header">
+                        <h2>Comment</h2>
+                        <button class="toggle-button"></button>
+                    </div>
 
-                <div id="commento"></div>
-                <script defer src="https://cdn.commento.io/js/commento.js"></script>
-                <script>
-                   // Get the current page's URL
-                    var currentPageUrl = window.location.pathname;
+                    <div class="section-content">
 
-                    // Set the data-page-id attribute of the commento div to the current page's URL
-                    document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
-                </script>
-                
+                        <br>
+                        
+                        <div id="commento"></div>
+                        <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                        
+                        <script>
+                            
+                            var currentPageUrl = window.location.pathname;
+                            document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+
+                        </script>
+                        
+                    </div>
+
+                </div>
+
             </section>
             
             <section style="padding: 1px;" ></section>
@@ -78,6 +93,24 @@
     <script src="../script.js"></script>
 
     <script>
+
+    //Comment
+    document.addEventListener("DOMContentLoaded", function() {
+            const toggleButton = document.querySelector("#Comment .toggle-button");
+            const aboutContent = document.querySelector("#Comment .section-content");
+            const aboutToggleHeading = document.querySelector("#commentToggleHeading");
+            const aboutSection = document.querySelector("#Comment");
+
+            function toggleAboutSection() {
+                    aboutSection.classList.toggle("expanded");
+                    toggleButton.style.transform = aboutSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(360deg)";
+            }
+
+            aboutSection.classList.add("expanded");
+            toggleButton.style.transform = "rotate(180deg)";
+            aboutToggleHeading.addEventListener("click", toggleAboutSection);
+            toggleButton.addEventListener("click", toggleAboutSection);
+    });
 
 
     fetch('../header.html').then(response => response.text()).then(html => {
