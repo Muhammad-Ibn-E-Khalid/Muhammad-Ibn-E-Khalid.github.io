@@ -51,6 +51,19 @@
                 5. Now you are ready to use the feedback system.
             </p>
         </div> -->
+            <section id="Comment" class="section-margin section-wrapper">
+
+                <div id="commento"></div>
+                <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                <script>
+                   // Get the current page's URL
+                    var currentPageUrl = window.location.pathname;
+
+                    // Set the data-page-id attribute of the commento div to the current page's URL
+                    document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+                </script>
+                
+            </section>
 
                     <div id="footer"></div>
                 </body>
