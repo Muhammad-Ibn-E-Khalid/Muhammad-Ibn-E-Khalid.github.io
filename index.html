@@ -453,128 +453,40 @@
             }
     });
 
+    
+    function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeadingId, isOpened) {
+        const toggleButton = document.querySelector(`${sectionId} ${toggleButtonClass}`);
+        const sectionContent = document.querySelector(`${sectionId} ${contentClass}`);
+        const toggleHeading = document.querySelector(toggleHeadingId);
 
-//About
-    document.addEventListener("DOMContentLoaded", function() {
-            const toggleButton = document.querySelector("#About .toggle-button");
-            const aboutContent = document.querySelector("#About .section-content");
-            const aboutToggleHeading = document.querySelector("#aboutToggleHeading");
-            const aboutSection = document.querySelector("#About");
+        function toggle() {
+            const section = document.querySelector(sectionId);
+            section.classList.toggle("expanded");
+            toggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+            sectionContent.style.display = section.classList.contains("expanded") ? "block" : "none";
+        }
 
-            function toggleAboutSection() {
-                    aboutSection.classList.toggle("expanded");
-                    toggleButton.style.transform = aboutSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(360deg)";
-            }
-
-            aboutSection.classList.add("expanded");
+        if (isOpened) {
+            const section = document.querySelector(sectionId);
+            section.classList.add("expanded");
             toggleButton.style.transform = "rotate(180deg)";
-            aboutToggleHeading.addEventListener("click", toggleAboutSection);
-            toggleButton.addEventListener("click", toggleAboutSection);
-    });
+            sectionContent.style.display = "block"; // Ensure content is visible initially
+        }
 
-//Project
-    document.addEventListener("DOMContentLoaded", function() {
-    const toggleButton = document.querySelector("#Projects .toggle-button");
-    const projectContent = document.querySelector("#Projects .section-content");
-    const projectsToggleHeading = document.querySelector("#projectsToggleHeading");
-    const projectsSection = document.querySelector("#Projects");
-
-    function toggleProjectsSection() {
-        projectsSection.classList.toggle("expanded");
-        toggleButton.style.transform = projectsSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
-        projectContent.style.display = projectsSection.classList.contains("expanded") ? "block" : "none";
+        // Event listeners
+        toggleHeading.addEventListener("click", toggle);
+        toggleButton.addEventListener("click", toggle);
     }
 
-    projectsSection.classList.add("expanded");
-    toggleButton.style.transform = "rotate(180deg)";
-    projectsToggleHeading.addEventListener("click", toggleProjectsSection);
-    toggleButton.addEventListener("click", toggleProjectsSection);
-});
+    // About, Projects, Blogs
+    toggleSection("#About", ".toggle-button", ".section-content", "#aboutToggleHeading", true);
+    toggleSection("#Projects", ".toggle-button", ".section-content", "#projectsToggleHeading", true);
+    toggleSection("#Blogs", ".toggle-button", ".section-content", "#blogsToggleHeading", true);
+    toggleSection("#Collaboration", ".toggle-button", ".section-content", "#collabToggleHeading");
+    toggleSection("#PCSpecs", ".toggle-button", ".section-content", "#toggleHeading");
+    toggleSection("#Contact", ".toggle-button", ".section-content", "#contactToggleHeading",true);
+    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading");
 
-//Blogs
-    document.addEventListener("DOMContentLoaded", function() {
-    const toggleButton = document.querySelector("#Blogs .toggle-button");
-    const blogsContent = document.querySelector("#Blogs .section-content");
-    const blogsToggleHeading = document.querySelector("#blogsToggleHeading");
-    const blogsSection = document.querySelector("#Blogs");
-
-    function toggleBlogsSection() {
-        blogsSection.classList.toggle("expanded");
-        toggleButton.style.transform = blogsSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
-        blogsContent.style.display = blogsSection.classList.contains("expanded") ? "block" : "none";
-    }
-
-    blogsSection.classList.add("expanded");
-    toggleButton.style.transform = "rotate(180deg)";
-    blogsToggleHeading.addEventListener("click", toggleBlogsSection);
-    toggleButton.addEventListener("click", toggleBlogsSection);
-});
-
-//Collab
-    document.addEventListener("DOMContentLoaded", function() {
-            const collabToggleButton = document.querySelector("#Collaboration .toggle-button");
-            const collabContent = document.querySelector("#Collaboration .collab-content");
-            const collabToggleHeading = document.querySelector("#collabToggleHeading");
-
-            function toggleCollabSection() {
-                    const section = document.querySelector("#Collaboration");
-                    section.classList.toggle("expanded");
-                    collabToggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
-            }
-
-            collabToggleHeading.addEventListener("click", toggleCollabSection);
-            collabToggleButton.addEventListener("click", toggleCollabSection);
-    });
-
-//PcSpecs
-    document.addEventListener("DOMContentLoaded", function() {
-            const specsToggleButton = document.querySelector("#PCSpecs .toggle-button");
-            const specsList = document.querySelector("#PCSpecs .section-content");
-            const specsToggleHeading = document.querySelector("#toggleHeading");
-
-            function toggleSpecsSection() {
-                    const section = document.querySelector("#PCSpecs");
-                    section.classList.toggle("expanded");
-                    specsToggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
-            }
-
-            specsToggleHeading.addEventListener("click", toggleSpecsSection);
-            specsToggleButton.addEventListener("click", toggleSpecsSection);
-    });
-
-//Contact
-    document.addEventListener("DOMContentLoaded", function() {
-            const toggleButton = document.querySelector("#Contact .toggle-button");
-            const contactContent = document.querySelector("#Contact .section-content");
-            const contactToggleHeading = document.querySelector("#contactToggleHeading");
-            const contactSection = document.querySelector("#Contact");
-
-            function toggleContactSection() {
-                    contactSection.classList.toggle("expanded");
-                    toggleButton.style.transform = contactSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(360deg)";
-            }
-
-            contactSection.classList.add("expanded");
-            toggleButton.style.transform = "rotate(180deg)";
-            contactToggleHeading.addEventListener("click", toggleContactSection);
-            toggleButton.addEventListener("click", toggleContactSection);
-    });
-
-//Comment
-    document.addEventListener("DOMContentLoaded", function() {
-            const collabToggleButton = document.querySelector("#Comment .toggle-button");
-            const collabContent = document.querySelector("#Comment .section-content");
-            const collabToggleHeading = document.querySelector("#commentToggleHeading");
-
-            function toggleCollabSection() {
-                    const section = document.querySelector("#Comment");
-                    section.classList.toggle("expanded");
-                    collabToggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
-            }
-
-            collabToggleHeading.addEventListener("click", toggleCollabSection);
-            collabToggleButton.addEventListener("click", toggleCollabSection);
-    });
 
     // Function to open side navigation
     function openNav() {
