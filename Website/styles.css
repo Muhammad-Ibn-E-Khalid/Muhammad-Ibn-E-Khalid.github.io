@@ -152,10 +152,10 @@ section a,
 }#clearButton:hover {
     color:#333;
 }.section-margin{
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-left: 50px;
-    margin-right: 50px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+    margin-left: 40px;
+    margin-right: 40px;
 }.section-wrapper {
     border: 6px solid #274e4b;
     background-color: #377a77;
