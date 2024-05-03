@@ -325,8 +325,7 @@ dfndl {
     height:2px;
     background-color:black;
     margin:6px 0;
-}
-@media screen and (max-width:768px) {
+}@media screen and (max-width:768px) {
     .main-nav {
         display:none;
    }
@@ -353,15 +352,19 @@ dfndl {
 footer {
     background-color:#377a77;
     color:#fff;
-    padding:15px 0;
+    padding:5px 0;
     border:6px solid #274e4b;
     text-align:center;
+}.CopyRightBox{
+    padding: 5px;
+}.donate{
+    padding: 5px;
 }.social-links {
     display:flex;
     justify-content:center;
     align-items:center;
     border-radius:6px;
-    padding:0px;
+    padding: 5px;
     flex-wrap:wrap;
 }.social-links-container {
     max-width:100%;
