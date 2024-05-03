@@ -152,10 +152,10 @@ section a,
 }#clearButton:hover {
     color:#333;
 }.section-margin{
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
 }.section-wrapper {
     border: 6px solid #274e4b;
     background-color: #377a77;
@@ -361,7 +361,7 @@ footer {
     justify-content:center;
     align-items:center;
     border-radius:6px;
-    padding:15px;
+    padding:0px;
     flex-wrap:wrap;
 }.social-links-container {
     max-width:100%;
