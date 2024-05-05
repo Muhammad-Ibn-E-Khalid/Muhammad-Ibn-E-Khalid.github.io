@@ -4,7 +4,10 @@ body {
     padding:0;
     background-color:#d4e3c9;
 }
-
+wtext{
+    color: white;
+    font-size: large;
+}
 textp {
     font-size:large;
     color:#d4e3c9;
@@ -173,7 +176,7 @@ section a,
     cursor: pointer;
     color: white;
 }
-#Collaboration h3, #Comment h3, #PCSpecs h3 {
+#Collaboration h3, #About h3, #Comment h3, #PCSpecs h3 {
     color: #d4e3c9;
 }
 #Collaboration p, #PCSpecs p {
