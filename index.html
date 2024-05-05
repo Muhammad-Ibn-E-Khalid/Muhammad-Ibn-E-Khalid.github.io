@@ -458,8 +458,10 @@ function remove() {
             var rateField = document.querySelector(".ratingWeb");
             if (this.value === "Collaboration") {
                     numberField.style.display = "block";
+                    rateField.style.display = "none";
             } else if (this.value === "Feedback") {
                 rateField.style.display = "block";
+                numberField.style.display = "none";
             }  
             else {
                     numberField.style.display = "none";
