@@ -4,6 +4,7 @@
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" />
         <link rel="stylesheet" href="Website/styles.css">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -320,6 +321,44 @@
                                     <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
                                 </div>
 
+                            <div class="field ratingWeb" style="display: none;">
+                                <label class="label">Rating</label>
+                                <div class="control">
+                                    <div class="rating">
+                                        <label>
+                                            <input type="radio" name="stars" value="1" required/>
+                                            <span class="fa fa-star icon"></span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="stars" value="2" />
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="stars" value="3" />
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>   
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="stars" value="4" />
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>
+                                        </label>
+                                        <label>
+                                            <input type="radio" name="stars" value="5" />
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>
+                                            <span class="fa fa-star icon"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                                
                                 <div class="field phoneField" style="display: none;">
                                     <label class="label">Phone Number</label>
                                     <div class="control">
@@ -327,7 +366,6 @@
                                     </div>
                                 </div>
                                 
-            
                                 <div class="field">
                                     <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Enter Your Message" name="Message" rows="4" required></textarea></div>
                                 </div>
@@ -452,19 +490,33 @@
             separateDialCode: true
             // utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
     });
-
+// To remove the pre-applied styling
+function remove() {
+    let i = 0;
+    while (i < 5) {
+        stars[i].className = "star";
+        i++;
+    }
+}
     function changeHoverText(text) {
             document.querySelector('.select select').setAttribute('title', text);
     }
 
+        
     document.getElementById("subjectSelect").addEventListener("change", function() {
             var numberField = document.querySelector(".phoneField");
+            var rateField = document.querySelector(".ratingWeb");
             if (this.value === "Collaboration") {
                     numberField.style.display = "block";
-            } else {
+            } else if (this.value === "Feedback") {
+                rateField.style.display = "block";
+            }  
+            else {
                     numberField.style.display = "none";
+                    rateField.style.display = "none";
             }
     });
+
 
     
     function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeadingId, isOpened) {
