@@ -3,68 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Disagreement - MBK Tech Studios</title>
-    <style>
-        body {
-            background-color: #1f1f1f; 
-            color: #fff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 50px auto;
-            text-align: center;
-        }
-        h1 {
-            color: #ff5733;
-        }
-        p {
-            margin-top: 20px;
-        }
-        button {
-    background-color: rgb(0, 213, 0);
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: 800;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    color: azure;
-    display: block; 
-    margin: auto; 
+    <link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg">
+    <title>Error 404 - Page Not Found</title>
+<style>
+    body {
+    font-family:Arial,sans-serif;
+    background-color:#d4e3c9;
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+.kkk a {
+    text-decoration:none;
+    display:inline-block;
+    padding:8px 16px;
+}
+.kkk a:hover {
+    background-color: #e0edd8;
+    color:white;
+}
+.previous {
+    border:3px solid #274e4b;
+    border-radius:6px;
+    background-color:#d4e3c9;
+    color:black;
+    font-weight:800;
+}
+.container {
+    border:6px solid #274e4b;
+    width:70%;
+    padding:20px;
+    background-color:#377a77;
+    border-radius:8px;
+    box-shadow:0 0 10px rgba(255,255,255,0.1);
+    margin:10% auto;
+}
+h1,p {
+    color:#fff;
+}
+footer {
+    background-color:#000;
+    color:#fff;
+    padding:15px 0;
+    border-top:2px solid #fff;
+    width:100%;
+    text-align:center;
+}
+.social-links {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:6px;
+    padding:15px;
+    flex-wrap:wrap;
+}
+.social-links img {
+    margin:5px;
+    height:56px;
+    width:56px;
+    max-width:100%;
+}
+.social-links img:hover {
+    box-shadow:0 0 80px #e5eedd;
+    border-radius:14px;
+}
+form .label {
+    color:white;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+form input,form textarea,form select {
+    width:100%;
+    margin-bottom:10px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    background-color:#fff;
+}
+form button {
+    background-color:#2ecc71;
+    color:#fff;
+    border:none;
+    font-weight:bold;
+    font-size:medium;
+    border-radius:6px;
+    padding:10px 20px;
+    cursor:pointer;
+}
+form button:hover {
+    opacity:0.8;
+}
+.logo-position img {
+    margin-left:10px;
+    width:110px;
+    height:110px;
+    margin-right:10px;
+    border-radius:100%;
+}
+.CopyRightBox a{
+    color: #95daff;
+   text-decoration: none;
+   font-weight: 750;
 }
 
-    </style>
+.CopyRightBox a:visited {
+   color: none;
+}
+
+.CopyRightBox a:hover {
+   color: #0097e8;
+   box-shadow: 0 0 100px #48bfff;
+}
+</style>
 </head>
+
 <body>
     <div class="container">
-        <h1>Disagreement</h1>
-        <p>You have rejected the Terms of Use and Privacy Policy of MBK Tech Studios.</p>
-        <p>You will be redirected to Google in <span id="countdown">8</span> seconds.</p>
-    </div>
-    <button onclick="goToindex()" >Go Back</button>
-</body>
-<script>
 
-    function goToindex(){
-        window.location.href = 'https://muhammad-ibn-e-khalid.github.io/index.html';
+        <div class="logo-position">
+            <a href="#">
+                <img src="Images/IconALogo.jpg" alt="MBK Tech Studios Logo">
+            </a>
+        </div>
+
+        <div class="kkk">
+                <h1>Disagreement</h1>
+                <h3>You have rejected the Terms of Use and Privacy Policy of MBK Tech Studios.</h3>
+                <h3>You will be redirected to Google in <span style="color: lightcoral;" id="countdown">8</span> seconds.</h3>
+                <a href="../" class="previous"> &laquo; Go Back To Home </a>
+        </div>
         
-    }
+        <div class="social-links" id="social-links">
+            <a class="gmail" href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
+                <img  src="Images/gmail.png" alt="MBK Tech Studios Logo">
+            </a>
+            <a class="yt" href="https://youtube.com/@MBKTechStudios" target="_blank"> <img src="Images/youtube1.png" alt="YouTube Channel Link"></a>
+            <a class="git" href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank"> <img src="Images/github.png" alt="Github Profile Link"></a>
+            <a class="fb" href="https://facebook.com/@MBKTechStudios" target="_blank"> <img src="Images/facebook.png" alt="Facebook Page Link"></a>
+            <a class="dis" href="https://discord.gg/MUAyAeckrM" target="_blank"> <img src="Images/discord.png" alt="Discord Server Link"></a>
+            <a class="insta" href="https://instagram.com/mbktech.studios" target="_blank"> <img src="Images/instagram.png" alt="Instagram Page Link"></a>
+            <a class="lk" href="https://www.linkedin.com/in/muhammad-bin-khalid-89711b25b" target="_blank"> <img src="Images/linkedin.png" alt="Linkedin Profile Link"></a>
+        </div>
 
-    var countdown = 8;
-    var countdownElement = document.getElementById('countdown');
+        <div class="CopyRightBox">
+            <img height="14px" width="14px" src="Images/psflag.png">
+                <a href="https://alkhidmat.org/appeal/emergency-appeal-palestine-save-lives-in-gaza-today" target="_blank" class="donate-button">Donate to Help Palestine People</a>
+            <img height="14px" width="14px" src="Images/psflag.png">
+            <br>
+            © 2024 MBK Tech Studios | Developed by <a href="https://github.com/Muhammad-Ibn-E-Khalid">Muhammad Bin Khalid</a> | <a href="https://muhammad-ibn-e-khalid.github.io/Website/UserAgreement/" target="_blank">Terms &amp; Conditions</a>
+      </div>
+    </div>
 
-    function updateCountdown() {
-        countdown--;
-        countdownElement.textContent = countdown;
-        if (countdown === 0) {
-            window.location.href = 'https://www.google.com';
+    <script>
+
+        function goToindex(){
+            window.location.href = '../index.html';
         }
-    }
+    
+        var countdown = 8;
+        var countdownElement = document.getElementById('countdown');
+        
+        function updateCountdown() {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown === 0) {
+                window.location.href = 'https://www.google.com';
+            }
+        }
+    
+        setInterval(updateCountdown, 1000); // Update countdown every second
+    </script>
+</body>
 
-    setInterval(updateCountdown, 1000); // Update countdown every second
-</script>
 </html>
