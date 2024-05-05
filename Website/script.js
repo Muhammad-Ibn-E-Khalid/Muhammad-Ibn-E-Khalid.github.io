@@ -65,9 +65,8 @@ function selectSectionfooter(sectionId) {
 
 
 
-
-            //Credit: TechLever (youtube.com/@tech-lever)
-            document.getElementById("form").addEventListener("submit", function(e) {
+                //Credit: TechLever (youtube.com/@tech-lever)
+                document.getElementById("form").addEventListener("submit", function(e) {
                     e.preventDefault();
                     document.getElementById("message").textContent = "Submitting..";
                     document.getElementById("message").style.display = "block";
@@ -134,6 +133,8 @@ function selectSectionfooter(sectionId) {
                                     document.getElementById("message").style.display = "none";
                                     var numberField = document.querySelector(".phoneField");
                                     numberField.style.display = "none";
+                                    var ratingField = document.querySelector(".ratingWeb");
+                                    ratingField.style.display = "none";
                             }, 3600);
                     }).catch(function(error) {
                             console.error(error);
@@ -142,14 +143,26 @@ function selectSectionfooter(sectionId) {
                     });
             });
 
-    // Function to handle change event of the subject select
-    document.getElementById("subjectSelect").addEventListener("change", function() {
-            var numberField = document.querySelector(".phoneField");
-            if (this.value === "Collaboration") {
-                    numberField.style.display = "block";
-                    document.querySelector('input[name="Number"]').setAttribute("required", "required");
-            } else {
-                    numberField.style.display = "none";
-                    document.querySelector('input[name="Number"]').removeAttribute("required");
-            }
-    });
+            // Function to handle change event of the subject select
+document.getElementById("subjectSelect").addEventListener("change", function() {
+    var numberField = document.querySelector(".phoneField");
+    var ratingField = document.querySelector(".ratingWeb");
+
+    if (this.value === "Collaboration") {
+        numberField.style.display = "block";
+        document.querySelector('input[name="Number"]').setAttribute("required", "required");
+    } else if (this.value === "Feedback") {
+        ratingField.style.display = "block";
+        document.querySelectorAll('input[name="stars"]').forEach(function(input) {
+            input.setAttribute("required", "required");
+        });
+    } else {
+        numberField.style.display = "none";
+        document.querySelector('input[name="Number"]').removeAttribute("required");
+
+        ratingField.style.display = "none";
+        document.querySelectorAll('input[name="stars"]').forEach(function(input) {
+            input.removeAttribute("required");
+        });
+    }
+});
