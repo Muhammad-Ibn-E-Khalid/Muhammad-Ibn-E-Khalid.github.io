@@ -3,9 +3,11 @@ body {
     margin:0;
     padding:0;
     background-color:#d4e3c9;
-    color:#333;
 }
-
+wtext{
+    color: white;
+    font-size: large;
+}
 textp {
     font-size:large;
     color:#d4e3c9;
@@ -115,20 +117,87 @@ section a,
     opacity:0.8;
 }
 
+/*Star rating*/
+
+.rating {
+    display: inline-block;
+    position: relative;
+    height: 50px;
+    line-height: 50px;
+    font-size: 35px;
+  }
+  
+  .rating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .rating label:last-child {
+    position: static;
+  }
+  
+  .rating label:nth-child(1) {
+    z-index: 5;
+  }
+  
+  .rating label:nth-child(2) {
+    z-index: 4;
+  }
+  
+  .rating label:nth-child(3) {
+    z-index: 3;
+  }
+  
+  .rating label:nth-child(4) {
+    z-index: 2;
+  }
+  
+  .rating label:nth-child(5) {
+    z-index: 1;
+  }
+  
+  .rating label input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+  }
+  
+  .rating label .icon {
+    float: left;
+    color: transparent;
+  }
+  
+  .rating label:last-child .icon {
+    color: #000;
+  }
+  
+  .rating:not(:hover) label input:checked ~ .icon,
+  .rating:hover label:hover input ~ .icon {
+    color: #d4e3c9;
+  }
+  
+  .rating label input:focus:not(:checked) ~ .icon:last-child {
+    color: #000;
+    text-shadow: 0 0 5px #d4e3c9;
+  }
+
 /* Project Page */
 /* Search Bar */
 
 .search-bar {
-    display:flex;
-    align-items:center;
-    width:100%;
-    max-width:400px;
-    margin:0 auto;
-    padding:10px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    background-color:#fff;
-    margin-bottom:20px;
+    display: flex;
+    align-items: center;
+    width: calc(100% - 20px); /* 1000px */
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-bottom: 20px;
 }.search-bar input[type="text"] {
     flex:1;
     padding:10px;
@@ -154,8 +223,8 @@ section a,
 }.section-margin{
     margin-top: 30px;
     margin-bottom: 30px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
 }.section-wrapper {
     border: 6px solid #274e4b;
     background-color: #377a77;
@@ -174,7 +243,7 @@ section a,
     cursor: pointer;
     color: white;
 }
-#Collaboration h3, #Comment h3, #PCSpecs h3 {
+#Collaboration h3, #About h3, #Comment h3, #PCSpecs h3 {
     color: #d4e3c9;
 }
 #Collaboration p, #PCSpecs p {
@@ -325,8 +394,7 @@ dfndl {
     height:2px;
     background-color:black;
     margin:6px 0;
-}
-@media screen and (max-width:768px) {
+}@media screen and (max-width:768px) {
     .main-nav {
         display:none;
    }
@@ -353,15 +421,19 @@ dfndl {
 footer {
     background-color:#377a77;
     color:#fff;
-    padding:15px 0;
+    padding:5px 0;
     border:6px solid #274e4b;
     text-align:center;
+}.CopyRightBox{
+    padding-bottom: 5px;
+}.donate{
+    padding: 5px;
 }.social-links {
     display:flex;
     justify-content:center;
     align-items:center;
     border-radius:6px;
-    padding:15px;
+    padding: 5px;
     flex-wrap:wrap;
 }.social-links-container {
     max-width:100%;
