@@ -133,8 +133,6 @@
                                     document.getElementById("message").style.display = "none";
                                     var numberField = document.querySelector(".phoneField");
                                     numberField.style.display = "none";
-                                    var ratingField = document.querySelector(".ratingWeb");
-                                    ratingField.style.display = "none";
                             }, 3600);
                     }).catch(function(error) {
                             console.error(error);
@@ -147,25 +145,16 @@
            document.getElementById("subjectSelect").addEventListener("change", function() {
                 var numberField = document.querySelector(".phoneField");
                 var ratingField = document.querySelector(".ratingWeb");
-                var supportField = document.querySelector(".supportfield");
 
                 if (this.value === "Collaboration") {
                     numberField.style.display = "block";
                     ratingField.style.display = "none";
-                    supportField.style.display = "none";
                     document.querySelector('input[name="Number"]').setAttribute("required", "required");
              
                 } else if (this.value === "Feedback") {
                     ratingField.style.display = "block";
                     numberField.style.display = "none";
-                    supportField.style.display = "none";
                     document.querySelectorAll('input[name="stars"]').forEach(function(input) {input.setAttribute("required", "required");});
-               
-                } else if (this.value === "Support") {
-                    supportField.style.display = "block";
-                    ratingField.style.display = "none";
-                    numberField.style.display = "none";
-                    document.querySelectorAll('input[name="support"]').forEach(function(input) {input.setAttribute("required", "required");});
                
                 } else {
                     numberField.style.display = "none";
@@ -173,9 +162,6 @@
 
                     ratingField.style.display = "none";
                     document.querySelectorAll('input[name="stars"]').forEach(function(input) { input.removeAttribute("required"); });
-                
-                    supportField.style.display = "none";
-                    document.querySelectorAll('input[name="support"]').forEach(function(input) { input.removeAttribute("required"); });
   
                 }
             });
