@@ -480,24 +480,16 @@ function remove() {
     document.getElementById("subjectSelect").addEventListener("change", function() {
             var numberField = document.querySelector(".phoneField");
             var rateField = document.querySelector(".ratingWeb");
-            var supportField = document.querySelector(".supportfield");
 
             if (this.value === "Collaboration") {
                 numberField.style.display = "block";
                 rateField.style.display = "none";
-                supportField.style.display = "none";
             } else if (this.value === "Feedback") {
                 rateField.style.display = "block";
-                numberField.style.display = "none";
-                supportField.style.display = "none";
-            } else if (this.value === "Support") {
-                supportField.style.display = "block";
-                rateField.style.display = "none";
                 numberField.style.display = "none";
             } else {
                 numberField.style.display = "none";
                 rateField.style.display = "none";
-                supportField.style.display = "none";
             }
     });
 
@@ -531,10 +523,9 @@ function remove() {
     toggleSection("#About", ".toggle-button", ".section-content", "#aboutToggleHeading", true);
     toggleSection("#Projects", ".toggle-button", ".section-content", "#projectsToggleHeading", true);
     toggleSection("#Blogs", ".toggle-button", ".section-content", "#blogsToggleHeading", true);
-    toggleSection("#Collaboration", ".toggle-button", ".section-content", "#collabToggleHeading");
-    //toggleSection("#PCSpecs", ".toggle-button", ".section-content", "#toggleHeading");
-    toggleSection("#Contact", ".toggle-button", ".section-content", "#contactToggleHeading",true);
-    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading");
+    toggleSection("#Collaboration", ".toggle-button", ".section-content", "#collabToggleHeading", true);
+    toggleSection("#Contact", ".toggle-button", ".section-content", "#contactToggleHeading", true);
+    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
 
 
     // Function to open side navigation
