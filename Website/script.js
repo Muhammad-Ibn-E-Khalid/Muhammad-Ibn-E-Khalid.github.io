@@ -1,67 +1,67 @@
- function searchProjects() {
-        var searchValue = document.getElementById("search").value.trim().toLowerCase();
-        var projectItems = document.querySelectorAll(".project-item");
-        var searchResults = document.getElementById("searchResults");
-        var found = false;
+                function searchProjects() {
+                    var searchValue = document.getElementById("search").value.trim().toLowerCase();
+                    var projectItems = document.querySelectorAll(".project-item");
+                    var searchResults = document.getElementById("searchResults");
+                    var found = false;
 
-        projectItems.forEach(function (item) {
-            var projectName = item.querySelector("h3").innerText.toLowerCase();
-            var projectId = item.querySelector(".project-id") ? item.querySelector(".project-id").innerText.toLowerCase() : '';
+                    projectItems.forEach(function (item) {
+                        var projectName = item.querySelector("h3").innerText.toLowerCase();
+                        var projectId = item.querySelector(".project-id") ? item.querySelector(".project-id").innerText.toLowerCase() : '';
 
-            if (projectName.includes(searchValue) || projectId.includes(searchValue)) {
-                item.style.display = "block";
-                found = true;
-            } else {
-                item.style.display = "none";
-            }
-        });
+                        if (projectName.includes(searchValue) || projectId.includes(searchValue)) {
+                            item.style.display = "block";
+                            found = true;
+                        } else {
+                              item.style.display = "none";
+                        }
+                    });
 
-        if (!found) {
-            searchResults.innerText = "No results found.";
-        } else {
-            searchResults.innerText = "";
-        }
-    }
+                    if (!found) {
+                        searchResults.innerText = "No results found.";
+                    } else {
+                        searchResults.innerText = "";
+                    }
+                }
 
-    function clearSearch() {
-        document.getElementById("search").value = "";
-        searchProjects();
-    }
+                function clearSearch() {
+                    document.getElementById("search").value = "";
+                    searchProjects();
+                }
 
-function selectSection(sectionId) {
-        // Remove 'selected' class from all sections
-        const sections = document.querySelectorAll('.section-margin');
-        sections.forEach(section => {
-            section.classList.remove('selected-main');
-        });
+                function selectSection(sectionId) {
+                    // Remove 'selected' class from all sections
+                    const sections = document.querySelectorAll('.section-margin');
+                    sections.forEach(section => {
+                    section.classList.remove('selected-main');
+                    });
 
-        // Add 'selected' class to the parent section of the clicked button
-        const selectedSection = document.getElementById(sectionId);
-        const parentSection = selectedSection.closest('.section-margin');
-        parentSection.classList.add('selected-main');
+                    // Add 'selected' class to the parent section of the clicked button
+                    const selectedSection = document.getElementById(sectionId);
+                    const parentSection = selectedSection.closest('.section-margin');
+                    parentSection.classList.add('selected-main');
 
-        // Remove 'selected' class after a delay (e.g., 1 second)
-        setTimeout(() => {
-            parentSection.classList.remove('selected-main');
-        }, 1000);
-    }
+                    // Remove 'selected' class after a delay (e.g., 1 second)
+                    setTimeout(() => {
+                        parentSection.classList.remove('selected-main');
+                    }, 1000);
+                }
 
-function selectSectionfooter(sectionId) {
-    // Remove 'selected' class from all sections
-    const sections = document.querySelectorAll('.section');
-    sections.forEach(section => {
-        section.classList.remove('selected-footer');
-    });
+                function selectSectionfooter(sectionId) {
+                    // Remove 'selected' class from all sections
+                    const sections = document.querySelectorAll('.section');
+                    sections.forEach(section => {
+                    section.classList.remove('selected-footer');
+                });
 
-    // Add 'selected' class to the clicked section
-    const selectedSection = document.getElementById(sectionId);
-    selectedSection.classList.add('selected-footer');
+                    // Add 'selected' class to the clicked section
+                    const selectedSection = document.getElementById(sectionId);
+                    selectedSection.classList.add('selected-footer');
 
-    // Remove 'selected' class after a delay (e.g., 1 second)
-    setTimeout(() => {
-        selectedSection.classList.remove('selected-footer');
-    }, 1000);
-}
+                    // Remove 'selected' class after a delay (e.g., 1 second)
+                    setTimeout(() => {
+                    selectedSection.classList.remove('selected-footer');
+                    }, 1000);
+                }
 
 
 
@@ -144,25 +144,38 @@ function selectSectionfooter(sectionId) {
             });
 
             // Function to handle change event of the subject select
-document.getElementById("subjectSelect").addEventListener("change", function() {
-    var numberField = document.querySelector(".phoneField");
-    var ratingField = document.querySelector(".ratingWeb");
+           document.getElementById("subjectSelect").addEventListener("change", function() {
+                var numberField = document.querySelector(".phoneField");
+                var ratingField = document.querySelector(".ratingWeb");
+                var supportField = document.querySelector(".supportfield");
 
-    if (this.value === "Collaboration") {
-        numberField.style.display = "block";
-        document.querySelector('input[name="Number"]').setAttribute("required", "required");
-    } else if (this.value === "Feedback") {
-        ratingField.style.display = "block";
-        document.querySelectorAll('input[name="stars"]').forEach(function(input) {
-            input.setAttribute("required", "required");
-        });
-    } else {
-        numberField.style.display = "none";
-        document.querySelector('input[name="Number"]').removeAttribute("required");
+                if (this.value === "Collaboration") {
+                    numberField.style.display = "block";
+                    ratingField.style.display = "none";
+                    supportField.style.display = "none";
+                    document.querySelector('input[name="Number"]').setAttribute("required", "required");
+             
+                } else if (this.value === "Feedback") {
+                    ratingField.style.display = "block";
+                    numberField.style.display = "none";
+                    supportField.style.display = "none";
+                    document.querySelectorAll('input[name="stars"]').forEach(function(input) {input.setAttribute("required", "required");});
+               
+                } else if (this.value === "Support") {
+                    supportField.style.display = "block";
+                    ratingField.style.display = "none";
+                    numberField.style.display = "none";
+                    document.querySelectorAll('input[name="support"]').forEach(function(input) {input.setAttribute("required", "required");});
+               
+                } else {
+                    numberField.style.display = "none";
+                    document.querySelector('input[name="Number"]').removeAttribute("required");
 
-        ratingField.style.display = "none";
-        document.querySelectorAll('input[name="stars"]').forEach(function(input) {
-            input.removeAttribute("required");
-        });
-    }
-});
+                    ratingField.style.display = "none";
+                    document.querySelectorAll('input[name="stars"]').forEach(function(input) { input.removeAttribute("required"); });
+                
+                    supportField.style.display = "none";
+                    document.querySelectorAll('input[name="support"]').forEach(function(input) { input.removeAttribute("required"); });
+  
+                }
+            });

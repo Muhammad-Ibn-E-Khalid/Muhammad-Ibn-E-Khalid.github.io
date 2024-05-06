@@ -271,6 +271,30 @@
                                     <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
                                 </div>
 
+                                                                <!-- Support Field Appear When Support is Selected -->
+
+                                <div class="field supportfield" style="display: block;">
+                                  
+                                    <label class="label">Support Type</label>
+                                  
+                                    <div class="control">
+                                        
+                                        <div class="select">
+                                            <select name="support" id="supportselect" required>
+                                                <option value="" disabled selected>Select support type</option>
+                                                <option value="Blogs">Blogs</option>
+                                                <option value="Technical">Technical</option>
+                                                <option value="CopyRightIssue">CopyRight Issue</option>
+                                                <option value="SourceCodeAssistance">Source Code Assistance</option>
+                                                <option value="BugReporting&FeatureRequests">Bug Reporting & Feature Requests</option>
+                                                <option value="other">other</option>
+                                             </select>                              
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
                             <div class="field ratingWeb" style="display: none;">
                                 <label class="label">Rating</label>
                                 <div class="control">
@@ -456,16 +480,24 @@ function remove() {
     document.getElementById("subjectSelect").addEventListener("change", function() {
             var numberField = document.querySelector(".phoneField");
             var rateField = document.querySelector(".ratingWeb");
+            var supportField = document.querySelector(".supportfield");
+
             if (this.value === "Collaboration") {
-                    numberField.style.display = "block";
-                    rateField.style.display = "none";
+                numberField.style.display = "block";
+                rateField.style.display = "none";
+                supportField.style.display = "none";
             } else if (this.value === "Feedback") {
                 rateField.style.display = "block";
                 numberField.style.display = "none";
-            }  
-            else {
-                    numberField.style.display = "none";
-                    rateField.style.display = "none";
+                supportField.style.display = "none";
+            } else if (this.value === "Support") {
+                supportField.style.display = "block";
+                rateField.style.display = "none";
+                numberField.style.display = "none";
+            } else {
+                numberField.style.display = "none";
+                rateField.style.display = "none";
+                supportField.style.display = "none";
             }
     });
 
