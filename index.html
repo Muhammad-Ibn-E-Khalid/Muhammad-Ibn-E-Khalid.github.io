@@ -5,65 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="Images/IconALogo.jpg">
     <title>Under Maintenance</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .container {
-            width: 70%;
-            padding: 20px;
-            background-color: #333;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(255,255,255,0.1);
-            margin-top: 10px;
-        }
-        h1, p {
-            color: #fff;
-        }
-  
-        footer {
-            background-color: #000;
-            color: #fff;
-            padding: 15px 0;
-            border-top: 2px solid #fff;
-            width: 100%;
-            text-align: center;
-        }
-        .social-links {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 6px;
-            padding: 15px;
-            flex-wrap: wrap;
-        }
-        .social-links img {
-            margin: 5px;
-            height: 56px;
-            width: 56px;
-            max-width: 100%;
-        }
-        .social-links img:hover {
-            box-shadow: 0 0 80px #e5eedd;
-            border-radius: 14px;
-        }
-        .CopyRightBox {
-            margin-top: 20px;
-        }
 
-  form .label {
-      color: white;
-      font-weight: bold;
-      margin-bottom: 5px; 
-  }
-  form input, form textarea, form select {
+  <style>
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #d4e3c9;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.kkk a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+}
+.kkk a:hover {
+    background-color: #e0edd8;
+    color: white;
+}
+.previous {
+    border: 3px solid #274e4b;
+    border-radius: 6px;
+    background-color: #d4e3c9;
+    color: black;
+    font-weight: 800;
+}
+.container {
+    border: 6px solid #274e4b;
+    width: 70%;
+    padding: 20px;
+    background-color: #377a77;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    margin: auto auto;
+}
+h1,p {
+    color: #fff;
+}
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 0;
+    border-top: 2px solid #fff;
+    width: 100%;
+    text-align: center;
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    padding: 15px;
+    flex-wrap: wrap;
+}
+.social-links img {
+    margin: 5px;
+    height: 56px;
+    width: 56px;
+    max-width: 100%;
+}
+.social-links img:hover {
+    box-shadow: 0 0 80px #e5eedd;
+    border-radius: 14px;
+}
+form select {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
@@ -71,96 +80,141 @@
     border-radius: 6px;
     background-color: #fff;
 }
+form {
+    border-radius: 6px;
+    padding-right: 20px;
+    background-color: #377a77;
+}
+form .control {
+    margin-top: 5px;
+}
+form .field {
+    margin-bottom: 5px;
+}
+form .label {
+    color: white;
+    font-weight: bold;
+}
+form input,
+form textarea,
+form select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+form button {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 6px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+form button:hover {
+    opacity: 0.8;
+}
+.logo-position img {
+    margin-left: 10px;
+    width: 110px;
+    height: 110px;
+    margin-right: 10px;
+    border-radius: 100%;
+}
+.CopyRightBox a {
+    color: #95daff;
+    text-decoration: none;
+    font-weight: 750;
+}
+.CopyRightBox a:visited {
+    color: none;
+}
+.CopyRightBox a:hover {
+    color: #0097e8;
+    box-shadow: 0 0 100px #48bfff;
+}
+  </style>
 
-  form button {
-     background-color:#2ecc71;
-     color:#fff;
-     border:none;
-     font-weight: bold;
-     font-size: medium;
-     border-radius:6px;
-     padding:10px 20px;
-     cursor:pointer;
-  }
-  form button:hover {
-     opacity:0.8;
-  }
-  .logo-position img{
-        margin-left: 10px;
-        width:110px;
-   height:110px;
-   margin-right:10px;
-   border-radius:100%;
-    }
-     
-    </style>
 </head>
 <body>
 
+  <div class="container">
 
-    <div class="container">
-        <div class="logo-position">
-            <a href="#"><img src="Images/IconALogo.jpg" alt="MBK Tech Studios Logo"></a>
-        </div>
-        <h1>Under Maintenance</h1>
-        <p>We apologize for the inconvenience, but this website is currently undergoing maintenance.</p>
-        <p>Please check back later.</p>
-  
-        <h2>Contact Me</h2>
+    <div class="logo-position">
+        <a href="#">
+            <img src="https://muhammad-ibn-e-khalid.github.io/Website/Images/IconALogo.jpg" alt="MBK Tech Studios Logo">
+        </a>
+    </div>
+
+    <div class="kkk">
+      <h1>Under Maintenance</h1>
+      <h3>We apologize for the inconvenience, but this website is currently undergoing maintenance.</h3>
+      <h3>Please check back later.</h3>
+      
+
+      <h1>Contact Us</h1>
           
-        <form id="form" class="" method="POST">
-            
-            <input  type="hidden" name="Timestamp" />
-            <input  type="hidden" name="IXPX" />
-            <input  type="hidden" name="Subject" />
+      <form id="form" class="" method="POST">
           
+          <input  type="hidden" name="Timestamp" />
+          <input  type="hidden" name="IXPX" />
+          <input  type="hidden" name="Subject" />
+        
 
-            <div class="field">
-              <label class="label">Name</label><div class="control"><div class="input" ><input  type="text" placeholder="Enter Your Name" name="UserName" required /></div></div>
-            </div>
-      
-            <div class="field">
-              <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
-            </div>
-      
-            <div class="field">
-              <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Your Message....." name="Message" rows="1" required></textarea></div>
-            </div>
-      
-            <div class="field is-grouped">
-              <div class="control"><button class="button is-primary" type="submit" id="submit-button">Submit</button></div>
-            </div>
-            
-            <div
-            id="message"
-            style="
-              display: none;
-              font-weight: bold;
-              color: green;
-              padding: 8px;
-              background-color: beige;
-              border-radius: 4px;
-              border-color: aquamarine;
-            "
-          ></div>
+          <div class="field">
+            <label class="label">Name</label><div class="control"><div class="input" ><input  type="text" placeholder="Enter Your Name" name="UserName" required /></div></div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
+          </div>
+    
+          <div class="field">
+            <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Your Message....." name="Message" rows="1" required></textarea></div>
+          </div>
+    
+          <div class="field is-grouped">
+            <div class="control"><button class="button is-primary" type="submit" id="submit-button">Submit</button></div>
+          </div>
+          
+          <div id="message" style="display: none; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine;"
+        ></div>
 
-          </form>
+        </form>
+    </div>
+    
+
+    <div class="social-links" id="social-links">
+        <a class="gmail" href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
+            <img  src="Images/gmail.png" alt="MBK Tech Studios Logo">
+        </a>
+        <a class="yt" href="https://youtube.com/@MBKTechStudios" target="_blank"> <img src="Images/youtube1.png" alt="YouTube Channel Link"></a>
+        <a class="git" href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank"> <img src="Images/github.png" alt="Github Profile Link"></a>
+        <a class="fb" href="https://facebook.com/@MBKTechStudios" target="_blank"> <img src="Images/facebook.png" alt="Facebook Page Link"></a>
+        <a class="dis" href="https://discord.gg/MUAyAeckrM" target="_blank"> <img src="Images/discord.png" alt="Discord Server Link"></a>
+        <a class="insta" href="https://instagram.com/mbktech.studios" target="_blank"> <img src="Images/instagram.png" alt="Instagram Page Link"></a>
+        <a class="lk" href="https://www.linkedin.com/in/muhammad-bin-khalid-89711b25b" target="_blank"> <img src="Images/linkedin.png" alt="Linkedin Profile Link"></a>
+    </div>
+
+    <div class="CopyRightBox" >
+
+        <div class="donate" >
+            <img height="13px" width="13px" src="Website/Images/psflag.png">
+                <a href="https://alkhidmat.org/appeal/emergency-appeal-palestine-save-lives-in-gaza-today" target="_blank" class="donate-button">Donate to Help Palestine People</a>
+            <img height="13px" width="13px" src="Website/Images/psflag.png">
         </div>
 
-        <div class="social-links" id="social-links">
-            <a href="mailto:mbktech.studio@gmail.com" target="_blank" title="mbktech.studio@gmail.com">
-                <img src="Images/gmail.png" alt="MBK Tech Studios Logo">
-            </a>
-            <a href="https://youtube.com/@MBKTechStudios" target="_blank"> <img src="Images/youtube.png" alt="YouTube Channel Liml"></a>
-            <a href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank"> <img src="Images/github.png" alt="MBK Tech Studios Logo"></a>
-            <a href="https://facebook.com/@MBKTechStudios" target="_blank"> <img src="Images/facebook.png" alt="MBK Tech Studios Logo"></a>
-            <a href="https://discord.gg/MUAyAeckrM" target="_blank"> <img src="Images/discord.png" alt="MBK Tech Studios Logo"></a>
-            <a href="https://instagram.com/mbktech.studios" target="_blank"> <img src="Images/instagram.png" alt="MBK Tech Studios Logo"></a>
-            <a href="https://www.linkedin.com/in/muhammad-bin-khalid-89711b25b" target="_blank"> <img src="Images/linkedin.png" alt="MBK Tech Studios Logo"></a>
-        </div>
-        <div class="CopyRightBox">
-            &copy; 2024 MBK Tech Studios | Developed by <a href="https://muhammad-ibn-e-khalid.github.io/index.html">MBK Tech Studios</a>
-        </div>
+       &copy; 2024 MBK Tech Studios | Developed by <a href="https://github.com/Muhammad-Ibn-E-Khalid">Muhammad Bin Khalid</a> | <a href="https://muhammad-ibn-e-khalid.github.io/Website/UserAgreement/" target="_blank" >Terms & Conditions</a> | <a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank" >Website Source Code</a>
+
+    </div>
+    
+</div>
+
+
 </body>
 <script>
 
