@@ -13,20 +13,22 @@ textp {
     color:#d4e3c9;
     font-weight:550;
 }
-
 #commento-textarea-root::placeholder {
     position: relative;
     top: -35px;
     left: 0px;
-}#commento-textarea-root{
+}
+#commento-textarea-root{
     min-height: 50px;
     width: 100%;
     height: 10px;
-}.commento-root textarea{
+}
+.commento-root textarea{
     min-height: 50px;
     height: 3em;
     width: 100%;
-}.commento-body p,
+}
+.commento-body p,
 .commento-markdown-button, 
 .commento-name, .commento-score, 
 .commento-timeago, .commento-body, 
@@ -36,19 +38,19 @@ textp {
 }.commento-logo-text {
     color: black !important;
 }
-
-
 section a,
 .CopyRightBox a,
 .donate-button {
     color: #48bfff ;
     text-decoration: none;
     font-weight: 750;
-}section a:visited,
+}
+section a:visited,
 .CopyRightBox a:visited,
 .donate-button a:visited {
     color: none;
-}section a:hover,
+}
+section a:hover,
 .CopyRightBox a:hover,
 .donate-button a:hover{
     color: #95daff;
@@ -66,9 +68,11 @@ section a,
 
 .section {
     transition:background-color 0.5s ease;
-}.selected-main {
+}
+.selected-main {
     background-color:#578482;
-}.selected-footer {
+}
+.selected-footer {
     background-color:#4d8583;
 }
 
@@ -80,14 +84,17 @@ section a,
     grid-template-columns:repeat(auto-fill,minmax(250px,1fr));
     grid-gap:20px;
     justify-content: space-between;
-}.project-item img {
+}
+.project-item img {
     width:100%;
     height:70%;
     border-radius:6px;
     display:block;
-}.project-item h3 {
+}
+.project-item h3 {
     margin-top:10px;
-}.overlay {
+}
+.overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -97,23 +104,28 @@ section a,
     align-items: center;
     color: whitesmoke;
     background-color: rgba(0, 0, 0, 0.6);
-}.project-item {
+}
+.project-item {
     border:5px solid #274e4b;
     border-radius:6px;
     padding:10px;
     position: relative;
     flex: 0 0 48%;
-    background-color:#f2f7ed;
+    background-color:#d4e3c9;
     text-align:center;
-}.project-item h3 {
+}
+.project-item h3 {
     margin-top:10px;
     text-align:center;
-}.project-item h3:hover {
+}
+.project-item h3:hover {
     opacity:0.8;
-}.project-item a {
+}
+.project-item a {
     color:#333;
     text-decoration:none;
-}.project-item a:hover {
+}
+.project-item a:hover {
     opacity:0.8;
 }
 
@@ -126,7 +138,6 @@ section a,
     line-height: 50px;
     font-size: 35px;
   }
-  
   .rating label {
     position: absolute;
     top: 0;
@@ -134,52 +145,41 @@ section a,
     height: 100%;
     cursor: pointer;
   }
-  
   .rating label:last-child {
     position: static;
   }
-  
   .rating label:nth-child(1) {
     z-index: 5;
   }
-  
   .rating label:nth-child(2) {
     z-index: 4;
   }
-  
   .rating label:nth-child(3) {
     z-index: 3;
   }
-  
   .rating label:nth-child(4) {
     z-index: 2;
   }
-  
   .rating label:nth-child(5) {
     z-index: 1;
   }
-  
   .rating label input {
     position: absolute;
     top: 0;
     left: 0;
     opacity: 0;
   }
-  
   .rating label .icon {
     float: left;
     color: transparent;
   }
-  
   .rating label:last-child .icon {
     color: #000;
   }
-  
   .rating:not(:hover) label input:checked ~ .icon,
   .rating:hover label:hover input ~ .icon {
     color: #d4e3c9;
   }
-  
   .rating label input:focus:not(:checked) ~ .icon:last-child {
     color: #000;
     text-shadow: 0 0 5px #d4e3c9;
@@ -198,12 +198,14 @@ section a,
     border: 1px solid #ccc;
     background-color: #fff;
     margin-bottom: 20px;
-}.search-bar input[type="text"] {
+}
+.search-bar input[type="text"] {
     flex:1;
     padding:10px;
     border:none;
     outline:none;
-}.search-bar-Sbutton {
+}
+.search-bar-Sbutton {
     padding:10px;
     border:none;
     border-radius:6px;
@@ -211,31 +213,38 @@ section a,
     color:#fff;
     cursor:pointer;
     margin-left:10px;
-}.search-bar-Sbutton:hover {
+}
+.search-bar-Sbutton:hover {
     opacity:0.8;
-}#clearButton {
+}
+#clearButton {
     cursor:pointer;
     font-size:20px;
     color:#ccc;
     margin-right:5px;
-}#clearButton:hover {
+}
+#clearButton:hover {
     color:#333;
-}.section-margin{
+}
+.section-margin{
     margin-top: 30px;
     margin-bottom: 30px;
     margin-left: 15px;
     margin-right: 15px;
-}.section-wrapper {
+}
+.section-wrapper {
     border: 6px solid #274e4b;
     background-color: #377a77;
     border-radius: 5px;
     padding: 10px;
-}#Collaboration, #PCSpecs {
+}
+#Collaboration, #PCSpecs {
     border: 6px solid #274e4b;
     background-color: #377a77;
     border-radius: 5px;
     padding: 10px;
-}.header{
+}
+.header{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -243,6 +252,9 @@ section a,
     cursor: pointer;
     color: white;
 }
+
+/* Expandable Section */
+
 #Collaboration h3, #About h3, #Comment h3, #PCSpecs h3 {
     color: #d4e3c9;
 }
@@ -275,6 +287,8 @@ section a,
     display: block;
 }
 
+/* Form */
+
 form select {
     width: 100%;
     margin-bottom: 10px;
@@ -282,26 +296,32 @@ form select {
     border: 1px solid #ccc;
     border-radius: 6px;
     background-color: #fff;
-}form{
+}
+form{
     border-radius: 6px;
     padding: 20px;
     background-color: #377a77;
-}form .control {
+}
+form .control {
     margin-top: 10px;
-}form .field {
+}
+form .field {
     margin-bottom: 15px;
-}form .label {
+}
+form .label {
     color: white;
     font-weight: bold;
     margin-bottom: 5px;
-}form input, form textarea, form select {
+}
+form input, form textarea, form select {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
     background-color: #fff;
-}form button {
+}
+form button {
     background-color:#2ecc71;
     color:#fff;
     border:none;
@@ -310,7 +330,8 @@ form select {
     border-radius:6px;
     padding:10px 20px;
     cursor:pointer;
-}form button:hover {
+}
+form button:hover {
     opacity:0.8;
 }
 
@@ -370,7 +391,8 @@ dfndl {
     background-color:#468b88;
     overflow-x:hidden;
     padding-top:80px;
-}.nav-mobile a {
+}
+.nav-mobile a {
     display:block;
     text-decoration:none;
     color:#fff;
@@ -378,42 +400,50 @@ dfndl {
     font-weight:750;
     border-radius:6px;
     transition: 0.35s;
-}.nav-mobile a:hover,.main-nav a:hover {
+}
+.nav-mobile a:hover,.main-nav a:hover {
     opacity:0.8;
     color:#377a77;
     background-color:#fff;
     box-shadow:0 0 80px #e5eedd;
-}.closebutton {
+}
+.closebutton {
     position:absolute;
     top:0;
     right:5px;
     font-size:56px;
     padding:auto;
-}.bar1,.bar2,.bar3,.bar4,.bar5 {
+}
+.bar1,.bar2,.bar3,.bar4,.bar5 {
     width:25px;
     height:2px;
     background-color:black;
     margin:6px 0;
-}@media screen and (max-width:768px) {
+}
+@media screen and (max-width:768px) {
     .main-nav {
         display:none;
    }
     .navbar-toggle {
         display:block;
    }
-}.logo-position img {
+}
+.logo-position img {
     margin-left:10px;
     width:110px;
     height:110px;
     margin-right:10px;
     border-radius:100%;
-}.main {
+}
+.main {
     font-size:20px;
     font-weight:800;
-}.sub {
+}
+.sub {
     font-size:14px;
     font-weight:800;
-}.logo-text {
+}
+.logo-text {
     display:flex;
     align-items:center;
 }
@@ -424,46 +454,58 @@ footer {
     padding:5px 0;
     border:6px solid #274e4b;
     text-align:center;
-}.CopyRightBox{
+}
+.CopyRightBox{
     padding-bottom: 5px;
-}.donate{
+}
+.donate{
     padding: 5px;
-}.social-links {
+}
+.social-links {
     display:flex;
     justify-content:center;
     align-items:center;
     border-radius:6px;
     padding: 5px;
     flex-wrap:wrap;
-}.social-links-container {
+}
+.social-links-container {
     max-width:100%;
     margin:0 auto;
     overflow:hidden;
-}.social-links img {
+}
+.social-links img {
     margin:5px;
     height:56px;
     width:56px;
     max-width:100%;
     transition: 0.3s;
-}.dis img:hover {
+}
+.dis img:hover {
     box-shadow:0 0 80px #e5eedd;
     border-radius: 10px 
-}.gmail img:hover {
+}
+.gmail img:hover {
     box-shadow:0 0 80px #e5eedd;
     border-radius: 100px / 40px;
-}.yt img:hover {
+}
+.yt img:hover {
     box-shadow:0 0 80px #e5eedd;
     border-radius: 100px / 60px;
-}.git img:hover {
+}
+.git img:hover {
     box-shadow:0 0 80px #e5eedd;
     border-radius:14px;
-}.fb img:hover {
+}
+.fb img:hover {
     box-shadow:0 0 80px #e5eedd;
     border-radius:6px;
-}.insta img:hover {
+}
+.insta img:hover {
     box-shadow:0 0 80px #e5eedd;
     border-radius:13px;
-}.lk img:hover {
+}
+.lk img:hover {
     box-shadow:0 0 80px #e5eedd;
     border-radius:5px;
 }
