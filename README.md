@@ -20,4 +20,3 @@ https://github.com/Muhammad-Ibn-E-Khalid
 
 
 <a href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank">Profile</a>
-[https://mbktech.xyz/](https://mbktech.xyz/){:target="_blank" rel="noopener noreferrer"}
