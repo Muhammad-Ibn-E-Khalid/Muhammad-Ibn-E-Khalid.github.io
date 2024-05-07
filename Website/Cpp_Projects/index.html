@@ -3,10 +3,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>
-            C++ Projects - MBK Tech Studios
-        </title>
-        <link rel="icon" type="image/x-icon" href="../Images/IconALogo.jpg" style="border-radius: 50%;">
+        <title> C++ Projects - MBK Tech Studios </title>
+        <link rel="icon" type="image/x-icon" href="../Images/IconALogo.jpg">
         <link rel="stylesheet" href="../styles.css">
     </head>
     
@@ -20,8 +18,8 @@
 
             <section style="padding: 1px;" ></section>
 
-            <section id="Projects" class="section-margin">
-
+            <section id="Search" class="section-margin">
+                    
                 <div class="container">
 
                     <div class="search-bar">
@@ -32,16 +30,34 @@
                   
                     </div>
 
-                    <h2> C++ Projects - MBK Tech Studios </h2>
+                    <h2> C++ Projects </h2>
 
                     <div id="searchResults"></div>
+                
+            </div>
+            
+            </section>
+
+            <section id="Projects" class="expandable-section section-margin section-wrapper">
+
+            <div id="projectsToggleHeading" class="header">
+
+                <h2>Projects Category</h2>
+
+                <button class="toggle-button"></button>
+
+            </div>
+        
+            <div class="section-content">
+                
+                <div class="container">
 
                     <div class="project-grid">
 
                         <div class="project-item" id="A456">
 
                             <a href="../Project/Quiz_Game_Cpp/">
-                                <img src="https://miro.medium.com/v2/resize:fit:1358/1*3gh-krzOrAoNyX8mJGyc2Q.jpeg" alt="Project 1">
+                                <img src="../Images/pr-item4.png" alt="Project 1">
                                 <h3> Cpp Quiz Game </h3>
                             </a>
 
@@ -50,35 +66,37 @@
                     </div>
 
                 </div>
-
+                
+            </div>
+            
             </section>
 
             <section id="Comment" class="expandable-section section-wrapper section-margin">
-            
-                <div class="container">
-                    
-                    <div id="commentToggleHeading" class="header">
-                        <h2>Comment</h2>
-                        <button class="toggle-button"></button>
-                    </div>
-
-                    <div class="section-content">
-
-                        <br>
-                        
-                        <div id="commento"></div>
-                        <script defer src="https://cdn.commento.io/js/commento.js"></script>
-                        
-                        <script>
-                            
-                            var currentPageUrl = window.location.pathname;
-                            document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
-
-                        </script>
-                        
-                    </div>
-
+        
+            <div class="container">
+                
+                <div id="commentToggleHeading" class="header">
+                    <h2>Comment</h2>
+                    <button class="toggle-button"></button>
                 </div>
+
+                <div class="section-content">
+
+                    <br>
+                    
+                    <div id="commento"></div>
+                    <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                    
+                    <script>
+                        
+                        var currentPageUrl = window.location.pathname;
+                        document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+
+                    </script>
+                    
+                </div>
+
+            </div>
 
             </section>
             
@@ -94,23 +112,8 @@
 
     <script>
 
-    //Comment
-    document.addEventListener("DOMContentLoaded", function() {
-            const toggleButton = document.querySelector("#Comment .toggle-button");
-            const aboutContent = document.querySelector("#Comment .section-content");
-            const aboutToggleHeading = document.querySelector("#commentToggleHeading");
-            const aboutSection = document.querySelector("#Comment");
-
-            function toggleAboutSection() {
-                    aboutSection.classList.toggle("expanded");
-                    toggleButton.style.transform = aboutSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(360deg)";
-            }
-
-            aboutSection.classList.add("expanded");
-            toggleButton.style.transform = "rotate(180deg)";
-            aboutToggleHeading.addEventListener("click", toggleAboutSection);
-            toggleButton.addEventListener("click", toggleAboutSection);
-    });
+    toggleSection("#Projects", ".toggle-button", ".section-content", "#projectsToggleHeading", true);
+    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading");
 
     fetch('../header.html').then(response => response.text()).then(html => {
         document.getElementById('header').innerHTML = html;
@@ -129,82 +132,12 @@
     function closeNav() {
         document.getElementById("sidenav").style.width = "0";
     }
-    function loadTerms() {
-        fetch('../terms.html').then(response => response.text()).then(html => {
-            document.getElementById('terms').innerHTML = html;
-            document.body.classList.add('no-scroll');
-            document.getElementById('agreeButton').addEventListener('click',
-            function() {
-                setCookie('agreed', 'true', 365);
-                hideOverlay();
-            });
 
-            document.getElementById('disagreeButton').addEventListener('click',
-            function() {
-                window.location.href = '../disagree.html';
-            });
-            // Function to open the terms box
-            function openTermsBox() {
-                var termsBox = document.getElementById("termsBox");
-                termsBox.style.display = "block";
-            }
+    document.addEventListener("DOMContentLoaded", function() {
+        checkCookie();
+        loadTerms();
+    });
 
-            // Function to close the terms box
-            document.addEventListener('click',
-            function(event) {
-                if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
-                    var termsBox = document.getElementById("termsBox");
-                    termsBox.style.display = "none";
-                }
-            });
+    </script>
 
-            // Function to toggle the modal
-            document.addEventListener('click',
-            function(event) {
-                if (event.target.id === 'openModalBtn') {
-                    openTermsBox();
-                }
-            });
-            checkCookie();
-        });
-    }
-
-    function checkCookie() {
-        if (getCookie('agreed') === 'true') {
-            hideOverlay();
-        }
-    }
-
-    loadTerms();
-
-    function hideOverlay() {
-        document.getElementById('overlay').style.display = 'none';
-        document.body.classList.remove('no-scroll');
-    }
-
-    function setCookie(name, value, days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-            expires = "; expires=" + date.toUTCString();
-        }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
-    }
-
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i];
-            while (cookie.charAt(0) === ' ') {
-                cookie = cookie.substring(1, cookie.length);
-            }
-            if (cookie.indexOf(nameEQ) === 0) {
-                return cookie.substring(nameEQ.length, cookie.length);
-            }
-        }
-        return null;
-    }
-        </script>
 </html>
