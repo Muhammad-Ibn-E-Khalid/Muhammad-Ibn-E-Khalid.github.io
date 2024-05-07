@@ -165,3 +165,110 @@
   
                 }
             });
+
+            function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeadingId, isOpened) {
+                const toggleButton = document.querySelector(`${sectionId} ${toggleButtonClass}`);
+                const sectionContent = document.querySelector(`${sectionId} ${contentClass}`);
+                const toggleHeading = document.querySelector(toggleHeadingId);
+        
+                function toggle() {
+                    const section = document.querySelector(sectionId);
+                    section.classList.toggle("expanded");
+                    toggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+                    sectionContent.style.display = section.classList.contains("expanded") ? "block" : "none";
+                }
+        
+                if (isOpened) {
+                    const section = document.querySelector(sectionId);
+                    section.classList.add("expanded");
+                    toggleButton.style.transform = "rotate(180deg)";
+                    sectionContent.style.display = "block"; // Ensure content is visible initially
+                }
+        
+                // Event listeners
+                toggleHeading.addEventListener("click", toggle);
+                toggleButton.addEventListener("click", toggle);
+            }
+
+
+
+// Function to load terms from external file
+function loadTerms() {
+    fetch('https://mbktech.xyz/Website/terms.html').then(response => response.text()).then(html => {
+        document.getElementById('terms').innerHTML = html;
+        document.body.classList.add('no-scroll');
+        document.getElementById('agreeButton').addEventListener('click', function() {
+            setCookie('agreed', 'true', 365);
+            hideOverlay();
+        });
+
+        document.getElementById('disagreeButton').addEventListener('click', function() {
+            window.location.href = 'https://mbktech.xyz/Website/disagree.html';
+        });
+
+        // Function to open the terms box
+        function openTermsBox() {
+            var termsBox = document.getElementById("termsBox");
+            termsBox.style.display = "block";
+        }
+
+        // Function to close the terms box
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
+                var termsBox = document.getElementById("termsBox");
+                termsBox.style.display = "none";
+            }
+        });
+
+        // Function to toggle the modal
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'openModalBtn') {
+                openTermsBox();
+            }
+        });
+        checkCookie();
+    });
+}
+
+// Function to check if the user has agreed to terms
+function checkCookie() {
+    if (getCookie('agreed') === 'true') {
+        hideOverlay();
+    }
+}
+
+// Function to hide the overlay
+function hideOverlay() {
+    document.getElementById('overlay').style.display = 'none';
+    document.body.classList.remove('no-scroll');
+}
+
+// Function to set a cookie
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Function to get a cookie value
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+    return null;
+}
+
+// Load terms on page load
+loadTerms();

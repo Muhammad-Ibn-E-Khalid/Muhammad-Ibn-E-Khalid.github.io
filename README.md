@@ -2,7 +2,7 @@
 
 Main Website
 
-https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io or 
+https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io
 
 https://muhammad-ibn-e-khalid.github.io/ or https://mbktech.xyz/
 
@@ -17,3 +17,6 @@ https://muhammad-ibn-e-khalid.github.io/mbktech.studios/ or https://mbktech.xyz/
 User Profile
 
 https://github.com/Muhammad-Ibn-E-Khalid
+
+
+<a href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank">Profile</a>

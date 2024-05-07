@@ -1,28 +1,47 @@
-<!DOCTYPE html>
 <html lang="en">
-
+    
     <head>
-        
-        <link rel="icon" type="image/x-icon" href="../Images/IconALogo.jpg">
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quiz Game Cpp - MBK Tech Studios</title>
-        <link rel="stylesheet" href="../../styles.css">
         <link rel="icon" type="image/x-icon" href="../../Images/IconALogo.jpg">
-
+        <link rel="stylesheet" href="../../styles.css">
     </head>
     
     <body>
 
-        <div id="header"></div>
+   <div id="header"></div>
 
         <div class="bordered">
-            
-            <section style="padding: 1px;" ></section>
 
             <div id="terms"></div>
             
-            <h2> Quiz Game Cpp Documentation </h2>
+            <section style="padding: 1px;" ></section>
+
+            <section id="Documentation" class="expandable-section section-margin section-wrapper">
+
+                <div id="documentationToggleHeading" class="header">
+
+                    <h2>Project Documentation</h2>
+
+                    <button class="toggle-button"></button>
+
+                </div>
+            
+                <div class="section-content">
+                    
+                    <div class="container">
+
+            
+                        <h1 style="color: aqua; text-align: center;" > Quiz Game Cpp Documentation </h1>
+                        <h3 style="color:coral; text-align: center;"> Project Will Upload Soon</h3>
+
+    
+                    </div>
+                    
+                </div>
+                
+            </section>
 
             <section id="Comment" class="expandable-section section-wrapper section-margin">
             
@@ -52,133 +71,46 @@
                 </div>
 
             </section>
-
+            
             <section style="padding: 1px;" ></section>
-        
+
         </div>
-                    
+
         <div id="footer"></div>
-    
+
     </body>
-                
+
     <script src="../../script.js"></script>
 
     <script>
 
-        //Comment
-        document.addEventListener("DOMContentLoaded", function() {
-                const toggleButton = document.querySelector("#Comment .toggle-button");
-                const aboutContent = document.querySelector("#Comment .section-content");
-                const aboutToggleHeading = document.querySelector("#commentToggleHeading");
-                const aboutSection = document.querySelector("#Comment");
-    
-                function toggleAboutSection() {
-                        aboutSection.classList.toggle("expanded");
-                        toggleButton.style.transform = aboutSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(360deg)";
-                }
-    
-                aboutSection.classList.add("expanded");
-                toggleButton.style.transform = "rotate(180deg)";
-                aboutToggleHeading.addEventListener("click", toggleAboutSection);
-                toggleButton.addEventListener("click", toggleAboutSection);
-        });
-    
-    
-                        fetch('../../header.html').then(response => response.text()).then(html => {
-                            document.getElementById('header').innerHTML = html;
-                        });
-                    
-                        fetch('../../footer.html').then(response => response.text()).then(html => {
-                            document.getElementById('footer').innerHTML = html;
-                        });
-                    
-                        // Function to open side navigation
-                        function openNav() {
-                            document.getElementById("sidenav").style.width = "250px";
-                        }
-                    
-                        // Function to close side navigation
-                        function closeNav() {
-                            document.getElementById("sidenav").style.width = "0";
-                        }
-                    
-                        function loadTerms() {
-                            fetch('../../terms.html').then(response => response.text()).then(html => {
-                                document.getElementById('terms').innerHTML = html;
-                                document.body.classList.add('no-scroll');
-                                document.getElementById('agreeButton').addEventListener('click',
-                                function() {
-                                    setCookie('agreed', 'true', 365);
-                                    hideOverlay();
-                                });
-                    
-                                document.getElementById('disagreeButton').addEventListener('click',
-                                function() {
-                                    window.location.href = '../../disagree.html';
-                                });
-                                // Function to open the terms box
-                                function openTermsBox() {
-                                    var termsBox = document.getElementById("termsBox");
-                                    termsBox.style.display = "block";
-                                }
-                    
-                                // Function to close the terms box
-                                document.addEventListener('click',
-                                function(event) {
-                                    if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
-                                        var termsBox = document.getElementById("termsBox");
-                                        termsBox.style.display = "none";
-                                    }
-                                });
-                    
-                                // Function to toggle the modal
-                                document.addEventListener('click',
-                                function(event) {
-                                    if (event.target.id === 'openModalBtn') {
-                                        openTermsBox();
-                                    }
-                                });
-                                checkCookie();
-                            });
-                        }
-                    
-                        function checkCookie() {
-                            if (getCookie('agreed') === 'true') {
-                                hideOverlay();
-                            }
-                        }
-                    
-                        loadTerms();
-                    
-                        function hideOverlay() {
-                            document.getElementById('overlay').style.display = 'none';
-                            document.body.classList.remove('no-scroll');
-                        }
-                    
-                        function setCookie(name, value, days) {
-                            var expires = "";
-                            if (days) {
-                                var date = new Date();
-                                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                                expires = "; expires=" + date.toUTCString();
-                            }
-                            document.cookie = name + "=" + (value || "") + expires + "; path=/";
-                        }
-                    
-                        function getCookie(name) {
-                            var nameEQ = name + "=";
-                            var cookies = document.cookie.split(';');
-                            for (var i = 0; i < cookies.length; i++) {
-                                var cookie = cookies[i];
-                                while (cookie.charAt(0) === ' ') {
-                                    cookie = cookie.substring(1, cookie.length);
-                                }
-                                if (cookie.indexOf(nameEQ) === 0) {
-                                    return cookie.substring(nameEQ.length, cookie.length);
-                                }
-                            }
-                            return null;
-                        }
+    toggleSection("#Documentation", ".toggle-button", ".section-content", "#documentationToggleHeading", true);
+    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
+
+  
+    fetch('../../header.html').then(response => response.text()).then(html => {
+        document.getElementById('header').innerHTML = html;
+    });
+
+    fetch('../../footer.html').then(response => response.text()).then(html => {
+        document.getElementById('footer').innerHTML = html;
+    });
+
+    // Function to open side navigation
+    function openNav() {
+        document.getElementById("sidenav").style.width = "250px";
+    }
+
+    // Function to close side navigation
+    function closeNav() {
+        document.getElementById("sidenav").style.width = "0";
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        checkCookie();
+        loadTerms();
+    });
     </script>
-               
+
 </html>
+
