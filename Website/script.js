@@ -193,7 +193,7 @@
 
 
     function loadTerms() {
-        fetch('../terms.html').then(response => response.text()).then(html => {
+        fetch('https://muhammad-ibn-e-khalid.github.io/Website/terms.html').then(response => response.text()).then(html => {
             document.getElementById('terms').innerHTML = html;
             document.body.classList.add('no-scroll');
             document.getElementById('agreeButton').addEventListener('click',
@@ -204,7 +204,7 @@
 
             document.getElementById('disagreeButton').addEventListener('click',
             function() {
-                window.location.href = '../disagree.html';
+                window.location.href = 'https://muhammad-ibn-e-khalid.github.io/Website/disagree.html';
             });
             // Function to open the terms box
             function openTermsBox() {
@@ -250,7 +250,7 @@
             date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
             expires = "; expires=" + date.toUTCString();
         }
-        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        document.cookie = name + "=" + (value || "") + expires + "; path=https://muhammad-ibn-e-khalid.github.io/";
     }
 
     function getCookie(name) {
