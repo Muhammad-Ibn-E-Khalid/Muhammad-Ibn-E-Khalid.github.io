@@ -1,3 +1,6 @@
+markdown_extensions:
+  - attr_list
+
 # Mbk Tech Studio Website
 
 Main Website
