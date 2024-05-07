@@ -165,3 +165,27 @@
   
                 }
             });
+
+            function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeadingId, isOpened) {
+                const toggleButton = document.querySelector(`${sectionId} ${toggleButtonClass}`);
+                const sectionContent = document.querySelector(`${sectionId} ${contentClass}`);
+                const toggleHeading = document.querySelector(toggleHeadingId);
+        
+                function toggle() {
+                    const section = document.querySelector(sectionId);
+                    section.classList.toggle("expanded");
+                    toggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+                    sectionContent.style.display = section.classList.contains("expanded") ? "block" : "none";
+                }
+        
+                if (isOpened) {
+                    const section = document.querySelector(sectionId);
+                    section.classList.add("expanded");
+                    toggleButton.style.transform = "rotate(180deg)";
+                    sectionContent.style.display = "block"; // Ensure content is visible initially
+                }
+        
+                // Event listeners
+                toggleHeading.addEventListener("click", toggle);
+                toggleButton.addEventListener("click", toggle);
+            }
