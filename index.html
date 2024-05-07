@@ -510,13 +510,10 @@
     toggleSection("#Contact", ".toggle-button", ".section-content", "#contactToggleHeading", true);
     toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
         
-    loadTerms();
-
-    function checkCookie() {
-        if (getCookie('agreed') === 'true') {
-            hideOverlay();
-        }
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+        checkCookie();
+        loadTerms();
+    });
 
     // Function to open side navigation
     function openNav() {
