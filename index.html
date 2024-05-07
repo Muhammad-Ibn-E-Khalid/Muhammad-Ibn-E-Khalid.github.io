@@ -465,32 +465,27 @@
     
     <script>
 
-    function linked (){
-        // Get the current page's URL
-            var currentPageUrl = window.location.pathname;
-            return currentPageUrl; 
-    }
-        
-        //phone
+    //phone
         
     $("#mobile_code").intlTelInput({
-            initialCountry: "pk",
-            separateDialCode: true
-            // utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
+        initialCountry: "pk",
+        separateDialCode: true
+        // utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/11.0.4/js/utils.js"
     });
-// To remove the pre-applied styling
-function remove() {
-    let i = 0;
-    while (i < 5) {
-        stars[i].className = "star";
-        i++;
+        
+    // To remove the pre-applied styling
+    function remove() {
+        let i = 0;
+        while (i < 5) {
+            stars[i].className = "star";
+            i++;
+        }
     }
-}
+        
     function changeHoverText(text) {
             document.querySelector('.select select').setAttribute('title', text);
     }
 
-        
     document.getElementById("subjectSelect").addEventListener("change", function() {
             var numberField = document.querySelector(".phoneField");
             var rateField = document.querySelector(".ratingWeb");
@@ -507,8 +502,6 @@ function remove() {
             }
     });
 
-
-
     // About, Projects, Blogs
     toggleSection("#About", ".toggle-button", ".section-content", "#aboutToggleHeading", true);
     toggleSection("#Projects", ".toggle-button", ".section-content", "#projectsToggleHeading", true);
@@ -516,7 +509,8 @@ function remove() {
     toggleSection("#Collaboration", ".toggle-button", ".section-content", "#collabToggleHeading", true);
     toggleSection("#Contact", ".toggle-button", ".section-content", "#contactToggleHeading", true);
     toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
-
+        
+    loadTerms();
 
     // Function to open side navigation
     function openNav() {
@@ -527,94 +521,5 @@ function remove() {
     function closeNav() {
             document.getElementById("sidenav").style.width = "0";
     }
-
-    </script>
-    
-    <script>
-
-        //load terms.html + pass cookies data and allow to interact with terms.html buttons and links
-    function loadTerms() {
-        fetch('Website/terms.html').then(response => response.text()).then(html => {
-            document.getElementById('terms').innerHTML = html;
-            document.body.classList.add('no-scroll');
-            document.getElementById('agreeButton').addEventListener('click',
-            function() {
-                setCookie('agreed', 'true', 365);
-                hideOverlay();
-            });
-
-            document.getElementById('disagreeButton').addEventListener('click',
-            function() {
-                window.location.href = 'Website/disagree.html';
-            });
-            // Function to open the terms box
-            function openTermsBox() {
-                var termsBox = document.getElementById("termsBox");
-                termsBox.style.display = "block";
-            }
-
-            // Function to close the terms box
-            document.addEventListener('click',
-            function(event) {
-                if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
-                    var termsBox = document.getElementById("termsBox");
-                    termsBox.style.display = "none";
-                }
-            });
-
-            // Function to toggle the modal
-            document.addEventListener('click',
-            function(event) {
-                if (event.target.id === 'openModalBtn') {
-                    openTermsBox();
-                }
-            });
-            checkCookie();
-        });
-    }
-
-    function checkCookie() {
-        if (getCookie('agreed') === 'true') {
-            hideOverlay();
-        }
-    }
-    
-        function checkCookie() {
-            if (getCookie('agreed') === 'true') {
-                hideOverlay();
-            }
-        }
-    
-        loadTerms();
-    
-        function hideOverlay() {
-            document.getElementById('overlay').style.display = 'none';
-            document.body.classList.remove('no-scroll');
-        }
-    
-        function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
-        }
-    
-        function getCookie(name) {
-            var nameEQ = name + "=";
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i];
-                while (cookie.charAt(0) === ' ') {
-                    cookie = cookie.substring(1, cookie.length);
-                }
-                if (cookie.indexOf(nameEQ) === 0) {
-                    return cookie.substring(nameEQ.length, cookie.length);
-                }
-            }
-            return null;
-        }
 
     </script>
