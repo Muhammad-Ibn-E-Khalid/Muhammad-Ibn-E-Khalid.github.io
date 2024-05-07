@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            Computer Hardware Engineering Projects - MBK Tech Studios
+            Web Projects - MBK Tech Studios
         </title>
         <link rel="icon" type="image/x-icon" href="../Images/IconALogo.jpg" style="border-radius: 50%;">
         <link rel="stylesheet" href="../styles.css">
@@ -19,55 +19,38 @@
             <div id="terms"></div>
             
             <section style="padding: 1px;" ></section>
-
-            <section id="Projec1ts" class="section-margin">
-                    
-                    <div class="container">
-
-                        <div class="search-bar">
-    
-                            <input type="text" id="search" placeholder="Search project by name or Project ID #...">
-                            <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()"> x </button>
-                            <button class="search-bar-Sbutton" type="button" onclick="searchProjects()"> Search </button>
-                      
-                        </div>
-    
-                        <h2> Computer Hardware Engineering Projects </h2>
-    
-                        <div id="searchResults"></div>
-                    
-                </div>
-                
-            </section>
-
-
-            <section id="Projects" class="expandable-section section-margin section-wrapper">
-                <div id="projectsToggleHeading" class="header">
-                    <h2>Projects Category</h2>
-                    <button class="toggle-button"></button>
-                </div>
             
-                <div class="section-content">
-                    
-                    <div class="container">
-    
-                        <div class="project-grid">
-    
-                            <div class="project-item" id="A456">
-    
-                                <a>
-                                    <img src="../Images/pr-item2.jpeg" alt="Project 1">
-                                    <h3> Comming Soon</h3>
-                                </a>
-    
-                            </div>
-    
-                        </div>
-    
+            <section id="Projects" class="section-margin" >
+
+                <div class="container">
+
+                    <div class="search-bar">
+
+                        <input type="text" id="search" placeholder="Search project by name or Project ID #...">
+                        <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()"> x </button>
+                        <button class="search-bar-Sbutton" type="button" onclick="searchProjects()"> Search </button>
+                  
                     </div>
-                    
+
+                    <h2> Web Projects </h2>
+
+                    <div id="searchResults"></div>
+
+                    <div class="project-grid">
+
+                        <div class="project-item" id="A456">
+
+                            <a>
+                                <img src="../Images/pr-item5.png" alt="Project 1">
+                                <h3>Portfolio</h3>
+                            </a>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                
+
             </section>
 
             <section id="Comment" class="expandable-section section-wrapper section-margin">
@@ -107,13 +90,27 @@
 
     </body>
 
-    <script src="../script.js"></script>
+    <script src="script.js"></script>
 
     <script>
 
+    //Comment
+    document.addEventListener("DOMContentLoaded", function() {
+            const toggleButton = document.querySelector("#Comment .toggle-button");
+            const aboutContent = document.querySelector("#Comment .section-content");
+            const aboutToggleHeading = document.querySelector("#commentToggleHeading");
+            const aboutSection = document.querySelector("#Comment");
 
-    toggleSection("#Projects", ".toggle-button", ".section-content", "#projectsToggleHeading", true);
-    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading");
+            function toggleAboutSection() {
+                    aboutSection.classList.toggle("expanded");
+                    toggleButton.style.transform = aboutSection.classList.contains("expanded") ? "rotate(180deg)" : "rotate(360deg)";
+            }
+
+            aboutSection.classList.add("expanded");
+            toggleButton.style.transform = "rotate(180deg)";
+            aboutToggleHeading.addEventListener("click", toggleAboutSection);
+            toggleButton.addEventListener("click", toggleAboutSection);
+    });
 
     fetch('../header.html').then(response => response.text()).then(html => {
         document.getElementById('header').innerHTML = html;
