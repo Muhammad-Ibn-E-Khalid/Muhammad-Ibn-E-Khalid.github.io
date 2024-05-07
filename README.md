@@ -1,6 +1,3 @@
-markdown_extensions:
-  - attr_list
-
 # Mbk Tech Studio Website
 
 Main Website
@@ -23,3 +20,4 @@ https://github.com/Muhammad-Ibn-E-Khalid
 
 
 <a href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank">Profile</a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/mojombo/github-flavored-markdown/issues/28" data-hovercard-type="issue" data-hovercard-url="/mojombo/github-flavored-markdown/issues/28/hovercard"><img src="https://github.com/mojombo/github-flavored-markdown/issues/28" alt="test" style="max-width: 100%;"></a>
