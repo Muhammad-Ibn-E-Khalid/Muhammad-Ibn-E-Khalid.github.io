@@ -133,7 +133,9 @@
         document.getElementById("sidenav").style.width = "0";
     }
 
-    loadTerms();
-   
+    document.addEventListener("DOMContentLoaded", function() {
+        checkCookie();
+        loadTerms();
+    });
         </script>
 </html>
