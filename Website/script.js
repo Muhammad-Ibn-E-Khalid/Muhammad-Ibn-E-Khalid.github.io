@@ -192,27 +192,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Function to load terms from external file
 function loadTerms() {
     fetch('http://mbktech.xyz/Website/terms.html').then(response => response.text()).then(html => {
