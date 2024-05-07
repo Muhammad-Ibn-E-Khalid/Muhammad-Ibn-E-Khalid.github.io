@@ -192,57 +192,79 @@
 
 
 
-    function loadTerms() {
-        fetch('https://muhammad-ibn-e-khalid.github.io/Website/terms.html').then(response => response.text()).then(html => {
-            document.getElementById('terms').innerHTML = html;
-            document.body.classList.add('no-scroll');
-            document.getElementById('agreeButton').addEventListener('click',
-            function() {
-                setCookie('agreed', 'true', 365);
-                hideOverlay();
-            });
 
-            document.getElementById('disagreeButton').addEventListener('click',
-            function() {
-                window.location.href = 'https://muhammad-ibn-e-khalid.github.io/Website/disagree.html';
-            });
-            // Function to open the terms box
-            function openTermsBox() {
-                var termsBox = document.getElementById("termsBox");
-                termsBox.style.display = "block";
-            }
 
-            // Function to close the terms box
-            document.addEventListener('click',
-            function(event) {
-                if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
-                    var termsBox = document.getElementById("termsBox");
-                    termsBox.style.display = "none";
-                }
-            });
 
-            // Function to toggle the modal
-            document.addEventListener('click',
-            function(event) {
-                if (event.target.id === 'openModalBtn') {
-                    openTermsBox();
-                }
-            });
-            checkCookie();
-        });
-    }
 
-    function checkCookie() {
-        if (getCookie('agreed') === 'true') {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Function to load terms from external file
+function loadTerms() {
+    fetch('http://mbktech.xyz/Website/terms.html').then(response => response.text()).then(html => {
+        document.getElementById('terms').innerHTML = html;
+        document.body.classList.add('no-scroll');
+        document.getElementById('agreeButton').addEventListener('click', function() {
+            setCookie('agreed', 'true', 365);
             hideOverlay();
+        });
+
+        document.getElementById('disagreeButton').addEventListener('click', function() {
+            window.location.href = 'http://mbktech.xyz/Website/disagree.html';
+        });
+
+        // Function to open the terms box
+        function openTermsBox() {
+            var termsBox = document.getElementById("termsBox");
+            termsBox.style.display = "block";
         }
-    }
 
-    function hideOverlay() {
-        document.getElementById('overlay').style.display = 'none';
-        document.body.classList.remove('no-scroll');
-    }
+        // Function to close the terms box
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
+                var termsBox = document.getElementById("termsBox");
+                termsBox.style.display = "none";
+            }
+        });
 
+        // Function to toggle the modal
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'openModalBtn') {
+                openTermsBox();
+            }
+        });
+        checkCookie();
+    });
+}
+
+// Function to check if the user has agreed to terms
+function checkCookie() {
+    if (getCookie('agreed') === 'true') {
+        hideOverlay();
+    }
+}
+
+// Function to hide the overlay
+function hideOverlay() {
+    document.getElementById('overlay').style.display = 'none';
+    document.body.classList.remove('no-scroll');
+}
+
+// Function to set a cookie
 function setCookie(name, value, days) {
     var expires = "";
     if (days) {
@@ -253,19 +275,21 @@ function setCookie(name, value, days) {
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
-
-    function getCookie(name) {
-        var nameEQ = name + "=";
-        var cookies = document.cookie.split(';');
-        for (var i = 0; i < cookies.length; i++) {
-            var cookie = cookies[i];
-            while (cookie.charAt(0) === ' ') {
-                cookie = cookie.substring(1, cookie.length);
-            }
-            if (cookie.indexOf(nameEQ) === 0) {
-                return cookie.substring(nameEQ.length, cookie.length);
-            }
+// Function to get a cookie value
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
         }
-        return null;
+        if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
     }
-        
+    return null;
+}
+
+// Load terms on page load
+loadTerms();
