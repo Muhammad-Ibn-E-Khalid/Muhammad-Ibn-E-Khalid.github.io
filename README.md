@@ -66,6 +66,7 @@ https://github.com/Muhammad-Ibn-E-Khalid
 
 Instead of using `UserAgreement.html`:
 - Bad URL: [https://mbktech.xyz/UserAgreement.html](https://mbktech.xyz/UserAgreement.html)
+
 Use `UserAgreement/index.html`:
   - Good URL: [https://mbktech.xyz/UserAgreement/](https://mbktech.xyz/UserAgreement/)
 
