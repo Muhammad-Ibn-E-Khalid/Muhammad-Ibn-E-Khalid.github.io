@@ -1,0 +1,149 @@
+<html lang="en">
+    
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title> MBK Tech Studio SourceCode </title>
+                <link rel="icon" type="image/x-icon" href="../../Assets/Images/IconALogo.jpg">
+                <link rel="stylesheet" href="../../Assets/styles.css">
+            </head>
+            
+            <style>
+                ff{
+                    color: burlywood; font-size: 20px;
+                }
+                .button-container {
+        text-align: center;
+    }
+    
+    
+    .button-container {
+        text-align: center; /* Center align the content */
+        margin-top: 20px; /* Add margin for spacing */
+    }
+    
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+
+            </style>
+
+            <body>
+        
+           <div id="header"></div>
+        
+                <div class="bordered">
+        
+                    <div id="terms"></div>
+                    
+                    <section style="padding: 1px;" ></section>
+        
+                    <section id="Documentation" class="expandable-section section-margin section-wrapper">
+        
+                        <div id="documentationToggleHeading" class="header">
+        
+                            <h2>Project Documentation</h2>
+        
+                            <button class="toggle-button"></button>
+        
+                        </div>
+                    
+                        <div class="section-content">
+                            
+                            <div class="container">
+        
+                                <h1 style="color:gold; text-align: center;" >Website Source Code Documentation Update</h1>
+                                <h3 style="color:aliceblue; text-align: center;" >At This Moment, The Website's <a href="https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io" target="_blank">Source Code</a> Documentation Has Not Been Written. However, You Can Access The <a href="https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io" target="_blank">Source Code</a> Via The Provided <a href="https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io" ><a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank">Link</a></a>. We Anticipate Releasing Detailed Documentation In Early <ff>June 2024</ff>. Thank You For Your Patience.</h3>
+                                
+                            <div class="button-container" >
+                                <a class="button" href="https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io" target="_blank">
+                                Source Code
+                                </a>
+                            </div>
+
+                            </div>
+                            
+                        </div>
+                        
+                    </section>
+        
+                    <section id="Comment" class="expandable-section section-wrapper section-margin">
+                    
+                        <div class="container">
+                            
+                            <div id="commentToggleHeading" class="header">
+                                <h2>Comment</h2>
+                                <button class="toggle-button"></button>
+                            </div>
+        
+                            <div class="section-content">
+        
+                                <br>
+                                
+                                <div id="commento"></div>
+                                <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                                
+                                <script>
+                                    
+                                    var currentPageUrl = window.location.pathname;
+                                    document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+        
+                                </script>
+                                
+                            </div>
+        
+                        </div>
+        
+                    </section>
+                    
+                    <section style="padding: 1px;" ></section>
+        
+                </div>
+        
+                <div id="footer"></div>
+        
+            </body>
+        
+            <script src="../../Assets/script.js"></script>
+        
+            <script>
+        
+            toggleSection("#Documentation", ".toggle-button", ".section-content", "#documentationToggleHeading", true);
+            toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
+        
+          
+            fetch('../../Assets/header.html').then(response => response.text()).then(html => {
+                document.getElementById('header').innerHTML = html;
+            });
+        
+            fetch('../../Assets/footer.html').then(response => response.text()).then(html => {
+                document.getElementById('footer').innerHTML = html;
+            });
+        
+            // Function to open side navigation
+            function openNav() {
+                document.getElementById("sidenav").style.width = "250px";
+            }
+        
+            // Function to close side navigation
+            function closeNav() {
+                document.getElementById("sidenav").style.width = "0";
+            }
+        
+            document.addEventListener("DOMContentLoaded", function() {
+                checkCookie();
+                loadTerms();
+            });
+            </script>
+        
+        </html>
