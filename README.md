@@ -86,8 +86,11 @@ Use `UserAgreement/index.html`:
 
 
 **Image References:**
+When Website first time laod on device.
 ![Image 1 Description](Assets/mdImages/termbox.png)
+When Clcik on 'Terms Of Use & Privacy Policy' link.
 ![Image 2 Description](Assets/mdImages/terms.png)
+When Click On Disagree
 ![Image 3 Description](Assets/mdImages/disaagree.png)
 
 
