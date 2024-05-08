@@ -194,7 +194,7 @@
 
 // Function to load terms from external file
 function loadTerms() {
-    fetch('http://localhost/web/terms.html').then(response => response.text()).then(html => {
+    fetch('https://mbktech.xyz/terms.html').then(response => response.text()).then(html => {
         document.getElementById('terms').innerHTML = html;
         document.body.classList.add('no-scroll');
         document.getElementById('agreeButton').addEventListener('click', function() {
@@ -203,7 +203,7 @@ function loadTerms() {
         });
 
         document.getElementById('disagreeButton').addEventListener('click', function() {
-            window.location.href = 'http://localhost/web/disagree.html';
+            window.location.href = 'https://mbktech.xyz/disagree.html';
         });
 
         // Function to open the terms box
