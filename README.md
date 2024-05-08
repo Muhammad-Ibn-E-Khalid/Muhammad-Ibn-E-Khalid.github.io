@@ -87,7 +87,7 @@ Use `UserAgreement/index.html`:
 
 **Image References:**
 ![Image 1 Description](Assets/mdImages/termbox.png)
-![Image 2 Description](Assets/mdImages/termsbox.png)
+![Image 2 Description](Assets/mdImages/terms.png)
 ![Image 3 Description](Assets/mdImages/disaagree.png)
 
 
