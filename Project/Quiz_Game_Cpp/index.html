@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quiz Game Cpp - MBK Tech Studios</title>
-        <link rel="icon" type="image/x-icon" href="../../Images/IconALogo.jpg">
-        <link rel="stylesheet" href="../../styles.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/IconALogo.jpg">
+        <link rel="stylesheet" href="../../Assets/styles.css">
     </head>
     
     <body>
@@ -80,7 +80,7 @@
 
     </body>
 
-    <script src="../../script.js"></script>
+    <script src="../../Assets/script.js"></script>
 
     <script>
 
@@ -88,11 +88,11 @@
     toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
 
   
-    fetch('../../header.html').then(response => response.text()).then(html => {
+    fetch('../../Assets/header.html').then(response => response.text()).then(html => {
         document.getElementById('header').innerHTML = html;
     });
 
-    fetch('../../footer.html').then(response => response.text()).then(html => {
+    fetch('../../Assets/footer.html').then(response => response.text()).then(html => {
         document.getElementById('footer').innerHTML = html;
     });
 
