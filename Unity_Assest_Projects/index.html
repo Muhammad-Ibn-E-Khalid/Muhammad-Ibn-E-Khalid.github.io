@@ -1,0 +1,141 @@
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Unity Assest Projects - MBK Tech Studios </title>
+        <link rel="icon" type="image/x-icon" href="../Images/IconALogo.jpg">
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    
+    <body>
+
+   <div id="header"></div>
+
+        <div class="bordered">
+
+            <div id="terms"></div>
+
+            <section style="padding: 1px;" ></section>
+
+            <section id="Search" class="section-margin">
+                    
+                <div class="container">
+
+                    <div class="search-bar">
+
+                        <input type="text" id="search" placeholder="Search project by name or Project ID #...">
+                        <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()"> x </button>
+                        <button class="search-bar-Sbutton" type="button" onclick="searchProjects()"> Search </button>
+                  
+                    </div>
+
+                    <h2>  Unity Assest Projects </h2>
+
+                    <div id="searchResults"></div>
+                
+                </div>
+            
+            </section>
+
+            <section id="Projects" class="expandable-section section-margin section-wrapper">
+
+            <div id="projectsToggleHeading" class="header">
+
+                <h2>Projects Category</h2>
+
+                <button class="toggle-button"></button>
+
+            </div>
+        
+            <div class="section-content">
+                
+                <div class="container">
+
+                    <div class="project-grid">
+
+                        <div class="project-item" id="A456">
+
+                                <a href="../Project/Feedback_Report_System_For_Unity/">
+                                    <img src="../Images/pr-item3.webp" alt="Project 1">
+                                    <h3> Unity Feedback Report System </h3>
+                                </a>
+
+                    </div>
+
+                </div>
+                
+            </div>
+            
+            </section>
+
+            <section id="Comment" class="expandable-section section-wrapper section-margin">
+        
+            <div class="container">
+                
+                <div id="commentToggleHeading" class="header">
+                    <h2>Comment</h2>
+                    <button class="toggle-button"></button>
+                </div>
+
+                <div class="section-content">
+
+                    <br>
+                    
+                    <div id="commento"></div>
+                    <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                    
+                    <script>
+                        
+                        var currentPageUrl = window.location.pathname;
+                        document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+
+                    </script>
+                    
+                </div>
+
+            </div>
+
+            </section>
+            
+            <section style="padding: 1px;" ></section>
+
+        </div>
+
+        <div id="footer"></div>
+        
+    </body>
+
+    <script src="../script.js"></script>
+
+    <script>
+
+    toggleSection("#Projects", ".toggle-button", ".section-content", "#projectsToggleHeading", true);
+    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading");
+
+    fetch('../header.html').then(response => response.text()).then(html => {
+        document.getElementById('header').innerHTML = html;
+    });
+
+    fetch('../footer.html').then(response => response.text()).then(html => {
+        document.getElementById('footer').innerHTML = html;
+    });
+
+    // Function to open side navigation
+    function openNav() {
+        document.getElementById("sidenav").style.width = "250px";
+    }
+
+    // Function to close side navigation
+    function closeNav() {
+        document.getElementById("sidenav").style.width = "0";
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        checkCookie();
+        loadTerms();
+    });
+    
+    </script>
+
+</html>
