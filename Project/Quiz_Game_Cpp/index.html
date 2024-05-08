@@ -1,0 +1,116 @@
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Game Cpp - MBK Tech Studios</title>
+        <link rel="icon" type="image/x-icon" href="../../Images/IconALogo.jpg">
+        <link rel="stylesheet" href="../../styles.css">
+    </head>
+    
+    <body>
+
+   <div id="header"></div>
+
+        <div class="bordered">
+
+            <div id="terms"></div>
+            
+            <section style="padding: 1px;" ></section>
+
+            <section id="Documentation" class="expandable-section section-margin section-wrapper">
+
+                <div id="documentationToggleHeading" class="header">
+
+                    <h2>Project Documentation</h2>
+
+                    <button class="toggle-button"></button>
+
+                </div>
+            
+                <div class="section-content">
+                    
+                    <div class="container">
+
+            
+                        <h1 style="color: aqua; text-align: center;" > Quiz Game Cpp Documentation </h1>
+                        <h3 style="color:coral; text-align: center;"> Project Will Upload Soon</h3>
+
+    
+                    </div>
+                    
+                </div>
+                
+            </section>
+
+            <section id="Comment" class="expandable-section section-wrapper section-margin">
+            
+                <div class="container">
+                    
+                    <div id="commentToggleHeading" class="header">
+                        <h2>Comment</h2>
+                        <button class="toggle-button"></button>
+                    </div>
+
+                    <div class="section-content">
+
+                        <br>
+                        
+                        <div id="commento"></div>
+                        <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                        
+                        <script>
+                            
+                            var currentPageUrl = window.location.pathname;
+                            document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+
+                        </script>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+            
+            <section style="padding: 1px;" ></section>
+
+        </div>
+
+        <div id="footer"></div>
+
+    </body>
+
+    <script src="../../script.js"></script>
+
+    <script>
+
+    toggleSection("#Documentation", ".toggle-button", ".section-content", "#documentationToggleHeading", true);
+    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
+
+  
+    fetch('../../header.html').then(response => response.text()).then(html => {
+        document.getElementById('header').innerHTML = html;
+    });
+
+    fetch('../../footer.html').then(response => response.text()).then(html => {
+        document.getElementById('footer').innerHTML = html;
+    });
+
+    // Function to open side navigation
+    function openNav() {
+        document.getElementById("sidenav").style.width = "250px";
+    }
+
+    // Function to close side navigation
+    function closeNav() {
+        document.getElementById("sidenav").style.width = "0";
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        checkCookie();
+        loadTerms();
+    });
+    </script>
+
+</html>
+
