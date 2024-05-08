@@ -20,7 +20,6 @@ https://github.com/Muhammad-Ibn-E-Khalid
 
 
 
-
 ## Hosting:
 - The website is hosted on GitHub, with a custom domain purchased from Namecheap for $2 for a 12-month period. This custom domain is pointed to the GitHub repository.
   *Note: If you are using a custom domain, ensure it is properly configured to point to your GitHub repository.*
@@ -28,7 +27,7 @@ https://github.com/Muhammad-Ibn-E-Khalid
 ## Files Tree:
 
 ### root/:
-- Asset/
+- Assets/
 - Project/
 - Project_Category/
 - UserAgreement/
@@ -37,7 +36,7 @@ https://github.com/Muhammad-Ibn-E-Khalid
 - index.html
 - README.md
 
-### Asset/: 
+### Assets/: 
 - Images/
 - disagree.html
 - footer.html 
@@ -70,4 +69,25 @@ Instead of using `UserAgreement.html`:
 Use `UserAgreement/index.html`:
   - Good URL: [https://mbktech.xyz/UserAgreement/](https://mbktech.xyz/UserAgreement/)
 
-In the root file, we have the home page `root/index.html` as its main page.
+## Functionality of Our Website:
+
+- **On First Load, Agreement Prompt:**
+  - Upon the initial loading of the website, users are prompted to agree with the terms of use.
+  - Users cannot proceed to use the website until they accept the terms of use.
+
+- **Accepting Terms of Use:**
+  - When a user agrees to the terms of use, the website saves a cookie with an expiry of 1 year.
+  - This cookie likely serves as a marker that the user has agreed to the terms and can continue to access the website without being prompted again during this period.
+
+- **Rejecting Terms of Use:**
+  - If a user rejects the terms of use, the website loads a disagreement page.
+  - After a few seconds, the website redirects the user to google.com.
+  - This behavior implies that users who do not agree to the terms are redirected away from the website.
+
+
+**Image References:**
+- img1: [Assets/mdImages/termbox.png]
+- img2: [Assets/mdImages/termsbox.png]
+- img3: [Assets/mdImages/disaagree.png]
+
+In the root folder, we have the home page `root/index.html` which is main page of our website.
