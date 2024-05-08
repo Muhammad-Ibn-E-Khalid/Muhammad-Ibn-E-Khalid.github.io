@@ -86,8 +86,9 @@ Use `UserAgreement/index.html`:
 
 
 **Image References:**
-- img1: [Assets/mdImages/termbox.png]
-- img2: [Assets/mdImages/termsbox.png]
-- img3: [Assets/mdImages/disaagree.png]
+![Image 1 Description](Assets/mdImages/termbox.png)
+![Image 2 Description](Assets/mdImages/termsbox.png)
+![Image 3 Description](Assets/mdImages/disaagree.png)
+
 
 In the root folder, we have the home page `root/index.html` which is main page of our website.
