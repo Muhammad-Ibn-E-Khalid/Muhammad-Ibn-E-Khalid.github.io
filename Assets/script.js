@@ -324,5 +324,23 @@ function getCookie(name) {
     return null;
 }
 
-// Load terms on page load
-loadTerms();
+function openNav() {
+    document.getElementById("sidenav").style.width = "250px";
+}
+
+// Function to close side navigation
+function closeNav() {
+    document.getElementById("sidenav").style.width = "0";
+}
+
+function header(){
+
+fetch('https://mbktech.xyz/Assets/header.html').then(response => response.text()).then(html => {
+    document.getElementById('header').innerHTML = html;
+});
+}
+function footer(){
+fetch('https://mbktech.xyz/Assets/footer.html').then(response => response.text()).then(html => {
+    document.getElementById('footer').innerHTML = html;
+});    
+}

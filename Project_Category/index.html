@@ -6,6 +6,7 @@
         <title> Projects Category - MBK Tech Studios </title>
         <link rel="icon" type="image/x-icon" href="../Assets/Images/IconALogo.jpg">
         <link rel="stylesheet" href="../Assets/styles.css">
+        <script> document.addEventListener("DOMContentLoaded", function() {header();footer();}); </script>
     </head>
     
     <body>
@@ -227,7 +228,7 @@
 
     <script>
 
-function changeHashAndReload(hash) {
+    function changeHashAndReload(hash) {
         window.location.hash = hash; // Change the hash
         location.reload(); // Reload the page
     }
@@ -237,25 +238,7 @@ function changeHashAndReload(hash) {
     toggleSection("#unityprojects", ".toggle-button", ".section-content", "#unityprojectsToggleHeading",true);
     toggleSection("#cppprojects", ".toggle-button", ".section-content", "#cppprojectsToggleHeading",true);
     toggleSection("#gameprojects", ".toggle-button", ".section-content", "#gameprojectsToggleHeading",true);
-
-    fetch('../Assets/header.html').then(response => response.text()).then(html => {
-        document.getElementById('header').innerHTML = html;
-    });
-
-    fetch('../Assets/footer.html').then(response => response.text()).then(html => {
-        document.getElementById('footer').innerHTML = html;
-    });
-
-    // Function to open side navigation
-    function openNav() {
-        document.getElementById("sidenav").style.width = "250px";
-    }
-
-    // Function to close side navigation
-    function closeNav() {
-        document.getElementById("sidenav").style.width = "0";
-    }
-
+  
     function showSectionBasedOnUrl() {
     var hash = window.location.hash; // Get only the hash portion of the URL
     console.log("Hash link:", hash); // Log the retrieved hash link for debugging
@@ -267,7 +250,7 @@ function changeHashAndReload(hash) {
     });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
         showSectionBasedOnUrl(); // Move the call here
     });
 
