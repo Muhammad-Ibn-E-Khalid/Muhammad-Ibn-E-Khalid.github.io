@@ -137,7 +137,9 @@
                                     document.getElementById("message").style.display = "none";
                                     var numberField = document.querySelector(".phoneField");
                                     numberField.style.display = "none";
-                            }, 3600);
+                                    var supportField = document.querySelector(".supportfield");
+                                    supportField.style.display = "none";
+                            }, 2000);
                     }).catch(function(error) {
                             console.error(error);
                             document.getElementById("message").textContent = "An error occurred while submitting the form.";
