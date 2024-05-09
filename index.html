@@ -275,15 +275,8 @@
                                     </div>
 
                                 </div>
-        
-                                <div class="field">
-                                    <label class="label">Name</label><div class="control"><div class="input" ><input  type="text" placeholder="Enter Your Name" name="UserName" required /></div></div>
-                                </div>
-              
-                                <div class="field">
-                                    <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
-                                </div>
 
+                                
                                 <!-- Support Field Appear When Support is Selected -->
 
                                 <div class="field supportfield" style="display: none;">
@@ -299,7 +292,7 @@
                                                 <option value="Technical">Technical</option>
                                                 <option value="CopyRightIssue">CopyRight Issue</option>
                                                 <option value="SourceCodeAssistance">Source Code Assistance</option>
-                                                <option value="BugReporting&FeatureRequests">Bug Reporting & Feature Requests</option>
+                                                <option value="BugReportingFeatureRequests">Bug Reporting & Feature Requests</option>
                                                 <option value="other">other</option>
                                              </select>                              
                                         </div>
@@ -307,45 +300,57 @@
                                     </div>
 
                                 </div>
+        
+                                <div class="field">
+                                    <label class="label">Name</label><div class="control"><div class="input" ><input  type="text" placeholder="Enter Your Name" name="UserName" required /></div></div>
+                                </div>
+              
+                                <div class="field">
+                                    <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
+                                </div>
 
-                            <div class="field ratingWeb" style="display: none;">
-                                <label class="label">Rating</label>
-                                <div class="control">
-                                    <div class="rating">
-                                        <label>
-                                            <input type="radio" name="stars" value="1"/>
-                                            <span class="fa fa-star icon"></span>
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="stars" value="2" />
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="stars" value="3" />
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>   
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="stars" value="4" />
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="stars" value="5" />
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                        </label>
+                                <!-- Support Field Appear When Feedback is Selected -->
+
+                                <div class="field ratingWeb" style="display: none;">
+                                    <label class="label">Rating</label>
+                                    <div class="control">
+                                        <div class="rating">
+                                            <label>
+                                                <input type="radio" name="stars" value="1"/>
+                                                <span class="fa fa-star icon"></span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="2" />
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="3" />
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>   
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="4" />
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="5" />
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                                 
+                                <!-- Support Field Appear When Collabration & Support is Selected -->
+
                                 <div class="field phoneField" style="display: none;">
                                     <label class="label">Phone Number</label>
                                     <div class="control">
@@ -484,25 +489,6 @@
     function changeHoverText(text) {
             document.querySelector('.select select').setAttribute('title', text);
     }
-
-        
-    document.getElementById("subjectSelect").addEventListener("change", function() {
-            var numberField = document.querySelector(".phoneField");
-            var rateField = document.querySelector(".ratingWeb");
-
-            if (this.value === "Collaboration") {
-                numberField.style.display = "block";
-                rateField.style.display = "none";
-            } else if (this.value === "Feedback") {
-                rateField.style.display = "block";
-                numberField.style.display = "none";
-            } else {
-                numberField.style.display = "none";
-                rateField.style.display = "none";
-            }
-    });
-
-
 
     // About, Projects, Blogs
     toggleSection("#About", ".toggle-button", ".section-content", "#aboutToggleHeading", true);
