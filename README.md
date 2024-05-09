@@ -38,6 +38,7 @@ https://github.com/Muhammad-Ibn-E-Khalid
 
 ### Assets/: 
 - Images/
+- mdImages/ (This folder contain Images for README.md so it have no effect on website)
 - disagree.html
 - footer.html 
 - header.html 
