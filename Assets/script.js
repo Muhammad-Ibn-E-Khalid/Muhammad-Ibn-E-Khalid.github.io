@@ -174,16 +174,16 @@
                     supportField.style.display = "none";
                     document.querySelectorAll('input[name="support"]').forEach(function(input) { input.removeAttribute("required"); });
              
-                }else if (this.value === "Support") {
+                } else if (this.value === "Support") {
                    
                     supportField.style.display = "block";
                     document.querySelectorAll('input[name="support"]').forEach(function(input) {input.setAttribute("required", "required");});
                    
+                    numberField.style.display = "block";
+                    document.querySelector('input[name="Number"]').setAttribute("required", "required");
+
                     ratingField.style.display = "none";
                     document.querySelectorAll('input[name="stars"]').forEach(function(input) {input.removeAttribute("required");});
-               
-                    numberField.style.display = "none";
-                    document.querySelector('input[name="Number"]').removeAttribute("required");
                
                 } else {
                   
