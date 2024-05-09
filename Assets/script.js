@@ -142,23 +142,30 @@
             });
 
             // Function to handle change event of the subject select
-           document.getElementById("subjectSelect").addEventListener("change", function() {
+            document.getElementById("subjectSelect").addEventListener("change", function() {
                 var numberField = document.querySelector(".phoneField");
                 var ratingField = document.querySelector(".ratingWeb");
 
                 if (this.value === "Collaboration") {
                     numberField.style.display = "block";
-                    ratingField.style.display = "none";
                     document.querySelector('input[name="Number"]').setAttribute("required", "required");
+
+
+                    ratingField.style.display = "none";
+                    document.querySelectorAll('input[name="stars"]').forEach(function(input) { input.removeAttribute("required"); });
+  
              
                 } else if (this.value === "Feedback") {
                     ratingField.style.display = "block";
-                    numberField.style.display = "none";
                     document.querySelectorAll('input[name="stars"]').forEach(function(input) {input.setAttribute("required", "required");});
                
-                } else {
                     numberField.style.display = "none";
                     document.querySelector('input[name="Number"]').removeAttribute("required");
+                } else {
+                    console.log("1");
+                    numberField.style.display = "none";
+                    document.querySelector('input[name="Number"]').removeAttribute("required");
+                    console.log("2");
 
                     ratingField.style.display = "none";
                     document.querySelectorAll('input[name="stars"]').forEach(function(input) { input.removeAttribute("required"); });
