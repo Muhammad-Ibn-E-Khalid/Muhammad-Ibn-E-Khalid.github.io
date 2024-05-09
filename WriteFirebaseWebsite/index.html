@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter and Read Data</title>
+
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #000;
+        color: #fff;
+    }
+    
+    
+    h1 {
+        margin-bottom: 20px;
+        color: #fff;
+    }
+    
+    form {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+        color: #fff;
+    }
+    
+    input[type="text"],
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #444;
+        border-radius: 4px;
+        box-sizing: border-box;
+        background-color: #222;
+        color: #fff;
+    }
+    
+    button,
+    input[type="submit"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover,
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    
+    #userData {
+        margin-top: 20px;
+        color: #fff;
+    }
+    
+    #userData p {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        color: #fff; /* Text color */
+    }
+    
+    th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #444; /* Border color */
+    }
+    
+    th {
+        background-color: #007bff; /* Header background color */
+    }
+    
+    tr:nth-child(even) {
+        background-color: #222; /* Even row background color */
+    }
+    
+    tr:hover {
+        background-color: #333; /* Hover row background color */
+    }
+    /* Add this CSS code */
+.line {
+    width: 100%;
+    height: 2px; /* Adjust line thickness as needed */
+    background-color: #444; /* Line color */
+}
+
+    </style>
+
+</head>
+           
+
+<body>
+
+    <div class="container">
+
+        <div class="enter">
+
+            <h1>Enter Data</h1>
+
+            <form id="dataForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age"><br><br>
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br><br>
+                <input type="submit" value="Submit" class="sub" id="submit">
+                <p id="message"></p> 
+            </form>
+
+        </div>
+        <div class="line"></div>
+
+        <div class="read">
+
+            <h1>Read Data</h1>
+            <form id="readForm">
+                <button type="button" id="searchButton">Search</button>
+            </form>
+            <div id="userData"></div>
+
+
+        </div>
+
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
+        import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyA0dQmm3-Ku1vFgumA77S9abQ-WdZvP6C8",
+            authDomain: "read-d6f2b.firebaseapp.com",
+            databaseURL: "https://read-d6f2b-default-rtdb.firebaseio.com",
+            projectId: "read-d6f2b",
+            storageBucket: "read-d6f2b.appspot.com",
+            messagingSenderId: "393601857791",
+            appId: "1:393601857791:web:a29aa96421c98a596e34ca"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        
+        
+// Function to read data
+function readData() {
+    const userDataRef = ref(db, 'user');
+
+    get(userDataRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            const userData = snapshot.val();
+            let tableHTML = '<table><tr><th>Name</th><th>Age</th><th>Gender</th></tr>';
+
+            // Loop through each user data and create table rows
+            for (const [userId, user] of Object.entries(userData)) {
+                tableHTML += `<tr>
+                    <td>${user.username}</td>
+                    <td>${user.Age}</td>
+                    <td>${user.Gender}</td>
+                </tr>`;
+            }
+
+            tableHTML += '</table>';
+            document.getElementById('userData').innerHTML = tableHTML;
+        } else {
+            document.getElementById('userData').innerHTML = "No data found.";
+        }
+    }).catch((error) => {
+        console.error("Error reading data: ", error);
+    });
+}
+
+        // Function to submit data
+function submitData(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
+
+    const userRef = ref(db, 'user/' + name);
+
+    get(userRef).then((snapshot) => {
+        if (snapshot.exists()) {
+            document.getElementById('message').innerText = "User already exists. Cannot submit data.";
+        } else {
+            set(userRef, {
+                username: name,
+                Age: age,
+                Gender: gender
+            }).then(() => {
+                document.getElementById('message').innerText = "Data submitted successfully!";
+                document.getElementById('dataForm').reset();
+            }).catch((error) => {
+                console.error("Error writing document: ", error);
+            });
+        }
+    }).catch((error) => {
+        console.error("Error checking if user exists: ", error);
+    });
+}
+
+        // Attach event listener to the submit button
+        document.getElementById('submit').addEventListener('click', submitData);
+
+        // Attach event listener to the search button
+        document.getElementById('searchButton').addEventListener('click', readData);
+    </script>
+
+</body>
+</html>
