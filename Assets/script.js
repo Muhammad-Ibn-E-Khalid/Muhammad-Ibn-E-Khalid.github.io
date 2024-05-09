@@ -335,12 +335,12 @@ function closeNav() {
 
 function header(){
 
-fetch('https://mbktech.xyz/Assets/header.html').then(response => response.text()).then(html => {
+fetch('http://localhost/web/Assets/header.html').then(response => response.text()).then(html => {
     document.getElementById('header').innerHTML = html;
 });
 }
 function footer(){
-fetch('https://mbktech.xyz/Assets/footer.html').then(response => response.text()).then(html => {
+fetch('http://localhost/web/Assets/footer.html').then(response => response.text()).then(html => {
     document.getElementById('footer').innerHTML = html;
 });    
 }
