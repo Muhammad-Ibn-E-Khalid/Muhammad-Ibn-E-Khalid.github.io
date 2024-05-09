@@ -149,31 +149,53 @@
             document.getElementById("subjectSelect").addEventListener("change", function() {
                 var numberField = document.querySelector(".phoneField");
                 var ratingField = document.querySelector(".ratingWeb");
+                var supportField = document.querySelector(".supportfield");
+
 
                 if (this.value === "Collaboration") {
+
                     numberField.style.display = "block";
                     document.querySelector('input[name="Number"]').setAttribute("required", "required");
 
-
                     ratingField.style.display = "none";
                     document.querySelectorAll('input[name="stars"]').forEach(function(input) { input.removeAttribute("required"); });
-  
+                    
+                    supportField.style.display = "none";
+                    document.querySelectorAll('input[name="support"]').forEach(function(input) { input.removeAttribute("required"); });
              
                 } else if (this.value === "Feedback") {
+                  
                     ratingField.style.display = "block";
                     document.querySelectorAll('input[name="stars"]').forEach(function(input) {input.setAttribute("required", "required");});
                
                     numberField.style.display = "none";
                     document.querySelector('input[name="Number"]').removeAttribute("required");
-                } else {
-                    console.log("1");
+
+                    supportField.style.display = "none";
+                    document.querySelectorAll('input[name="support"]').forEach(function(input) { input.removeAttribute("required"); });
+             
+                }else if (this.value === "Support") {
+                   
+                    supportField.style.display = "block";
+                    document.querySelectorAll('input[name="support"]').forEach(function(input) {input.setAttribute("required", "required");});
+                   
+                    ratingField.style.display = "none";
+                    document.querySelectorAll('input[name="stars"]').forEach(function(input) {input.removeAttribute("required");});
+               
                     numberField.style.display = "none";
                     document.querySelector('input[name="Number"]').removeAttribute("required");
-                    console.log("2");
+               
+                } else {
+                  
+                    numberField.style.display = "none";
+                    document.querySelector('input[name="Number"]').removeAttribute("required");
 
                     ratingField.style.display = "none";
                     document.querySelectorAll('input[name="stars"]').forEach(function(input) { input.removeAttribute("required"); });
   
+                    supportField.style.display = "none";
+                    document.querySelectorAll('input[name="support"]').forEach(function(input) { input.removeAttribute("required"); });
+             
                 }
             });
 
