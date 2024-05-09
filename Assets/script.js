@@ -63,11 +63,15 @@
                     }, 1000);
                 }
 
-
+                function resetMessageBoxColor() {
+                    document.getElementById("message").style.backgroundColor = "beige";
+                    document.getElementById("message").style.color = "green";
+                }
 
                 //Credit: TechLever (youtube.com/@tech-lever)
                 document.getElementById("form").addEventListener("submit", function(e) {
                     e.preventDefault();
+                   resetMessageBoxColor();
                     document.getElementById("message").textContent = "Submitting..";
                     document.getElementById("message").style.display = "block";
                     document.getElementById("submit-button").disabled = true;
