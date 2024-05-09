@@ -146,58 +146,77 @@
             });
 
             // Function to handle change event of the subject select
+
             document.getElementById("subjectSelect").addEventListener("change", function() {
-                var numberField = document.querySelector(".phoneField");
-                var ratingField = document.querySelector(".ratingWeb");
-                var supportField = document.querySelector(".supportfield");
+    var numberField = document.querySelector(".phoneField");
+    var ratingField = document.querySelector(".ratingWeb");
+    var supportField = document.querySelector(".supportfield");
 
+    // Get the value of the selected option
+    var selectedOption = this.value;
 
-                if (this.value === "Collaboration") {
+    if (selectedOption === "Collaboration") {
+        // Show phone number field for collaboration
+        numberField.style.display = "block";
+        document.querySelector('input[name="Number"]').setAttribute("required", "required");
 
-                    numberField.style.display = "block";
-                    document.querySelector('input[name="Number"]').setAttribute("required", "required");
+        // Hide rating field
+        ratingField.style.display = "none";
+        document.querySelectorAll('input[name="stars"]').forEach(function(input) {
+            input.removeAttribute("required");
+        });
 
-                    ratingField.style.display = "none";
-                    document.querySelectorAll('input[name="stars"]').forEach(function(input) { input.removeAttribute("required"); });
-                    
-                    supportField.style.display = "none";
-                    document.querySelectorAll('input[name="support"]').forEach(function(input) { input.removeAttribute("required"); });
-             
-                } else if (this.value === "Feedback") {
-                  
-                    ratingField.style.display = "block";
-                    document.querySelectorAll('input[name="stars"]').forEach(function(input) {input.setAttribute("required", "required");});
-               
-                    numberField.style.display = "none";
-                    document.querySelector('input[name="Number"]').removeAttribute("required");
+        // Hide support field
+        supportField.style.display = "none";
+        document.querySelectorAll('select[name="support"]').forEach(function(input) {
+            input.removeAttribute("required");
+        });
+    } else if (selectedOption === "Feedback") {
+        // Show rating field for feedback
+        ratingField.style.display = "block";
+        document.querySelectorAll('input[name="stars"]').forEach(function(input) {
+            input.setAttribute("required", "required");
+        });
 
-                    supportField.style.display = "none";
-                    document.querySelectorAll('input[name="support"]').forEach(function(input) { input.removeAttribute("required"); });
-             
-                } else if (this.value === "Support") {
-                   
-                    supportField.style.display = "block";
-                    document.querySelectorAll('input[name="support"]').forEach(function(input) {input.setAttribute("required", "required");});
-                   
-                    numberField.style.display = "block";
-                    document.querySelector('input[name="Number"]').setAttribute("required", "required");
+        // Hide phone number field
+        numberField.style.display = "none";
+        document.querySelector('input[name="Number"]').removeAttribute("required");
 
-                    ratingField.style.display = "none";
-                    document.querySelectorAll('input[name="stars"]').forEach(function(input) {input.removeAttribute("required");});
-               
-                } else {
-                  
-                    numberField.style.display = "none";
-                    document.querySelector('input[name="Number"]').removeAttribute("required");
+        // Hide support field
+        supportField.style.display = "none";
+        document.querySelectorAll('select[name="support"]').forEach(function(input) {
+            input.removeAttribute("required");
+        });
+    } else if (selectedOption === "Support") {
+        // Show support field for support
+        supportField.style.display = "block";
+        document.querySelectorAll('select[name="support"]').forEach(function(input) {
+            input.setAttribute("required", "required");
+        });
 
-                    ratingField.style.display = "none";
-                    document.querySelectorAll('input[name="stars"]').forEach(function(input) { input.removeAttribute("required"); });
-  
-                    supportField.style.display = "none";
-                    document.querySelectorAll('input[name="support"]').forEach(function(input) { input.removeAttribute("required"); });
-             
-                }
-            });
+        // Show phone number field for support
+        numberField.style.display = "block";
+        document.querySelector('input[name="Number"]').setAttribute("required", "required");
+
+        // Hide rating field
+        ratingField.style.display = "none";
+        document.querySelectorAll('input[name="stars"]').forEach(function(input) {
+            input.removeAttribute("required");
+        });
+    } else {
+        // Hide all additional fields for other options
+        numberField.style.display = "none";
+        document.querySelector('input[name="Number"]').removeAttribute("required");
+        ratingField.style.display = "none";
+        document.querySelectorAll('input[name="stars"]').forEach(function(input) {
+            input.removeAttribute("required");
+        });
+        supportField.style.display = "none";
+        document.querySelectorAll('select[name="support"]').forEach(function(input) {
+            input.removeAttribute("required");
+        });
+    }
+});
 
             function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeadingId, isOpened) {
                 const toggleButton = document.querySelector(`${sectionId} ${toggleButtonClass}`);
