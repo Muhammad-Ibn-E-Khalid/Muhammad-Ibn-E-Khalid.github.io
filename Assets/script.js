@@ -69,16 +69,28 @@ function getCurrentSection() {
 }
 
 function clearSearch() {
-    document.getElementById("search").value = "";
-    searchProjects();
+    var searchInput = document.getElementById("search");
+    searchInput.value = "";
+
+    // Hide search results
+    var currentSection = getCurrentSection();
+    var searchResults = currentSection.querySelector(".search-results");
+    searchResults.innerText = "";
+
     // Remove previous search highlights
+    var projectItems = currentSection.querySelectorAll(".project-item");
     projectItems.forEach(function(item) {
         removeHighlight(item.querySelector("h3"));
         if (item.querySelector(".project-id")) {
             removeHighlight(item.querySelector(".project-id"));
         }
     });
-}
+
+    // Show all project items in the current section
+    projectItems.forEach(function(item) {
+        item.style.display = "block";
+    });
+} 
 
 function selectSection(sectionId) {
     // Remove 'selected' class from all sections
