@@ -316,7 +316,7 @@ function loadTerms() {
         document.getElementById('terms').innerHTML = html;
         document.body.classList.add('no-scroll');
         document.getElementById('agreeButton').addEventListener('click', function() {
-            setCookie('agreed', 'true', 1);
+            setCookie('agreed', 'true', 365);
             hideOverlay();
         });
 
