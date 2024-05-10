@@ -15,6 +15,21 @@
             background-color: yellow;
             font-weight: bold;
         }
+
+        .CrossButton{
+            background-color: rgba(0, 0, 0, 0);
+            border: 0px solid wheat;
+            cursor:pointer;
+            font-size:30px;
+            margin-right:5px;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2px;
+        }
+        .CrossButton:hover{
+            color:#ccc;
+        }
+
         
     </style>
 
@@ -48,7 +63,7 @@
                         <div class="search-bar">
     
                             <input type="text" id="search" placeholder="Search project by name or Project ID #...">
-                            <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()"> x </button>
+                            <button class="CrossButton" type="button" onclick="clearSearch()"> x </button>
                             <button class="search-bar-Sbutton" type="button" onclick="searchProjects()"> Search </button>
                       
                         </div>
