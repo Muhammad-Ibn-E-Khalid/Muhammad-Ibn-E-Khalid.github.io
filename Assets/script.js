@@ -1,155 +1,207 @@
-                function searchProjects() {
-                    var searchValue = document.getElementById("search").value.trim().toLowerCase();
-                    var projectItems = document.querySelectorAll(".project-item");
-                    var searchResults = document.getElementById("searchResults");
-                    var found = false;
+function searchProjects() {
+    var searchValue = document.getElementById("search").value.trim().toLowerCase();
+    var currentSection = getCurrentSection(); // Get the currently visible section
 
-                    projectItems.forEach(function (item) {
-                        var projectName = item.querySelector("h3").innerText.toLowerCase();
-                        var projectId = item.querySelector(".project-id") ? item.querySelector(".project-id").innerText.toLowerCase() : '';
+    var projectItems = currentSection.querySelectorAll(".project-item");
+    var searchResults = currentSection.querySelector(".search-results");
+    var found = false;
 
-                        if (projectName.includes(searchValue) || projectId.includes(searchValue)) {
-                            item.style.display = "block";
-                            found = true;
-                        } else {
-                              item.style.display = "none";
-                        }
-                    });
+    // Remove previous search highlights
+    projectItems.forEach(function(item) {
+        removeHighlight(item.querySelector("h3"));
+        if (item.querySelector(".project-id")) {
+            removeHighlight(item.querySelector(".project-id"));
+        }
+    });
 
-                    if (!found) {
-                        searchResults.innerText = "No results found.";
-                    } else {
-                        searchResults.innerText = "";
-                    }
-                }
+    projectItems.forEach(function(item) {
+        var projectName = item.querySelector("h3").innerText.toLowerCase();
+        var projectId = item.querySelector(".project-id") ? item.querySelector(".project-id").innerText.toLowerCase() : '';
 
-                function clearSearch() {
-                    document.getElementById("search").value = "";
-                    searchProjects();
-                }
+        if (projectName.includes(searchValue) || projectId.includes(searchValue)) {
+            item.style.display = "block";
+            found = true;
+            // Highlight the searched text
+            highlightText(item.querySelector("h3"), searchValue);
+            if (projectId.includes(searchValue)) {
+                highlightText(item.querySelector(".project-id"), searchValue);
+            }
+        } else {
+            item.style.display = "none";
+        }
+    });
 
-                function selectSection(sectionId) {
-                    // Remove 'selected' class from all sections
-                    const sections = document.querySelectorAll('.section-margin');
-                    sections.forEach(section => {
-                    section.classList.remove('selected-main');
-                    });
+    if (!found) {
+        searchResults.innerText = "No Projects Matching Your Search Criteria Were Found.";
+    } else {
+        searchResults.innerText = "";
+    }
+}
 
-                    // Add 'selected' class to the parent section of the clicked button
-                    const selectedSection = document.getElementById(sectionId);
-                    const parentSection = selectedSection.closest('.section-margin');
-                    parentSection.classList.add('selected-main');
+function removeHighlight(element) {
+    element.innerHTML = element.textContent;
+}
 
-                    // Remove 'selected' class after a delay (e.g., 1 second)
-                    setTimeout(() => {
-                        parentSection.classList.remove('selected-main');
-                    }, 1000);
-                }
 
-                function selectSectionfooter(sectionId) {
-                    // Remove 'selected' class from all sections
-                    const sections = document.querySelectorAll('.section');
-                    sections.forEach(section => {
-                    section.classList.remove('selected-footer');
-                });
+function highlightText(element, searchValue) {
+    var innerHTML = element.innerHTML;
+    var index = innerHTML.toLowerCase().indexOf(searchValue);
+    if (index >= 0) {
+        var highlightedText = "<span class='highlight'>" + innerHTML.substr(index, searchValue.length) + "</span>";
+        innerHTML = innerHTML.substr(0, index) + highlightedText + innerHTML.substr(index + searchValue.length);
+        element.innerHTML = innerHTML;
+    }
+}
 
-                    // Add 'selected' class to the clicked section
-                    const selectedSection = document.getElementById(sectionId);
-                    selectedSection.classList.add('selected-footer');
 
-                    // Remove 'selected' class after a delay (e.g., 1 second)
-                    setTimeout(() => {
-                    selectedSection.classList.remove('selected-footer');
-                    }, 1000);
-                }
+function getCurrentSection() {
+    var hash = window.location.hash; // Get only the hash portion of the URL
+    var sections = ["#hardwareprojects", "#gameprojects", "#cppprojects", "#unityprojects", "#webprojects", "#Comment"];
+    var currentSection = null;
 
-                function resetMessageBoxColor() {
-                    document.getElementById("message").style.backgroundColor = "beige";
-                    document.getElementById("message").style.color = "green";
-                }
+    sections.forEach(function(sectionId) {
+        if (hash === sectionId) { // Compare with sectionId including the hash
+            currentSection = document.querySelector(sectionId);
+        }
+    });
 
-                //Credit: TechLever (youtube.com/@tech-lever)
-                document.getElementById("form").addEventListener("submit", function(e) {
-                    e.preventDefault();
-                   resetMessageBoxColor();
-                    document.getElementById("message").textContent = "Submitting..";
-                    document.getElementById("message").style.display = "block";
-                    document.getElementById("submit-button").disabled = true;
+    return currentSection;
+}
 
-                    var currentDate = new Date();
-                    var day = String(currentDate.getDate()).padStart(2, "0");
-                    var month = String(currentDate.getMonth() + 1).padStart(2, "0");
-                    var year = currentDate.getFullYear();
-                    var hours = String(currentDate.getHours()).padStart(2, "0");
-                    var minutes = String(currentDate.getMinutes()).padStart(2, "0");
-                    var seconds = String(currentDate.getSeconds()).padStart(2, "0");
-                    var timestamp = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+function clearSearch() {
+    document.getElementById("search").value = "";
+    searchProjects();
+    // Remove previous search highlights
+    projectItems.forEach(function(item) {
+        removeHighlight(item.querySelector("h3"));
+        if (item.querySelector(".project-id")) {
+            removeHighlight(item.querySelector(".project-id"));
+        }
+    });
+}
 
-                    var countryCode = $("#mobile_code").intlTelInput("getSelectedCountryData").dialCode;
-                    var inputNumber = document.querySelector('input[name="Number"]').value;
-                    var combinedNumber = "+" + countryCode + inputNumber; // Add the '+' sign here
-                    document.querySelector('input[name="Timestamp"]').value = timestamp;
-                    document.querySelector('input[name="Number"]').value = combinedNumber;
+function selectSection(sectionId) {
+    // Remove 'selected' class from all sections
+    const sections = document.querySelectorAll('.section-margin');
+    sections.forEach(section => {
+        section.classList.remove('selected-main');
+    });
 
-                    $(document).ready(function() {
-                            $.getJSON("https://api.ipify.org?format=json", function(data) {
-                                    if (data && data.ip) {
-                                            $('input[name="IXPX"]').val(data.ip);
-                                    } else {
-                                            console.error("Failed to retrieve IP address.");
-                                    }
-                            }).fail(function() {
-                                    console.error("Failed to retrieve IP address.");
-                            });
-                    });
+    // Add 'selected' class to the parent section of the clicked button
+    const selectedSection = document.getElementById(sectionId);
+    const parentSection = selectedSection.closest('.section-margin');
+    parentSection.classList.add('selected-main');
 
-                    var formData = new FormData(this);
-                    var keyValuePairs = [];
-                    for (var pair of formData.entries()) {
-                            keyValuePairs.push(pair[0] + "=" + pair[1]);
-                    }
+    // Remove 'selected' class after a delay (e.g., 1 second)
+    setTimeout(() => {
+        parentSection.classList.remove('selected-main');
+    }, 1000);
+}
 
-                    var formDataString = keyValuePairs.join("&");
+function selectSectionfooter(sectionId) {
+    // Remove 'selected' class from all sections
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.remove('selected-footer');
+    });
 
-                    fetch("https://script.google.com/macros/s/AKfycbz3Gp9r177UzM0z1olj8TW25hBZqIQ7zlMrAdrVoq-dT8gkuqQMwHe7JcmYFwgvcfd_/exec", {
-                            redirect: "follow",
-                            method: "POST",
-                            body: formDataString,
-                            headers: {
-                                    "Content-Type": "text/plain;charset=utf-8",
-                            },
-                    }).then(function(response) {
-                            if (response) {
-                                    return response;
-                            } else {
-                                    throw new Error("Failed to submit the form.");
-                            }
-                    }).then(function(data) {
-                            document.getElementById("message").textContent = "Message Submitted Successfully!";
-                            document.getElementById("message").style.display = "block";
-                            document.getElementById("message").style.backgroundColor = "green";
-                            document.getElementById("message").style.color = "beige";
-                            document.getElementById("submit-button").disabled = false;
-                            document.getElementById("form").reset();
+    // Add 'selected' class to the clicked section
+    const selectedSection = document.getElementById(sectionId);
+    selectedSection.classList.add('selected-footer');
 
-                            setTimeout(function() {
-                                    document.getElementById("message").textContent = "";
-                                    document.getElementById("message").style.display = "none";
-                                    var numberField = document.querySelector(".phoneField");
-                                    numberField.style.display = "none";
-                                    var supportField = document.querySelector(".supportfield");
-                                    supportField.style.display = "none";
-                            }, 2000);
-                    }).catch(function(error) {
-                            console.error(error);
-                            document.getElementById("message").textContent = "An error occurred while submitting the form.";
-                            document.getElementById("message").style.display = "block";
-                    });
-            });
+    // Remove 'selected' class after a delay (e.g., 1 second)
+    setTimeout(() => {
+        selectedSection.classList.remove('selected-footer');
+    }, 1000);
+}
 
-            // Function to handle change event of the subject select
+function resetMessageBoxColor() {
+    document.getElementById("message").style.backgroundColor = "beige";
+    document.getElementById("message").style.color = "green";
+}
 
-            document.getElementById("subjectSelect").addEventListener("change", function() {
+//Credit: TechLever (youtube.com/@tech-lever)
+document.getElementById("form").addEventListener("submit", function(e) {
+    e.preventDefault();
+    resetMessageBoxColor();
+    document.getElementById("message").textContent = "Submitting..";
+    document.getElementById("message").style.display = "block";
+    document.getElementById("submit-button").disabled = true;
+
+    var currentDate = new Date();
+    var day = String(currentDate.getDate()).padStart(2, "0");
+    var month = String(currentDate.getMonth() + 1).padStart(2, "0");
+    var year = currentDate.getFullYear();
+    var hours = String(currentDate.getHours()).padStart(2, "0");
+    var minutes = String(currentDate.getMinutes()).padStart(2, "0");
+    var seconds = String(currentDate.getSeconds()).padStart(2, "0");
+    var timestamp = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+
+    var countryCode = $("#mobile_code").intlTelInput("getSelectedCountryData").dialCode;
+    var inputNumber = document.querySelector('input[name="Number"]').value;
+    var combinedNumber = "+" + countryCode + inputNumber; // Add the '+' sign here
+    document.querySelector('input[name="Timestamp"]').value = timestamp;
+    document.querySelector('input[name="Number"]').value = combinedNumber;
+
+    $(document).ready(function() {
+        $.getJSON("https://api.ipify.org?format=json", function(data) {
+            if (data && data.ip) {
+                $('input[name="IXPX"]').val(data.ip);
+            } else {
+                console.error("Failed to retrieve IP address.");
+            }
+        }).fail(function() {
+            console.error("Failed to retrieve IP address.");
+        });
+    });
+
+    var formData = new FormData(this);
+    var keyValuePairs = [];
+    for (var pair of formData.entries()) {
+        keyValuePairs.push(pair[0] + "=" + pair[1]);
+    }
+
+    var formDataString = keyValuePairs.join("&");
+
+    fetch("https://script.google.com/macros/s/AKfycbz3Gp9r177UzM0z1olj8TW25hBZqIQ7zlMrAdrVoq-dT8gkuqQMwHe7JcmYFwgvcfd_/exec", {
+        redirect: "follow",
+        method: "POST",
+        body: formDataString,
+        headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+        },
+    }).then(function(response) {
+        if (response) {
+            return response;
+        } else {
+            throw new Error("Failed to submit the form.");
+        }
+    }).then(function(data) {
+        document.getElementById("message").textContent = "Message Submitted Successfully!";
+        document.getElementById("message").style.display = "block";
+        document.getElementById("message").style.backgroundColor = "green";
+        document.getElementById("message").style.color = "beige";
+        document.getElementById("submit-button").disabled = false;
+        document.getElementById("form").reset();
+
+        setTimeout(function() {
+            document.getElementById("message").textContent = "";
+            document.getElementById("message").style.display = "none";
+            var numberField = document.querySelector(".phoneField");
+            numberField.style.display = "none";
+            var supportField = document.querySelector(".supportfield");
+            supportField.style.display = "none";
+        }, 2000);
+    }).catch(function(error) {
+        console.error(error);
+        document.getElementById("message").textContent = "An error occurred while submitting the form.";
+        document.getElementById("message").style.display = "block";
+    });
+});
+
+// Function to handle change event of the subject select
+
+document.getElementById("subjectSelect").addEventListener("change", function() {
     var numberField = document.querySelector(".phoneField");
     var ratingField = document.querySelector(".ratingWeb");
     var supportField = document.querySelector(".supportfield");
@@ -220,29 +272,29 @@
     }
 });
 
-            function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeadingId, isOpened) {
-                const toggleButton = document.querySelector(`${sectionId} ${toggleButtonClass}`);
-                const sectionContent = document.querySelector(`${sectionId} ${contentClass}`);
-                const toggleHeading = document.querySelector(toggleHeadingId);
-        
-                function toggle() {
-                    const section = document.querySelector(sectionId);
-                    section.classList.toggle("expanded");
-                    toggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
-                    sectionContent.style.display = section.classList.contains("expanded") ? "block" : "none";
-                }
-        
-                if (isOpened) {
-                    const section = document.querySelector(sectionId);
-                    section.classList.add("expanded");
-                    toggleButton.style.transform = "rotate(180deg)";
-                    sectionContent.style.display = "block"; // Ensure content is visible initially
-                }
-        
-                // Event listeners
-                toggleHeading.addEventListener("click", toggle);
-                toggleButton.addEventListener("click", toggle);
-            }
+function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeadingId, isOpened) {
+    const toggleButton = document.querySelector(`${sectionId} ${toggleButtonClass}`);
+    const sectionContent = document.querySelector(`${sectionId} ${contentClass}`);
+    const toggleHeading = document.querySelector(toggleHeadingId);
+
+    function toggle() {
+        const section = document.querySelector(sectionId);
+        section.classList.toggle("expanded");
+        toggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
+        sectionContent.style.display = section.classList.contains("expanded") ? "block" : "none";
+    }
+
+    if (isOpened) {
+        const section = document.querySelector(sectionId);
+        section.classList.add("expanded");
+        toggleButton.style.transform = "rotate(180deg)";
+        sectionContent.style.display = "block"; // Ensure content is visible initially
+    }
+
+    // Event listeners
+    toggleHeading.addEventListener("click", toggle);
+    toggleButton.addEventListener("click", toggle);
+}
 
 
 
@@ -328,19 +380,18 @@ function openNav() {
     document.getElementById("sidenav").style.width = "250px";
 }
 
-// Function to close side navigation
 function closeNav() {
     document.getElementById("sidenav").style.width = "0";
 }
 
-function header(){
-
-fetch('https://mbktech.xyz/Assets/header.html').then(response => response.text()).then(html => {
-    document.getElementById('header').innerHTML = html;
-});
+function header() {
+    fetch('https://mbktech.xyz/Assets/header.html').then(response => response.text()).then(html => {
+        document.getElementById('header').innerHTML = html;
+    });
 }
-function footer(){
-fetch('https://mbktech.xyz/Assets/footer.html').then(response => response.text()).then(html => {
-    document.getElementById('footer').innerHTML = html;
-});    
+
+function footer() {
+    fetch('https://mbktech.xyz/Assets/footer.html').then(response => response.text()).then(html => {
+        document.getElementById('footer').innerHTML = html;
+    });
 }
