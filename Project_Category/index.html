@@ -9,6 +9,15 @@
         <script> document.addEventListener("DOMContentLoaded", function() {header();footer();}); </script>
     </head>
     
+    <style>
+
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+        
+    </style>
+
     <div id="header"></div>
 
     <body>
@@ -43,8 +52,6 @@
                             <button class="search-bar-Sbutton" type="button" onclick="searchProjects()"> Search </button>
                       
                         </div>
-    
-                        <div id="searchResults"></div>
                     
                 </div>
                 
@@ -61,7 +68,9 @@
                 </div>
             
                 <div class="section-content">
-                    
+
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
@@ -95,6 +104,8 @@
             
                 <div class="section-content">
                     
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
@@ -127,7 +138,9 @@
                 </div>
             
                 <div class="section-content">
-                    
+
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
@@ -137,6 +150,15 @@
                                 <a href="../Project/Quiz_Game_Cpp/">
                                     <img src="../Assets/Images/pr-item4.png" alt="Project 1">
                                     <h3> Cpp Quiz Game </h3>
+                                </a>
+    
+                            </div>
+
+                            <div class="project-item" id="A456">
+    
+                                <a href="../Project/Quiz_Game_Cpp/">
+                                    <img src="../Assets/Images/pr-item4.png" alt="Project 1">
+                                    <h3> Cpp Encryption Game </h3>
                                 </a>
     
                             </div>
@@ -161,6 +183,8 @@
             
                 <div class="section-content">
                     
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
@@ -194,7 +218,9 @@
                 </div>
             
                 <div class="section-content">
-                    
+
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
@@ -232,7 +258,7 @@
         window.location.hash = hash; // Change the hash
         location.reload(); // Reload the page
     }
-
+    
     toggleSection("#hardwareprojects", ".toggle-button", ".section-content", "#hardwareprojectsToggleHeading",true);
     toggleSection("#webprojects", ".toggle-button", ".section-content", "#webprojectsToggleHeading",true);
     toggleSection("#unityprojects", ".toggle-button", ".section-content", "#unityprojectsToggleHeading",true);
@@ -241,27 +267,29 @@
   
     function showSectionBasedOnUrl() {
     var hash = window.location.hash; // Get only the hash portion of the URL
-    console.log("Hash link:", hash); // Log the retrieved hash link for debugging
     var sections = ["#hardwareprojects", "#gameprojects", "#cppprojects", "#unityprojects", "#webprojects", "#Comment"];
     sections.forEach(function(sectionId) {
         if (hash === sectionId) { // Compare with sectionId including the hash
             document.querySelector(sectionId).style.display = "block";
-        }
-    });
-}
+        }});
+    }
 
     document.addEventListener("DOMContentLoaded", function() {
-        showSectionBasedOnUrl(); // Move the call here
+        showSectionBasedOnUrl();
     });
-
-
 
     document.addEventListener("DOMContentLoaded", function() {
         checkCookie();
         loadTerms();
-        showSectionBasedOnUrl(); // Move the call here
+        showSectionBasedOnUrl();
     });
 
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("search").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            searchProjects();
+        }});
+    });
     </script>
 
 </html>
