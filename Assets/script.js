@@ -327,7 +327,7 @@ function loadTerms() {
         // Function to open the terms box
         function openTermsBox() {
             var termsBox = document.getElementById("termsBox");
-       //     termsBox.style.display = "block";
+            termsBox.style.display = "block";
         }
 
         // Function to close the terms box
