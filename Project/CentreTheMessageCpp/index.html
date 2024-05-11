@@ -295,11 +295,9 @@
     }
 }
 
-        
+            toggleSection("#Documentation", "#documentationToggleHeading", true);
+            toggleSection("#Comment", "#commentToggleHeading", true);
 
-            toggleSection("#Documentation", ".toggle-button", ".section-content", "#documentationToggleHeading", true);
-            toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
-        
             document.addEventListener("DOMContentLoaded", function() {
                 checkCookie();
                 loadTerms();

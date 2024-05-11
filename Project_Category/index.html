@@ -407,11 +407,11 @@
         location.reload(); // Reload the page
     }
     
-    toggleSection("#hardwareprojects", ".toggle-button", ".section-content", "#hardwareprojectsToggleHeading",true);
-    toggleSection("#webprojects", ".toggle-button", ".section-content", "#webprojectsToggleHeading",true);
-    toggleSection("#unityprojects", ".toggle-button", ".section-content", "#unityprojectsToggleHeading",true);
-    toggleSection("#cppprojects", ".toggle-button", ".section-content", "#cppprojectsToggleHeading",true);
-    toggleSection("#gameprojects", ".toggle-button", ".section-content", "#gameprojectsToggleHeading",true);
+    toggleSection("#hardwareprojects", "#hardwareprojectsToggleHeading",true);
+    toggleSection("#webprojects", "#webprojectsToggleHeading",true);
+    toggleSection("#unityprojects", "#unityprojectsToggleHeading",true);
+    toggleSection("#cppprojects", "#cppprojectsToggleHeading",true);
+    toggleSection("#gameprojects", "#gameprojectsToggleHeading",true);
   
     function showSectionBasedOnUrl() {
     var hash = window.location.hash; // Get only the hash portion of the URL

@@ -35,15 +35,15 @@
       
             <ul class="main-nav">
       
-              <li><a class="nav-links" href="#About" onclick="selectSection('About')"> About Us </a></li>
+              <li><a class="nav-links" href="#About" onclick="toggleSection('#About', '#aboutToggleHeading', true, true)"> About Us </a></li>
       
-              <li><a class="nav-links" href="#Projects" onclick="selectSection('Projects')"> Projects </a></li>
+              <li><a class="nav-links" href="#Projects" onclick="toggleSection('#Projects', '#projectsToggleHeading', true)"> Projects </a></li>
       
-              <li><a class="nav-links" href="#Blogs" onclick="selectSection('Blogs')"> Blogs </a></li>
+              <li><a class="nav-links" href="#Blogs" onclick="toggleSection('#Blogs', '#blogsToggleHeading', true)"> Blogs </a></li>
       
-              <li><a class="nav-links" href="#Contact" onclick="selectSection('Contact')"> Contact Us </a></li>
+              <li><a class="nav-links" href="#Contact" onclick="toggleSection('#Contact', '#contactToggleHeading', true)"> Contact Us </a></li>
       
-              <li><a class="nav-links" href="#Comment" onclick="selectSection('Comment')"> Comment </a></li>
+              <li><a class="nav-links" href="#Comment" onclick="toggleSection('#Comment', '#commentToggleHeading', true)"> Comment </a></li>
                 
             </ul>
       
@@ -70,7 +70,7 @@
               <div class="bar5"></div>
             </div>
             
-          </nav>
+        </nav>
     
     </header>
 
@@ -491,12 +491,12 @@
     }
 
     // About, Projects, Blogs
-    toggleSection("#About", ".toggle-button", ".section-content", "#aboutToggleHeading", true);
-    toggleSection("#Projects", ".toggle-button", ".section-content", "#projectsToggleHeading", true);
-    toggleSection("#Blogs", ".toggle-button", ".section-content", "#blogsToggleHeading", true);
-    toggleSection("#Collaboration", ".toggle-button", ".section-content", "#collabToggleHeading", true);
-    toggleSection("#Contact", ".toggle-button", ".section-content", "#contactToggleHeading", true);
-    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
+    toggleSection("#About", "#aboutToggleHeading", true);
+    toggleSection("#Projects", "#projectsToggleHeading", true);
+    toggleSection("#Blogs", "#blogsToggleHeading", true);
+    toggleSection("#Collaboration", "#collabToggleHeading", true);
+    toggleSection("#Contact", "#contactToggleHeading", true);
+    toggleSection("#Comment", "#commentToggleHeading", true);
 
 
     // Function to open side navigation
@@ -512,4 +512,20 @@
         checkCookie();
         loadTerms();
     });
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            var sectionId = this.getAttribute('href');
+            var section = document.querySelector(sectionId);
+
+            // Smooth scroll to the section
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
     </script>

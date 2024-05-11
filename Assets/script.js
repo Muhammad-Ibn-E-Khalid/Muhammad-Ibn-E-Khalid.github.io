@@ -42,7 +42,6 @@ function removeHighlight(element) {
     element.innerHTML = element.textContent;
 }
 
-
 function highlightText(element, searchValue) {
     var innerHTML = element.innerHTML;
     var index = innerHTML.toLowerCase().indexOf(searchValue);
@@ -52,7 +51,6 @@ function highlightText(element, searchValue) {
         element.innerHTML = innerHTML;
     }
 }
-
 
 function getCurrentSection() {
     var hash = window.location.hash; // Get only the hash portion of the URL
@@ -284,9 +282,9 @@ document.getElementById("subjectSelect").addEventListener("change", function() {
     }
 });
 
-function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeadingId, isOpened) {
-    const toggleButton = document.querySelector(`${sectionId} ${toggleButtonClass}`);
-    const sectionContent = document.querySelector(`${sectionId} ${contentClass}`);
+function toggleSection(sectionId, toggleHeadingId, isOpened) {
+    const toggleButton = document.querySelector(`${sectionId} ${'.toggle-button'}`);
+    const sectionContent = document.querySelector(`${sectionId} ${'.section-content'}`);
     const toggleHeading = document.querySelector(toggleHeadingId);
 
     function toggle() {
@@ -294,6 +292,7 @@ function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeading
         section.classList.toggle("expanded");
         toggleButton.style.transform = section.classList.contains("expanded") ? "rotate(180deg)" : "rotate(0deg)";
         sectionContent.style.display = section.classList.contains("expanded") ? "block" : "none";
+
     }
 
     if (isOpened) {
@@ -307,8 +306,6 @@ function toggleSection(sectionId, toggleButtonClass, contentClass, toggleHeading
     toggleHeading.addEventListener("click", toggle);
     toggleButton.addEventListener("click", toggle);
 }
-
-
 
 // Function to load terms from external file
 function loadTerms() {
