@@ -146,10 +146,24 @@
             <li><strong>- Multiline Content:</strong> You need to handle multiline content gracefully, ensuring each line is centered independently for a cohesive display.</li>
             <li><strong>- User-Friendly Interfaces:</strong> Creating a more user-friendly interface by presenting information in a visually appealing and organized manner.</li>
           </ul>
-        
-          <br>
+          
+          <h2>Limitation</h2>
+
+          <p>While the CentredMessage function provides a convenient way to center text within the console window, it's important to be aware of its limitations:</p>
+
+          <ul>
+            <li><strong>- Platform Dependency:</strong> The function relies on Windows API functions, such as  <code>GetConsoleScreenBufferInfo</code> and <code>GetStdHandle</code>, making it platform-dependent. Consequently, portability to non-Windows platforms may require significant modifications or alternative approaches.</li>
+            <li><strong>- Handling of Very Long Lines:</strong> While the function attempts to handle very long lines by intelligently splitting them into two parts, extremely long lines may still pose challenges. In such cases, manual adjustments or alternative formatting methods may be necessary for optimal display.    
+            <li><strong>- Dependency on Console Environment:</strong> The behavior of the function may vary depending on the console environment and settings. Compatibility issues or unexpected behavior may arise in certain environments.    
+       
+          </ul>
+
+          <h2>Collaborate</h2>
+
+          <p>Feel free to collaborate on improving this code by visiting our GitHub repository: <a href="https://github.com/Muhammad-Ibn-E-Khalid/CentreTheMessageCpp/" >Link</a>. Let's work together to make it even better!</p>
+<br>
           <br id="code">
-          <br> <br>
+          <br> 
           <h1 >C++ Source Code</h1>
          <br>
           <pre  id="htmlCode"><button class="cbutton" onclick="copyHtmlCode()">Copy</button>
