@@ -4,7 +4,7 @@ Main Website
 
 https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io
 
-https://muhammad-ibn-e-khalid.github.io/ or https://mbktech.xyz/
+https://mbktechstudio.com/ or https://muhammad-ibn-e-khalid.github.io/ or https://mbktech.xyz/
 
 
 Website Source Code / Copy of Website
