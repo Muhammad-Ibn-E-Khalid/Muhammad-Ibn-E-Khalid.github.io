@@ -32,3 +32,18 @@
 
         </div>
         
+<script>
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            var sectionId = this.getAttribute('href');
+            var section = document.querySelector(sectionId);
+
+            // Smooth scroll to the section
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });</script>
