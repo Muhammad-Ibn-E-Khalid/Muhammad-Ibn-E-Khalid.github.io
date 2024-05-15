@@ -309,7 +309,7 @@ function toggleSection(sectionId, toggleHeadingId, isOpened) {
 
 // Function to load terms from external file
 function loadTerms() {
-    fetch('https://mbktech.xyz/Assets/terms.html').then(response => response.text()).then(html => {
+    fetch('https://mbktechstudio.com/Assets/terms.html').then(response => response.text()).then(html => {
         document.getElementById('terms').innerHTML = html;
         document.body.classList.add('no-scroll');
         document.getElementById('agreeButton').addEventListener('click', function() {
@@ -318,7 +318,7 @@ function loadTerms() {
         });
 
         document.getElementById('disagreeButton').addEventListener('click', function() {
-            window.location.href = 'https://mbktech.xyz/Assets/disagree.html';
+            window.location.href = 'https://mbktechstudio.com/Assets/disagree.html';
         });
 
         // Function to open the terms box
@@ -394,13 +394,13 @@ function closeNav() {
 }
 
 function header() {
-    fetch('https://mbktech.xyz/Assets/header.html').then(response => response.text()).then(html => {
+    fetch('https://mbktechstudio.com/Assets/header.html').then(response => response.text()).then(html => {
         document.getElementById('header').innerHTML = html;
     });
 }
 
 function footer() {
-    fetch('https://mbktech.xyz/Assets/footer.html').then(response => response.text()).then(html => {
+    fetch('https://mbktechstudio.com/Assets/footer.html').then(response => response.text()).then(html => {
         document.getElementById('footer').innerHTML = html;
     });
 }
