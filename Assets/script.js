@@ -400,7 +400,7 @@ function header() {
 }
 
 function footer() {
-    fetch('https://muhammad-ibn-e-khalid.github.ioAssets/footer.html').then(response => response.text()).then(html => {
+    fetch('https://muhammad-ibn-e-khalid.github.io/Assets/footer.html').then(response => response.text()).then(html => {
         document.getElementById('footer').innerHTML = html;
     });
 }
