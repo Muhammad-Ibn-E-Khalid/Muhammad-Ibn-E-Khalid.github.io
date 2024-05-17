@@ -9,12 +9,12 @@ body {
     margin: 0;
     border: 6px solid #274e4b;
 }
-.kkk a {
+.content a {
     text-decoration: none;
     display: inline-block;
     padding: 8px 16px;
 }
-.kkk a:hover {
+.content a:hover {
     background-color: #e0edd8;
     color: white;
 }
