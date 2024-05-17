@@ -6,7 +6,8 @@
                 <title> MBK Tech Studio SourceCode </title>
                 <link rel="icon" type="image/x-icon" href="../../Assets/Images/IconALogo.jpg">
                 <link rel="stylesheet" href="../../Assets/styles.css">
-            </head>
+                <script> document.addEventListener("DOMContentLoaded", function() {header();footer();}); </script>
+              </head>
             
             <style>
     ff{
@@ -43,9 +44,9 @@
 
             </style>
 
+            <div id="header"></div>
+
             <body>
-        
-           <div id="header"></div>
         
                 <div class="bordered">
         
@@ -68,10 +69,10 @@
                             <div class="container">
         
                                 <h1 style="color:gold; text-align: center;" >Website Source Code Documentation Update</h1>
-                                <h3 style="color:aliceblue; text-align: center;" >At This Moment, The Website's <a href="https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io" target="_blank">Source Code</a> Documentation Has Not Been Fully Written. However, You Can Access The <a href="https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io" target="_blank">Source Code</a> Via The Provided <a href="https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io" ><a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank">Link</a></a>. We Anticipate Releasing Fully Detailed Documentation In Early <ff>June 2024</ff>. Thank You For Your Patience.</h3>
+                                <h3 style="color:aliceblue; text-align: center;" >At This Moment, The Website's <a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank">Source Code</a> Documentation Has Not Been Fully Written. However, You Can Access The <a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank">Source Code</a> Via The Provided <a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" ><a href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank">Link</a></a>. We Anticipate Releasing Fully Detailed Documentation In Early <ff>June 2024</ff>. Thank You For Your Patience.</h3>
                                 
                             <div class="button-container" >
-                                <a class="button" href="https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io" target="_blank">
+                                <a class="button" href="https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/" target="_blank">
                                 Source Code
                                 </a>
                             </div>
@@ -217,36 +218,17 @@
                     <section style="padding: 1px;" ></section>
         
                 </div>
-        
-                <div id="footer"></div>
-        
+
             </body>
+        
+            <footer> <div id="footer"></div> </footer>
         
             <script src="../../Assets/script.js"></script>
         
             <script>
         
-            toggleSection("#Documentation", ".toggle-button", ".section-content", "#documentationToggleHeading", true);
-            toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
-        
-          
-            fetch('../../Assets/header.html').then(response => response.text()).then(html => {
-                document.getElementById('header').innerHTML = html;
-            });
-        
-            fetch('../../Assets/footer.html').then(response => response.text()).then(html => {
-                document.getElementById('footer').innerHTML = html;
-            });
-        
-            // Function to open side navigation
-            function openNav() {
-                document.getElementById("sidenav").style.width = "250px";
-            }
-        
-            // Function to close side navigation
-            function closeNav() {
-                document.getElementById("sidenav").style.width = "0";
-            }
+            toggleSection("#Documentation", "#documentationToggleHeading", true);
+            toggleSection("#Comment", "#commentToggleHeading", true);
         
             document.addEventListener("DOMContentLoaded", function() {
                 checkCookie();

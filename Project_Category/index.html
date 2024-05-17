@@ -6,11 +6,129 @@
         <title> Projects Category - MBK Tech Studios </title>
         <link rel="icon" type="image/x-icon" href="../Assets/Images/IconALogo.jpg">
         <link rel="stylesheet" href="../Assets/styles.css">
+        <script> document.addEventListener("DOMContentLoaded", function() {header();footer();}); </script>
     </head>
     
-    <body>
+    <style>
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+       }
+        .CrossButton{
+            background-color: rgba(0, 0, 0, 0);
+            border: 0px solid wheat;
+            cursor:pointer;
+            font-size:30px;
+            margin-right:5px;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 2px;
+       }
+        .CrossButton:hover{
+            color:#ccc;
+       }
+        .project-item {
+            position: relative;
+            display: inline-block;
+       }
+        .status {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color:rgb(94, 94, 94);
+            padding: 5px 10px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            font-weight: bold;
+       }
+        .notactive{
+            background-color: rgb(255, 255, 0);
+            opacity: 0.9;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: rgb(255, 255, 255);
+            padding: 5px 10px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            font-weight: bold;
+            opacity: 0.9;
+            z-index: 1;
+       }
+        .active{
+            background-color: rgb(165, 254, 32);
+            opacity: 0.9;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: rgb(255, 255, 255);
+            padding: 5px 5px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            font-weight: bold;
+            opacity: 0.9;
+            z-index: 1;
+       }
+        .archived {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: rgb(255, 255, 255);
+            padding: 5px 10px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            font-weight: bold;
+            background-color: #ff743d;
+            opacity: 0.9;
+            z-index: 1;
+       }
+        .info-button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            margin-left: 5px;
+       }
+        .info-popup {
+            display: none;
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.874);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            max-width: 250px;
+           /* Set maximum width */
+            bottom: calc(100% - 10px);
+           /* Set bottom position */
+            left: 50%;
+            transform: translateX(-50%);
+       }
+        .project-item {
+            position: relative;
+       }
+        .project-item:hover .archived {
+            position: absolute;
+           /* Ensure the position remains fixed */
+       }
+        .ongoing{
+            position: absolute;
+            top: 0;
+            right: 0;
+            color:rgb(255, 255, 255);
+            padding: 5px 10px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            font-weight: bold;
+            background-color:lightskyblue;
+            opacity: 0.9;
+            z-index: 1;
+       }
+        
+    </style>
 
-   <div id="header"></div>
+    <div id="header"></div>
+
+    <body>
 
         <div class="bordered">
 
@@ -27,7 +145,7 @@
                             <a onclick="changeHashAndReload('#hardwareprojects')">Computer Hardware Projects</a>
                             <a onclick="changeHashAndReload('#gameprojects')">Game Development Projects</a>
                             <a onclick="changeHashAndReload('#cppprojects')">C++ Projects</a>
-                            <a onclick="changeHashAndReload('#unityprojects')">Unity Projects</a>
+                            <a onclick="changeHashAndReload('#unityprojects')">Unity Asset Projects</a>
                             <a onclick="changeHashAndReload('#webprojects')">Web Development Projects</a>
                         </div>
                     </div>
@@ -38,12 +156,10 @@
                         <div class="search-bar">
     
                             <input type="text" id="search" placeholder="Search project by name or Project ID #...">
-                            <button class="search-bar-Cbutton" id="clearButton" type="button" onclick="clearSearch()"> x </button>
+                            <button class="CrossButton" type="button" onclick="clearSearch()"> x </button>
                             <button class="search-bar-Sbutton" type="button" onclick="searchProjects()"> Search </button>
                       
                         </div>
-    
-                        <div id="searchResults"></div>
                     
                 </div>
                 
@@ -60,7 +176,9 @@
                 </div>
             
                 <div class="section-content">
-                    
+
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
@@ -68,7 +186,7 @@
                             <div class="project-item" id="A456">
     
                                 <a>
-                                    <img src="../Assets/Images/pr-item2.jpeg" alt="Project 1">
+                                    <img src="../Assets/Images/pr-item2.png" alt="Project 1">
                                     <h3> Comming Soon</h3>
                                 </a>
     
@@ -94,6 +212,8 @@
             
                 <div class="section-content">
                     
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
@@ -101,7 +221,7 @@
                             <div class="project-item" id="A456">
     
                                 <a>
-                                    <img src="../Assets/Images/pr-item1.jpg" alt="Project 1">
+                                    <img src="../Assets/Images/pr-item1.png" alt="Project 1">
                                     <h3> Comming Soon</h3>
                                 </a>
     
@@ -126,18 +246,41 @@
                 </div>
             
                 <div class="section-content">
-                    
+
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
-    
+                            
                             <div class="project-item" id="A456">
-    
+
+                                <span class="active" title="This project has been published, providing access to both its source code and documentation.">
+                                    <a class="info-button" onclick="showInfo('popup6')">Active</a>
+                                    <div id="popup6" class="info-popup">
+                                        This project has been published, providing access to both its source code and documentation.
+                                    </div>
+                                </span>
+
+                                <a href="../Project/CentreTheMessageCpp/">
+                                    <img src="Img/CentreTheMessageCpp.png" alt="Project 1">
+                                    <h3> Centre The Message Cpp </h3>
+                                </a>
+                            </div>
+
+                            <div class="project-item" id="A456">
+
+                                <span class="status notactive" title="This project is underdevelopment and will be available soon.">
+                                    <a class="info-button" onclick="showInfo('popup3')">Comming Soon</a>
+                                    <div id="popup3" class="info-popup">
+                                        This project is underdevelopment and will be available soon.
+                                    </div>
+                                </span>
+
                                 <a href="../Project/Quiz_Game_Cpp/">
                                     <img src="../Assets/Images/pr-item4.png" alt="Project 1">
                                     <h3> Cpp Quiz Game </h3>
                                 </a>
-    
                             </div>
     
                         </div>
@@ -160,19 +303,34 @@
             
                 <div class="section-content">
                     
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
-    
+
                             <div class="project-item" id="A456">
-    
-                                <a>
-                                    <a href="../Project/Feedback_Report_System_For_Unity/">
-                                        <img src="../Assets/Images/pr-item3.webp" alt="Project 1">
-                                        <h3> Unity Feedback Report System </h3>
-                                    </a>
-    
+
+                                <span class="archived" title="This project is archived and under major changes due to violation of Unity Asset Guidelines or API Storage">
+                                    <a class="info-button" onclick="showInfo('popup1')">Archived</a>
+                                    <div id="popup1" class="info-popup">
+                                        This project is archived and under major changes due to violation of Unity Asset Guidelines of API Storage
+                                    </div>
+                                </span>
+
+                                <span class="status notactive" title="This project is undergoing major changes and will be available soon.">
+                                    <a class="info-button" onclick="showInfo('popup2')">Comming Soon</a>
+                                    <div id="popup2" class="info-popup">
+                                        This project is undergoing major changes and will be available soon.
+                                    </div>
+                                </span>
+
+                                <a href="../Project/Feedback_Report_System_For_Unity/">
+                                    <img src="../Assets/Images/pr-item3.png" alt="Project 1">
+                                    <h3> Unity Feedback Report System </h3>
+                                </a>
                             </div>
+                            
     
                         </div>
     
@@ -193,12 +351,29 @@
                 </div>
             
                 <div class="section-content">
-                    
+
+                    <div class="search-results" style="color: lightcoral; font-weight: bold; margin-top: 5px;"></div>
+
                     <div class="container">
     
                         <div class="project-grid">
     
                             <div class="project-item" id="A456">
+
+                                
+                                <span class="active" title="This project has been published and its source code is available, but its documentation is incomplete.">
+                                    <a class="info-button" onclick="showInfo('popup4')">Active-InComplete</a>
+                                    <div id="popup4" class="info-popup">
+                                        This project has been published and its source code is available, but its documentation is incomplete.
+                                    </div>
+                                </span>
+
+                                <span class="ongoing" title="This project will continue to receive regular updates">
+                                    <a class="info-button" onclick="showInfo('popup5')">Ongoing</a>
+                                    <div id="popup5" class="info-popup">
+                                        This project will continue to receive regular updates
+                                    </div>
+                                </span>
     
                                 <a href="../Project/MBKTechStudio_SourceCode/" target="_blank">
                                     <img src="../Assets/Images/pr-item5.png" alt="Project 1">
@@ -217,68 +392,62 @@
 
             <section style="padding: 1px;" ></section>
 
-        </div>
-
-        <div id="footer"></div>
+        </div>       
 
     </body>
+
+    <footer> <div id="footer"></div> </footer>
 
     <script src="../Assets/script.js"></script>
 
     <script>
 
-function changeHashAndReload(hash) {
+    function changeHashAndReload(hash) {
         window.location.hash = hash; // Change the hash
         location.reload(); // Reload the page
     }
-
-    toggleSection("#hardwareprojects", ".toggle-button", ".section-content", "#hardwareprojectsToggleHeading",true);
-    toggleSection("#webprojects", ".toggle-button", ".section-content", "#webprojectsToggleHeading",true);
-    toggleSection("#unityprojects", ".toggle-button", ".section-content", "#unityprojectsToggleHeading",true);
-    toggleSection("#cppprojects", ".toggle-button", ".section-content", "#cppprojectsToggleHeading",true);
-    toggleSection("#gameprojects", ".toggle-button", ".section-content", "#gameprojectsToggleHeading",true);
-
-    fetch('../Assets/header.html').then(response => response.text()).then(html => {
-        document.getElementById('header').innerHTML = html;
-    });
-
-    fetch('../Assets/footer.html').then(response => response.text()).then(html => {
-        document.getElementById('footer').innerHTML = html;
-    });
-
-    // Function to open side navigation
-    function openNav() {
-        document.getElementById("sidenav").style.width = "250px";
-    }
-
-    // Function to close side navigation
-    function closeNav() {
-        document.getElementById("sidenav").style.width = "0";
-    }
+    
+    toggleSection("#hardwareprojects", "#hardwareprojectsToggleHeading",true);
+    toggleSection("#webprojects", "#webprojectsToggleHeading",true);
+    toggleSection("#unityprojects", "#unityprojectsToggleHeading",true);
+    toggleSection("#cppprojects", "#cppprojectsToggleHeading",true);
+    toggleSection("#gameprojects", "#gameprojectsToggleHeading",true);
 
     function showSectionBasedOnUrl() {
     var hash = window.location.hash; // Get only the hash portion of the URL
-    console.log("Hash link:", hash); // Log the retrieved hash link for debugging
     var sections = ["#hardwareprojects", "#gameprojects", "#cppprojects", "#unityprojects", "#webprojects", "#Comment"];
     sections.forEach(function(sectionId) {
         if (hash === sectionId) { // Compare with sectionId including the hash
             document.querySelector(sectionId).style.display = "block";
-        }
-    });
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-        showSectionBasedOnUrl(); // Move the call here
-    });
-
-
+        }});
+    }
 
     document.addEventListener("DOMContentLoaded", function() {
-        checkCookie();
-        loadTerms();
-        showSectionBasedOnUrl(); // Move the call here
+        showSectionBasedOnUrl();
     });
 
-    </script>
+    document.addEventListener("DOMContentLoaded", function() {
+        loadTerms();
+    });
 
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("search").addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            searchProjects();
+        }});
+    });
+    function showInfo(popup) {
+    var infoPopup = document.getElementById(popup);
+    var computedStyle = window.getComputedStyle(infoPopup);
+
+    if (computedStyle.display === "none") {
+        infoPopup.style.display = "block";
+    } else {
+        infoPopup.style.display = "none";
+    }
+}
+
+
+    </script>
+        
 </html>

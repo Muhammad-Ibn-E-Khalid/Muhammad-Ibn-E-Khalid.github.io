@@ -13,15 +13,48 @@
       
     </head>
 
-    <header>
+    <style>
+        .notice{
+            background-color: #f2f2f2;
+            color: #333;
+            padding: 1px;
+            margin-bottom: 5px;
+        }
+        .notice p{
+            margin: 0 0 5;
+            margin-top: 5px;
+        }
+        .project-item {
+            position: relative;
+            display: inline-block;
+       }
+        .new{
+            background-color: rgb(255, 255, 0);
+            opacity: 0.9;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: #191919;
+            padding: 5px 10px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            font-weight: bold;
+            opacity: 0.9;
+            z-index: 1;
+       }
+    </style>
 
-        <p style="text-align: center; background-color: #f2f2f2; color: #333; padding: 10px; margin-top: 0px; ">
-            <img height="13px" width="13px" src="Assets/Images/psflag.png">
-            <a href="https://alkhidmat.org/appeal/emergency-appeal-palestine-save-lives-in-gaza-today" target="_blank" class="donate-button">Donate For Palestine</a>
-            <img height="13px" width="13px" src="Assets/Images/psflag.png">
-            <br>
-            <strong>Notice:</strong> I will be less available until 25/05/2024, due to ongoing exams. Your patience and understanding are greatly appreciated during this period.
-        </p>
+    <header>
+        
+        <div class="notice">
+            
+            <p>
+                <img height="13px" width="13px" src="Assets/Images/psflag.png">
+                <a href="https://alkhidmat.org/appeal/emergency-appeal-palestine-save-lives-in-gaza-today" target="_blank" class="donate-button">Donate For Palestine</a>
+                <img height="13px" width="13px" src="Assets/Images/psflag.png">
+            </p>           
+
+        </div>
         
         <nav class="navbar">
 
@@ -35,15 +68,11 @@
       
             <ul class="main-nav">
       
-              <li><a class="nav-links" href="#About" onclick="selectSection('About')"> About Us </a></li>
-      
-              <li><a class="nav-links" href="#Projects" onclick="selectSection('Projects')"> Projects </a></li>
-      
-              <li><a class="nav-links" href="#Blogs" onclick="selectSection('Blogs')"> Blogs </a></li>
-      
-              <li><a class="nav-links" href="#Contact" onclick="selectSection('Contact')"> Contact Us </a></li>
-      
-              <li><a class="nav-links" href="#Comment" onclick="selectSection('Comment')"> Comment </a></li>
+                <li><a class="nav-links" href="#About" onclick="selectSection('About')"> About Us </a></li>
+                <li><a class="nav-links" href="#Projects" onclick="selectSection('Projects')"> Projects </a></li>
+                <li><a class="nav-links" href="#Blogs" onclick="selectSection('Blogs')"> Blogs </a></li>
+                <li><a class="nav-links" href="#Contact" onclick="selectSection('Contact')"> Contact Us </a></li>
+                <li><a class="nav-links" href="#Comment" onclick="selectSection('Comment')"> Comment </a></li>
                 
             </ul>
       
@@ -70,7 +99,7 @@
               <div class="bar5"></div>
             </div>
             
-          </nav>
+        </nav>
     
     </header>
 
@@ -119,7 +148,6 @@
 
                      </div>
 
-
             </section>
 
             <section id="Projects" class="expandable-section section-margin section-wrapper">
@@ -135,37 +163,39 @@
                         <div class="project-grid">
                             
                             <div class="project-item">
-                                <a href="Project_Category/#gameprojects" target="_blank">
-                                    <img src="Assets/Images/pr-item1.jpg" alt="Game Development Projects">
+                                <a href="Project_Category/#gameprojects">
+                                    <img src="Assets/Images/pr-item1.png" alt="Game Development Projects">
                                     <h3>Game Development Projects</h3>
                                 </a>
                             </div>
             
                             <div class="project-item">
-                                <a href="Project_Category/#hardwareprojects" target="_blank">
-                                    <img src="Assets/Images/pr-item2.jpeg" alt="Computer Hardware Engineering Projects">
+                                <a href="Project_Category/#hardwareprojects">
+                                    <img src="Assets/Images/pr-item2.png" alt="Computer Hardware Engineering Projects">
                                     <h3>Computer Hardware Engineering Projects</h3>
                                 </a>
                             </div>
             
                             <div class="project-item">
-                                <a href="Project_Category/#unityprojects" target="_blank">
-                                    <img class="logo-containerdimg" src="Assets/Images/pr-item3.webp" alt="Unity Asset Projects">
+                                <a href="Project_Category/#unityprojects">
+                                    <img class="logo-containerdimg" src="Assets/Images/pr-item3.png" alt="Unity Asset Projects">
                                     <h3>Unity Asset Projects</h3>
                                 </a>
                             </div>
             
                             <div class="project-item">
-                                <a href="Project_Category/#cppprojects" target="_blank">
+                                <a href="Project_Category/#cppprojects">
+                                    <span class="new" title="New Project Has been Published">+ 1 New</span>
                                     <img class="logo-containerdimg" src="Assets/Images/pr-item4.png" alt="C++ Projects">
                                     <h3>C++ Projects</h3>
                                 </a>
                             </div>
 
                             <div class="project-item">
-                                <a href="Project_Category/#webprojects" target="_blank">
+                                <a href="Project_Category/#webprojects">
+                                    <span class="new" title="New Project Has been Published">+ 1 New</span>
                                     <img class="logo-containerdimg" src="Assets/Images/pr-item5.png" alt="Web Projects">
-                                    <h3>Web Projects</h3>
+                                    <h3>Web Development Projects</h3>
                                 </a>
                             </div>
                             
@@ -188,7 +218,7 @@
                         <div class="project-grid">
                             <div class="project-item">
                                 <a><!-- <a href="" target="_blank">-->
-                                    <img class="logo-containerdimg" src="Assets/Images/pr-item1.jpg" alt="Unity Asset Projects">
+                                    <img class="logo-containerdimg" src="Assets/Images/pr-item1.png" alt="Unity Asset Projects">
                                     <h3>No Blogs Uploaded Yet</h3>
                                 </a>
                             </div>
@@ -241,7 +271,7 @@
 
             </section>
 
-                        <section id="Contact" class="expandable-section section-wrapper section-margin">
+            <section id="Contact" class="expandable-section section-wrapper section-margin">
 
                     <div id="contactToggleHeading" class="header">
                         <h2>Contact Us</h2>
@@ -276,6 +306,31 @@
                                     </div>
 
                                 </div>
+
+                                
+                                <!-- Support Field Appear When Support is Selected -->
+
+                                <div class="field supportfield" style="display: none;">
+                                  
+                                    <label class="label">Support Type</label>
+                                  
+                                    <div class="control">
+                                        
+                                        <div class="select">
+                                            <select name="support" id="supportselect">
+                                                <option value="" disabled selected>Select support type</option>
+                                                <option value="Blogs">Blogs</option>
+                                                <option value="Technical">Technical</option>
+                                                <option value="CopyRightIssue">CopyRight Issue</option>
+                                                <option value="SourceCodeAssistance">Source Code Assistance</option>
+                                                <option value="BugReportingFeatureRequests">Bug Reporting & Feature Requests</option>
+                                                <option value="other">other</option>
+                                             </select>                              
+                                        </div>
+
+                                    </div>
+
+                                </div>
         
                                 <div class="field">
                                     <label class="label">Name</label><div class="control"><div class="input" ><input  type="text" placeholder="Enter Your Name" name="UserName" required /></div></div>
@@ -285,68 +340,48 @@
                                     <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
                                 </div>
 
-                                <!-- Support Field Appear When Support is Selected 
+                                <!-- Support Field Appear When Feedback is Selected -->
 
-                                <div class="field supportfield" style="display: none;">
-                                  
-                                    <label class="label">Support Type</label>
-                                  
+                                <div class="field ratingWeb" style="display: none;">
+                                    <label class="label">Rating</label>
                                     <div class="control">
-                                        
-                                        <div class="select">
-                                            <select name="support" id="supportselect" required>
-                                                <option value="" disabled selected>Select support type</option>
-                                                <option value="Blogs">Blogs</option>
-                                                <option value="Technical">Technical</option>
-                                                <option value="CopyRightIssue">CopyRight Issue</option>
-                                                <option value="SourceCodeAssistance">Source Code Assistance</option>
-                                                <option value="BugReporting&FeatureRequests">Bug Reporting & Feature Requests</option>
-                                                <option value="other">other</option>
-                                             </select>                              
+                                        <div class="rating">
+                                            <label>
+                                                <input type="radio" name="stars" value="1"/>
+                                                <span class="fa fa-star icon"></span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="2" />
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="3" />
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>   
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="4" />
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                            </label>
+                                            <label>
+                                                <input type="radio" name="stars" value="5" />
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                                <span class="fa fa-star icon"></span>
+                                            </label>
                                         </div>
-
-                                    </div>
-
-                                </div>-->
-
-                            <div class="field ratingWeb" style="display: none;">
-                                <label class="label">Rating</label>
-                                <div class="control">
-                                    <div class="rating">
-                                        <label>
-                                            <input type="radio" name="stars" value="1"/>
-                                            <span class="fa fa-star icon"></span>
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="stars" value="2" />
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="stars" value="3" />
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>   
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="stars" value="4" />
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                        </label>
-                                        <label>
-                                            <input type="radio" name="stars" value="5" />
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                            <span class="fa fa-star icon"></span>
-                                        </label>
                                     </div>
                                 </div>
-                            </div>
                                 
+                                <!-- Support Field Appear When Collabration & Support is Selected -->
+
                                 <div class="field phoneField" style="display: none;">
                                     <label class="label">Phone Number</label>
                                     <div class="control">
@@ -424,7 +459,7 @@
             </a>
             <a class="yt" href="https://youtube.com/@MBKTechStudios" target="_blank"> <img src="Assets/Images/youtube1.png" alt="YouTube Channel Link"></a>
             <a class="git" href="https://github.com/Muhammad-Ibn-E-Khalid" target="_blank"> <img src="Assets/Images/github.png" alt="Github Profile Link"></a>
-            <a class="fb" href="https://facebook.com/@MBKTechStudios" target="_blank"> <img src="Assets/Images/facebook.png" alt="Facebook Page Link"></a>
+            <a class="fb" href="https://www.facebook.com/people/MBK-Tech-Studio/61559079077988/" target="_blank"> <img src="Assets/Images/facebook.png" alt="Facebook Page Link"></a>
             <a class="dis" href="https://discord.gg/MUAyAeckrM" target="_blank"> <img src="Assets/Images/discord.png" alt="Discord Server Link"></a>
             <a class="insta" href="https://instagram.com/mbktech.studios" target="_blank"> <img src="Assets/Images/instagram.png" alt="Instagram Page Link"></a>
             <a class="lk" href="https://www.linkedin.com/in/muhammad-bin-khalid-89711b25b" target="_blank"> <img src="Assets/Images/linkedin.png" alt="Linkedin Profile Link"></a>
@@ -486,32 +521,13 @@
             document.querySelector('.select select').setAttribute('title', text);
     }
 
-        
-    document.getElementById("subjectSelect").addEventListener("change", function() {
-            var numberField = document.querySelector(".phoneField");
-            var rateField = document.querySelector(".ratingWeb");
-
-            if (this.value === "Collaboration") {
-                numberField.style.display = "block";
-                rateField.style.display = "none";
-            } else if (this.value === "Feedback") {
-                rateField.style.display = "block";
-                numberField.style.display = "none";
-            } else {
-                numberField.style.display = "none";
-                rateField.style.display = "none";
-            }
-    });
-
-
-
     // About, Projects, Blogs
-    toggleSection("#About", ".toggle-button", ".section-content", "#aboutToggleHeading", true);
-    toggleSection("#Projects", ".toggle-button", ".section-content", "#projectsToggleHeading", true);
-    toggleSection("#Blogs", ".toggle-button", ".section-content", "#blogsToggleHeading", true);
-    toggleSection("#Collaboration", ".toggle-button", ".section-content", "#collabToggleHeading", true);
-    toggleSection("#Contact", ".toggle-button", ".section-content", "#contactToggleHeading", true);
-    toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
+    toggleSection("#About", "#aboutToggleHeading", true);
+    toggleSection("#Projects", "#projectsToggleHeading", true);
+    toggleSection("#Blogs", "#blogsToggleHeading", true);
+    toggleSection("#Collaboration", "#collabToggleHeading", true);
+    toggleSection("#Contact", "#contactToggleHeading", true);
+    toggleSection("#Comment", "#commentToggleHeading", true);
 
 
     // Function to open side navigation
@@ -524,7 +540,22 @@
             document.getElementById("sidenav").style.width = "0";
     }
     document.addEventListener("DOMContentLoaded", function() {
-        checkCookie();
         loadTerms();
     });
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            var sectionId = this.getAttribute('href');
+            var section = document.querySelector(sectionId);
+
+            // Smooth scroll to the section
+            section.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
     </script>

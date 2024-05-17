@@ -4,7 +4,7 @@ Main Website
 
 https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io
 
-https://muhammad-ibn-e-khalid.github.io/ or https://mbktech.xyz/
+https://mbktechstudio.com/ or https://muhammad-ibn-e-khalid.github.io/ or https://mbktech.xyz/
 
 
 Website Source Code / Copy of Website
@@ -38,7 +38,6 @@ https://github.com/Muhammad-Ibn-E-Khalid
 
 ### Assets/: 
 - Images/
-- mdImages/ (This folder contain Images for README.md so it have no effect on website)
 - disagree.html
 - footer.html 
 - header.html 
@@ -88,11 +87,11 @@ Use `UserAgreement/index.html`:
 
 **Image References:**
 When Website first time laod on device.
-![Image 1 Description](Assets/mdImages/termbox.png)
+![Image 1 Description](Project/MBKTechStudio_SourceCode/termbox.png)
 When Clcik on 'Terms Of Use & Privacy Policy' link.
-![Image 2 Description](Assets/mdImages/terms.png)
+![Image 2 Description](Project/MBKTechStudio_SourceCode/terms.png)
 When Click On Disagree
-![Image 3 Description](Assets/mdImages/disaagree.png)
+![Image 3 Description](Project/MBKTechStudio_SourceCode/disaagree.png)
 
 
 In the root folder, we have the home page `root/index.html` which is main page of our website.

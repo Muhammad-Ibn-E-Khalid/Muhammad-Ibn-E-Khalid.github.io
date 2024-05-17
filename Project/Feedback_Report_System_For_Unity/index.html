@@ -6,11 +6,12 @@
                 <title> Feedback Report System For Unity - MBK Tech Studios </title>
                 <link rel="icon" type="image/x-icon" href="../../Assets/Images/IconALogo.jpg">
                 <link rel="stylesheet" href="../../Assets/styles.css">
+                <script> document.addEventListener("DOMContentLoaded", function() {header();footer();}); </script>
             </head>
             
+            <div id="header"></div>
+
             <body>
-        
-           <div id="header"></div>
         
                 <div class="bordered">
         
@@ -73,43 +74,25 @@
         
                 </div>
         
-                <div id="footer"></div>
-        
             </body>
+
+            <footer> <div id="footer"></div> </footer>
         
             <script src="../../Assets/script.js"></script>
         
             <script>
         
-            toggleSection("#Documentation", ".toggle-button", ".section-content", "#documentationToggleHeading", true);
-            toggleSection("#Comment", ".toggle-button", ".section-content", "#commentToggleHeading", true);
-        
-          
-            fetch('../../Assets/header.html').then(response => response.text()).then(html => {
-                document.getElementById('header').innerHTML = html;
-            });
-        
-            fetch('../../Assets/footer.html').then(response => response.text()).then(html => {
-                document.getElementById('footer').innerHTML = html;
-            });
-        
-            // Function to open side navigation
-            function openNav() {
-                document.getElementById("sidenav").style.width = "250px";
-            }
-        
-            // Function to close side navigation
-            function closeNav() {
-                document.getElementById("sidenav").style.width = "0";
-            }
-        
+            toggleSection("#Documentation", "#documentationToggleHeading", true);
+            toggleSection("#Comment", "#commentToggleHeading", true);
+
             document.addEventListener("DOMContentLoaded", function() {
                 checkCookie();
                 loadTerms();
             });
+            
             </script>
         
-        </html>
+</html>
         
         
 
