@@ -14,11 +14,6 @@ https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/
 https://muhammad-ibn-e-khalid.github.io/mbktech.studios/ or https://mbktech.xyz/mbktech.studios/
 
 
-User Profile
-
-https://github.com/Muhammad-Ibn-E-Khalid
-
-
 
 ## Hosting:
 - The website is hosted on GitHub, with a custom domain purchased from Namecheap for $2 for a 12-month period. This custom domain is pointed to the GitHub repository.
