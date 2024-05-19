@@ -390,6 +390,36 @@
                 
             </section>
 
+
+            <section id="Comment" class="expandable-section section-wrapper section-margin">
+            
+                <div class="container">
+                    
+                    <div id="commentToggleHeading" class="header">
+                        <h2>Comment</h2>
+                        <button class="toggle-button"></button>
+                    </div>
+
+                    <div class="section-content">
+
+                        <br>
+                        
+                        <div id="commento"></div>
+                        <script defer src="https://cdn.commento.io/js/commento.js"></script>
+                        
+                        <script>
+
+                            var currentPageUrl = window.location.pathname;
+                            document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
+                            
+                        </script>
+                        
+                    </div>
+
+                </div>
+
+            </section>
+            
             <section style="padding: 1px;" ></section>
 
         </div>       
@@ -412,6 +442,8 @@
     toggleSection("#unityprojects", "#unityprojectsToggleHeading",true);
     toggleSection("#cppprojects", "#cppprojectsToggleHeading",true);
     toggleSection("#gameprojects", "#gameprojectsToggleHeading",true);
+    toggleSection("#Comment", "#commentToggleHeading");
+
 
     function showSectionBasedOnUrl() {
     var hash = window.location.hash; // Get only the hash portion of the URL
