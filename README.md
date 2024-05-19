@@ -2,16 +2,16 @@
 
 Main Website
 
-https://github.com/Muhammad-Ibn-E-Khalid/Muhammad-Ibn-E-Khalid.github.io
+https://github.com/MIbnEKhalid.github.io/Muhammad-Ibn-E-Khalid.github.io
 
-https://mbktechstudio.com/ or https://muhammad-ibn-e-khalid.github.io/
+https://mbktechstudio.com/ or https://MIbnEKhalid.github.io/
 
 
 Website Source Code / Copy of Website
 
-https://github.com/Muhammad-Ibn-E-Khalid/mbktech.studios/
+https://github.com/MIbnEKhalid.github.io/mbktech.studios/
 
-https://muhammad-ibn-e-khalid.github.io/mbktech.studios/ or https://mbktechstudio.com/mbktech.studios/
+https://MIbnEKhalid.github.io.github.io/mbktech.studios/ or https://mbktechstudio.com/mbktech.studios/
 
 
 
