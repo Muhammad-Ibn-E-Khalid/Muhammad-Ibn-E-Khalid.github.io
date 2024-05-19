@@ -1,9 +1,7 @@
-https://muhammad-ibn-e-khalid.github.io/mbktech.studios/
+# mbktechstudio
 
-https://muhammad-ibn-e-khalid.github.io/
+https://mbktechstudio.com/
 
-https://github.com/Muhammad-Ibn-E-Khalid
+https://mbktechstudio.com/mbktech.studios/
 
-# mbktech.studio
-
-op
+https://github.com/MIbnEKhalid
