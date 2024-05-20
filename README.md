@@ -9,7 +9,7 @@ https://mbktechstudio.com/ or https://MIbnEKhalid.github.io/
 
 Website Source Code / Copy of Website
 
-https://github.com/MIbnEKhalid.github.io/mbktech.studios/
+https://github.com/MIbnEKhalid/mbktech.studios/
 
 https://MIbnEKhalid.github.io.github.io/mbktech.studios/ or https://mbktechstudio.com/mbktech.studios/
 
