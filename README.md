@@ -16,8 +16,9 @@ https://MIbnEKhalid.github.io.github.io/mbktech.studios/ or https://mbktechstudi
 
 
 ## Hosting:
-- The website is hosted on GitHub, with a custom domain purchased from Namecheap for $2 for a 12-month period. This custom domain is pointed to the GitHub repository.
+- The website is hosted on GitHub, with a custom domain purchased from Namecheap for $13 for a 12-month period. This custom domain is pointed to the GitHub repository.
   *Note: If you are using a custom domain, ensure it is properly configured to point to your GitHub repository.*
+- Buying domain is not necessary you can use github gomain for free *user.github.io*.
 
 ## Files Tree:
 
