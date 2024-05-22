@@ -281,7 +281,7 @@ section a:hover,
 }
 .section-content{
     padding: 0 20px;
-    display: none;
+    display: block;
 }
 .expanded .section-content {
     display: block;
