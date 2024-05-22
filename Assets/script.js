@@ -307,40 +307,58 @@ function toggleSection(sectionId, toggleHeadingId, isOpened) {
     toggleButton.addEventListener("click", toggle);
 }
 
-const TERMS_VERSION = '0.2';  // Change this version when terms are updated
-
+// Function to load terms from external file
 function loadTerms() {
-    fetch('Assets/terms.html').then(response => response.text()).then(html => {
+    fetch('https://mbktechstudio.com/Assets/terms.html').then(response => response.text()).then(html => {
         document.getElementById('terms').innerHTML = html;
         document.body.classList.add('no-scroll');
         document.getElementById('agreeButton').addEventListener('click', function() {
             setCookie('agreed', 'true', 365);
-            setCookie('termsVersion', TERMS_VERSION, 365);
             hideOverlay();
         });
 
         document.getElementById('disagreeButton').addEventListener('click', function() {
-            window.location.href = 'Assets/disagree.html';
+            window.location.href = 'https://mbktechstudio.com/Assets/disagree.html';
         });
 
+        // Function to open the terms box
+        function openTermsBox() {
+            var termsBox = document.getElementById("termsBox");
+            termsBox.style.display = "block";
+        }
+
+        // Function to close the terms box
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
+                var termsBox = document.getElementById("termsBox");
+                termsBox.style.display = "none";
+            }
+        });
+
+        // Function to toggle the modal
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'openModalBtn') {
+                openTermsBox();
+            }
+        });
         checkCookie();
     });
 }
 
+// Function to check if the user has agreed to terms
 function checkCookie() {
-    const agreed = getCookie('agreed');
-    const savedVersion = getCookie('termsVersion');
-
-    if (agreed === 'true' && savedVersion === TERMS_VERSION) {
+    if (getCookie('agreed') === 'true') {
         hideOverlay();
     }
 }
 
+// Function to hide the overlay
 function hideOverlay() {
     document.getElementById('overlay').style.display = 'none';
     document.body.classList.remove('no-scroll');
 }
 
+// Function to set a cookie
 function setCookie(name, value, days) {
     var expires = "";
     if (days) {
@@ -351,6 +369,7 @@ function setCookie(name, value, days) {
     document.cookie = name + "=" + (value || "") + expires + "; path=/";
 }
 
+// Function to get a cookie value
 function getCookie(name) {
     var nameEQ = name + "=";
     var cookies = document.cookie.split(';');
