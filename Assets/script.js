@@ -307,68 +307,83 @@ function toggleSection(sectionId, toggleHeadingId, isOpened) {
     toggleButton.addEventListener("click", toggle);
 }
 
-        const TERMS_VERSION = '0.2';  // Change this version when terms are updated
+// Function to load terms from external file
+function loadTerms() {
+    fetch('https://mbktechstudio.com/Assets/terms.html').then(response => response.text()).then(html => {
+        document.getElementById('terms').innerHTML = html;
+        document.body.classList.add('no-scroll');
+        document.getElementById('agreeButton').addEventListener('click', function() {
+            setCookie('agreed', 'true', 365);
+            hideOverlay();
+        });
 
-        function loadTerms() {
-            fetch('https://mbktechstudio.com/Assets/terms.html').then(response => response.text()).then(html => {
-                document.getElementById('terms').innerHTML = html;
-                document.body.classList.add('no-scroll');
-                document.getElementById('agreeButton').addEventListener('click', function() {
-                    setCookie('agreed', 'true', 365);
-                    setCookie('termsVersion', TERMS_VERSION, 365);
-                    hideOverlay();
-                });
+        document.getElementById('disagreeButton').addEventListener('click', function() {
+            window.location.href = 'https://mbktechstudio.com/Assets/disagree.html';
+        });
 
-                document.getElementById('disagreeButton').addEventListener('click', function() {
-                    window.location.href = 'https://mbktechstudio.com/Assets/disagree.html';
-                });
-
-                checkCookie();
-            });
+        // Function to open the terms box
+        function openTermsBox() {
+            var termsBox = document.getElementById("termsBox");
+            termsBox.style.display = "block";
         }
 
-        // Function to check if the user has agreed to terms
-        function checkCookie() {
-            const agreed = getCookie('agreed');
-            const savedVersion = getCookie('termsVersion');
-
-            if (agreed === 'true' && savedVersion === TERMS_VERSION) {
-                hideOverlay();
+        // Function to close the terms box
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'closeTermsBtn' || event.target.id === 'backToTerm') {
+                var termsBox = document.getElementById("termsBox");
+                termsBox.style.display = "none";
             }
-        }
+        });
 
-        // Function to hide the overlay
-        function hideOverlay() {
-            document.getElementById('overlay').style.display = 'none';
-            document.body.classList.remove('no-scroll');
-        }
-
-        // Function to set a cookie
-        function setCookie(name, value, days) {
-            var expires = "";
-            if (days) {
-                var date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
+        // Function to toggle the modal
+        document.addEventListener('click', function(event) {
+            if (event.target.id === 'openModalBtn') {
+                openTermsBox();
             }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/";
-        }
+        });
+        checkCookie();
+    });
+}
 
-        // Function to get a cookie value
-        function getCookie(name) {
-            var nameEQ = name + "=";
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-                var cookie = cookies[i];
-                while (cookie.charAt(0) === ' ') {
-                    cookie = cookie.substring(1, cookie.length);
-                }
-                if (cookie.indexOf(nameEQ) === 0) {
-                    return cookie.substring(nameEQ.length, cookie.length);
-                }
-            }
-            return null;
+// Function to check if the user has agreed to terms
+function checkCookie() {
+    if (getCookie('agreed') === 'true') {
+        hideOverlay();
+    }
+}
+
+// Function to hide the overlay
+function hideOverlay() {
+    document.getElementById('overlay').style.display = 'none';
+    document.body.classList.remove('no-scroll');
+}
+
+// Function to set a cookie
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+// Function to get a cookie value
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
         }
+        if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+    return null;
+}
 
 function openNav() {
     document.getElementById("sidenav").style.width = "250px";
