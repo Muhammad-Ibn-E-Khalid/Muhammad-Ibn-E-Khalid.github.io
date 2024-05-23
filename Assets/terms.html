@@ -7,72 +7,173 @@
     
     <style>
         body {
-            font-family:Arial,sans-serif;
-            margin:0;
-            padding:0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
         }
-        .mmodal  a {
-            color:#6ac2f1;
-            text-decoration:none;
-            font-weight:800;
-            text-decoration:underline;
+        .mmodal a {
+            color: #6ac2f1;
+            text-decoration: none;
+            font-weight: 800;
+            text-decoration: underline;
         }
         .mmodal a:visited {
-            color:none;
+            color: none;
         }
         .mmodal a:hover {
-            color:#95daff;
-            box-shadow:0 0 10px 5px #48bfff;
+            color: #95daff;
+            box-shadow: 0 0 10px 5px #48bfff;
         }
-        #overlay {
-            display:block;
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background-color:rgba(0,0,0,0.704);
-            z-index:9999;
+        #overlay, #confirmationModal {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.704);
+            z-index: 9998;
+        }
+        #confirmationModal {
+            z-index: 10000; 
         }
         #modal {
-            color:whitesmoke;
-            position:fixed;
-            top:50%;
-            left:50%;
-            transform:translate(-50%,-50%);
-            background-color:#377a77;
-            border:6px solid #274e4b;
-            padding:20px;
-            border-radius:5px;
-            box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+            color: whitesmoke;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #377a77;
+            border: 6px solid #274e4b;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
         }
         .mmodal button {
-            padding:10px 20px;
-            border:none;
-            border-radius:5px;
-            cursor:pointer;
-            font-weight:800;
-            font-size:16px;
-            transition:background-color 0.3s ease;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
-        #disagreeButton {
-            background-color:#dc3545;
-            color:#fff;
-            margin-right:10px;
+        #disagreeButton, #disagreeconfirmationButton {
+            background-color: #dc3545;
+            color: #fff;
+            margin-right: 10px;
         }
-        #agreeButton {
-            background-color:#28a745;
-            color:#fff;
-            float:right;
+        #agreeButton, #cancelconfirmationButton {
+            background-color: #28a745;
+            color: #fff;
+            float: right;
         }
         #agreeButton:hover {
-            box-shadow:0 0 50px 10px #46b05d;
+            box-shadow: 0 0 50px 10px #46b05d;
         }
         #disagreeButton:hover {
-            box-shadow:0 0 50px 10px #f54b5c;
+            box-shadow: 0 0 50px 10px #f54b5c;
         }
         body.no-scroll {
             overflow: hidden;
+        }
+        .terms-box {
+            border-radius: 6px;
+            display: none;
+            position: fixed;
+            top: 7%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #377a77;
+            border: 6px solid #274e4b;
+            color: aliceblue;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            height: 80%;
+            overflow-y: auto;
+            z-index: 9999;
+        }
+        .terms-header {
+            text-align: right;
+        }
+        .terms-box h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #4cffdb;
+            text-align: center;
+        }
+        .terms-box h3 {
+            font-size: 18px;
+            color: #f1bf6a;
+        }
+        .terms-box p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .terms-box ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        .terms-box a {
+            color: #5bc6ff;
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+        .terms-box a:visited {
+            color: none;
+        }
+        .terms-box a:hover {
+            color: #75cfffdd;
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+        .terms-box .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .button-container {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+        .terms-box .DateTimePara {
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            color: #4cffdb;
+            background-color: #274e4b;
+            padding: 15px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            font-weight: 800;
+        }
+        .terms-box button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 800;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        /* WebKit browsers (Chrome, Safari) */
+        .terms-box::-webkit-scrollbar {
+            width: 12px;
+        }
+        .terms-box::-webkit-scrollbar-thumb {
+            background-color: white;
+            border-radius: 10px;
+            border: 3px solid #377a77; /* Adjust border to match your modal background */
+        }
+        .terms-box::-webkit-scrollbar-track {
+            background: #274e4b; /* Adjust track background if needed */
+        }
+        .terms-box {
+            scrollbar-width: thin;
+            scrollbar-color: white #335f5b; /* Thumb color followed by track color */
         }
         @media only screen and (max-width: 600px) {
             #modal {
@@ -84,97 +185,28 @@
                 font-size: 14px;
             }
         }
-          .terms-box {
-            border-radius: 6px;
-            display: none;
-            position: fixed;
-            top: 7%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color:#377a77;
-            border:6px solid #274e4b;
-            color: aliceblue;
-            padding: 20px;
-            width: 80%;
-            max-width: 800px;
-            height: 80%; 
-            overflow-y: auto; 
-            z-index: 9999;
-        }
-        .terms-header {
-            text-align: right;
-        }
-        .terms-box h2 {
-    font-size:30px;
-    margin-bottom:20px;
-    color:#4cffdb;
-    text-align:center;
-}
-.terms-box h3 {
-    font-size:18px;
-    color:#f1bf6a;
-}
- .terms-box p {
-    font-size:16px;
-    line-height:1.6;
-    margin-bottom:20px;
-}
- .terms-box ul {
-    margin-bottom:20px;
-    padding-left:20px;
-}
-        
-.terms-box  a {
-    color:#5bc6ff;
-    font-weight:bolder;
-    text-decoration:underline;
-}
-.terms-box a:visited {
-    color:none;
-}
-.terms-box a:hover {
-    color:#75cfffdd;
-    font-weight:bolder;
-    text-decoration:underline;
-}
-
-.terms-box .container {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-.terms-box .DateTimePara {
-    font-family:Arial,sans-serif;
-    font-size:18px;
-    color:#2f8dff;
-    background-color:#2e3a41;
-    padding:15px;
-    border:2px solid #ccc;
-    border-radius:10px;
-    box-shadow:0px 4px 8px rgba(0,0,0,0.1);
-    font-weight:800;
-}
-.terms-box button {
-    padding:10px 20px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-weight:800;
-    font-size:16px;
-    transition:background-color 0.3s ease;
-}
     </style>
 </head>
 <body> 
     
-    <div class="mmodal" id="overlay">
+    <div class="mmodal" id="overlay" style="display: block;">
         <div id="modal">
             <h2>Terms of Use and Privacy Policy</h2>
-            <p>Please Read And Agree To The <a  class="termbutton" id="openModalBtn" > Terms Of Use & Privacy Policy </a> Before Accessing The Website. By Agreeing, You Are Also Agreeing To The Use Of Cookies.</p>
-            <button id="agreeButton">Agree</button>
-            <button id="disagreeButton">Disagree</button>
+            <p>Please Read And Agree To The <a class="termbutton" id="openModalBtn"> Terms Of Use & Privacy Policy </a> Before Accessing The Website. By Agreeing, You Are Also Agreeing To The Use Of Cookies.</p>
+            <button id="agreeButton">Accept</button>
+            <button id="disagreeButton">Reject</button>
         </div>
-    </div> 
+    </div>
+
+    <div class="mmodal" id="confirmationModal" style="display: none;">
+        <div id="modal">
+            <h2>Are You Sure?</h2>
+            <p>By rejecting, access to the website will be denied.</p>
+            <button id="disagreeconfirmationButton">Yes, Reject</button>
+            <button id="cancelconfirmationButton">Cancel</button>
+        </div>
+    </div>
+
 
     <div class="terms-box" id="termsBox"style="display: none;">
         <div class="terms-header">
@@ -182,7 +214,6 @@
         </div>
         <div id="con">
             <h2>Terms and Conditions</h2>
-            <p id="termsVersion" style="display:block;">Version: 0.2</p>
             <span style="color:rgb(255, 112, 112);font-weight: 800; text-align: center; font-size: larger;">Whoa, hold up nigga! You must be super bored if you're reading our Terms & Conditions! Get a life, bro! Anyway</span>
             <h4 style="color:lightgreen; text-align: center; font-weight: 800; "> Welcome To MBK Tech Studios, By Accepting These Terms And Conditions, You Are Agreeing To Comply With And Be Bound By The Following Terms Of Use.</h4>
             <h3 id="Section1" >Section 1: Acceptance of Terms</h3>
@@ -209,10 +240,12 @@
             <h3 id="Section8" >Section 8: Governing Law</h3>
             <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of Pakistan. Any disputes arising out of or related to these Terms and Conditions will be resolved through binding arbitration in accordance with the rules of the Pakistan International Arbitration Centre.</p>
             <h3 id="Section9" >Section 9: Changes to Terms</h3>
-            <ul>
-                <li>I reserve the right to modify or update these Terms and Conditions at any time without prior notice. Your continued use of this Website constitutes your agreement to any changes.</li>
-                <li>The terms and conditions of use are valid for 365 days from your initial acceptance. After this period, you must re-agree to the terms. You'll receive a notification prompting renewal. Failure to renew may result in restricted access. <a href="https://github.com/MIbnEKhalid/" target="_blank" >Muhammad Bin Khalid</a> reserves the right to update these terms without notice.</li>
+            <ul style="font-size: 15px; line-height: 1.6; margin-bottom: 20px;" >
+                <li><a href="https://github.com/MIbnEKhalid/" target="_blank" >Muhammad Bin Khalid</a> reserve the right to modify or update these Terms and Conditions at any time, and you will receive a notification whenever changes occur. Your continued use of this <a href="https://mbktechstudio.com/" >Website</a> constitutes your agreement to any modifications.</li>
+                <li>The terms and conditions of use remain valid for 365 days from your initial acceptance or until a new update on the terms is made, whichever comes first. Upon any update to the terms, you will be prompted to review and re-agree to them. Failure to do so may result in restricted access. <a href="https://github.com/MIbnEKhalid/" target="_blank" >Muhammad Bin Khalid</a> reserves the right to update these terms with notice.</li>
             </ul>
+
+            
             <h3 id="Section10" >Section 10: Website Code License</h3>
             <p>The <a href="https://github.com/MIbnEKhalid/mbktech.studios/" target="_blank" >Source Code</a> of this <a href="https://mbktechstudio.com/" >Website</a> is provided under an open-source license, allowing you to view, copy, modify, distribute, and use it for any purpose, including commercial purposes, without requiring further permission from <a href="https://github.com/MIbnEKhalid/" target="_blank" >Muhammad Bin Khalid</a>. However, you accept that the <a href="https://github.com/MIbnEKhalid/mbktech.studios/" target="_blank" >Source Code</a> is provided "as is," without warranty of any kind, express or implied. <a href="https://github.com/MIbnEKhalid/" target="_blank" >Muhammad Bin Khalid</a> holds no liability for any damages arising from the use of this <a href="https://github.com/MIbnEKhalid/mbktech.studios/" target="_blank" >Source Code</a>.</p>
            
@@ -236,10 +269,11 @@
             <p>For More Details Visit <a href="https://commento.io/" target="_blank" >Commento</a> <a href="https://commento.io/legal" target="_blank">Terms of Service and Policies</a></p>
             
             <div class="container">
-                <p class="DateTimePara">Last Updated On 13/05/2024</p>
-                <div class="button-container">
-                    <button id="backToTerm">Back</button>
-                </div>
+                <p class="DateTimePara"> <span id="termsVersion">Update Version: 0.2</span> | <span>Last Updated On 23/05/2024</span></p>
+            </div>   
+
+            <div class="button-container">
+                <button id="backToTerm">Close</button>
             </div>
 
         </div>
