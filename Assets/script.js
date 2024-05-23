@@ -307,6 +307,7 @@ function toggleSection(sectionId, toggleHeadingId, isOpened) {
     toggleButton.addEventListener("click", toggle);
 }
 
+        const TERMS_VERSION = '0.2';  // Change this version when terms are updated
 
         function loadTerms() {
             fetch('https://mbktechstudio.com/Assets/terms.html').then(response => response.text()).then(html => {
