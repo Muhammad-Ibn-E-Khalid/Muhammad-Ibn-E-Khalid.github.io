@@ -1,191 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>\
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../Assets/Images/IconALogo.jpg">
     <title>Terms&Conditions - MBKTechStudio</title>
-    <link rel="stylesheet" href="style.css">
     <script> document.addEventListener("DOMContentLoaded", function() {header();footer();}); </script>
     
     <style>        
-body {
-    background-color:#000;
-    color:#fff;
-    font-family:Arial,sans-serif;
-    margin:0;
-    padding:0;
-}
-#overlay {
-    display:block;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background-color:rgba(0,0,0,0.7);
-    z-index:9999;
-}
-#modal {
-    color:#fff;
-    position:fixed;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    background-color:#222;
-    border:1px solid #fff;
-    padding:20px;
-    border-radius:5px;
-    box-shadow:0px 0px 10px rgba(255,255,255,0.5);
-    width:95%;
-    overflow-y:auto;
-    height:90%;
-}
-#modal h2 {
-    font-size:30px;
-    margin-bottom:20px;
-    color:#4cffdb;
-    text-align:center;
-}
-#modal h3 {
-    font-size:18px;
-    color:#f1bf6a;
-}
-#modal p {
-    font-size:16px;
-    line-height:1.6;
-    margin-bottom:20px;
-}
-#modal ul {
-    margin-bottom:20px;
-    padding-left:20px;
-}
-.mmodal button {
-    padding:10px 20px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-    font-weight:800;
-    font-size:16px;
-    transition:background-color 0.3s ease;
-}
-#backToTerm {
-    background-color:#2f8dff;
-    color:#fff;
-    margin-right:10px;
-}
-#agreeButton:hover {
-    background-color:#218838;
-}
-#disagreeButton:hover {
-    background-color:#c82333;
-}
-.container {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-.DateTimePara {
-    font-family:Arial,sans-serif;
-    font-size:18px;
-    color:#2f8dff;
-    background-color:#2e3a41;
-    padding:15px;
-    border:2px solid #ccc;
-    border-radius:10px;
-    box-shadow:0px 4px 8px rgba(0,0,0,0.1);
-    font-weight:800;
-}
-.button-container {
+        body {
+            background-color:#000;
+            color:#fff;
+            font-family:Arial,sans-serif;
+            margin:0;
+            padding:0;
+        }
+        #overlay {
+            display:block;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background-color:rgba(0,0,0,0.7);
+            z-index:9999;
+        }
+        #modal {
+            color:#fff;
+            position:fixed;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background-color:#222;
+            border:2px solid #fff;
+            padding:20px;
+            border-radius:6px;
+            box-shadow:0px 0px 10px rgba(255,255,255,0.5);
+            width:95%;
+            overflow-y:auto;
+            height:90%;
+        }
+        #modal h2 {
+            font-size:30px;
+            margin-bottom:20px;
+            color:#4cffdb;
+            text-align:center;
+        }
+        #modal h3 {
+            font-size:18px;
+            color:#f1bf6a;
+        }
+        #modal p {
+            font-size:16px;
+            line-height:1.6;
+            margin-bottom:20px;
+        }
+        #modal ul {
+            margin-bottom:20px;
+            padding-left:20px;
+        }
+        .mmodal button {
+            padding:10px 20px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            font-weight:800;
+            font-size:16px;
+            transition:background-color 0.3s ease;
+        }
+        #backToTerm {
+            background-color:#2f8dff;
+            color:#fff;
+            margin-right:10px;
+        }
+        #agreeButton:hover {
+            background-color:#218838;
+        }
+        #disagreeButton:hover {
+            background-color:#c82333;
+        }
+        .container {
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .DateTimePara {
+            font-family:Arial,sans-serif;
+            font-size:18px;
+            color:#2f8dff;
+            background-color:#2e3a41;
+            padding:15px;
+            border:2px solid #ccc;
+            border-radius:10px;
+            box-shadow:0px 4px 8px rgba(0,0,0,0.1);
+            font-weight:800;
+        }
+        .button-container {
             justify-content: center;
             display: flex;
             align-items: center;
-}
-a {
-    color:#5bc6ff;
-    font-weight:bolder;
-    text-decoration:underline;
-}
-a:visited {
-    color:none;
-}
-a:hover {
-    color:#75cfffdd;
-    font-weight:bolder;
-    text-decoration:underline;
-}
-@media only screen and (max-width:600px) {
-    #modal {
-        width:90%;
-        height:90%;
-    }
-}
-footer {
-    color:#fff;
-    padding:5px 0;
-    text-align:center;
-}.CopyRightBox{
-    padding-bottom: 5px;
-}.donate{
-    padding: 5px;
-}.social-links {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    border-radius:6px;
-    padding: 5px;
-    flex-wrap:wrap;
-}.social-links-container {
-    max-width:100%;
-    margin:0 auto;
-    overflow:hidden;
-}.social-links img {
-    margin:5px;
-    height:56px;
-    width:56px;
-    max-width:100%;
-    transition: 0.3s;
-}.dis img:hover {
-    box-shadow:0 0 80px #e5eedd;
-    border-radius: 10px 
-}.gmail img:hover {
-    box-shadow:0 0 80px #e5eedd;
-    border-radius: 100px / 40px;
-}.yt img:hover {
-    box-shadow:0 0 80px #e5eedd;
-    border-radius: 100px / 60px;
-}.git img:hover {
-    box-shadow:0 0 80px #e5eedd;
-    border-radius:14px;
-}.fb img:hover {
-    box-shadow:0 0 80px #e5eedd;
-    border-radius:6px;
-}.insta img:hover {
-    box-shadow:0 0 80px #e5eedd;
-    border-radius:13px;
-}.lk img:hover {
-    box-shadow:0 0 80px #e5eedd;
-    border-radius:5px;
-}
-/* For Firefox */
-* {
-    scrollbar-width: thin; /* Makes the scrollbar thinner */
-    scrollbar-color: #4cffdb #333; /* Sets the color of the scrollbar handle and track */
-}
-/* For WebKit browsers */
-::-webkit-scrollbar {
-    width: 12px; /* Width of the scrollbar */
-}
-::-webkit-scrollbar-track {
-    background: #333; /* Color of the scrollbar track */
-}
-::-webkit-scrollbar-thumb {
-    background: #4cffdb; /* Color of the scrollbar handle */
-    border-radius: 6px; /* Rounded corners for the scrollbar handle */
-}
-::-webkit-scrollbar-thumb:hover {
-    background: #4ae0c2; /* Color of the scrollbar handle when hovered */
-}
+        }
+        a {
+            color:#5bc6ff;
+            font-weight:bolder;
+            text-decoration:underline;
+        }
+        a:visited {
+            color:none;
+        }
+        a:hover {
+            color:#75cfffdd;
+            font-weight:bolder;
+            text-decoration:underline;
+        }
+        @media only screen and (max-width:600px) {
+            #modal {
+                width:90%;
+                height:90%;
+            }
+        }
+        /* For Firefox */
+        * {
+            scrollbar-width: thin; /* Makes the scrollbar thinner */
+            scrollbar-color: #4cffdb #333; /* Sets the color of the scrollbar handle and track */
+        }
+        /* For WebKit browsers */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+        ::-webkit-scrollbar-track {
+            background: #333; /* Color of the scrollbar track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4cffdb; /* Color of the scrollbar handle */
+            border-radius: 6px; /* Rounded corners for the scrollbar handle */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4ae0c2; /* Color of the scrollbar handle when hovered */
+        }
     </style>
     
 </head>
