@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="style.css">
     <script> document.addEventListener("DOMContentLoaded", function() {header();footer();}); </script>
     
-    <style>
-        
-        body {
+    <style>        
+body {
     background-color:#000;
     color:#fff;
     font-family:Arial,sans-serif;
@@ -71,7 +70,7 @@
     transition:background-color 0.3s ease;
 }
 #backToTerm {
-    background-color:#28a745;
+    background-color:#2f8dff;
     color:#fff;
     margin-right:10px;
 }
@@ -84,7 +83,7 @@
 .container {
     display:flex;
     align-items:center;
-    justify-content:space-between;
+    justify-content:center;
 }
 .DateTimePara {
     font-family:Arial,sans-serif;
@@ -98,8 +97,9 @@
     font-weight:800;
 }
 .button-container {
-    padding:15px;
-    text-align:right;
+            justify-content: center;
+            display: flex;
+            align-items: center;
 }
 a {
     color:#5bc6ff;
@@ -116,11 +116,10 @@ a:hover {
 }
 @media only screen and (max-width:600px) {
     #modal {
-    width:90%;
-    height:90%;
+        width:90%;
+        height:90%;
+    }
 }
-}
-
 footer {
     color:#fff;
     padding:5px 0;
@@ -168,7 +167,25 @@ footer {
     box-shadow:0 0 80px #e5eedd;
     border-radius:5px;
 }
-
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* Makes the scrollbar thinner */
+    scrollbar-color: #4cffdb #333; /* Sets the color of the scrollbar handle and track */
+}
+/* For WebKit browsers */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+::-webkit-scrollbar-track {
+    background: #333; /* Color of the scrollbar track */
+}
+::-webkit-scrollbar-thumb {
+    background: #4cffdb; /* Color of the scrollbar handle */
+    border-radius: 6px; /* Rounded corners for the scrollbar handle */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #4ae0c2; /* Color of the scrollbar handle when hovered */
+}
     </style>
     
 </head>
@@ -242,8 +259,12 @@ footer {
             <p>For More Details Visit <a href="https://commento.io/" target="_blank" >Commento</a> <a href="https://commento.io/legal" target="_blank">Terms of Service and Policies</a></p>
             
             <div class="container">
-                <p class="DateTimePara"> <span id="termsVersion">Update Version: 0.3</span> | <span>Last Updated On 23/05/2024</span></p>
+                <p class="DateTimePara"> <span id="termsVersion">Version: 0.3</span> | <span>Last Updated On 23/05/2024</span></p>
             </div>   
+
+            <div class="button-container">
+                <button id="backToTerm">Go Back To Home</button>
+            </div>
             
             <footer style="background-color: #222; border: 0px;"> <div id="footer"></div> </footer>
 
@@ -255,7 +276,7 @@ footer {
   
     <script>
         document.getElementById("backToTerm").onclick = function() {
-            window.location.href = "https://mbktechstudio.com/";
+            window.location.href = "../";
         };
     </script>
 
