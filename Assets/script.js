@@ -323,8 +323,19 @@ function loadTerms() {
             hideOverlay();
         });
 
-        document.getElementById('disagreeButton').addEventListener('click', function() {
+        document.getElementById('disagreeconfirmationButton').addEventListener('click', function() {
             window.location.href = 'https://mbktechstudio.com/Assets/disagree.html';
+        });
+        
+
+        document.getElementById('cancelconfirmationButton').addEventListener('click', function() {
+            var termsBox = document.getElementById("confirmationModal");
+            termsBox.style.display = "none";
+        });
+
+        document.getElementById('disagreeButton').addEventListener('click', function() {
+            var termsBox = document.getElementById("confirmationModal");
+            termsBox.style.display = "block";
         });
 
         // Function to open the terms box
