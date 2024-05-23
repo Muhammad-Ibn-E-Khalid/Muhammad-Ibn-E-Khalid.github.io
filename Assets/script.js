@@ -307,13 +307,19 @@ function toggleSection(sectionId, toggleHeadingId, isOpened) {
     toggleButton.addEventListener("click", toggle);
 }
 
+
 // Function to load terms from external file
 function loadTerms() {
     fetch('https://mbktechstudio.com/Assets/terms.html').then(response => response.text()).then(html => {
         document.getElementById('terms').innerHTML = html;
         document.body.classList.add('no-scroll');
+        
+        const termsVersion = document.getElementById('termsVersion').innerText.split(': ')[1];
+        checkCookie(termsVersion);
+
         document.getElementById('agreeButton').addEventListener('click', function() {
-            setCookie('agreed', 'true', 365);
+            const termsVersion = document.getElementById('termsVersion').innerText.split(': ')[1];
+            setCookie('agreed', termsVersion, 365);
             hideOverlay();
         });
 
@@ -341,13 +347,13 @@ function loadTerms() {
                 openTermsBox();
             }
         });
-        checkCookie();
     });
 }
 
 // Function to check if the user has agreed to terms
-function checkCookie() {
-    if (getCookie('agreed') === 'true') {
+function checkCookie(currentVersion) {
+    const agreedVersion = getCookie('agreed');
+    if (agreedVersion === currentVersion) {
         hideOverlay();
     }
 }
@@ -384,6 +390,7 @@ function getCookie(name) {
     }
     return null;
 }
+
 
 function openNav() {
     document.getElementById("sidenav").style.width = "250px";
