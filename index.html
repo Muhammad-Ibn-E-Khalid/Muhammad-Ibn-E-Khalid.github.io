@@ -253,16 +253,16 @@
                             <li>Explore technology partnerships for mutual benefit</li>
                             <li>Exchange knowledge and resources for innovative solutions</li>
                             <li>And much more!</li>
-                       </ul>
+                        </ul>
                   
-                       <p>
+                        <p>
                             If you're interested in exploring collaboration opportunities or have a
                             project idea you'd like to discuss, don't hesitate to get in touch using the
                             <a href="#Contact" onclick="selectSection('Contact')">Contact Form</a> and through
                             <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>.
                             I'm always open to new collaborations and excited to work with talented individuals and entities
                             to achieve our shared goals.
-                       </p>
+                        </p>
 
                     </div>
 
@@ -272,144 +272,138 @@
 
             <section id="Contact" class="expandable-section section-wrapper section-margin">
 
-                    <div id="contactToggleHeading" class="header">
-                        <h2>Contact Us</h2>
-                        <button class="toggle-button"></button>
-                    </div>
+                <div id="contactToggleHeading" class="header">
+                    <h2>Contact Us</h2>
+                    <button class="toggle-button"></button>
+                </div>
           
-                    <div class="section-content">
-                        
-                        <div class="container">
-                            
-                            <form id="form" class="container m-4 pl-4" method="POST">
-                    
-                                <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="Timestamp" /></div></div>
-                                <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="IXPX" /></div></div>
-                  
-                                <div class="field">
-                                  
-                                    <label class="label">Subject</label>
-                                  
-                                    <div class="control">
-                                        
-                                        <div class="select">
-                                            <select name="Subject" id="subjectSelect" onmouseenter="changeHoverText('Please Select The Most Suitable Subject For Your Message')" required>
-                                                <option value="" disabled selected>Select a subject</option>
-                                                <option value="Feedback">Feedback</option>
-                                                <option value="Collaboration">Collaboration</option>
-                                                <option value="Support">Support</option>
-                                                <option value="General Inquiry">General Inquiry</option>
-                                            </select>                              
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
+                <div class="section-content">
+                                                    
+                    <form id="form" class="container m-4 pl-4" method="POST">
+                
+                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="Timestamp" /></div></div>
+                        <div class="field"><div class="control"><input class="input" type="hidden" placeholder="Enter Your Name" name="IXPX" /></div></div>
+          
+                        <div class="field">
+                          
+                            <label class="label">Subject</label>
+                          
+                            <div class="control">
                                 
-                                <!-- Support Field Appear When Support is Selected -->
-
-                                <div class="field supportfield" style="display: none;">
-                                  
-                                    <label class="label">Support Type</label>
-                                  
-                                    <div class="control">
-                                        
-                                        <div class="select">
-                                            <select name="support" id="supportselect">
-                                                <option value="" disabled selected>Select support type</option>
-                                                <option value="Blogs">Blogs</option>
-                                                <option value="Technical">Technical</option>
-                                                <option value="CopyRightIssue">CopyRight Issue</option>
-                                                <option value="SourceCodeAssistance">Source Code Assistance</option>
-                                                <option value="BugReportingFeatureRequests">Bug Reporting & Feature Requests</option>
-                                                <option value="other">other</option>
-                                             </select>                              
-                                        </div>
-
-                                    </div>
-
-                                </div>
-        
-                                <div class="field">
-                                    <label class="label">Name</label><div class="control"><div class="input" ><input  type="text" placeholder="Enter Your Name" name="UserName" required /></div></div>
-                                </div>
-              
-                                <div class="field">
-                                    <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
+                                <div class="select">
+                                    <select name="Subject" id="subjectSelect" onmouseenter="changeHoverText('Please Select The Most Suitable Subject For Your Message')" required>
+                                        <option value="" disabled selected>Select a subject</option>
+                                        <option value="Feedback">Feedback</option>
+                                        <option value="Collaboration">Collaboration</option>
+                                        <option value="Support">Support</option>
+                                        <option value="General Inquiry">General Inquiry</option>
+                                    </select>                              
                                 </div>
 
-                                <!-- Support Field Appear When Feedback is Selected -->
-
-                                <div class="field ratingWeb" style="display: none;">
-                                    <label class="label">Rating</label>
-                                    <div class="control">
-                                        <div class="rating">
-                                            <label>
-                                                <input type="radio" name="stars" value="1"/>
-                                                <span class="fa fa-star icon"></span>
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="stars" value="2" />
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="stars" value="3" />
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>   
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="stars" value="4" />
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>
-                                            </label>
-                                            <label>
-                                                <input type="radio" name="stars" value="5" />
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>
-                                                <span class="fa fa-star icon"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                <!-- Support Field Appear When Collabration & Support is Selected -->
-
-                                <div class="field phoneField" style="display: none;">
-                                    <label class="label">Phone Number</label>
-                                    <div class="control">
-                                        <input type="text" id="mobile_code" placeholder="Enter Phone Number" name="Number" />
-                                    </div>
-                                </div>
-                                
-                                <div class="field">
-                                    <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Enter Your Message" name="Message" rows="4" required></textarea></div>
-                                </div>
-
-                                <textp>
-                                    Note: For quicker assistance, contact us on <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>. Email responses may take 1-2 business days.
-                                </textp>
-              
-                                <div class="field is-grouped">
-                                    <div class="control"><button class="button is-primary" type="submit" id="submit-button">Submit</button></div>
-                                </div>
-                    
-                                <div id="message" style="display: none; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine;"></div>
-                         
-                            </form>
+                            </div>
 
                         </div>
 
+                        <!-- Support Field Appear When Support is Selected -->
+
+                        <div class="field supportfield" style="display: none;">
+                          
+                            <label class="label">Support Type</label>
+                          
+                            <div class="control">
+                                
+                                <div class="select">
+                                    <select name="support" id="supportselect">
+                                        <option value="" disabled selected>Select support type</option>
+                                        <option value="Blogs">Blogs</option>
+                                        <option value="Technical">Technical</option>
+                                        <option value="CopyRightIssue">CopyRight Issue</option>
+                                        <option value="SourceCodeAssistance">Source Code Assistance</option>
+                                        <option value="BugReportingFeatureRequests">Bug Reporting & Feature Requests</option>
+                                        <option value="other">other</option>
+                                     </select>                              
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="field">
+                            <label class="label">Name</label><div class="control"><div class="input" ><input  type="text" placeholder="Enter Your Name" name="UserName" required /></div></div>
+                        </div>
+      
+                        <div class="field">
+                            <label class="label">Email</label><div class="control"><div class="input" ><input  type="email" placeholder="Enter Your Email" name="Email" required /></div></div>
+                        </div>
+
+                        <!-- Support Field Appear When Feedback is Selected -->
+
+                        <div class="field ratingWeb" style="display: none;">
+                            <label class="label">Rating</label>
+                            <div class="control">
+                                <div class="rating">
+                                    <label>
+                                        <input type="radio" name="stars" value="1"/>
+                                        <span class="fa fa-star icon"></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stars" value="2" />
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stars" value="3" />
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>   
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stars" value="4" />
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="stars" value="5" />
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>
+                                        <span class="fa fa-star icon"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Support Field Appear When Collabration & Support is Selected -->
+
+                        <div class="field phoneField" style="display: none;">
+                            <label class="label">Phone Number</label>
+                            <div class="control">
+                                <input type="text" id="mobile_code" placeholder="Enter Phone Number" name="Number" />
+                            </div>
+                        </div>
+                        
+                        <div class="field">
+                            <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Enter Your Message" name="Message" rows="4" required></textarea></div>
+                        </div>
+
+                        <textp>
+                            Note: For quicker assistance, contact us on <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>. Email responses may take 1-2 business days.
+                        </textp>
+      
+                        <div class="field is-grouped">
+                            <div class="control"><button class="button is-primary" type="submit" id="submit-button">Submit</button></div>
+                        </div>
+            
+                        <div id="message" style="display: none; font-weight: bold; color: green; padding: 8px; background-color: beige; border-radius: 4px; border-color: aquamarine;"></div>
+                 
+                    </form>
                 </div>
 
             </section>
-
+            
             <section id="Comment" class="expandable-section section-wrapper section-margin">
             
                 <div class="container">
@@ -427,10 +421,8 @@
                         <script defer src="https://cdn.commento.io/js/commento.js"></script>
                         
                         <script>
-
                             var currentPageUrl = window.location.pathname;
                             document.getElementById('commento').setAttribute('data-page-id', currentPageUrl);
-                            
                         </script>
                         
                     </div>
