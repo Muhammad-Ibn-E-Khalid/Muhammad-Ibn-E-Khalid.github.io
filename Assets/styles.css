@@ -300,7 +300,7 @@ form select {
 }
 form{
     border-radius: 6px;
-    padding: 20px;
+    padding: 0px;
     background-color: #377a77;
 }
 form .control {
