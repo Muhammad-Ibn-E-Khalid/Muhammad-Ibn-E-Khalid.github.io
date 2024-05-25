@@ -69,6 +69,10 @@ Use `UserAgreement/index.html`:
   - Upon the initial loading of the website, users are prompted to agree with the terms of use.
   - Users cannot proceed to use the website until they accept the terms of use.
 
+- **On Term Updates:**
+  - When You Change Terms and want to notify user about it, simplply change term version in term.html. When version change all user will be prompt agreement box again until they save cookie again or accept terms
+  - Users cannot proceed to use the website until they accept the terms of use.
+
 - **Accepting Terms of Use:**
   - When a user agrees to the terms of use, the website saves a cookie with an expiry of 1 year.
   - This cookie likely serves as a marker that the user has agreed to the terms and can continue to access the website without being prompted again during this period.
