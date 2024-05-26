@@ -302,12 +302,13 @@ function toggleSection(sectionId, toggleHeadingId, isOpened) {
         sectionContent.style.display = "block"; // Ensure content is visible initially
     }
 
+    /*
     else{
         const section = document.querySelector(sectionId);
         section.classList.remove("expanded");
         toggleButton.style.transform = "rotate(0deg)";
         sectionContent.style.display = "none"; // Ensure content is invisible initially
-    }
+    }*/
 
 
     // Event listeners
