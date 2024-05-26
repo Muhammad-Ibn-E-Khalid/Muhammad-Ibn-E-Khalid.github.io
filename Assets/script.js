@@ -325,10 +325,12 @@ function loadTerms() {
         });
 
 
- // This part of code decide what to do when user disagree to terms&conditions document.getElementById('disagreeconfirmationButton').addEventListener('click', function() {
+ // This part of code decide what to do when user disagree to terms&conditions 
+
+document.getElementById('disagreeconfirmationButton').addEventListener('click', function() {
             window.location.href = 'https://mbktechstudio.com/Assets/disagree.html';
 
-Uncomment this code when you want user to continue using your website. and comment or Remo window location.href line
+/*Uncomment this code when you want user to continue using your website. and comment or Remo window location.href line*/
 /*document.getElementById("confirmationModal");
             termsBox.style.display = "none";
 document.getElementById("termsBox");
