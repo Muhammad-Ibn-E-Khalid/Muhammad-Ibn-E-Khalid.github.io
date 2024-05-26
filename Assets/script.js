@@ -309,6 +309,7 @@ function toggleSection(sectionId, toggleHeadingId, isOpened) {
 
 
 // Function to load terms from external file
+// Call this function where you need to show terms and conditions.
 function loadTerms() {
     fetch('https://mbktechstudio.com/Assets/terms.html').then(response => response.text()).then(html => {
         document.getElementById('terms').innerHTML = html;
@@ -323,8 +324,16 @@ function loadTerms() {
             hideOverlay();
         });
 
-        document.getElementById('disagreeconfirmationButton').addEventListener('click', function() {
+
+ // This part of code decide what to do when user disagree to terms&conditions document.getElementById('disagreeconfirmationButton').addEventListener('click', function() {
             window.location.href = 'https://mbktechstudio.com/Assets/disagree.html';
+
+Uncomment this code when you want user to continue using your website. and comment or Remo window location.href line
+/*document.getElementById("confirmationModal");
+            termsBox.style.display = "none";
+document.getElementById("termsBox");
+            termsBox.style.display = "block";
+*/
         });
         
 
