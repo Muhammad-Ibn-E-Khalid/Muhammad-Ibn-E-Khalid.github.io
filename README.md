@@ -1,4 +1,4 @@
-# Mbk Tech Studio Website
+# MBK Tech Studio Website
 
 https://MIbnEKhalid.github.io/
 
