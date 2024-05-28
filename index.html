@@ -291,7 +291,7 @@
                             <div class="control">
                                 
                                 <div class="select">
-                                    <select name="Subject" id="subjectSelect" onmouseenter="changeHoverText('Please Select The Most Suitable Subject For Your Message')" required>
+                                    <select name="Subject" id="subjectSelect"  required>
                                         <option value="" disabled selected>Select a subject</option>
                                         <option value="Feedback">Feedback</option>
                                         <option value="Collaboration">Collaboration</option>
@@ -503,10 +503,6 @@
         }
     }
 
-    function changeHoverText(text) {
-            document.querySelector('.select select').setAttribute('title', text);
-    }
-
     // About, Projects, Blogs
     toggleSection("#About", "#aboutToggleHeading",true);
     toggleSection("#Projects", "#projectsToggleHeading",true);
@@ -525,10 +521,10 @@
     function closeNav() {
             document.getElementById("sidenav").style.width = "0";
     }
+    
     document.addEventListener("DOMContentLoaded", function() {
        loadTerms();
     });
-
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
