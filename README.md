@@ -41,9 +41,11 @@ https://MIbnEKhalid.github.io.github.io/mbktech.studios/ or https://mbktechstudi
 - script.js
 
 ### Project/:
-- Feedback_Report_System_For_Unity.html/: 
+- Feedback_Report_System_For_Unity/: 
   - index.html
-- Quiz_Game_Cpp.html/: 
+- CentreTheMessageCpp/
+  - index.html
+- Quiz_Game_Cpp/: 
   - index.html
 - project.css
 
