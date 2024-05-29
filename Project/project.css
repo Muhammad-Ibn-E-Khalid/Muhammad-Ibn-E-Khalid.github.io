@@ -25,6 +25,16 @@
         background-color: #0056b3;
     }
                 
-    .doc ul,li,h2,h3,p,h4{
+    .doc ul,h1,li,h2,h3,p,h4{
       color: #fff;
+    }
+
+    .description p{
+        font-size: large;
+    }
+
+    .description  h1{
+        text-align: center;
+        align-items: center;
+        color: aqua;
     }
