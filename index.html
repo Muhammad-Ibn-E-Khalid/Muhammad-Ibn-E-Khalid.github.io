@@ -533,10 +533,18 @@
             var sectionId = this.getAttribute('href');
             var section = document.querySelector(sectionId);
 
-            // Smooth scroll to the section
-            section.scrollIntoView({
-                behavior: 'smooth'
-            });
+            if (section) {
+                var offset =  5 ; 
+
+                var sectionPosition = section.getBoundingClientRect().top + window.pageYOffset - offset;
+ 
+                // Smooth scroll to the adjusted position
+                window.scrollTo({
+                    top: sectionPosition,
+                    behavior: 'smooth'
+                });
+            }
+            
         });
     });
 
