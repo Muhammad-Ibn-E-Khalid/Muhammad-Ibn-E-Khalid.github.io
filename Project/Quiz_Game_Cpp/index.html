@@ -54,6 +54,92 @@
                             <h1>Simple Quiz</h1>
                             <p>This Code demonstrate Quiz Actual Logic and code:</p>
 
+                            <h1>Code Structure</h1>
+
+                            <h2>Libraries and Defines</h2>
+
+                            <pre>
+                                
+#include &lt;iostream&gt;
+#include &lt;windows.h&gt;
+#include &lt;sstream&gt;
+#include &lt;string&gt;
+#include &lt;iomanip&gt;
+#include &lt;fstream&gt;
+#include &lt;thread&gt;
+#include &lt;algorithm&gt;
+#include &lt;random&gt;
+#include &lt;ctime&gt;
+#include &lt;vector&gt;
+#include &lt;unordered_set&gt;
+                                   
+// Color constants
+#define RESET   7 // White
+#define RED     12 // Red
+#define GREEN   10 // Green
+#define YELLOW  14 // Yellow
+#define BLUE    9 // Blue
+#define MAGENTA 13 // Magenta
+#define CYAN    11 // Cyan
+#define WHITE   15 // White
+                                    
+using namespace std;
+using namespace std::chrono;        
+</pre>
+
+                            <h2>Global Variables</h2>
+
+                            <pre>
+const int Total_Questions = 3; // Total Questions (Adjust this according to your .CSV file)
+const int Total_Options = 4;  // Total Options Per Question
+const int NumberOfQuestionsToAsk = 3; // Number of questions to be asked
+</pre>
+                            <h2>Class Definition: QuizManager</h2>
+                            
+                            <p>The QuizManager class encapsulates all functionalities related to managing the quiz, including loading questions, shuffling them, processing user responses, and displaying results.</p>
+
+<pre>
+class QuizManager
+{
+    private:
+        // Member variables
+        string Question[Total_Questions];
+        string Option[Total_Questions][Total_Options];
+        string Correct[Total_Questions][1];
+        string User_Name;
+        int SCORE_ = 0;
+        int CorrectAnswerCount_ = 0;
+        int WrongAnswerCount_ = 0;
+        const int Score_Per_Question = 3;
+        const int Total_Score = NumberOfQuestionsToAsk * Score_Per_Question;
+        steady_clock::time_point startTime;
+        steady_clock::time_point endTime;
+    
+    public:
+        QuizManager()
+        {
+            LoadQuestions();
+            ShuffleQuestion();
+            SetZero();
+        }
+    
+        void SetZero();
+        void LoadQuestions();
+        void initializeOptions(int questionIndex, string optionA, string optionB, string optionC, string optionD, char CorrectAnswerI);
+        void ShuffleQuestion();
+        void ProcessQuestion(int questionIndex, int Qno);
+        void WriteQuestionDetailsToHistory(int questionIndex, int Qno, const string& userAnswer, const string& correctAnswer);
+        void DisplayQuestions();
+        void DisplayQuizInstruction();
+        void DisplayQuizResult();
+        void DisplayAnswerStats();
+        void WriteResultsToFile(int elapsedTime, int spercentage, int cpercentage);
+        void AboutProject();
+        void MainMenu();
+        void Quit();
+};
+</pre>
+
                         </div>
                         
                     </div>
