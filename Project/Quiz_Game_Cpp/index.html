@@ -139,6 +139,121 @@ class QuizManager
         void Quit();
 };
 </pre>
+                            <h1>Member Functions</h1>
+
+                            <h2>Constructor</h2>
+
+<pre>
+QuizManager()
+{
+    LoadQuestions();
+    ShuffleQuestion();
+    SetZero();
+}    
+</pre>
+
+                            <ul>
+                                <li>
+                                    Purpose: Initializes the quiz by loading questions, shuffling them, and resetting score-related variables.
+                                </li>
+                            </ul>
+
+                            <h2>SetZero</h2>
+
+<pre>
+void SetZero()
+{
+    User_Name = "";
+    SCORE_ = 0;
+    CorrectAnswerCount_ = 0;
+    WrongAnswerCount_ = 0;
+}
+</pre>
+                            <ul>
+                                <li>
+                                    Purpose: Resets the user name, score, and counts of correct and incorrect answers.
+                                </li>
+                            </ul>
+
+                            <h2>LoadQuestions</h2>
+
+<pre>
+
+</pre>
+
+                            <ul>
+                                <li>
+                                    Purpose: Loads predefined questions and their options into the corresponding arrays.
+                                </li>
+                            </ul>
+
+                            <h2>initializeOptions</h2>
+
+<pre>
+void initializeOptions(int questionIndex, string optionA, string optionB, string optionC, string optionD, char CorrectAnswerI)
+{
+    Option[questionIndex][0] = optionA;
+    Option[questionIndex][1] = optionB;
+    Option[questionIndex][2] = optionC;
+    Option[questionIndex][3] = optionD;
+    Correct[questionIndex][0] = CorrectAnswerI;
+}
+</pre>
+
+                            <ul>
+                                <li>
+                                    Purpose: Initializes the options and correct answers for a given question.
+                                </li>
+                            </ul>
+
+                            <h2>ShuffleQuestion</h2>
+
+<pre>
+void ShuffleQuestion()
+{
+    string Q[Total_Questions];
+    string O[Total_Questions][Total_Options];
+    string C[Total_Questions][1];
+    
+    for (int i = 0; i < Total_Questions; i++)
+    {
+        Q[i] = Question[i];
+        for (int j = 0; j < Total_Options; j++) {
+            O[i][j] = Option[i][j];
+        }
+        C[i][0] = Correct[i][0];
+    }
+    
+    int questionIndices[Total_Questions];
+    for (int i = 0; i < Total_Questions; ++i) {
+        questionIndices[i] = i;
+    }
+    
+    srand(static_cast<unsigned int>(time(0)));
+    for (int i = Total_Questions - 1; i > 0; --i) {
+        int j = rand() % (i + 1);
+        int temp = questionIndices[i];
+        questionIndices[i] = questionIndices[j];
+        questionIndices[j] = temp;
+    }
+    
+    for (int i = 0; i < Total_Questions; i++)
+    {
+        Question[i] = Q[questionIndices[i]];
+        for (int j = 0; j < Total_Options; j++) {
+            Option[i][j] = O[questionIndices[i]][j];
+        }
+        Correct[i][0] = C[questionIndices[i]][0];
+    }
+}
+</pre>
+
+
+                            <ul>
+                                <li>
+                                    Purpose: Shuffles the order of questions to provide a randomized quiz experience.
+                                </li>
+                            </ul>
 
                         </div>
                         
