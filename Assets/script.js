@@ -302,23 +302,60 @@ function toggleSection(sectionId, toggleHeadingId, isOpened) {
         sectionContent.style.display = "block"; // Ensure content is visible initially
     }
 
+    
+    else{
+        const section = document.querySelector(sectionId);
+        section.classList.remove("expanded");
+        toggleButton.style.transform = "rotate(0deg)";
+        sectionContent.style.display = "none"; // Ensure content is invisible initially
+    }
+
+
     // Event listeners
     toggleHeading.addEventListener("click", toggle);
     toggleButton.addEventListener("click", toggle);
 }
 
+
 // Function to load terms from external file
+// Call this function where you need to show terms and conditions.
 function loadTerms() {
     fetch('https://mbktechstudio.com/Assets/terms.html').then(response => response.text()).then(html => {
         document.getElementById('terms').innerHTML = html;
         document.body.classList.add('no-scroll');
+        
+        const termsVersion = document.getElementById('termsVersion').innerText.split(': ')[1];
+        checkCookie(termsVersion);
+
         document.getElementById('agreeButton').addEventListener('click', function() {
-            setCookie('agreed', 'true', 365);
+            const termsVersion = document.getElementById('termsVersion').innerText.split(': ')[1];
+            setCookie('agreed', termsVersion, 365);
             hideOverlay();
         });
 
-        document.getElementById('disagreeButton').addEventListener('click', function() {
+
+ // This part of code decide what to do when user disagree to terms&conditions 
+
+document.getElementById('disagreeconfirmationButton').addEventListener('click', function() {
             window.location.href = 'https://mbktechstudio.com/Assets/disagree.html';
+
+/*Uncomment this code when you want user to continue using your website. and comment or Remo window location.href line*/
+/*document.getElementById("confirmationModal");
+            termsBox.style.display = "none";
+document.getElementById("termsBox");
+            termsBox.style.display = "block";
+*/
+        });
+        
+
+        document.getElementById('cancelconfirmationButton').addEventListener('click', function() {
+            var termsBox = document.getElementById("confirmationModal");
+            termsBox.style.display = "none";
+        });
+
+        document.getElementById('disagreeButton').addEventListener('click', function() {
+            var termsBox = document.getElementById("confirmationModal");
+            termsBox.style.display = "block";
         });
 
         // Function to open the terms box
@@ -341,13 +378,13 @@ function loadTerms() {
                 openTermsBox();
             }
         });
-        checkCookie();
     });
 }
 
 // Function to check if the user has agreed to terms
-function checkCookie() {
-    if (getCookie('agreed') === 'true') {
+function checkCookie(currentVersion) {
+    const agreedVersion = getCookie('agreed');
+    if (agreedVersion === currentVersion) {
         hideOverlay();
     }
 }
@@ -384,6 +421,7 @@ function getCookie(name) {
     }
     return null;
 }
+
 
 function openNav() {
     document.getElementById("sidenav").style.width = "250px";

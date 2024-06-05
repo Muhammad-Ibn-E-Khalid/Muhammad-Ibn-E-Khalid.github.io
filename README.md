@@ -1,23 +1,22 @@
-# Mbk Tech Studio Website
+# MBK Tech Studio Website
 
-Main Website
-
-https://github.com/MIbnEKhalid.github.io/Muhammad-Ibn-E-Khalid.github.io
+https://MIbnEKhalid.github.io/
 
 https://mbktechstudio.com/ or https://MIbnEKhalid.github.io/
 
 
 Website Source Code / Copy of Website
 
-https://github.com/MIbnEKhalid.github.io/mbktech.studios/
+https://github.com/MIbnEKhalid/mbktech.studios/
 
 https://MIbnEKhalid.github.io.github.io/mbktech.studios/ or https://mbktechstudio.com/mbktech.studios/
 
 
 
 ## Hosting:
-- The website is hosted on GitHub, with a custom domain purchased from Namecheap for $2 for a 12-month period. This custom domain is pointed to the GitHub repository.
+- The website is hosted on GitHub, with a custom domain purchased from Namecheap for $13 for a 12-month period. This custom domain is pointed to the GitHub repository.
   *Note: If you are using a custom domain, ensure it is properly configured to point to your GitHub repository.*
+- Buying domain is not necessary you can use github gomain for free *user.github.io*.
 
 ## Files Tree:
 
@@ -42,9 +41,13 @@ https://MIbnEKhalid.github.io.github.io/mbktech.studios/ or https://mbktechstudi
 - script.js
 
 ### Project/:
-- Feedback_Report_System_For_Unity.html/: 
+- Feedback_Report_System_For_Unity/: 
   - index.html
-- Quiz_Game_Cpp.html/: 
+- CentreTheMessageCpp/
+  - index.html
+- MBKTechStudio_SourceCode/
+  - index.html
+- Quiz_Game_Cpp/: 
   - index.html
 - project.css
 
@@ -68,6 +71,10 @@ Use `UserAgreement/index.html`:
 
 - **On First Load, Agreement Prompt:**
   - Upon the initial loading of the website, users are prompted to agree with the terms of use.
+  - Users cannot proceed to use the website until they accept the terms of use.
+
+- **On Term Updates:**
+  - When You Change Terms and want to notify user about it, simplply change term version in term.html. When version change all user will be prompt agreement box again until they save cookie again or accept terms
   - Users cannot proceed to use the website until they accept the terms of use.
 
 - **Accepting Terms of Use:**
