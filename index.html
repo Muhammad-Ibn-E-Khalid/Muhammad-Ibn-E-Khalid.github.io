@@ -526,6 +526,9 @@
             document.getElementById("sidenav").style.width = "0";
     }
      
+    document.addEventListener("DOMContentLoaded", function() {
+       loadTerms();
+    });
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -548,5 +551,5 @@
             
         });
     });
-
+        
     </script>
