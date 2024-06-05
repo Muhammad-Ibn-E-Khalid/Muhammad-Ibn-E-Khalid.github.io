@@ -1,13 +1,13 @@
 :root {
-    --main-bg-color: #fcfcfc;
-    --main-border-color: #191919;
-    --main-text-color: #191919;
-    --page-color: #fff;
-    --project-item-bg-color: #f4f4f4;
+    --main-bg-color: #292929;
+    --main-border-color: #fff;
+    --main-text-color: white;
+    --page-color: #191919;
+    --project-item-bg-color: #2b2a2a;
     --rating-star-color: #d4e3c9;
     --rating-star-bg-color: black;
-    --form-bg-color: #191919;
-    --form-txt-color: #fcfcfc;
+    --form-bg-color: #fff;
+    --form-txt-color: #292929;
 }
 
 .dark-theme {
@@ -69,7 +69,7 @@ wtext{
 .commento-sort-policy-button{
     color: var(--main-text-color) !important;
 }.commento-logo-text {
-    color: black !important;
+    color: var(--main-text-color) !important;
 }
 section a,
 .CopyRightBox a,
