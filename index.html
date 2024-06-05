@@ -251,7 +251,7 @@
 
                         <wtext>Here's how we can collaborate:</wtext>
                   
-                        <ul style="font-size: medium; color:#d4e3c9">
+                        <ul style="font-size: medium;">
                             <li>Join ongoing projects to contribute expertise and insights</li>
                             <li>Co-create new projects from ideation to implementation</li>
                             <li>Explore technology partnerships for mutual benefit</li>
@@ -393,9 +393,9 @@
                             <label class="label">Message</label><div class="control"><textarea class="input" placeholder="Enter Your Message" name="Message" rows="4" required></textarea></div>
                         </div>
 
-                        <textp>
+                        <wtext>
                             Note: For quicker assistance, contact us on <a href="#social-links" onclick="selectSectionfooter('social-links')">Social Media</a>. Email responses may take 1-2 business days.
-                        </textp>
+                        </wtext>
       
                         <div class="field is-grouped">
                             <div class="control"><button class="button is-primary" type="submit" id="submit-button">Submit</button></div>
@@ -525,10 +525,7 @@
     function closeNav() {
             document.getElementById("sidenav").style.width = "0";
     }
-    
-    document.addEventListener("DOMContentLoaded", function() {
-       loadTerms();
-    });
+     
 
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
