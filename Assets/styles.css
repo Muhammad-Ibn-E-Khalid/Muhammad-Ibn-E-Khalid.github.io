@@ -1,17 +1,50 @@
+:root {
+    --main-bg-color: #fcfcfc;
+    --main-border-color: #191919;
+    --main-text-color: #191919;
+    --page-color: #fff;
+    --project-item-bg-color: #f4f4f4;
+    --rating-star-color: #d4e3c9;
+    --rating-star-bg-color: black;
+    --form-bg-color: #191919;
+    --form-txt-color: #fcfcfc;
+}
+
+.dark-theme {
+    --main-bg-color: #292929;
+    --main-border-color: #fff;
+    --main-text-color: white;
+    --page-color: #191919;
+    --project-item-bg-color: #2b2a2a;
+    --rating-star-color: #d4e3c9;
+    --rating-star-bg-color: black;
+    --form-bg-color: #fff;
+    --form-txt-color: #292929;
+}
+
+.light-theme {
+    --main-bg-color: #fcfcfc;
+    --main-border-color: #191919;
+    --main-text-color: #191919;
+    --page-color: #fff;
+    --project-item-bg-color: #f4f4f4;
+    --rating-star-color: #d4e3c9;
+    --rating-star-bg-color: black;
+    --form-bg-color: #191919;
+    --form-txt-color: #fcfcfc;
+
+}
+ 
 body {
     font-family:Arial,sans-serif;
     margin:0;
     padding:0;
-    background-color:#d4e3c9;
+    background-color:var(--page-color);
 }
 wtext{
-    color: white;
-    font-size: large;
-}
-textp {
-    font-size:large;
-    color:#d4e3c9;
-    font-weight:550;
+    color: var(--main-text-color);
+    font-size: medium;
+    font-weight: 600;
 }
 #commento-textarea-root::placeholder {
     position: relative;
@@ -34,14 +67,14 @@ textp {
 .commento-timeago, .commento-body, 
 .commento-profile-button,
 .commento-sort-policy-button{
-    color: white !important;
+    color: var(--main-text-color) !important;
 }.commento-logo-text {
     color: black !important;
 }
 section a,
 .CopyRightBox a,
 .donate-button {
-    color: #48bfff ;
+    color: #48bfff;
     text-decoration: none;
     font-weight: 750;
 }
@@ -53,15 +86,14 @@ section a:visited,
 section a:hover,
 .CopyRightBox a:hover,
 .donate-button a:hover{
-    color: #95daff;
-    box-shadow: 0 0 100px #0097e8;
+    color: #95daff; 
 }
 
 /* Main Body */
 
 .bordered {
-    border-left:6px solid #274e4b;
-    border-right:6px solid #274e4b;
+    border-left:6px solid var(--main-border-color);
+    border-right:6px solid var(--main-border-color);
 }
 
 /* Section Click Transition */
@@ -94,6 +126,7 @@ section a:hover,
 }
 .project-item h3 {
     margin-top:10px;
+    color: var(--main-text-color);
 }
 .overlay {
     position: absolute;
@@ -107,12 +140,12 @@ section a:hover,
     background-color: rgba(0, 0, 0, 0.6);
 }
 .project-item {
-    border:5px solid #274e4b;
+    border:5px solid var(--main-border-color);
     border-radius:6px;
     padding:10px;
     position: relative;
     flex: 0 0 48%;
-    background-color:#d4e3c9;
+    background-color: var(--project-item-bg-color);
     text-align:center;
 }
 .project-item h3 {
@@ -175,15 +208,15 @@ section a:hover,
     color: transparent;
   }
   .rating label:last-child .icon {
-    color: #000;
+    color: var(--rating-star-bg-color);
   }
   .rating:not(:hover) label input:checked ~ .icon,
   .rating:hover label:hover input ~ .icon {
-    color: #d4e3c9;
+    color: var(--rating-star-color);
   }
   .rating label input:focus:not(:checked) ~ .icon:last-child {
     color: #000;
-    text-shadow: 0 0 5px #d4e3c9;
+    text-shadow: 0 0 5px var(--rating-star-color);
   }
 
 /* Project Page */
@@ -210,7 +243,7 @@ section a:hover,
     padding:10px;
     border:none;
     border-radius:6px;
-    background-color:#2c3e50;
+    background-color: var(--main-bg-color);
     color:#fff;
     cursor:pointer;
     margin-left:10px;
@@ -234,14 +267,17 @@ section a:hover,
     margin-right: 15px;
 }
 .section-wrapper {
-    border: 6px solid #274e4b;
-    background-color: #377a77;
+    border: 6px solid var(--main-border-color);
+    background-color: var(--main-bg-color);
     border-radius: 5px;
     padding: 10px;
 }
+.section-wrapper ul {
+    color: var(--main-text-color);
+}
 #Collaboration, #PCSpecs {
-    border: 6px solid #274e4b;
-    background-color: #377a77;
+    border: 6px solid var(--main-border-color);
+    background-color: var(--main-bg-color);
     border-radius: 5px;
     padding: 10px;
 }
@@ -251,19 +287,20 @@ section a:hover,
     align-items: center;
     padding: 10px 20px;
     cursor: pointer;
-    color: white;
+    color: var(--form-txt-color);
 }
 
 /* Expandable Section */
 
 #Collaboration h3, #About h3, #Comment h3, #PCSpecs h3 {
-    color: #d4e3c9;
+    color: var(--main-text-color);
 }
 #Collaboration p, #PCSpecs p {
-    color: #f5f5f5;
+    color: var(--main-text-color);
 }
 .header h2 {
     margin: 0;
+    color: var(--main-text-color);
 }
 .toggle-button {
     width: 20px;
@@ -290,18 +327,11 @@ section a:hover,
 
 /* Form */
 
-form select {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #fff;
-}
+
 form{
     border-radius: 6px;
     padding: 0px;
-    background-color: #377a77;
+    background-color: var(--main-bg-color);
 }
 form .control {
     margin-top: 10px;
@@ -310,7 +340,7 @@ form .field {
     margin-bottom: 15px;
 }
 form .label {
-    color: white;
+    color: var(--main-text-color);
     font-weight: bold;
     margin-bottom: 5px;
 }
@@ -320,11 +350,16 @@ form input, form textarea, form select {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 6px;
-    background-color: #fff;
+    background-color:  var(--form-bg-color);
+    color: var(--form-txt-color);
+}
+.iti--separate-dial-code .iti__selected-dial-code{
+    color: var(--main-bg-color);
+
 }
 form button {
     background-color:#2ecc71;
-    color:#fff;
+    color: var(--main-text-color);
     border:none;
     font-weight: bold;
     font-size: medium;
@@ -337,10 +372,10 @@ form button:hover {
 }
 
 header {
-    background-color:#377a77;
+    background-color: var(--main-bg-color);
     color:#fff;
     padding-bottom: 10px;
-    border:6px solid #274e4b;
+    border:6px solid var(--main-border-color);
     text-align:center;
 }
 dfndl {
@@ -368,7 +403,7 @@ dfndl {
     margin-right:20px;
 }
 .main-nav a {
-    color:#fff;
+    color: var(--main-text-color);
     text-decoration:none;
     text-align:center;
     padding:10px 10px;
@@ -396,7 +431,7 @@ dfndl {
 .nav-mobile a {
     display:block;
     text-decoration:none;
-    color:#fff;
+    color: var(--main-text-color);
     padding:10px 10px;
     font-weight:750;
     border-radius:6px;
@@ -406,7 +441,6 @@ dfndl {
     opacity:0.8;
     color:#377a77;
     background-color:#fff;
-    box-shadow:0 0 80px #e5eedd;
 }
 .closebutton {
     position:absolute;
@@ -450,10 +484,10 @@ dfndl {
 }
 
 footer {
-    background-color:#377a77;
-    color:#fff;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
     padding:5px 0;
-    border:6px solid #274e4b;
+    border:6px solid var(--main-border-color);
     text-align:center;
 }
 .CopyRightBox{
