@@ -272,7 +272,7 @@ section a:hover,
     border-radius: 5px;
     padding: 10px;
 }
-.section-wrapper ul {
+.section-content ul {
     color: var(--main-text-color);
 }
 #Collaboration, #PCSpecs {
