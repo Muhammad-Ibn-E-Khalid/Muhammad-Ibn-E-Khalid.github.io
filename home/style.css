@@ -439,11 +439,13 @@ footer .text span{
   color: #fff;
 }
 footer .text span a{
+  text-decoration: underline;
   font-weight: 500;
   color: #FFF;
 }
 footer .text span a:hover{
-  text-decoration: underline;
+  text-decoration: none;
+  color: #c4c6ce;
 }
 /* Scroll TO Top Button CSS */
 .scroll-button a{
