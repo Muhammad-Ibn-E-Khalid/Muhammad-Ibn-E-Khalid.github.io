@@ -9,7 +9,7 @@
 }
 
 a:visited{
-  color: #4070f4;
+  color: #377a77;
 }
 a:hover{
   color: #9eb5f7;
@@ -23,13 +23,13 @@ a:hover{
     background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-    background: #6e93f7;
+    background: #78e9e5;
     border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #4070f4;
+    background: #4ea19d;
 }
 /* navbar styling */
 nav{
@@ -41,7 +41,7 @@ nav{
   font-family: 'Ubuntu', sans-serif;
 }
 nav.sticky{
-  background: #4070f4;
+  background: #377a77;
   padding: 13px 0;
 }
 nav .navbar{
@@ -51,14 +51,30 @@ nav .navbar{
   align-items: center;
   margin: auto;
 }
+.logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+.logo img {
+  width: 100%;
+  height:100%;
+  float: left;
+}
+
+.logo .text {
+  margin-left: -225px;
+  float: left;
+}
 nav .navbar .logo a{
   font-weight: 500;
   font-size: 35px;
-  color: #4070f4;
+  color: #377a77;
 }
 nav.sticky .navbar .logo a{
   color: #fff;
 }
+
 nav .navbar .menu{
   display: flex;
   position: relative;
@@ -75,7 +91,7 @@ nav .navbar .menu li{
   transition: all 0.4s ease;
 }
 .navbar .menu a:hover{
-  color: #4070f4;
+  color: #377a77;
 }
 nav.sticky .menu a{
   color: #FFF;
@@ -84,7 +100,7 @@ nav.sticky .menu a:hover{
   color: #0E2431;
 }
 .navbar .media-icons a{
-  color: #4070f4;
+  color: #377a77;
   font-size: 21px;
   margin: 0 6px; 
 }
@@ -107,7 +123,7 @@ nav .menu-btn,
   display: none;
 }
 nav .menu-btn{
-  color: #4070f4;
+  color: #377a77;
 }
 nav.sticky .menu-btn{
   color: #FFF;
@@ -116,7 +132,6 @@ nav.sticky .menu-btn{
   color: #fff;
 }
 
-
 /* Style for select element */
 .text .select select {
   outline: none;
@@ -124,7 +139,7 @@ nav.sticky .menu-btn{
   border-radius: 6px;
   font-size: 25px;
   font-weight: 400;
-  background: #4070f4;
+  background: #377a77;
   width: 180px;
   color: #fff;
   cursor: pointer;
@@ -134,9 +149,9 @@ nav.sticky .menu-btn{
 }
 
 .text .select select:hover {
-  border-color: #4070f4;
+  border-color: #377a77;
   background-color: #fff;
-  color: #4070f4;
+  color: #377a77;
 }
  
 .text .select select option.selected {
@@ -146,11 +161,11 @@ nav.sticky .menu-btn{
 
 .text .select select option {
   background-color: #fff;
-  color: #4070f4;
+  color: #377a77;
 }
 
 .ssmedis a{
-  color: #4070f4;
+  color: #377a77;
   font-size: 35px;
   margin: 0 6px; 
 }
@@ -196,7 +211,7 @@ nav.sticky .menu-btn{
 .home .text-three{
   font-size: 40px;
   margin: 5px 0;
-  color: #4070f4;
+  color: #377a77;
 }
 .home .text-four{
   font-size: 23px;
@@ -212,16 +227,16 @@ nav.sticky .menu-btn{
   border-radius: 6px;
   font-size: 25px;
   font-weight: 400;
-  background: #4070f4;
+  background: #377a77;
   color: #fff;
   cursor: pointer;
   border: 2px solid transparent;
   transition: all 0.4s ease;
 }
 .home .button button:hover{
-  border-color: #4070f4;
+  border-color: #377a77;
   background-color: #fff;
-  color: #4070f4;
+  color: #377a77;
 }
 
 /* About Section Styling */
@@ -260,7 +275,7 @@ section .title span::after{
   position: absolute;
   height: 3px;
   width: 100%;
-  background: #4070f4;
+  background: #377a77;
   left: 0;
   bottom: 0;
 }
@@ -274,13 +289,19 @@ section .title span::after{
   width: 45%;
 }
 .about .left img{
-  height: 400px;
+  height: 100px;
   width: 400px;
   object-fit: cover;
   border-radius: 12px;
 }
+
+
+
 .about-details .right{
   width: 55%;
+}
+.about-details .centre{
+  width: 95%;
 }
 section  .topic{
   color: #0E2431;
@@ -289,6 +310,10 @@ section  .topic{
   margin-bottom: 10px;
 }
 .about-details .right p{
+  text-align: justify;
+  color: #0E2431;
+}
+.about-details .centre p{
   text-align: justify;
   color: #0E2431;
 }
@@ -301,16 +326,16 @@ section .button button{
   border-radius: 4px;
   font-size: 25px;
   font-weight: 400;
-  background: #4070f4;
+  background: #377a77;
   color: #fff;
   border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.4s ease;
 }
 section .button button:hover{
-  border-color: #4070f4;
+  border-color: #377a77;
   background-color: #fff;
-  color: #4070f4;
+  color: #377a77;
 }
 
  /* My Skills CSS */
@@ -360,11 +385,11 @@ section .button button:hover{
 }
 .skills-details .boxes .topic{
   font-size: 20px;
-  color: #4070f4;
+  color: #377a77;
 }
 .skills-details .boxes .per{
   font-size: 60px;
-  color: #4070f4;
+  color: #377a77;
 }
 
 /* My Services CSS */
@@ -384,13 +409,13 @@ section .button button:hover{
   transition: all 0.4s ease;
 }
 .services .boxes .box:hover{
-  background: #4070f4;
+  background: #377a77;
   color: #fff;
 }
 .services .boxes .box .icon{
   height: 50px;
   width: 50px;
-  background: #4070f4;
+  background: #377a77;
   border-radius: 50%;
   text-align: center;
   line-height: 50px;
@@ -401,7 +426,7 @@ section .button button:hover{
 }
 .boxes .box:hover .icon{
   background-color: #fff;
-  color: #4070f4;
+  color: #377a77;
 }
 .services .boxes .box:hover .topic,
 .services .boxes .box:hover p{
@@ -428,7 +453,7 @@ section .button button:hover{
 
 /* Footer CSS */
 footer{
-  background: #4070f4;
+  background: #377a77;
   padding: 15px 0;
   text-align: center;
   font-family: 'Poppins', sans-serif;
@@ -453,7 +478,7 @@ footer .text span a:hover{
   bottom: 20px;
   right: 20px;
   color: #fff;
-  background: #4070f4;
+  background: #377a77;
   padding: 7px 12px;;
   font-size: 18px;
   border-radius: 6px;
@@ -481,6 +506,10 @@ footer .text span a:hover{
     width: 90%;
     margin: 40px 0;
   }
+  .about-details .centre{
+    width: 90%;
+    margin: 0px 0;
+  }
   .services .boxes .box{
     margin: 20px 0;
     width: calc(100% / 2 - 20px);
@@ -488,7 +517,7 @@ footer .text span a:hover{
 }
 @media (max-width: 900px) {
   .about .left img{
-    height: 350px;
+    height: 150px;
     width: 350px;
   }
 }
@@ -520,7 +549,7 @@ footer .text span a:hover{
     margin: 10px 0;
   }
   nav.sticky .menu a:hover{
-    color: #4070f4;
+    color: #377a77;
   }
   nav .navbar .media-icons{
     display: none;
@@ -567,7 +596,7 @@ footer .text span a:hover{
   }
   .skills-details .boxes .per{
     font-size: 50px;
-    color: #4070f4;
+    color: #377a77;
   }
 }
 
@@ -621,8 +650,6 @@ form button {
 form button:hover {
   opacity:0.8;
 }
-
-
 
 /*Star rating*/
 
