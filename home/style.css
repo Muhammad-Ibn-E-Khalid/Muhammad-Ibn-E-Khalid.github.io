@@ -23,7 +23,7 @@ a:hover{
     background: #f1f1f1;
 }
 ::-webkit-scrollbar-thumb {
-    background: #78e9e5;
+    background: #89f1ee;
     border-radius: 12px;
     transition: all 0.3s ease;
 }
@@ -85,7 +85,7 @@ nav .navbar .menu li{
 }
 .navbar .menu a{
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 800;
   color: #0E2431;
   padding: 6px 0;
   transition: all 0.4s ease;
@@ -105,7 +105,8 @@ nav.sticky .menu a:hover{
   margin: 0 6px; 
 }
 .media-icons a:hover{
-color: grey;}
+  color: grey;
+}
 nav.sticky .media-icons a{
   color: #FFF;
 }
@@ -478,7 +479,7 @@ footer .text span a:hover{
   bottom: 20px;
   right: 20px;
   color: #fff;
-  background: #377a77;
+  background: #49949e;
   padding: 7px 12px;;
   font-size: 18px;
   border-radius: 6px;
