@@ -25,7 +25,7 @@
         position: fixed;
         bottom: 0px; /* Adjust this value as needed */
         left: 0;
-        right: 0;
+        right: 0;        
     }
 
     .grid {
@@ -34,28 +34,43 @@
     }
 
    .left {
+        height: 74%;
         width: 15%;
         padding: 10px; /* Optional: add some padding for better appearance */
         box-sizing: border-box; /* Ensure padding and border are included in the width */
         overflow-y: auto; /* Ensure scroll if content overflows */
-        position: fixed; /* Keep the left section fixed */
         height: 100%; /* Ensure it takes full height */
     }
 
     .right {
-        height: 74%;
-        width: 85%;
+        height: 72%;
+        width: 100%;
         padding: 10px; /* Optional: add some padding for better appearance */
         box-sizing: border-box; /* Ensure padding and border are included in the width */
         overflow-y: auto; /* Ensure scroll if content overflows */
-        margin-left: 15%; /* Offset the right section to the right of the fixed left section */
+        margin-left: 5%; /* Offset the right section to the right of the fixed left section */
+    }
+    @media (max-width: 750px) {
+    .left{
+        display: none;
+    }
+    .right {
+        height: 100%;
+        width: 100%;
+        padding: 5px; 
+        margin-left: 0%;
+    }
+    footer {
+        padding: 0; /* Remove padding */
+        position: static; /* Change from fixed to static */
+        bottom: auto; /* Remove bottom position */
+        left: auto; /* Remove left position */
+        right: auto; /* Remove right position */
+    }
     }
 
-    .left h3{
-        color: #f1bf6a;
-        margin-top: 3px;
-        margin-bottom: 5px; 
-    }
+
+
     #about{
         color:#000;
     }
@@ -151,6 +166,17 @@
         font-weight:bolder;
         text-decoration:underline;
     }
+    .left a{
+        color: #f1bf6a;
+        text-decoration: underline;
+    }
+    .left a:hover {
+        color: #f3d7a6;
+        text-decoration: none; 
+    }
+    .left h3{
+        margin-bottom: 7px; 
+    }
     @media only screen and (max-width:600px) {
         #modal {
             width:90%;
@@ -192,7 +218,7 @@
           </div>
 
           <div class="text">
-            <a href="#">MBK Tech Studio</a>
+            <a href="../">MBK Tech Studio</a>
           </div>
 
         </div>
@@ -233,23 +259,23 @@
         <br><br><br><br>
 
 
-        <div class="title"><span>Terms and Conditions</span></div>
+        <div class="title"><span>Terms And Conditions</span></div>
 
         <div class="grid">
 
             <div class="left">
     
-                <a href="#Section1"><h3>Acceptance of Terms</h3></a>            
-                <a href="#Section2"><h3>Use License</h3></a>      
-                <a href="#Section3"><h3>Intellectual Property</h3></a>                
-                <a href="#Section4"><h3>Links to Other Sites</h3></a>                
-                <a href="#Section5"><h3>Contact Us Form</h3></a>                     
-                <a href="#Section6"><h3>Cookies</h3></a>                      
-                <a href="#Section7"><h3>Blog Posts</h3></a>                     
-                <a href="#Section8"><h3>Governing Law</h3></a> 
-                <a href="#Section9"><h3>Changes to Terms</h3></a> 
-                <a href="#Section10"><h3>Website Code License</h3></a>                
-                <a href="#Section11"><h3>Data Privacy and Protection: </h3></a>                    
+                <a href="#Section1"><h3>1: Acceptance of Terms</h3></a>            
+                <a href="#Section2"><h3>2: Use License</h3></a>      
+                <a href="#Section3"><h3>3: Intellectual Property</h3></a>                
+                <a href="#Section4"><h3>4: Links to Other Sites</h3></a>                
+                <a href="#Section5"><h3>5: Contact Us Form</h3></a>                     
+                <a href="#Section6"><h3>6: Cookies</h3></a>                      
+                <a href="#Section7"><h3>7: Blog Posts</h3></a>                     
+                <a href="#Section8"><h3>8: Governing Law</h3></a> 
+                <a href="#Section9"><h3>9: Changes to Terms</h3></a> 
+                <a href="#Section10"><h3>10: Website Code License</h3></a>                
+                <a href="#Section11"><h3>11: Data Privacy and Protection: </h3></a>                    
                 <a href="#CommentoTerms"><h3>Rights and Responsibilities: Commento & Users</h3></a> 
     
             </div>
