@@ -342,7 +342,8 @@
       </div>
 
     </section>
- 
+    <div id="terms"></div>
+
   </body>
 
   <!-- Footer Section Start -->
@@ -399,6 +400,10 @@
 
   </script>
   <script>
+        document.addEventListener("DOMContentLoaded", function() {
+       loadTerms();
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
         const headerHeight = document.querySelector('header').offsetHeight;
 
@@ -418,7 +423,13 @@
             });
         });
     });
+
+
+
+
+    
 </script>
+
 
 
 </html>

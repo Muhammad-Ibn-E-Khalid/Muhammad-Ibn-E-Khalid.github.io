@@ -223,3 +223,69 @@ function handleCVFile() {
       window.open(fileUrl, '_blank');
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+function loadTerms() {
+    fetch('https://mbktechstudio.com/home/Assets/cookie.html').then(response => response.text()).then(html => {
+        document.getElementById('terms').innerHTML = html;
+        const termsVersion = document.getElementById('termsVersion').innerText.split(': ')[1];
+        checkCookie(termsVersion);
+    });
+}
+
+function set(){
+    const termsVersion = document.getElementById('termsVersion').innerText.split(': ')[1];
+    setCookie('agreed', termsVersion, 365);
+    hideOverlay();
+}
+
+function checkCookie(currentVersion) {
+    const agreedVersion = getCookie('agreed');
+    if (agreedVersion === currentVersion) {
+        hideOverlay();
+    }
+}
+
+function hideOverlay() {
+    document.getElementById('cookieNotice').style.display = 'none';
+}
+
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+    return null;
+}
+
+function hideCookieNotice() {
+    document.getElementById('cookieNotice').style.display = 'none';
+}
