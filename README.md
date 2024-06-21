@@ -11,7 +11,7 @@ https://github.com/MIbnEKhalid/mbktech.studios/
 
 https://MIbnEKhalid.github.io.github.io/mbktech.studios/ or https://mbktechstudio.com/mbktech.studios/
 
-#Completely New Web Design About to Release (https://mbktechstudio.com/home/)
+# Completely New Web Design About to Release (https://mbktechstudio.com/home/)
 
 ## Hosting:
 - The website is hosted on GitHub, with a custom domain purchased from Namecheap for $13 for a 12-month period. This custom domain is pointed to the GitHub repository.
