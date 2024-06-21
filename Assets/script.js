@@ -245,7 +245,7 @@ function handleCVFile() {
 
 
 function AskForCookieConsent() {
-    fetch('https://mbktechstudio.com/home/Assets/cookie.html').then(response => response.text()).then(html => {
+    fetch('https://mbktechstudio.com/Assets/cookie.html').then(response => response.text()).then(html => {
         document.getElementById('cookie').innerHTML = html;
         const termsVersion = document.getElementById('termsVersion').innerText.split(': ')[1];
         checkCookie(termsVersion);
