@@ -727,7 +727,7 @@ form button:hover {
 /* Cookie */
 
 #cookieNotice.display-right {
-  right: 10px; 
+  right: 1px; 
   bottom: 10px;
   max-width: 600px;
 }
