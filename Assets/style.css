@@ -731,12 +731,7 @@ form button:hover {
   bottom: 5px;
   max-width: 600px;
 }
-#cookieNotice.light {
-  background-color: #fff;
-  background-color: var(--cookieNoticeProLight);
-  color: #393d4d;
-  color: var(--cookieNoticeProDark);
-}
+ 
 #cookieNotice {
   border: 2px solid #377a77;
   box-sizing: border-box;
@@ -746,6 +741,7 @@ form button:hover {
   box-shadow: 0 6px 6px rgb(0 0 0 / 25%);
   font-family: 'Poppins', sans-serif;
   z-index: 999997;
+  background-color: #f9f9f9;
 }
 #cookieNotice #closeIcon {
   width: 20px;
